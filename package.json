@@ -1,0 +1,31 @@
+{
+  "name": "ferrous_study",
+  "version": "1.0.0",
+  "description": "Descripción de tu proyecto",
+  "main": "index.js",
+  "workspaces": [
+    "ferrous_study_server",
+    "ferrous_study_web"
+  ],
+  "scripts": {
+    "dev": "node --watch ferrous_study_server/index.js & pnpm dev -p 3001 ferrous_study_web/",
+    "build": "pnpm build ferrous_study_web/",
+    "start": "node ferrous_study_server/index.js & pnpm dev -p 3001 ferrous_study_web/"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "typescript",
+    "tailwind"
+  ],
+  "author": "Luis Eduardo Frias",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/tu-proyecto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/tu-proyecto/issues"
+  },
+  "homepage": "https://github.com/tu-usuario/tu-proyecto#readme"
+}
