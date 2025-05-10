@@ -2,6 +2,7 @@ import { ReactNode, Children, cloneElement } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import CodeButton from './code_button'
 import CopyButton from './copy_button'
 import Paragraph from './paragraph'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
@@ -13,8 +14,12 @@ export default function MarkdownRenderer({ children }: { children: ReactNode }) 
     const match = /language-(\w+)/.exec(className || "");
 
     return !inline && match ? (
-      <div className="relative" >
-        <CopyButton textToCopy={codeChildren} />
+      <div className="relative pt-4 px-3" >
+        <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
+          <CopyButton textToCopy={codeChildren} />
+          <CodeButton textToCode={codeChildren} />
+        </div>
+
         <SyntaxHighlighter
           style={dracula}
           PreTag="div"

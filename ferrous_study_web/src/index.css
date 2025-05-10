@@ -73,10 +73,8 @@
   --theme-o-4-l: #F2B2FF; /* Más claro */
   --theme-o-4-d: #9A56CC; /* Más oscuro */
 
-  
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: white;
+  background-color: #131313;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -102,7 +100,7 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: underline;
+/*   text-decoration: underline; */
   color: var(--theme-3-l);
 }
 
@@ -128,12 +126,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--theme-4);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: var(--theme-3);
 }
 button:focus,
 button:focus-visible {
@@ -146,7 +144,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: var(--theme-4);
   }
   button {
     background-color: #f9f9f9;

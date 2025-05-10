@@ -1,4 +1,6 @@
-export default function Paragraph({ text, className }: { text: string, className?: string }) {
+import {ReactNode} from 'react'
+
+export default function Paragraph({ text, children, className }: { text: string, children:ReactNode, className?: string }) {
   return (
     <p
       style={{
@@ -12,6 +14,7 @@ export default function Paragraph({ text, className }: { text: string, className
       className={`text-[14px] ${className}`}
     >
       {text}
+      {children}
     </p>
   )
 }

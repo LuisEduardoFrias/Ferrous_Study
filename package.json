@@ -1,17 +1,9 @@
 {
-  "name": "ferrous_study",
+  "name": "Ferrous_Study",
   "version": "1.0.0",
-  "description": "Descripción de tu proyecto",
+  "description": "Curso de rust",
   "main": "index.js",
-  "workspaces": [
-    "ferrous_study_server",
-    "ferrous_study_web"
-  ],
-  "scripts": {
-    "dev": "node --watch ferrous_study_server/index.js & pnpm dev -p 3001 ferrous_study_web/",
-    "build": "pnpm build ferrous_study_web/",
-    "start": "node ferrous_study_server/index.js & pnpm dev -p 3001 ferrous_study_web/"
-  },
+  "scripts": {},
   "keywords": [
     "react",
     "express",
@@ -22,10 +14,10 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tu-usuario/tu-proyecto.git"
+    "url": "https://github.com/LuisEduardoFrias/Ferrous_Study.git"
   },
   "bugs": {
-    "url": "https://github.com/tu-usuario/tu-proyecto/issues"
+    "url": "https://github.com/LuisEduardoFrias/Ferrous_Study/issues"
   },
-  "homepage": "https://github.com/tu-usuario/tu-proyecto#readme"
+  "homepage": "https://github.com/LuisEduardoFrias/Ferrous_Study#readme"
 }

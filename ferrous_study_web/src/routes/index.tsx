@@ -11,7 +11,7 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
   return (
     <div className="p-2">
-      <img src={ferrous} className="bg-white" alt="ferrous gif" />
+      <img src={ferrous} className="bg-[#ffffff] w-full" alt="ferrous gif" />
       <h1 className="flex gap-1 font-bold -md:text-3xl justify-center items-center">
         Bienvenido a Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
       </h1>

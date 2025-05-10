@@ -1,0 +1,3 @@
+packages:
+  - 'ferrous_study_server'
+  - 'ferrous_study_web'

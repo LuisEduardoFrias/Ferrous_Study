@@ -23,10 +23,10 @@ export default function CopyButton({ textToCopy }: CopyButtonProps) {
   };
 
   return (
-    <div className="absolute right-4 top-4">
-      {showTooltip && <div className="p-2 absolute rounded right-0 bottom-14 bg-translucent text-white font-extrabold" ><p>Copiado</p></div>}
+    <div className="">
+      {showTooltip && <div className="p-2 absolute rounded right-0 bottom-14 bg-translucent font-extrabold" ><p>Copiado</p></div>}
       <button
-        className="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600"
+        className="rounded-md flex justify-center items-center w-14 h-14 shadow shadow-sm"
         onClick={handleCopyClick}
       >
         <CopyIcon />

@@ -17,10 +17,10 @@ El objetivo del curso es enseñarte Rust. Suponiendo que no sabes nada sobre Rus
 
 Basándonos en esto, te invitamos a profundizar en uno o más temas especializados:
 
-- Android: un curso sobre el uso de Rust en el desarrollo de la plataforma Android (AOSP). En él se incluye la interoperabilidad con C, C++ y Java.
-- Chromium: una clase sobre el uso de Rust dentro del navegador Chromium. Incluye interoperabilidad con C++ y como incorporar bibliotecas de tercero (“crates”) en Chromium.
-- Bare Metal: una clase sobre el uso de Rust para el desarrollo bare-metal (insertado). Se tratarán tanto los microcontroladores como los procesadores de aplicaciones.
-- Concurrencia: una clase sobre concurrencia en Rust. Abordaremos tanto la concurrencia clásica (programación interrumpible mediante hilos y exclusiones mutuas), como la concurrencia async / await (multitarea cooperativa mediante traits future).
+- Rust en Android: un curso sobre el uso de Rust en el desarrollo de la plataforma Android (AOSP). En él se incluye la interoperabilidad con C, C++ y Java.
+- Rust en Chromium: una clase sobre el uso de Rust dentro del navegador Chromium. Incluye interoperabilidad con C++ y como incorporar bibliotecas de tercero (“crates”) en Chromium.
+- Bare Metal Rust: una clase sobre el uso de Rust para el desarrollo bare-metal (insertado). Se tratarán tanto los microcontroladores como los procesadores de aplicaciones.
+- Concurrencia en Rust: una clase sobre concurrencia en Rust. Abordaremos tanto la concurrencia clásica (programación interrumpible mediante hilos y exclusiones mutuas), como la concurrencia async / await (multitarea cooperativa mediante traits future).
 
 <br />
 <hr />
