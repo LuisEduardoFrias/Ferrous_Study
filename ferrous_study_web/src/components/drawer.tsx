@@ -17,9 +17,21 @@ type TMenu = {
 const menu: TMenu[] = [
   {
     to: "/classroom/$classroomId",
-    text: "Ecosistema de Rust",
+    text: "Rust y su ecosistema",
     displayQuality: '',
     subMenu: [
+      {
+        to: "/classroom/$classroomId",
+        text: "Que es Rust",
+        displayQuality: '',
+        params: { classroomId: 'que_es_rust' }
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Ventajas de Rust",
+        displayQuality: '',
+        params: { classroomId: 'ventajas_de_rust' }
+      },
       {
         to: "/classroom/$classroomId",
         text: "Ecosistema",
@@ -38,6 +50,87 @@ const menu: TMenu[] = [
         displayQuality: '',
         params: { classroomId: 'ejercicios_ejemplos_codigo' }
       }
+    ]
+  },
+  {
+    to: "/classroom/$classroomId",
+    text: "Tipos y Valores",
+    displayQuality: '',
+    subMenu: [
+      {
+        to: "/classroom/$classroomId",
+        text: "Variabless",
+        displayQuality: '',
+        params: { classroomId: 'variables' },
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Valores",
+        displayQuality: '',
+        params: { classroomId: 'valores' },
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Aritmética",
+        displayQuality: '',
+        params: { classroomId: 'aritmetica' },
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Inferencia de tipos",
+        displayQuality: '',
+        params: { classroomId: 'inferencia_tipos' },
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: 'Ejercicio - Fibonacci',
+        displayQuality: '',
+        subMenu: [
+          {
+            to: "/classroom/$classroomId",
+            text: 'Fibonacci',
+            displayQuality: '',
+            params: { classroomId: 'eje_fibonacci' },
+          },
+          {
+            to: "/classroom/$classroomId",
+            text: 'Solución',
+            displayQuality: '',
+            params: { classroomId: 'solu_fibonacci' },
+          }
+        ]
+      },
+    ]
+  },
+  {
+    to: "/classroom/$classroomId",
+    text: "Controles de flujo básicos",
+    displayQuality: '',
+    subMenu: [
+      {
+        to: "/classroom/$classroomId",
+        text: "Expresiones if",
+        displayQuality: '',
+        params: { classroomId: 'new' }
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Bucles",
+        displayQuality: '',
+        params: { classroomId: 'new' }
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Break y continue",
+        displayQuality: '',
+        params: { classroomId: 'new' }
+      },
+      {
+        to: "/classroom/$classroomId",
+        text: "Bloques y ámbitos",
+        displayQuality: '',
+        params: { classroomId: 'new' }
+      },
     ]
   },
   {
@@ -124,7 +217,7 @@ function LinkC({ text, params, className, children, displayQuality, to, subMenu 
       setIsOpen(!isOpen);
       return;
     }
-    
+
     on_show_drawer(false)
   };
 

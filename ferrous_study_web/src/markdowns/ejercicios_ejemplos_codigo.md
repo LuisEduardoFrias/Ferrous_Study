@@ -6,6 +6,14 @@ Se recomienda instalar Cargo, ya que facilitará la realización de los ejercici
 
 Los bloques de código de este curso son totalmente **interactivos**:
 
+```rust
+
+fn main() {
+    println!("¡Edítame!");
+}
+
+```
+
 * Puedes usar `Ctrl + Enter` para ejecutar el código cuando el cursor esté en el cuadro de texto.
 
 ## Speaker Notes
