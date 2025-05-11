@@ -4,5 +4,18 @@ import CopyIcon from './copy';
 import FerrisIcon from './ferris';
 import ArrowRightIcon from './arrow_right';
 import CodeIcon from './code';
+import EditIcon from './edit';
+import SearchIcon from './search';
+import LoadingIcon from './loading';
+import ImageIcon from './image';
+import LinkIcon from './link';
+import TableIcon from './table';
+import SaveIcon from './save';
 
-export { BookCloseIcon, BookOpenIcon, CopyIcon, FerrisIcon,  ArrowRightIcon,CodeIcon };
+export {
+  BookCloseIcon, BookOpenIcon, CopyIcon,
+  FerrisIcon, ArrowRightIcon, CodeIcon, 
+  EditIcon, LinkIcon, TableIcon,
+  SearchIcon, LoadingIcon,ImageIcon,
+  SaveIcon
+};

@@ -14,7 +14,7 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as ClassroomClassroomIdImport } from './routes/classroom/$classroomId'
-import { Route as ClassroomEditClassroomEditClassroomIdImport } from './routes/classroom_/editClassroom/$editClassroomId'
+import { Route as ClassroomEditEditClassroomIdImport } from './routes/classroom_/edit/$editClassroomId'
 
 // Create/Update Routes
 
@@ -36,10 +36,10 @@ const ClassroomClassroomIdRoute = ClassroomClassroomIdImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ClassroomEditClassroomEditClassroomIdRoute =
-  ClassroomEditClassroomEditClassroomIdImport.update({
-    id: '/classroom_/editClassroom/$editClassroomId',
-    path: '/classroom/editClassroom/$editClassroomId',
+const ClassroomEditEditClassroomIdRoute =
+  ClassroomEditEditClassroomIdImport.update({
+    id: '/classroom_/edit/$editClassroomId',
+    path: '/classroom/edit/$editClassroomId',
     getParentRoute: () => rootRoute,
   } as any)
 
@@ -68,11 +68,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassroomClassroomIdImport
       parentRoute: typeof rootRoute
     }
-    '/classroom_/editClassroom/$editClassroomId': {
-      id: '/classroom_/editClassroom/$editClassroomId'
-      path: '/classroom/editClassroom/$editClassroomId'
-      fullPath: '/classroom/editClassroom/$editClassroomId'
-      preLoaderRoute: typeof ClassroomEditClassroomEditClassroomIdImport
+    '/classroom_/edit/$editClassroomId': {
+      id: '/classroom_/edit/$editClassroomId'
+      path: '/classroom/edit/$editClassroomId'
+      fullPath: '/classroom/edit/$editClassroomId'
+      preLoaderRoute: typeof ClassroomEditEditClassroomIdImport
       parentRoute: typeof rootRoute
     }
   }
@@ -84,14 +84,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom/editClassroom/$editClassroomId': typeof ClassroomEditClassroomEditClassroomIdRoute
+  '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom/editClassroom/$editClassroomId': typeof ClassroomEditClassroomEditClassroomIdRoute
+  '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
 export interface FileRoutesById {
@@ -99,7 +99,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom_/editClassroom/$editClassroomId': typeof ClassroomEditClassroomEditClassroomIdRoute
+  '/classroom_/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
 export interface FileRouteTypes {
@@ -108,19 +108,19 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/classroom/$classroomId'
-    | '/classroom/editClassroom/$editClassroomId'
+    | '/classroom/edit/$editClassroomId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/classroom/$classroomId'
-    | '/classroom/editClassroom/$editClassroomId'
+    | '/classroom/edit/$editClassroomId'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/classroom/$classroomId'
-    | '/classroom_/editClassroom/$editClassroomId'
+    | '/classroom_/edit/$editClassroomId'
   fileRoutesById: FileRoutesById
 }
 
@@ -128,15 +128,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ClassroomClassroomIdRoute: typeof ClassroomClassroomIdRoute
-  ClassroomEditClassroomEditClassroomIdRoute: typeof ClassroomEditClassroomEditClassroomIdRoute
+  ClassroomEditEditClassroomIdRoute: typeof ClassroomEditEditClassroomIdRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ClassroomClassroomIdRoute: ClassroomClassroomIdRoute,
-  ClassroomEditClassroomEditClassroomIdRoute:
-    ClassroomEditClassroomEditClassroomIdRoute,
+  ClassroomEditEditClassroomIdRoute: ClassroomEditEditClassroomIdRoute,
 }
 
 export const routeTree = rootRoute
@@ -152,7 +151,7 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/classroom/$classroomId",
-        "/classroom_/editClassroom/$editClassroomId"
+        "/classroom_/edit/$editClassroomId"
       ]
     },
     "/": {
@@ -164,8 +163,8 @@ export const routeTree = rootRoute
     "/classroom/$classroomId": {
       "filePath": "classroom/$classroomId.tsx"
     },
-    "/classroom_/editClassroom/$editClassroomId": {
-      "filePath": "classroom_/editClassroom/$editClassroomId.tsx"
+    "/classroom_/edit/$editClassroomId": {
+      "filePath": "classroom_/edit/$editClassroomId.tsx"
     }
   }
 }

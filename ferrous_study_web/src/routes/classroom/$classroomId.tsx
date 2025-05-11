@@ -16,7 +16,7 @@ function ClassRoom() {
   })();
 
   return (
-    <div className="p-2">
+    <div name="classRoom" className="p-2">
       <MarkdownRenderer>
         {content}
       </MarkdownRenderer>

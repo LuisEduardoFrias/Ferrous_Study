@@ -4,10 +4,12 @@ import Drawer from '../components/drawer'
 import Layout from '../components/layout'
 
 export const Route = createRootRoute({
-  component: () => (
-    <div className="w-full h-full" >
-      <Drawer />
-      <Layout />
-    </div>
-  ),
+  component: () => {
+    return (
+      <div id="root2" className="w-full h-full pt-14" >
+        <Drawer />
+        <Layout />
+      </div>
+    )
+  },
 })

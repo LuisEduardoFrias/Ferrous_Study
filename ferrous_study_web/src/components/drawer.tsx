@@ -3,8 +3,10 @@ import { Link } from '@tanstack/react-router'
 import { State, Actions } from '../state_warehouse'
 import { useSubscriberState, useActions } from 'subscriber_state'
 import { BookOpenIcon } from '../assets/svgs'
+import Menu from '../jsons/menu.json'
 import { useClickInSide } from '../hooks/use_click_in_side'
 import { FerrisIcon, ArrowRightIcon } from '../assets/svgs'
+import ButtonIcon from '../components/button_icon'
 
 type TMenu = {
   to: string,
@@ -14,143 +16,7 @@ type TMenu = {
   subMenu?: TMenu[]
 }
 
-const menu: TMenu[] = [
-  {
-    to: "/classroom/$classroomId",
-    text: "Rust y su ecosistema",
-    displayQuality: '',
-    subMenu: [
-      {
-        to: "/classroom/$classroomId",
-        text: "Que es Rust",
-        displayQuality: '',
-        params: { classroomId: 'que_es_rust' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Ventajas de Rust",
-        displayQuality: '',
-        params: { classroomId: 'ventajas_de_rust' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Ecosistema",
-        displayQuality: '',
-        params: { classroomId: 'ecosistema_rust' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Cargo",
-        displayQuality: '',
-        params: { classroomId: 'cargo' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Ejemplos de codigo",
-        displayQuality: '',
-        params: { classroomId: 'ejercicios_ejemplos_codigo' }
-      }
-    ]
-  },
-  {
-    to: "/classroom/$classroomId",
-    text: "Tipos y Valores",
-    displayQuality: '',
-    subMenu: [
-      {
-        to: "/classroom/$classroomId",
-        text: "Variabless",
-        displayQuality: '',
-        params: { classroomId: 'variables' },
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Valores",
-        displayQuality: '',
-        params: { classroomId: 'valores' },
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Aritmética",
-        displayQuality: '',
-        params: { classroomId: 'aritmetica' },
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Inferencia de tipos",
-        displayQuality: '',
-        params: { classroomId: 'inferencia_tipos' },
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: 'Ejercicio - Fibonacci',
-        displayQuality: '',
-        subMenu: [
-          {
-            to: "/classroom/$classroomId",
-            text: 'Fibonacci',
-            displayQuality: '',
-            params: { classroomId: 'eje_fibonacci' },
-          },
-          {
-            to: "/classroom/$classroomId",
-            text: 'Solución',
-            displayQuality: '',
-            params: { classroomId: 'solu_fibonacci' },
-          }
-        ]
-      },
-    ]
-  },
-  {
-    to: "/classroom/$classroomId",
-    text: "Controles de flujo básicos",
-    displayQuality: '',
-    subMenu: [
-      {
-        to: "/classroom/$classroomId",
-        text: "Expresiones if",
-        displayQuality: '',
-        params: { classroomId: 'new' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Bucles",
-        displayQuality: '',
-        params: { classroomId: 'new' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Break y continue",
-        displayQuality: '',
-        params: { classroomId: 'new' }
-      },
-      {
-        to: "/classroom/$classroomId",
-        text: "Bloques y ámbitos",
-        displayQuality: '',
-        params: { classroomId: 'new' }
-      },
-    ]
-  },
-  {
-    to: "/classroom/$classroomId",
-    text: "Class Room",
-    displayQuality: '',
-    params: { classroomId: 'new' }
-  },
-  {
-    displayQuality: '',
-    to: "/classroom/editClassroom/$editClassroomId",
-    text: "Edit Class Room",
-    params: { editClassroomId: '456' }
-  },
-  {
-    to: "/about",
-    text: "About",
-    displayQuality: '',
-  }
-]
+const menu: TMenu[] = Menu;
 
 export default function Drawer() {
   const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
@@ -163,7 +29,7 @@ export default function Drawer() {
   }
 
   return (
-    <div ref={divRef} className={`absolute top-0 left-0 z-50 flex flex-row transition-custom duration-7ms ease-in-out ${show_drawer ? 'translate-x-0 backdrop-blur-[0.8px] bg-translucent' : '-translate-x-full backdrop-blur-[0px] bg-transparent'} w-full h-[100dvh]`} >
+    <div ref={divRef} className={`fixed top-0 left-0 z-50 flex flex-row transition-custom duration-7ms ease-in-out ${show_drawer ? 'translate-x-0 backdrop-blur-[0.8px] bg-translucent' : '-translate-x-full backdrop-blur-[0px] bg-transparent'} w-full h-[100dvh]`} >
 
       <div className="flex flex-col gap-2 w-3/6 bg-theme-d-4 shadow shadow-blue-800"   >
 
@@ -171,7 +37,9 @@ export default function Drawer() {
           <LinkC to="/" className="hover:text-theme-1-d">
             <span className="flex gap-1 text-[16px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" /></span>
           </LinkC>
+          <ButtonIcon>
           <BookOpenIcon onClick={() => on_show_drawer(false)} />
+          </ButtonIcon>
         </div>
 
         <div className="flex flex-col gap-2 p-2 overflow-y-scroll">

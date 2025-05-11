@@ -1,18 +1,20 @@
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-console.log("VARIABLE PORT: ", process.env.PORT);
-console.log("VARIABLE ORIGIN: ", process.env.ORIGIN);
-
-export const {
-  // PROTOCOL = process.env.PROTOCOL || 'http://',
-  //  DOMAIN = process.env.DOMAIN || 'localhost:',
-  SWAGGER = '/api-docs',
-  PORT = process.env.PORT || 3000,
-  SECRET_ENCRYOT_KEY = process.env.SALT || 'tcx-crypto',
-  ORIGIN = process.env.ORIGIN || ['http://localhost:3001', 'http://localhost:3000'],
-  METHODS = process.env.METHODS || ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'],
-  SECRET_JWT_KEY = process.env.SECRET_JWT_KEY || "3$t0EsUnC0d1guBonoS3cr3t0_p@r@-t0d0L4@p",
-  POSTGRES_VERCEL_URL = process.env.POSTGRES_VERCEL_URL
+const {
+  //PROTOCOL: protocol,
+  //DOMAIN: domain,
+  PORT: port,
+  SECRET_ENCRYPT_KEY: secret_encrypt_key,
+  ORIGIN: origin_,
+  METHODS: methonds,
+  SECRET_JWT_KEY: secre_jwt_key,
 } = process.env;
+
+
+//PROTOCOL = protocol || 'http://',
+//DOMAIN = domain || 'localhost:',
+const PORT = port || 3000;
+const SECRET_ENCRYPT_KEY = secret_encrypt_key || 'tcx-crypto';
+const ORIGIN = origin_ || ['http://localhost:3001', 'http://localhost:3000'];
+const METHODS = methonds || ['GET', 'HEAD', 'POST', 'PUT', 'DELETE'];
+const SECRET_JWT_KEY = secre_jwt_key || "3$t0EsUnC0d1guBonoS3cr3t0_p@r@-t0d0L4@p";
+
+export { PORT, SECRET_ENCRYPT_KEY, ORIGIN, METHODS, SECRET_JWT_KEY };

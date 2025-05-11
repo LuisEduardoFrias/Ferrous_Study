@@ -1,0 +1,90 @@
+// github_service.ts
+
+const API_BASE_URL = 'http://localhost:3000'; // Ajusta la URL base si es diferente
+
+export type FileContentResponse = {
+  content?: string | null;
+}
+
+export type FileOperationResponse = {
+  resulCreate?: any; // Ajusta el tipo según la respuesta real de tu API
+  resultUpdate?: any; // Ajusta el tipo según la respuesta real de tu API
+}
+
+export const githubService = {
+  /**
+   * Obtiene el contenido de un archivo (Markdown o JSON) desde el servidor usando Fetch.
+   * @param fileName El nombre del archivo (sin extensión).
+   * @param type El tipo de archivo ('markdown' o 'json').
+   * @returns Una promesa que resuelve al contenido del archivo o null si hay un error.
+   */
+  async getFileContent(fileName: string, type: 'markdown' | 'json'): Promise<string | null> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/${fileName}/${type}`);
+      if (!response.ok) {
+        console.error(`Error al obtener el contenido de ${fileName}.${type}:`, response.status);
+        return null;
+      }
+      const data: FileContentResponse = await response.json();
+      return data.content || null;
+    } catch (error) {
+      console.error(`Error de red al obtener el contenido de ${fileName}.${type}:`, error);
+      return null;
+    }
+  },
+
+  /**
+   * Crea un nuevo archivo Markdown en el servidor usando Fetch.
+   * @param fileName El nombre del archivo (sin extensión).
+   * @param content El contenido del archivo.
+   * @returns Una promesa que resuelve a la respuesta de la creación del archivo.
+   */
+  async createMarkdownFile(fileName: string, content: string): Promise<FileOperationResponse> {
+    try {
+      const response = await fetch(API_BASE_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fileName, content }),
+      });
+      if (!response.ok) {
+        console.error(`Error al crear el archivo ${fileName}.md:`, response.status);
+        throw new Error(`Error al crear el archivo: ${response.status}`);
+      }
+      const data: FileOperationResponse = await response.json();
+      return data;
+    } catch (error) {
+      console.error(`Error al crear el archivo ${fileName}.md:`, error);
+      throw error;
+    }
+  },
+
+  /**
+   * Actualiza el contenido de un archivo (Markdown o JSON) existente en el servidor usando Fetch.
+   * @param fileName El nombre del archivo (sin extensión).
+   * @param content El nuevo contenido del archivo.
+   * @param type El tipo de archivo ('markdown' o 'json').
+   * @returns Una promesa que resuelve a la respuesta de la actualización del archivo.
+   */
+  async updateFileContent(fileName: string, content: string, type: 'markdown' | 'json'): Promise<FileOperationResponse> {
+    try {
+      const response = await fetch(API_BASE_URL, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ fileName, content, type }),
+      });
+      if (!response.ok) {
+        console.error(`Error al actualizar el archivo ${fileName}.${type}:`, response.status);
+        throw new Error(`Error al actualizar el archivo: ${response.status}`);
+      }
+      const data: FileOperationResponse = await response.json();
+      return data;
+    } catch (error) {
+      console.error(`Error al actualizar el archivo ${fileName}.${type}:`, error);
+      throw error;
+    }
+  },
+};

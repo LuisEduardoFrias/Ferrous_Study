@@ -9,7 +9,10 @@ lerna-debug.log*
 
 node_modules
 ferrous_study_web/node_modules
+ferrous_study_web/node_modules
+ferrous_study_web/.env
 ferrous_study_server/node_modules
+ferrous_study_server/.env
 ferrous_study_web/dist
 ferrous_study_server/dist
 dist-ssr

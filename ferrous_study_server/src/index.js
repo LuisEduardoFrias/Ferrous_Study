@@ -1,11 +1,9 @@
 import express from 'express';
-import _static from 'serve-static';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from "cookie-parser";
-import { createServer } from "http";
 
-import { PORT, /*PROTOCOL, DOMAIN, */ SWAGGER } from '../src/config.js';
+import { PORT, /*PROTOCOL, DOMAIN, */ } from '../src/config.js';
 import configCors from '../src/config_cors.js';
 //
 
@@ -21,17 +19,12 @@ import home from '../src/routes/home.js';
 //----------------------------
 
 const app = express();
-const { pathname: root } = new URL('../../', import.meta.url)
 
 //settings
 //app.set('protocol', PROTOCOL);
 //app.set('domain', DOMAIN);
 //app.set('port', PORT);
 app.disabled("x-powered-by");
-
-//swagger
-app.use(_static(root + '/public'));
-app.use(SWAGGER, swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 
 //middlewares
 app.use(express.text());
@@ -44,9 +37,9 @@ app.use(cors(configCors));
 
 //routers
 app.use(home);
-app.use(session);
-app.use('/product', phoneProduct);
-app.use('/admin', admin);
+// app.use(session);
+// app.use('/product', phoneProduct);
+// app.use('/admin', admin);
 
 //
 app.listen(PORT, () => {

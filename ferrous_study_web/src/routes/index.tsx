@@ -19,7 +19,6 @@ function RouteComponent() {
       <MarkdownRenderer>
         {markdownHomePage}
       </MarkdownRenderer>
-
     </div>
   )
 }
