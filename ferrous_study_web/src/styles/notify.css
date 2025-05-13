@@ -1,0 +1,50 @@
+dialog::backdrop,
+dialog+.backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+dialog[open] {
+  transform: scale(1) translate(-50%, -50%);
+  transition: scale .3s ease-in-out;
+  
+  @starting-style {
+    transform: scale(0);
+  }
+}
+
+dialog {
+  transition: scale .3s ease,
+    display .3s ease allow-discrete;
+  transform: scale(0);
+}
+
+.modal {
+  padding: 10px;
+  background-color: #454545b0;
+  backdrop-filter: blur(1px);
+  border-radius: 5px;
+  
+  position: relative;
+  left: 50%;
+  top: 50%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  
+  & footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+    & button {
+      padding: 3px;
+      font-weight: 600;
+      width: 70px;
+      border-radius: 5px;
+      border: 1px solid #000000;
+    }
+  }
+}

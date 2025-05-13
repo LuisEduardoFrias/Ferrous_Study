@@ -5,7 +5,10 @@ import type { TMenu } from '../../types/menu';
 import type { TClass } from '../../types/class';
 import { EditIcon, DeleteIcon, SaveIcon, AddIcon, ArrowRightIcon, LinkIcon, LoadingIcon } from '../../assets/svgs';
 import ButtonIcon from '../../components/button_icon';
-import Json from '../../jsons/menu.json';
+import { useDialog } from '../../hooks/use_dialog';
+import Notify from '../../components/notify';
+import JsonMenu from '../../jsons/menu.json';
+import JsonClass from '../../jsons/class.json';
 
 export const Route = createFileRoute('/settings/menu')({
   component: Menu,
@@ -17,6 +20,7 @@ function Menu() {
   const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);
   const [editable, setEditable] = useState('');
   const [loading, setLoading] = useState(false);
+  const { dialogRef, open, close } = useDialog();
   const divRef = useRef<HTMLDivElement>({});
   const inputRefs = useRef<HTMLInputElement>({});
 
@@ -30,12 +34,19 @@ function Menu() {
     setLoading(true);
     (async () => {
       try {
-        const resultClass = await githubService.getFileContent("class", 'json');
-        const result = await githubService.getFileContent("menu", 'json');
+
+        /*
+        const [resultClass, resultNenu] = await Promise.all([
+          githubService.getFileContent("class", 'json'),
+          githubService.getFileContent("menu", 'json')
+        ]);
 
         setClassroomIdsArray(JSON.parse(resultClass));
-         const { WithClassroom, WithOutClassroom } = splitClassroom(JSON.parse(result));
-       // const { WithClassroom, WithOutClassroom } = splitClassroom(Json);
+        const { WithClassroom, WithOutClassroom } = splitClassroom(JSON.parse(resultNenu));
+      */
+
+        setClassroomIdsArray(JsonClass);
+        const { WithClassroom, WithOutClassroom } = splitClassroom(JsonMenu);
         setContent(WithClassroom);
         setOptionHidden(WithOutClassroom);
       } catch (error) {
@@ -153,11 +164,13 @@ function Menu() {
         const lastItem = content.at(-1);
         const id = parseInt(lastItem.key) + 1;
 
-        content.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: id + index })))
+        const newContent = [...content];
+        newContent.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: (id + index).toString() })))
 
-        const result = await githubService.updateFileContent("menu", content, 'json');
-        console.log(JSON.parse(result));
-        // console.log(JSON.stringify(content, null, 2));
+        // const result = await githubService.updateFileContent("menu", content, 'json');
+        // console.log(JSON.parse(result));
+        console.log(JSON.stringify(newContent, null, 2));
+        close();
       } catch (error) {
         console.error("Error updating menu:", error);
       } finally {
@@ -174,11 +187,14 @@ function Menu() {
           <ButtonIcon>
             <AddIcon onClick={() => handlerAdd()} />
           </ButtonIcon>
-          <ButtonIcon onClick={handlerSave} disabled={loading}>
+          <ButtonIcon onClick={open} disabled={loading}>
             {loading ? <LoadingIcon className="progress" /> : <SaveIcon />}
           </ButtonIcon>
         </div>
       </div>
+      <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
+        <span className="text-3xl mb-3">Verificacion para guardar!</span>
+      </Notify>
       <div className="w-[34rem] px-2 mt-3">
         <Ul
           onChange={handlerChange}
@@ -250,7 +266,18 @@ const Li = memo(function Li({ value, onRemove, onAdd, classArray, onChangeLink, 
   const [isOpen, setIsOpen] = useState(false);
 
   const keys = useMemo(() => fatherKey ? [...fatherKey, value.key] : [value.key], [fatherKey, value.key]);
-  const depth = useMemo(() => value?.key?.split('-').length, [value?.key]);
+
+  const depth = () => {
+    try {
+      return value?.key?.split('-').length
+    } catch (error) {
+      console.log('value: ', value)
+
+      console.log(error)
+      alert('error en el console')
+      return 3;
+    }
+  };
 
   return (
     <>
@@ -286,7 +313,7 @@ const Li = memo(function Li({ value, onRemove, onAdd, classArray, onChangeLink, 
             <ButtonIcon>
               <EditIcon onClick={() => onEditable(value.key)} />
             </ButtonIcon>
-            {depth < 3 && (
+            {depth() < 3 && (
               <ButtonIcon>
                 <AddIcon onClick={() => onAdd(keys)} />
               </ButtonIcon>
@@ -326,7 +353,6 @@ type SelectProps = {
 };
 
 const Select = memo(function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
-  console.log(options)
   return (
     <select
       className="bg-gray-800 w-32 text-theme-0 rounded-md py-1 px-2 outline-none"
