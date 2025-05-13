@@ -151,3 +151,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.progress {
+  width: 24px;
+  height: 24px;
+  animation: rotatde 2s  0s infinite linear;
+}
+
+@keyframes rotatde {
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -11,11 +11,13 @@ import ImageIcon from './image';
 import LinkIcon from './link';
 import TableIcon from './table';
 import SaveIcon from './save';
+import DeleteIcon from './delete';
+import AddIcon from './add';
 
 export {
   BookCloseIcon, BookOpenIcon, CopyIcon,
   FerrisIcon, ArrowRightIcon, CodeIcon, 
   EditIcon, LinkIcon, TableIcon,
   SearchIcon, LoadingIcon,ImageIcon,
-  SaveIcon
+  SaveIcon, DeleteIcon, AddIcon
 };

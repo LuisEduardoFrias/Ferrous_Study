@@ -11,7 +11,7 @@ export default function Search() {
       <>
         {
           loading ?
-            <div id='progress'><LoadingIcon /></div> :
+            <div className='progress'><LoadingIcon /></div> :
             <SearchIcon />
         }
       </>)

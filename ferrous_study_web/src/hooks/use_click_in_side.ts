@@ -1,24 +1,24 @@
 import { useRef, useEffect } from 'react';
 
-export function useClickInSide(onClick: () => void) {
-  const ref = useRef<HTMLDivElement>(null);
+export function useClickInSide<T>(onClick: () => void, refOutSede?: MutableRefObject<{ [key: string]: T | null }>) {
+  const ref = useRef<T>(refOutSede);
 
   useEffect(() => {
     function handleClick(event) {
-      if (ref.current && event.target === ref.current) {
+      if (ref?.current && event.target === ref?.current) {
         onClick();
       }
     }
 
-    if (ref.current) {
-      ref.current.addEventListener('mousedown', handleClick);
-      ref.current.addEventListener('touchstart', handleClick);
+    if (ref?.current) {
+      ref?.current?.addEventListener('mousedown', handleClick);
+      ref?.current?.addEventListener('touchstart', handleClick);
     }
 
     return () => {
-      if (ref.current) {
-        ref.current.removeEventListener('mousedown', handleClick);
-        ref.current.removeEventListener('touchstart', handleClick);
+      if (ref?.current) {
+        ref?.current?.removeEventListener('mousedown', handleClick);
+        ref?.current?.removeEventListener('touchstart', handleClick);
       }
     };
   }, [onClick]);

@@ -13,6 +13,8 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
+import { Route as SettingsMenuImport } from './routes/settings/menu'
+import { Route as ClassroomNewImport } from './routes/classroom/new'
 import { Route as ClassroomClassroomIdImport } from './routes/classroom/$classroomId'
 import { Route as ClassroomEditEditClassroomIdImport } from './routes/classroom_/edit/$editClassroomId'
 
@@ -27,6 +29,18 @@ const AboutRoute = AboutImport.update({
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SettingsMenuRoute = SettingsMenuImport.update({
+  id: '/settings/menu',
+  path: '/settings/menu',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ClassroomNewRoute = ClassroomNewImport.update({
+  id: '/classroom/new',
+  path: '/classroom/new',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -68,6 +82,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassroomClassroomIdImport
       parentRoute: typeof rootRoute
     }
+    '/classroom/new': {
+      id: '/classroom/new'
+      path: '/classroom/new'
+      fullPath: '/classroom/new'
+      preLoaderRoute: typeof ClassroomNewImport
+      parentRoute: typeof rootRoute
+    }
+    '/settings/menu': {
+      id: '/settings/menu'
+      path: '/settings/menu'
+      fullPath: '/settings/menu'
+      preLoaderRoute: typeof SettingsMenuImport
+      parentRoute: typeof rootRoute
+    }
     '/classroom_/edit/$editClassroomId': {
       id: '/classroom_/edit/$editClassroomId'
       path: '/classroom/edit/$editClassroomId'
@@ -84,6 +112,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
+  '/classroom/new': typeof ClassroomNewRoute
+  '/settings/menu': typeof SettingsMenuRoute
   '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
@@ -91,6 +121,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
+  '/classroom/new': typeof ClassroomNewRoute
+  '/settings/menu': typeof SettingsMenuRoute
   '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
@@ -99,6 +131,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
+  '/classroom/new': typeof ClassroomNewRoute
+  '/settings/menu': typeof SettingsMenuRoute
   '/classroom_/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
 
@@ -108,18 +142,24 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/classroom/$classroomId'
+    | '/classroom/new'
+    | '/settings/menu'
     | '/classroom/edit/$editClassroomId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/classroom/$classroomId'
+    | '/classroom/new'
+    | '/settings/menu'
     | '/classroom/edit/$editClassroomId'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/classroom/$classroomId'
+    | '/classroom/new'
+    | '/settings/menu'
     | '/classroom_/edit/$editClassroomId'
   fileRoutesById: FileRoutesById
 }
@@ -128,6 +168,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   ClassroomClassroomIdRoute: typeof ClassroomClassroomIdRoute
+  ClassroomNewRoute: typeof ClassroomNewRoute
+  SettingsMenuRoute: typeof SettingsMenuRoute
   ClassroomEditEditClassroomIdRoute: typeof ClassroomEditEditClassroomIdRoute
 }
 
@@ -135,6 +177,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   ClassroomClassroomIdRoute: ClassroomClassroomIdRoute,
+  ClassroomNewRoute: ClassroomNewRoute,
+  SettingsMenuRoute: SettingsMenuRoute,
   ClassroomEditEditClassroomIdRoute: ClassroomEditEditClassroomIdRoute,
 }
 
@@ -151,6 +195,8 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/classroom/$classroomId",
+        "/classroom/new",
+        "/settings/menu",
         "/classroom_/edit/$editClassroomId"
       ]
     },
@@ -162,6 +208,12 @@ export const routeTree = rootRoute
     },
     "/classroom/$classroomId": {
       "filePath": "classroom/$classroomId.tsx"
+    },
+    "/classroom/new": {
+      "filePath": "classroom/new.tsx"
+    },
+    "/settings/menu": {
+      "filePath": "settings/menu.tsx"
     },
     "/classroom_/edit/$editClassroomId": {
       "filePath": "classroom_/edit/$editClassroomId.tsx"

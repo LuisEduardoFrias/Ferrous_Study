@@ -7,14 +7,7 @@ import Menu from '../jsons/menu.json'
 import { useClickInSide } from '../hooks/use_click_in_side'
 import { FerrisIcon, ArrowRightIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
-
-type TMenu = {
-  to: string,
-  text: string,
-  displayQuality: string,
-  params?: object,
-  subMenu?: TMenu[]
-}
+import type { TMenu } from '../types/menu'
 
 const menu: TMenu[] = Menu;
 
@@ -38,7 +31,7 @@ export default function Drawer() {
             <span className="flex gap-1 text-[16px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" /></span>
           </LinkC>
           <ButtonIcon>
-          <BookOpenIcon onClick={() => on_show_drawer(false)} />
+            <BookOpenIcon onClick={() => on_show_drawer(false)} />
           </ButtonIcon>
         </div>
 

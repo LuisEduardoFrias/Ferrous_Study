@@ -49,8 +49,8 @@ export default function TextEditor({ children, markdownName }: TextEditorProps) 
             <ImageIcon />
           </Option>
           <Option>
-            <SaveIcon onClick={() => {
-              githubService.updateFileContent(markdownName, textareaRef.current.value, 'markdown' )
+            <SaveIcon onClick={async () => {
+              console.log("consumiendo la api update: ", await githubService.updateFileContent(markdownName, textareaRef.current.value, 'markdown'))
             }} />
           </Option>
 

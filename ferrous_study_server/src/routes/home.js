@@ -26,16 +26,23 @@ router.post('/', async (req, res) => {
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
   const message = "new file markdown";
 
-  const resulCreate = await GithubCore.createFiles([
-    { path: fullPath, content, message },
-  ]);
+  try {
 
-  console.log('Respuesta de creación:', resulCreate);
+    const resulCreate = await GithubCore.createFiles([
+      { path: fullPath, content, message },
+    ]);
 
-  res.json({ resulCreate });
+    console.log('Respuesta de creación:', resulCreate);
+
+    res.json({ resulCreate });
+  } catch (error) {
+    console.log("try catch error: ", error)
+  }
 });
 
 router.put('/', async (req, res) => {
+  console.log('probando');
+
   const { fileName, content, type } = req.body;
   const message = "update file markdown";
 
@@ -46,17 +53,23 @@ router.put('/', async (req, res) => {
   else
     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  const fileInfo = await octokit.rest.repos.getContent({ owner: 'LuisEduardoFrias', repo: 'Ferrous_Study', path: fullPath });
+  try {
 
-  if (fileInfo.data && 'sha' in fileInfo.data) {
+    const fileInfo = await GithubCore.getFile(fullPath);
+    console.log("verificando sha: ", fileInfo);
 
-    const resultUpdate = await GithubCore.updateFiles([
-      { path: fullPath, content, message, sha: fileInfo.data.sha },
-    ]);
+    if (fileInfo.data && 'sha' in fileInfo.data) {
+      console.log("updating: content ", content);
+      const resultUpdate = await GithubCore.updateFiles([
+        { path: fullPath, content, message, sha: fileInfo.data.sha },
+      ]);
 
-    console.log('Respuesta de actualización:', resultUpdate);
+      console.log('Respuesta de actualización:', resultUpdate);
 
-    res.json({ resultUpdate });
+      res.json({ resultUpdate });
+    }
+  } catch (error) {
+    console.log('try catch put error: ', error)
   }
 });
 

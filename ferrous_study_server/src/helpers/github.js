@@ -28,6 +28,24 @@ export const GithubCore = {
     }
   },
 
+  async getFile(filePath) {
+    try {
+      const response = await octokit.rest.repos.getContent({
+        owner: OWNER,
+        repo: REPO,
+        path: filePath,
+      });
+
+
+      return response;
+
+      return null;
+    } catch (error) {
+      console.error(`Error al obtener el contenido de ${filePath} en ${OWNER}/${REPO}:`, error);
+      return null;
+    }
+  },
+
   /**
    * Actualiza el contenido de uno o varios archivos específicos del repositorio 'Ferrous_Study'.
    * @param {Array<{path: string, content: string, message?: string, sha?: string}>} filesToUpdate - Un array de objetos con la ruta, el nuevo contenido, un mensaje de commit opcional y el SHA del archivo (obligatorio para archivos existentes).

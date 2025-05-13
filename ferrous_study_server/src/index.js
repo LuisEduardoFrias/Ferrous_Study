@@ -33,7 +33,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(morgan('dev')); // combined
 
-app.use(cors(configCors));
+app.use(cors());
+//app.use(cors(configCors));
 
 //routers
 app.use(home);
