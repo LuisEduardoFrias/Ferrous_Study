@@ -1,25 +1,12 @@
+import Option from '../../../../../work_biography/src/components/menu/option';
 import { useState, useRef, useEffect, ChangeEvent, MutableRefObject } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { githubService } from '../../services/github_service';
 import type { TMenu } from '../../types/menu';
+import type { TClass } from '../../types/class';
 import { EditIcon, DeleteIcon, SaveIcon, AddIcon, ArrowRightIcon, LinkIcon, LoadingIcon } from '../../assets/svgs';
 import ButtonIcon from '../../components/button_icon';
 import Json from '../../jsons/menu.json';
-
-const classroomIdsArray = [
-  "que_es_rust",
-  "ventajas_de_rust",
-  "ecosistema_rust",
-  "cargo",
-  "ejercicios_ejemplos_codigo",
-  "variables",
-  "valores",
-  "aritmetica",
-  "inferencia_tipos",
-  "eje_fibonacci",
-  "solu_fibonacci"
-];
-
 
 export const Route = createFileRoute('/settings/menu')({
   component: Menu,
@@ -28,6 +15,7 @@ export const Route = createFileRoute('/settings/menu')({
 function Menu() {
   const [content, setContent] = useState<TMenu[]>([]);
   const [optionHidden, setOptionHidden] = useState<TMenu[]>([]);
+  const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);
   const [editable, setEditable] = useState('');
   const [loading, setLoading] = useState(false);
   const divRef = useRef<HTMLDivElement>({});
@@ -44,7 +32,9 @@ function Menu() {
     (async () => {
       try {
         const result = await githubService.getFileContent("menu", 'json');
+        const resultClass = await githubService.getFileContent("class", 'json');
 
+        setClassroomIdsArray(JSON.parse(resultClass));
         //const { WithClassroom, WithOutClassroom } = splitClassroom(Json);
         const { WithClassroom, WithOutClassroom } = splitClassroom(JSON.parse(result));
         setContent(WithClassroom)
@@ -194,6 +184,7 @@ function Menu() {
         <Ul
           onChange={handlerChange}
           content={content}
+          classArray={classroomIdsArray}
           onRemove={handlerRemove}
           onChangeLink={handlerChangeLink}
           onAdd={handlerAdd}
@@ -211,6 +202,7 @@ type UlProps = {
   onRemove: (key: string) => void;
   onAdd: (keys: string[]) => void;
   isEditable: string;
+  classArray: TClass;
   onEditable: (value: string) => void;
   onChangeLink: (key: string, value: string) => void;
   onChange: (key: string, event: ChangeEvent) => void;
@@ -218,7 +210,7 @@ type UlProps = {
   fatherKey?: string[];
 };
 
-function Ul({ content, onRemove, onAdd, isEditable, onChangeLink, onEditable, inputRefs, onChange, fatherKey }: UlProps) {
+function Ul({ content, onRemove, classArray, onAdd, isEditable, onChangeLink, onEditable, inputRefs, onChange, fatherKey }: UlProps) {
   return (
     <ul className=" flex flex-col">
       {
@@ -229,6 +221,7 @@ function Ul({ content, onRemove, onAdd, isEditable, onChangeLink, onEditable, in
             onChange={onChange}
             onRemove={onRemove}
             fatherKey={fatherKey}
+            classArray={classArray}
             onChangeLink={onChangeLink}
             onAdd={onAdd}
             isEditable={isEditable}
@@ -243,6 +236,7 @@ function Ul({ content, onRemove, onAdd, isEditable, onChangeLink, onEditable, in
 
 type LiProps = {
   value: TMenu;
+  classArray: TClass;
   onRemove: (key: string) => void;
   onAdd: (keys: string[]) => void;
   isEditable: string;
@@ -253,7 +247,7 @@ type LiProps = {
   fatherKey?: string[];
 };
 
-function Li({ value, onRemove, onAdd, onChangeLink, isEditable, onEditable, inputRefs, onChange, fatherKey }: LiProps) {
+function Li({ value, onRemove, onAdd, classArray, onChangeLink, isEditable, onEditable, inputRefs, onChange, fatherKey }: LiProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const keys = fatherKey ? [...fatherKey, value.key] : [value.key];
@@ -277,7 +271,7 @@ function Li({ value, onRemove, onAdd, onChangeLink, isEditable, onEditable, inpu
             {(!(value.subMenu) || value.subMenu?.length === 0) &&
               <>
                 <LinkIcon />
-                <Select options={classroomIdsArray}
+                <Select options={classArray}
                   defaultValue={value?.params?.classroomId}
                   onChange={(linkValuw: string) => onChangeLink(value.key, linkValuw)} />
               </>
@@ -327,13 +321,13 @@ function Li({ value, onRemove, onAdd, onChangeLink, isEditable, onEditable, inpu
 
 
 type SelectProps = {
-  options: string[];
+  options: TClass[];
   defaultValue?: string;
   onChange: (value: string) => void;
 };
 
 function toCamelCase(text: string): string {
-  return text.substr(0, 1).toUpperCase() + text.substr(1).replace(/_/g, ' ');
+  return text?.substr(0, 1).toUpperCase() + text?.substr(1).replace(/_/g, ' ');
 }
 
 function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
@@ -344,9 +338,9 @@ function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
       onChange={(e: ChangeEvent<HTMLSelectElement>) => onChange(e.target.value)}
     >
       <option value="new">Sin enlace</option>
-      {options.map((option) => (
-        <option key={option} value={option}>
-          {toCamelCase(option)}
+      {options?.map((option) => (
+        <option key={option.name} value={option.name}>
+          {toCamelCase(option.name)}
         </option>
       ))}
     </select>
