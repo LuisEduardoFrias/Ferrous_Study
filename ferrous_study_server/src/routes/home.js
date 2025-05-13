@@ -17,6 +17,7 @@ router.get('/:fileName/:type', async (req, res) => {
 
   const content = await GithubCore.getFileContent(fullPath);
 
+console.log('verificacion: ----', content)
   res.json({ content });
 });
 

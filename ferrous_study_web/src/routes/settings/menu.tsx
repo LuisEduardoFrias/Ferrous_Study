@@ -1,5 +1,4 @@
-import Option from '../../../../../work_biography/src/components/menu/option';
-import { useState, useRef, useEffect, ChangeEvent, MutableRefObject } from 'react';
+import { useState, useRef, useEffect, ChangeEvent, MutableRefObject, memo, useMemo } from 'react';
 import { createFileRoute } from '@tanstack/react-router';
 import { githubService } from '../../services/github_service';
 import type { TMenu } from '../../types/menu';
@@ -31,14 +30,14 @@ function Menu() {
     setLoading(true);
     (async () => {
       try {
-        const result = await githubService.getFileContent("menu", 'json');
         const resultClass = await githubService.getFileContent("class", 'json');
+        const result = await githubService.getFileContent("menu", 'json');
 
         setClassroomIdsArray(JSON.parse(resultClass));
-        //const { WithClassroom, WithOutClassroom } = splitClassroom(Json);
-        const { WithClassroom, WithOutClassroom } = splitClassroom(JSON.parse(result));
-        setContent(WithClassroom)
-        setOptionHidden(WithOutClassroom)
+         const { WithClassroom, WithOutClassroom } = splitClassroom(JSON.parse(result));
+       // const { WithClassroom, WithOutClassroom } = splitClassroom(Json);
+        setContent(WithClassroom);
+        setOptionHidden(WithOutClassroom);
       } catch (error) {
         console.error("Error fetching menu:", error);
       } finally {
@@ -210,7 +209,7 @@ type UlProps = {
   fatherKey?: string[];
 };
 
-function Ul({ content, onRemove, classArray, onAdd, isEditable, onChangeLink, onEditable, inputRefs, onChange, fatherKey }: UlProps) {
+const Ul = memo(function Ul({ content, onRemove, classArray, onAdd, isEditable, onChangeLink, onEditable, inputRefs, onChange, fatherKey }: UlProps) {
   return (
     <ul className=" flex flex-col">
       {
@@ -232,7 +231,7 @@ function Ul({ content, onRemove, classArray, onAdd, isEditable, onChangeLink, on
       }
     </ul>
   );
-}
+});
 
 type LiProps = {
   value: TMenu;
@@ -247,11 +246,11 @@ type LiProps = {
   fatherKey?: string[];
 };
 
-function Li({ value, onRemove, onAdd, classArray, onChangeLink, isEditable, onEditable, inputRefs, onChange, fatherKey }: LiProps) {
+const Li = memo(function Li({ value, onRemove, onAdd, classArray, onChangeLink, isEditable, onEditable, inputRefs, onChange, fatherKey }: LiProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const keys = fatherKey ? [...fatherKey, value.key] : [value.key];
-  const depth = value?.key?.split('-').length;
+  const keys = useMemo(() => fatherKey ? [...fatherKey, value.key] : [value.key], [fatherKey, value.key]);
+  const depth = useMemo(() => value?.key?.split('-').length, [value?.key]);
 
   return (
     <>
@@ -305,6 +304,7 @@ function Li({ value, onRemove, onAdd, classArray, onChangeLink, isEditable, onEd
             content={value.subMenu}
             onChange={onChange}
             onRemove={onRemove}
+            classArray={classArray}
             onChangeLink={onChangeLink}
             fatherKey={keys}
             onAdd={onAdd}
@@ -317,8 +317,7 @@ function Li({ value, onRemove, onAdd, classArray, onChangeLink, isEditable, onEd
       {value?.key?.split('-').length === 1 && <div className="h-8"></div>}
     </>
   )
-}
-
+});
 
 type SelectProps = {
   options: TClass[];
@@ -326,11 +325,8 @@ type SelectProps = {
   onChange: (value: string) => void;
 };
 
-function toCamelCase(text: string): string {
-  return text?.substr(0, 1).toUpperCase() + text?.substr(1).replace(/_/g, ' ');
-}
-
-function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
+const Select = memo(function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
+  console.log(options)
   return (
     <select
       className="bg-gray-800 w-32 text-theme-0 rounded-md py-1 px-2 outline-none"
@@ -345,5 +341,8 @@ function Select({ options, defaultValue = 'new', onChange }: SelectProps) {
       ))}
     </select>
   );
-}
+});
 
+function toCamelCase(text: string): string {
+  return text?.substr(0, 1).toUpperCase() + text?.substr(1).replace(/_/g, ' ');
+}
