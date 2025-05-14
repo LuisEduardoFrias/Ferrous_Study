@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, ChangeEvent, MutableRefObject, memo, useMemo } from 'react';
 import { EditIcon, DeleteIcon, SaveIcon, AddIcon, ArrowRightIcon, LinkIcon, LoadingIcon } from '../assets/svgs';
 import { githubService } from '../services/github_service';
+import { useTitle } from '../hooks/use_title'
 import type { TMenu } from '../types/menu';
 import type { TClass } from '../types/class';
 import ButtonIcon from '../components/button_icon';
@@ -12,6 +13,7 @@ import JsonMenu from '../jsons/menu.json';
 import JsonClass from '../jsons/class.json';
 
 export default function Menu() {
+  useTitle('Configuracion del menu')
   const [content, setContent] = useState<TMenu[]>([]);
   const [optionHidden, setOptionHidden] = useState<TMenu[]>([]);
   const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);

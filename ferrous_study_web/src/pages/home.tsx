@@ -1,9 +1,11 @@
 import ferrous from '../assets/ferrous.gif'
 import { FerrisIcon } from '../assets/svgs'
 import MarkdownRenderer from "../components/markdown_renderer"
+import { useTitle } from '../hooks/use_title'
 import markdownHomePage from '../markdowns/home_page.md?raw'
 
 export default function Home({ userId }: { userId: string }) {
+  useTitle('')
   return (
     <div className="p-2">
       <img src={ferrous} className="bg-[#ffffff] w-full" alt="ferrous gif" />

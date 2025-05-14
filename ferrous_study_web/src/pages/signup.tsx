@@ -1,5 +1,6 @@
 import { useState, useRef, ReactNode } from 'react'
 import Loading from '../components/loading'
+import { useTitle } from '../hooks/use_title'
 import Paragraph from '../components/paragraph'
 import { ArrowRightIcon } from '../assets/svgs'
 import { SignIn } from '@clerk/tanstack-react-start'
@@ -20,6 +21,7 @@ const appearance = {
 }
 
 export default function AuthForm({ signinup }: AuthFormProps) {
+  useTitle('Acceder y registrarse')
   const [isLogin, setIsLogin] = useState(true);
   const formRef = useRef<HTMLDivElement>(null);
 

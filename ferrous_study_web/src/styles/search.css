@@ -6,6 +6,7 @@
   padding-inline-start: 2px;
   border: 1px solid var(--theme-3);
   border-radius: 50px;
+  width: 200px;
 }
 
 .search:has(input[type='search']:focus) {
@@ -22,7 +23,7 @@
     background-color: transparent;
     padding-inline-start: 2px;
     margin-inline-end: 8px;
-    width: 60px;
+    width: 100%;
 }
 
 .search input[type='search']:focus {

@@ -2,10 +2,12 @@ import { useState, useEffect } from 'react'
 import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
 import { toCamelCase } from '../hooks/to_camel_case';
+import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import Notify from '../components/notify';
 
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
+  useTitle(editClassroomId)
   const [content, setContent] = useState('');
   const { dialogRef, open, close } = useDialog();
 

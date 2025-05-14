@@ -1,5 +1,5 @@
 import Paragraph from '../components/paragraph'
-
+import { useTitle } from '../hooks/use_title'
 
 interface Tool {
   name: string;
@@ -42,6 +42,7 @@ const tools: Tool[] = [
 
 
 export default function About() {
+  useTitle("Acerca de")
   const yourCreativeCommonsLicenseName = 'Licencia Creative Commons NoComercial CompartirIgual 4.0';
   const yourCreativeCommonsLicenseLink = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
   const apache2LicenseLink = 'https://www.apache.org/licenses/LICENSE-2.0';

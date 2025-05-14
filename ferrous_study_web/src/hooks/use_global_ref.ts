@@ -35,11 +35,18 @@ export function useGlobalRef<T extends HTMLElement = HTMLElement>() {
 
   useEffect(() => {
     const id = ref.current?.id;
-
     if (ref.current && id) {
       refs.set(ref.current, id);
+      return;
     }
-  }, [ref,refs]);
+
+    const name = ref.current?.name;
+    if (ref.current && name) {
+      refs.set(ref.current, name);
+      return;
+    }
+
+  }, [ref, refs]);
 
   return { ref, get: <T extends HTMLElement = HTMLElement>(key: string) => refs.get<T>(key) };
 }

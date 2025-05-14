@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { githubService } from '../services/github_service'
 import MarkdownRenderer from '../components/markdown_renderer'
+import ButtonChangePage from '../components/button_change_page'
+import { useTitle } from '../hooks/use_title'
 
 export default function ClassRoom({ classroomId }: { classroomId: string }) {
+  useTitle(classroomId)
   const [content, setContent] = useState('');
 
   useEffect(() => {
@@ -17,6 +20,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
       <MarkdownRenderer>
         {content}
       </MarkdownRenderer>
+      <ButtonChangePage />
     </div>
   );
 }

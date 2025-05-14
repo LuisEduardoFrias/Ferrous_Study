@@ -1,7 +1,9 @@
 
 export function searchFilter(search, contentMenu, contentClass) {
-  const classFiltered = contentClass.filter((obj) =>
-    obj.keywords.some((keyword) => keyword.includes(search))
+  const objClass = JSON.parse(contentClass);
+
+  const classFiltered = objClass.filter((obj) =>
+    obj.keywords.some((keyword) => keyword.includes(search.toLowerCase()))
   );
 
   if (classFiltered.length === 0) return [];
@@ -19,6 +21,6 @@ export function searchFilter(search, contentMenu, contentClass) {
     });
   }
 
-  findMatchingMenus(contentMenu);
+  findMatchingMenus(JSON.parse(contentMenu));
   return menuOptions;
 }

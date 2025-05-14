@@ -21,7 +21,7 @@ router.get('/:fileName/:type', async (req, res) => {
   res.json({ content });
 });
 
-router.get('/:search/:type', async (req, res) => {
+router.get('/:search', async (req, res) => {
   const { search } = req.params;
 
   let fullPathMenu = path.join('ferrous_study_web', 'src', 'jsons', `menu.json`);

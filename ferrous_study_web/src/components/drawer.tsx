@@ -4,7 +4,7 @@ import { State, Actions } from '../state_warehouse'
 import { useSubscriberState, useActions } from 'subscriber_state'
 import { BookOpenIcon } from '../assets/svgs'
 import Menu from '../jsons/menu.json'
-import { useClickInSide } from '../hooks/use_click_in_side'
+import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
 import { FerrisIcon, ArrowRightIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
@@ -119,7 +119,7 @@ function LinkC({ text, params, className, children, displayQuality, to, subMenu 
   return (
     <div className="w-full" >
       <Link
-        to={hasSubMenu ? '#' : to}
+        to={hasSubMenu ? '' : to}
         params={params}
         className={`flex items-center justify-between w-full text-theme-3 [&.active]:font-extrabold ${className}`}
         onClick={handleClick}

@@ -1,9 +1,12 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import type { ChangeEvent } from 'react'
+import searchj from '../jsons/searchj.json'
+import { Actions } from '../state_warehouse'
 import { githubService } from '../services/github_service'
+import { useActions } from 'subscriber_state'
 
 export default function useFilter() {
-  const [content, setContent] = useState<string>([]);
+  const { on_search_data } = useActions<Actions>()
   const [search, setSearch] = useState<string>('');
   const [loading, setLoading] = useState<boolean>();
   const timer = useRef<NodeJS.Timeout | null>(null);
@@ -11,7 +14,11 @@ export default function useFilter() {
   const executeDispatch = useCallback(() => {
     (async () => {
       const result = await githubService.searchContent(search);
-      setContent(result);
+
+      on_search_data({ show: true, data: result ?? [] });
+
+      // on_search_data({show:true, data: searchj.content});
+
       setLoading(false);
     })()
   }, [setLoading, search])
@@ -24,13 +31,15 @@ export default function useFilter() {
     }
 
     if (search === '') {
-      executeDispatch()
+      on_search_data({ show: false, data: searchj.content });
+      setLoading(false);
       return;
     }
 
     timer.current = setTimeout(() => {
       executeDispatch();
     }, 1300);
+
   }, [search, executeDispatch])
 
   function handlerSearch(event: ChangeEvent<HTMLInputElement>) {
@@ -38,6 +47,6 @@ export default function useFilter() {
   }
 
   return {
-    content, loading, handlerSearch
+    loading, handlerSearch
   }
 }

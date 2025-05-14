@@ -1,9 +1,11 @@
 import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
+import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import Notify from '../components/notify';
 
 export default function NewMarkdown() {
+  useTitle('Crear nueva clase')
   const { dialogRef, open, close } = useDialog();
 
   async function handlerSave(textValue: string) {
