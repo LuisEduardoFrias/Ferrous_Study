@@ -19,8 +19,8 @@ const Notify = forwardRef<HTMLDialogElement, TypeValidstionsProps>(function Noti
         area-labelledby='modal-title'
         id={`Modal-${identity}`}
         ref={ref}
-        style={{ backgroundImage: `url('/metal_rust.webp')` }}
-        className="modal w-5/6 mx-4 max-w-[800px] grayscale-[40%] ">
+        // style={{ backgroundImage: `url('/metal_rust.webp')` }}
+        className="modal w-5/6 mx-4 max-w-[800px] bg-[#202020cb] text-theme-0  ">
         {children}
         <footer>
           <button onClick={() => cancel()}>

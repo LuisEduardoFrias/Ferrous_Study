@@ -1,15 +1,11 @@
 import { ReactNode } from 'react'
-import { Outlet } from '@tanstack/react-router'
-import Narbar from './navbar'
+import { Outlet, ScrollRestoration, createRootRoute } from '@tanstack/react-router'
+import Navbar from './navbar'
 
-type LayoutProps = {
-  child: ReactNode
-}
-
-export default function Layout({ child }: LayoutProps) {
+export default function Layout() {
   return (
     <div className="w-full h-full text-black bg-white" >
-      <Narbar />
+      <Navbar />
       <Outlet />
     </div>
   )

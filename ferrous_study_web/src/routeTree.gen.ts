@@ -11,14 +11,21 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SigninupImport } from './routes/signinup'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as SettingsMenuImport } from './routes/settings/menu'
-import { Route as ClassroomNewImport } from './routes/classroom/new'
+import { Route as ClassroomNewmdImport } from './routes/classroom/newmd'
 import { Route as ClassroomClassroomIdImport } from './routes/classroom/$classroomId'
 import { Route as ClassroomEditEditClassroomIdImport } from './routes/classroom_/edit/$editClassroomId'
 
 // Create/Update Routes
+
+const SigninupRoute = SigninupImport.update({
+  id: '/signinup',
+  path: '/signinup',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const AboutRoute = AboutImport.update({
   id: '/about',
@@ -38,9 +45,9 @@ const SettingsMenuRoute = SettingsMenuImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ClassroomNewRoute = ClassroomNewImport.update({
-  id: '/classroom/new',
-  path: '/classroom/new',
+const ClassroomNewmdRoute = ClassroomNewmdImport.update({
+  id: '/classroom/newmd',
+  path: '/classroom/newmd',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -75,6 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
+    '/signinup': {
+      id: '/signinup'
+      path: '/signinup'
+      fullPath: '/signinup'
+      preLoaderRoute: typeof SigninupImport
+      parentRoute: typeof rootRoute
+    }
     '/classroom/$classroomId': {
       id: '/classroom/$classroomId'
       path: '/classroom/$classroomId'
@@ -82,11 +96,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ClassroomClassroomIdImport
       parentRoute: typeof rootRoute
     }
-    '/classroom/new': {
-      id: '/classroom/new'
-      path: '/classroom/new'
-      fullPath: '/classroom/new'
-      preLoaderRoute: typeof ClassroomNewImport
+    '/classroom/newmd': {
+      id: '/classroom/newmd'
+      path: '/classroom/newmd'
+      fullPath: '/classroom/newmd'
+      preLoaderRoute: typeof ClassroomNewmdImport
       parentRoute: typeof rootRoute
     }
     '/settings/menu': {
@@ -111,8 +125,9 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/signinup': typeof SigninupRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom/new': typeof ClassroomNewRoute
+  '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
   '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
@@ -120,8 +135,9 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/signinup': typeof SigninupRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom/new': typeof ClassroomNewRoute
+  '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
   '/classroom/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
@@ -130,8 +146,9 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/signinup': typeof SigninupRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
-  '/classroom/new': typeof ClassroomNewRoute
+  '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
   '/classroom_/edit/$editClassroomId': typeof ClassroomEditEditClassroomIdRoute
 }
@@ -141,24 +158,27 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/signinup'
     | '/classroom/$classroomId'
-    | '/classroom/new'
+    | '/classroom/newmd'
     | '/settings/menu'
     | '/classroom/edit/$editClassroomId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/signinup'
     | '/classroom/$classroomId'
-    | '/classroom/new'
+    | '/classroom/newmd'
     | '/settings/menu'
     | '/classroom/edit/$editClassroomId'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/signinup'
     | '/classroom/$classroomId'
-    | '/classroom/new'
+    | '/classroom/newmd'
     | '/settings/menu'
     | '/classroom_/edit/$editClassroomId'
   fileRoutesById: FileRoutesById
@@ -167,8 +187,9 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  SigninupRoute: typeof SigninupRoute
   ClassroomClassroomIdRoute: typeof ClassroomClassroomIdRoute
-  ClassroomNewRoute: typeof ClassroomNewRoute
+  ClassroomNewmdRoute: typeof ClassroomNewmdRoute
   SettingsMenuRoute: typeof SettingsMenuRoute
   ClassroomEditEditClassroomIdRoute: typeof ClassroomEditEditClassroomIdRoute
 }
@@ -176,8 +197,9 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  SigninupRoute: SigninupRoute,
   ClassroomClassroomIdRoute: ClassroomClassroomIdRoute,
-  ClassroomNewRoute: ClassroomNewRoute,
+  ClassroomNewmdRoute: ClassroomNewmdRoute,
   SettingsMenuRoute: SettingsMenuRoute,
   ClassroomEditEditClassroomIdRoute: ClassroomEditEditClassroomIdRoute,
 }
@@ -194,8 +216,9 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
+        "/signinup",
         "/classroom/$classroomId",
-        "/classroom/new",
+        "/classroom/newmd",
         "/settings/menu",
         "/classroom_/edit/$editClassroomId"
       ]
@@ -206,11 +229,14 @@ export const routeTree = rootRoute
     "/about": {
       "filePath": "about.tsx"
     },
+    "/signinup": {
+      "filePath": "signinup.tsx"
+    },
     "/classroom/$classroomId": {
       "filePath": "classroom/$classroomId.tsx"
     },
-    "/classroom/new": {
-      "filePath": "classroom/new.tsx"
+    "/classroom/newmd": {
+      "filePath": "classroom/newmd.tsx"
     },
     "/settings/menu": {
       "filePath": "settings/menu.tsx"

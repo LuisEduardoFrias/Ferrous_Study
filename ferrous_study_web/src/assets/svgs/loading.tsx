@@ -9,9 +9,9 @@ export default function LoadingIcon(props: Props) {
       width="24px"
       height="24px"
       viewBox="0 0 24.00 24.00"
-      fill="none"
       id="svg"
       {...props}
+      fill="none"
     >
       <path
         d="M11.0175 19C10.6601 19 10.3552 18.7347 10.297 18.373C10.2434 18.0804 10.038 17.8413 9.76171 17.75C9.53658
@@ -30,7 +30,7 @@ export default function LoadingIcon(props: Props) {
 19H11.0175Z" stroke={props.fill ?? "#ffff"} strokeWidth="1.5" ></path> <path
         d="M13.9747 12C13.9747 13.2885 12.9563 14.333 11.7 14.333C10.4437 14.333 9.42533 13.2885 9.42533 12C9.42533 10.7115 10.4437 9.66699 11.7
 9.66699C12.9563 9.66699 13.9747 10.7115 13.9747 12Z" stroke={props.fill ?? "#ffff"} strokeWidth="1.5" ></path>
-    </svg>
+    </svg >
   );
 }
 

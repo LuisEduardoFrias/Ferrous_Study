@@ -1,34 +1,11 @@
-import { useState, useEffect } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import TextEditor from '../../../components/text_editor'
-import MarkdownRenderer from '../../../components/markdown_renderer'
-import { githubService } from '../../../services/github_service'
+import EditClassroom from '../../../pages/edit_classroom'
 
 export const Route = createFileRoute('/classroom_/edit/$editClassroomId')({
-  component: EditClassroom,
+  component: EditClassRoom,
 })
 
-function EditClassroom() {
-  const [content, setContent] = useState('');
+function EditClassRoom(){
   const { editClassroomId } = Route.useParams();
-
-  //   (async () => {
-  //     const DynamicComponent = await import(`@/${editClassroomId}.md?raw`);
-  //     setContent(DynamicComponent.default);
-  //   })();
-
-  useEffect(() => {
-    (async () => {
-      const result = await githubService.getFileContent(editClassroomId, 'markdown');
-      setContent(result);
-    })()
-  }, [])
-
-  return (
-    <TextEditor name="idClassRoom" markdownName={editClassroomId} >
-      <textarea className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
-        style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
-        defaultValue={content} />
-    </TextEditor>
-  );
+  return <EditClassroom editClassroomId={editClassroomId} />
 }

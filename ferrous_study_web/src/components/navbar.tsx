@@ -2,13 +2,14 @@ import { Link, useLocation, useNavigate, ParsedLocationType } from '@tanstack/re
 import { State, Actions, } from '../state_warehouse'
 import { useSubscriberState } from 'subscriber_state'
 import { BookCloseIcon } from '../assets/svgs'
-import { FerrisIcon, EditIcon } from '../assets/svgs'
+import { FerrisIcon, EditIcon, GithubIcon } from '../assets/svgs'
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
 import { useRouterState } from '@tanstack/react-router'
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
-export default function Narbar() {
+export default function Navbar() {
   const navigate = useNavigate();
   const state = useRouterState()
   const { param1, param2 } = useLocation({
@@ -44,19 +45,27 @@ export default function Narbar() {
   }
 
   return (
-    <div className={`fixed top-0 left-0 flex flex-row gap-2 items-center justify-center transition-all z-40 p-2 backdrop-blur-[0.8px] ${color} w-full h-14`} >
-      <div className="flex items-center absolute left-4 ">
-        <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
-        {
-          isMovil ? <EditButton /> : <MenuButton />
-        }
-      </div>
-      <Search />
-      <div className="flex items-center absolute right-4 ">
-        {
-          isMovil ? <MenuButton /> : <EditButton />
-        }
-      </div>
-    </div>
+    <header className={`fixed top-0 left-0 flex flex-row gap-2 items-center justify-center transition-all z-40 p-2 backdrop-blur-[0.8px] ${color} w-full h-14`} >
+      <>
+        <div className="flex items-center absolute left-4 ">
+          <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
+          {
+            isMovil ? <SignedIn><EditButton /></SignedIn> : <MenuButton />
+          }
+        </div>
+        <Search />
+        <div className="flex items-center absolute right-4 gap-4 ">
+          <SignedOut>
+            <Link to="/signinup" >
+              <span className="text-theme-0 italic">{`<Unete />`}</span>
+            </Link>
+          </SignedOut>
+          <UserButton />
+          {
+            isMovil ? <MenuButton /> : <SignedIn><EditButton /></SignedIn>
+          }
+        </div>
+      </>
+    </header>
   );
 }

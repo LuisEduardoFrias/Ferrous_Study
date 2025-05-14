@@ -1,20 +1,92 @@
-import { ReactNode, useRef, cloneElement } from 'react'
-import { TableIcon, CodeIcon, LinkIcon, ImageIcon, SaveIcon } from '../assets/svgs'
-import { githubService } from '../services/github_service'
+import { ReactNode, useRef, cloneElement, useState } from 'react'
+//import { TableIcon, CodeIcon, LinkIcon, ImageIcon, SaveIcon } from '../assets/svgs'
+import { NotViewIcon, ViewIcon, SaveIcon } from '../assets/svgs'
+import { toCamelCase } from '../hooks/to_camel_case';
+import MarkdownRenderer from "../components/markdown_renderer"
+import { useDialog } from '../hooks/use_dialog';
+import Notify from '../components/notify';
 
 type TextEditorProps = {
   children: ReactNode,
-  markdownName: string
+  fileName: string,
+  onSave: (textValue: string) => void,
 }
 
-export default function TextEditor({ children, markdownName }: TextEditorProps) {
+export default function TextEditor({ children, onSave, fileName }: TextEditorProps) {
+  const [view, setView] = useState(true);
   const textareaRef = useRef<HTMLTextAreaElement>();
+  const { dialogRef, open, close } = useDialog();
+
+  function handlerSave() {
+    onSave(textareaRef.current?.value)
+    close();
+  }
 
   return (
-    <div className="relative p-2 pt-24  w-full h-full" >
+    <div className="relative p-2 pt-14  w-full h-full" >
+      <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
+        <span className="text-3xl mb-3">Verificacion para guardar!</span>
+      </Notify>
 
-      <div className="fixed left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-24" >
-        <div className="flex flex-wrap w-full px-4 h-20 bg-gray-600" >
+      <div className="fixed left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-14" >
+        <div className="relative flex flex-wrap w-full gap-4 items-center justify-center px-4 h-10 bg-theme-d-4-d" >
+          <h1 className="text-2xl text-center text-theme-0" >Editando archivo {toCamelCase(fileName)}</h1>
+          <div className="absolute right-1 w-20 flex flex-row gap-4 items-cente" >
+            <ViewMarkdown onClick={(value: boolean) => setView(value)} />
+
+            <Option>
+              <SaveIcon onClick={open} />
+            </Option>
+
+          </div>
+        </div>
+      </div>
+      {view ?
+        <div>
+          {cloneElement(children, { ref: textareaRef })}
+        </div> :
+        <MarkdownRenderer>
+          {textareaRef.current?.value}
+        </MarkdownRenderer>
+      }
+    </div>
+  )
+}
+
+type OptionProps = {
+  children: ReactNode
+}
+
+function Option({ children }: OptionProps) {
+  return (
+    <button className="text-theme-0 bg-transparent border-none p-0 focus:outline-none transition-transform duration-150 active:scale-95 hover:scale-105 w-8 h-8 flex justify-center items-center " >
+      {children}
+    </button>
+  )
+}
+
+function ViewMarkdown({ onClick }: { onClick: (value: boolean) => void }) {
+  const [view, setView] = useState(true);
+
+  function handlerChangeView() {
+    setView(!view);
+    onClick(!view);
+  }
+
+  return (
+    <div>
+      {view ?
+        <Option>
+          <ViewIcon onClick={handlerChangeView} />
+        </Option> :
+        <Option>
+          <NotViewIcon onClick={handlerChangeView} />
+        </Option>
+      }
+    </div>)
+}
+
+/*
           <Option>
             <b className="font-extrabold" >B</b>
           </Option>
@@ -22,12 +94,15 @@ export default function TextEditor({ children, markdownName }: TextEditorProps) 
           <Option>
             <span className="font-bold" >H1</span>
           </Option>
+
           <Option>
             <span className="font-bold" >H2</span>
           </Option>
+
           <Option>
             <span className="font-bold" >H3</span>
           </Option>
+
           <Option>
             <span className="font-bold" onClick={() => {
               console.log(textareaRef.current.value)
@@ -48,33 +123,9 @@ export default function TextEditor({ children, markdownName }: TextEditorProps) 
           <Option>
             <ImageIcon />
           </Option>
-          <Option>
-            <SaveIcon onClick={async () => {
-              console.log("consumiendo la api update: ", await githubService.updateFileContent(markdownName, textareaRef.current.value, 'markdown'))
-            }} />
-          </Option>
 
           <Option>
             <LinkIcon />
           </Option>
 
-        </div>
-      </div>
-      <div>
-        {cloneElement(children, { ref: textareaRef })}
-      </div>
-    </div>
-  )
-}
-
-type OptionProps = {
-
-}
-
-function Option({ children }: OptionProps) {
-  return (
-    <button className="text-theme-0 bg-transparent border-none p-0 focus:outline-none transition-transform duration-150 active:scale-95 hover:scale-105 w-8 h-8 flex justify-center items-center " >
-      {children}
-    </button>
-  )
-}
+*/

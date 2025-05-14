@@ -21,7 +21,7 @@ dialog {
 
 .modal {
   padding: 10px;
-  background-color: #454545b0;
+  /*background-color: #454545b0;*/
   backdrop-filter: blur(1px);
   border-radius: 5px;
   

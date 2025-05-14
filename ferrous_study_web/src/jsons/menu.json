@@ -168,7 +168,7 @@
   },
   {
     "key": "3",
-    "to": "/classroom/new",
+    "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },

@@ -128,6 +128,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--theme-4);
+  color: var(--theme-0);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -153,8 +154,6 @@ button:focus-visible {
 }
 
 .progress {
-  width: 24px;
-  height: 24px;
   animation: rotatde 2s  0s infinite linear;
 }
 
