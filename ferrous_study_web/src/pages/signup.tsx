@@ -1,5 +1,7 @@
-import { useState, useRef } from 'react';
-import Loading from '../components/loading';
+import { useState, useRef, ReactNode } from 'react'
+import Loading from '../components/loading'
+import Paragraph from '../components/paragraph'
+import { ArrowRightIcon } from '../assets/svgs'
 import { SignIn } from '@clerk/tanstack-react-start'
 import { SignUp } from '@clerk/tanstack-react-start'
 
@@ -10,7 +12,9 @@ type AuthFormProps = {
 const appearance = {
   elements: {
     footer: 'hidden',
-    socialButtonsBlockButton: 'bg-theme-3-l',
+    headerSubtitle: 'hidden',
+   // socialButtonsProviderIcon: 'text-theme-3-l backdrop-invert',
+    socialButtonsBlockButton: 'bg-theme-3-l hover:bg-theme-4 hover:text-theme-0',
     formButtonPrimary: 'bg-theme-d-4 hover:bg-theme-3 text-sm',
   },
 }
@@ -68,16 +72,18 @@ function LoginForm(props: LoginFormProps) {
         //  withSignUp={true}
         appearance={appearance}
       />
-      <p className="mt-4 text-sm text-gray-600 text-center">
-        ¿No tienes cuenta?{' '}
-        <button
-          type="button"
-          onClick={props.onToggleAuth}
-          className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
-        >
-          Regístrate
-        </button>
-      </p>
+      <Footer>
+        <p className="mt-4 text-sm text-gray-600 text-center">
+          ¿No tienes cuenta?{' '}
+          <button
+            type="button"
+            onClick={props.onToggleAuth}
+            className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+          >
+            Regístrate
+          </button>
+        </p>
+      </Footer>
     </div>
   );
 }
@@ -106,16 +112,54 @@ function SignupForm(props: SignupFormProps) {
           withSignUp={true}
           appearance={appearance}
         />
-        <p className="mt-4 text-sm text-gray-600 text-center">
-          ¿Ya tienes una cuenta?{' '}
-          <button
-            type="button"
-            onClick={props.onToggleAuth}
-            className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
-          >
-            Inicia Sesión
-          </button>
-        </p>
+        <Footer>
+          <p className="mt-4 text-sm text-gray-600 text-center">
+            ¿Ya tienes una cuenta?{' '}
+            <button
+              type="button"
+              onClick={props.onToggleAuth}
+              className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+            >
+              Inicia Sesión
+            </button>
+          </p>
+        </Footer>
+      </div>
+    </div>
+  );
+}
+
+function Footer({ children }: { children: ReactNode }) {
+  const [showExplanation, setShowExplanation] = useState(false);
+
+  const toggleExplanation = () => {
+    setShowExplanation(!showExplanation);
+  };
+
+  return (
+    <div>
+      {children}
+
+      <div className="mt-4 text-center">
+        <button
+          type="button"
+          onClick={toggleExplanation}
+          className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+        >
+          {showExplanation ?
+            <ArrowRightIcon fill="back" className="transform -rotate-90 " /> : '¿Por qué tener una cuenta de FerrousStudy?'}
+        </button>
+        <div className={`text-sm text-left text-gray-700 transition-all duration-300 ease-in-out overflow-hidden ${showExplanation ? 'max-h-50 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <Paragraph>
+            Al crear una cuenta en FerrousStudy, te unes a una comunidad apasionada por Rust.
+          </Paragraph>
+          <Paragraph>
+            Podrás contribuir directamente a la creación de nuevas clases y ejercicios, enriquecer las explicaciones existentes y colaborar en la traducción de contenido para que el aprendizaje de Rust sea accesible para todos.
+          </Paragraph>
+          <Paragraph>
+            ¡Tu aporte es fundamental para hacer crecer esta plataforma!
+          </Paragraph>
+        </div>
       </div>
     </div>
   );

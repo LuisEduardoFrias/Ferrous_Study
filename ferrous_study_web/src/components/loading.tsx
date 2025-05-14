@@ -3,8 +3,12 @@ import '../styles/search.css'
 
 export default function Loading(props) {
   return (
-    <div className="progress w-full h-full flex justify-center items-center">
-      <LoadingIcon {...props} />
+    <div className="w-full h-full flex justify-center items-center">
+      <span className="flex flex-row" >Cargando
+        <div className="progress flex justify-center items-center">
+          <LoadingIcon {...props} />
+        </div>
+      </span>
     </div>
   )
 }

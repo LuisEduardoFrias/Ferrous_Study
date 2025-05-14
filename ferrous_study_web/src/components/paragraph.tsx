@@ -1,10 +1,10 @@
-import {ReactNode} from 'react'
+import { ReactNode } from 'react'
 
-export default function Paragraph({ text, children, className }: { text: string, children:ReactNode, className?: string }) {
+export default function Paragraph({ text, children, className }: { text: string, children: ReactNode, className?: string }) {
   return (
     <p
       style={{
-        textWrap: 'pretty',
+         textWrap: 'pretty',
         hyphens: 'auto',
         //marginBlock: '1em',
         marginBlock: '1lh',

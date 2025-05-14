@@ -20,6 +20,7 @@ export default function Navbar() {
       return { param1, param2 };
     }
   });
+
   const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
   const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
   const isMovil = useIsMovil();
@@ -27,7 +28,7 @@ export default function Navbar() {
   function EditButton() {
     return (
       <>
-        {(param1 === 'classroom' || param1 === "") &&
+        {((param1 === 'classroom' || param1 === '') && param2 !== 'newmd' && param2 !== 'edit') &&
           (<ButtonIcon>
             <EditIcon onClick={() => navigate({ href: `/classroom/edit/${param2}`, viewTransition: true })} />
           </ButtonIcon>)
@@ -54,11 +55,13 @@ export default function Navbar() {
           }
         </div>
         <Search />
-        <div className="flex items-center absolute right-4 gap-4 ">
+        <div className="flex items-center absolute right-4 gap-2 ">
           <SignedOut>
-            <Link to="/signinup" >
-              <span className="text-theme-0 italic">{`<Unete />`}</span>
-            </Link>
+            {param1 !== 'signinup' &&
+              <Link to="/signinup" >
+                <span className="text-theme-0 italic">{`*Unete`}</span>
+              </Link>
+            }
           </SignedOut>
           <UserButton />
           {
