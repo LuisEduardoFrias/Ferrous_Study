@@ -34,6 +34,27 @@ export const githubService = {
   },
 
   /**
+   * B7sca un pskabra clave en asociada a los markdiens desde el servidor usando Fetch.
+   * @param search Palabra clave a buscar.
+   * @returns Una promesa que resuelve a un arreglo de informacion o o null si hay un error.
+   */
+  async searchContent(search: string): Promise<string | null> {
+    try {
+      const response = await fetch(`${API_BASE_URL}/${search}`);
+
+      if (!response.ok) {
+        console.error(`Error al buscar '${search}':`, response.status);
+        return null;
+      }
+      const data: FileContentResponse = await response.json();
+      return data.content || null;
+    } catch (error) {
+      console.error(`Error de red al buscae '${search}':`, error);
+      return null;
+    }
+  },
+
+  /**
    * Crea un nuevo archivo Markdown en el servidor usando Fetch.
    * @param fileName El nombre del archivo (sin extensión).
    * @param content El contenido del archivo.

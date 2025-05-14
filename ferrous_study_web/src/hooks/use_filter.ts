@@ -1,17 +1,20 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import type { ChangeEvent } from 'react'
-import { useStore } from '../warehouse/index'
+import { githubService } from '../services/github_service'
 
 export default function useFilter() {
-  const onSearch = (state) => {}
+  const [content, setContent] = useState<string>([]);
   const [search, setSearch] = useState<string>('');
   const [loading, setLoading] = useState<boolean>();
   const timer = useRef<NodeJS.Timeout | null>(null);
 
   const executeDispatch = useCallback(() => {
-    onSearch({ search })
-    setLoading(false);
-  }, [setLoading, onSearch, search])
+    (async () => {
+      const result = await githubService.searchContent(search);
+      setContent(result);
+      setLoading(false);
+    })()
+  }, [setLoading, search])
 
   useEffect(() => {
     setLoading(true);
@@ -35,6 +38,6 @@ export default function useFilter() {
   }
 
   return {
-    loading, handlerSearch
+    content, loading, handlerSearch
   }
 }

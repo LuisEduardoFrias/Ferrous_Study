@@ -16,7 +16,10 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "rust",
+      "cargo"
+    ]
   },
   {
     "key": "1",
@@ -35,7 +38,12 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "struct",
+      "int",
+      "bool",
+      "boolean"
+    ]
   },
   {
     "key": "3",
@@ -54,7 +62,11 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "rust",
+      "rustc",
+      "cargo"
+    ]
   },
   {
     "key": "4",
@@ -73,7 +85,10 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "borrowing",
+      "puntero"
+    ]
   },
   {
     "key": "5",
@@ -92,7 +107,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "rust"
+    ]
   },
   {
     "key": "6",
@@ -111,7 +128,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "references"
+    ]
   },
   {
     "key": "7",
@@ -130,7 +149,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "rust"
+    ]
   },
   {
     "key": "8",
@@ -149,7 +170,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "argoritmos"
+    ]
   },
   {
     "key": "9",
@@ -168,7 +191,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "rust"
+    ]
   },
   {
     "key": "10",
@@ -187,7 +212,9 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "punteros"
+    ]
   },
   {
     "key": "11",
@@ -206,6 +233,8 @@
         "name": "Admin.Rust27"
       }
     },
-    "keywords":[]
+    "keywords": [
+      "punteros"
+    ]
   }
 ]

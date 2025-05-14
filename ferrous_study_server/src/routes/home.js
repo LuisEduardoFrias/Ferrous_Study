@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { GithubCore } from '../helpers/github.js';
+import { searchFilter } from '../helpers/search.js';
 
 const router = express.Router();
 
@@ -16,6 +17,22 @@ router.get('/:fileName/:type', async (req, res) => {
     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
   const content = await GithubCore.getFileContent(fullPath);
+
+  res.json({ content });
+});
+
+router.get('/:search/:type', async (req, res) => {
+  const { search } = req.params;
+
+  let fullPathMenu = path.join('ferrous_study_web', 'src', 'jsons', `menu.json`);
+  let fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
+
+  const [contentMenu, contentClass] = await Promise.all([
+    GithubCore.getFileContent(fullPathMenu),
+    GithubCore.getFileContent(fullPathClass)
+  ]);
+
+  const content = searchFilter(search,contentMenu, contentClass);
 
   res.json({ content });
 });

@@ -27,7 +27,7 @@ export const GithubCore = {
       return null;
     }
   },
-
+  
   async getFile(filePath) {
     try {
       const response = await octokit.rest.repos.getContent({
@@ -35,7 +35,6 @@ export const GithubCore = {
         repo: REPO,
         path: filePath,
       });
-
 
       return response;
 
