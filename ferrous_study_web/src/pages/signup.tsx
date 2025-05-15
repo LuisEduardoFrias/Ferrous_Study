@@ -3,24 +3,18 @@ import Loading from '../components/loading'
 import { useTitle } from '../hooks/use_title'
 import Paragraph from '../components/paragraph'
 import { ArrowRightIcon } from '../assets/svgs'
-import { SignIn } from '@clerk/tanstack-react-start'
-import { SignUp } from '@clerk/tanstack-react-start'
-
-type AuthFormProps = {
-  signinup: string
-};
+import { SignIn, SignUp } from '@clerk/tanstack-react-start'
 
 const appearance = {
   elements: {
     footer: 'hidden',
     headerSubtitle: 'hidden',
-   // socialButtonsProviderIcon: 'text-theme-3-l backdrop-invert',
     socialButtonsBlockButton: 'bg-theme-3-l hover:bg-theme-4 hover:text-theme-0',
     formButtonPrimary: 'bg-theme-d-4 hover:bg-theme-3 text-sm',
   },
 }
 
-export default function AuthForm({ signinup }: AuthFormProps) {
+export default function AuthForm() {
   useTitle('Acceder y registrarse')
   const [isLogin, setIsLogin] = useState(true);
   const formRef = useRef<HTMLDivElement>(null);

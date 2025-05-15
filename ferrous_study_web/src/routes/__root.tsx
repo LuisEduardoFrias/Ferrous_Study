@@ -1,7 +1,7 @@
 import { createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import Drawer from '../components/drawer'
-import Layout from '../components/layout'
+import Layout from '../pages/layout'
 
 export const Route = createRootRoute({
   component: () => {

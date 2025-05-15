@@ -9,11 +9,12 @@ import { useDialog } from '../hooks/use_dialog';
 import Notify from '../components/notify';
 import { toCamelCase } from '../hooks/to_camel_case';
 import { splitMenuOptions } from '../hooks/split_menu_options';
-import JsonMenu from '../jsons/menu.json';
-import JsonClass from '../jsons/class.json';
+import { State, Actions } from '../state_warehouse'
+import { useSubscriberState } from 'subscriber_state'
 
 export default function Menu() {
   useTitle('Configuracion del menu')
+  const [{ dataClass, dataMenu }] = useSubscriberState<State, Actions>(['dataClass', 'dataMenu'])
   const [content, setContent] = useState<TMenu[]>([]);
   const [optionHidden, setOptionHidden] = useState<TMenu[]>([]);
   const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);
@@ -25,30 +26,17 @@ export default function Menu() {
 
   useEffect(() => {
     setLoading(true);
-    (async () => {
-      try {
-
-        /*
-        const [resultClass, resultNenu] = await Promise.all([
-          githubService.getFileContent("class", 'json'),
-          githubService.getFileContent("menu", 'json')
-        ]);
-
-        setClassroomIdsArray(JSON.parse(resultClass));
-        const { classroom, authorizedPages  } = splitClassroom(JSON.parse(resultNenu));
-      */
-
-        setClassroomIdsArray(JsonClass);
-        const { classroom, authorizedPages  } = splitMenuOptions(JsonMenu);
-        setContent(classroom);
-        setOptionHidden(authorizedPages);
-      } catch (error) {
-        console.error("Error fetching menu:", error);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, []);
+    try {
+      setClassroomIdsArray(dataClass);
+      const { classroom, authorizedPages } = splitMenuOptions(dataMenu);
+      setContent(classroom);
+      setOptionHidden(authorizedPages);
+    } catch (error) {
+      console.error("Error fetching menu:", error);
+    } finally {
+      setLoading(false);
+    }
+  }, [dataClass, dataMenu]);
 
   useEffect(() => {
     if (editable && inputRefs.current[editable]) {

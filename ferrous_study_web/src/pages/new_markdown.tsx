@@ -19,11 +19,11 @@ export default function NewMarkdown() {
         <span className="text-3xl mb-3">Verificacion para guardar!</span>
       </Notify>
       <TextEditor
-      name="idClassRoom"
-      onSave={open}
-      fileName={"Nueva clase"}
-          className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
-          style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
-        />
+        name="idClassRoom"
+        onSave={open}
+        fileName={"Nueva clase"}
+        className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
+        style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
+      />
     </div>)
 }

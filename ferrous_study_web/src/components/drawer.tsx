@@ -2,20 +2,19 @@ import { ReactNode, useState, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
 import { State, Actions } from '../state_warehouse'
 import { useSubscriberState, useActions } from 'subscriber_state'
-import { BookOpenIcon } from '../assets/svgs'
-import Menu from '../jsons/menu.json'
 import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
-import { FerrisIcon, ArrowRightIcon } from '../assets/svgs'
+import { FerrisIcon, ArrowRightIcon, BookOpenIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
+import { SignedIn } from '@clerk/clerk-react';
 import type { TMenu } from '../types/menu'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 
 export default function Drawer() {
-  const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
-  const [menu, setMenu] = useState();
+  const [{ show_drawer, dataMenu }, { on_show_drawer }] = useSubscriberState<State, Actions>(['show_drawer', 'dataMenu'])
+  const [menu, setMenu] = useState(null);
   const divRef = useClickInSide(() => on_show_drawer(false))
 
+  //activa o desactiva el scroll del body si el drawer se nuestra o no.
   if (show_drawer) {
     document.body.style.overflow = 'hidden';
   } else {
@@ -23,13 +22,15 @@ export default function Drawer() {
   }
 
   useEffect(() => {
-    const { classroom, authorizedPages: authPage } = splitMenuOptions(Menu);
+    const { classroom, authorizedPages: authPage } = splitMenuOptions(dataMenu);
 
     const about = authPage.filter(item => item.to && item.to.includes('/about'))[0];
     const authorizedPages = authPage.filter(item => !item.to || !item.to.includes('/about'));
     setMenu({ classroom, authorizedPages, about })
-
   }, [])
+
+  useEffect(() => {
+  }, [menu])
 
   return (
     <div ref={divRef} className={`fixed top-0 left-0 z-50 flex flex-row transition-custom duration-7ms ease-in-out ${show_drawer ? 'translate-x-0 backdrop-blur-[0.8px] bg-translucent' : '-translate-x-full backdrop-blur-[0px] bg-transparent'} w-full h-[100dvh]`} >
@@ -75,12 +76,12 @@ export default function Drawer() {
 
           <LinkC
             key={menu?.about?.text}
-            to={menu?.about.to}
-            displayQuality={menu?.about.displayQuality}
-            subMenu={menu?.about.subMenu}
-            params={menu?.about.params}
+            to={menu?.about?.to}
+            displayQuality={menu?.about?.displayQuality}
+            subMenu={menu?.about?.subMenu}
+            params={menu?.about?.params}
           >
-            {menu?.about.text}
+            {menu?.about?.text}
           </LinkC>
 
         </div>

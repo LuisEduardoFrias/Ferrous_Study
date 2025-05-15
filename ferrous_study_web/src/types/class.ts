@@ -15,5 +15,6 @@ export type TClass =  {
         key: string,
         name: string,
       }
-    }
+    },
+    keywords:string[]
   }

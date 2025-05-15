@@ -5,6 +5,7 @@ import { toCamelCase } from '../hooks/to_camel_case';
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import Notify from '../components/notify';
+import { memoryCache } from '../helps/memory_cache'
 
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
   useTitle(editClassroomId)
@@ -13,7 +14,10 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
 
   useEffect(() => {
     (async () => {
-      const result = await githubService.getFileContent(editClassroomId, 'markdown');
+      const result = await memoryCache.get(editClassroomId, async () => {
+        return await githubService.getFileContent(editClassroomId, 'markdown');;
+      });
+
       setContent(result);
     })()
   }, [editClassroomId])
@@ -28,10 +32,10 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
         <span className="text-3xl mb-3">Verificacion para guardar!</span>
       </Notify>
-      <TextEditor 
-      name="idClassRoom"
-      onSave={open} 
-      fileName={`Editando archivo ${toCamelCase(editClassroomId)}`} 
+      <TextEditor
+        name="idClassRoom"
+        onSave={open}
+        fileName={`Editando archivo ${toCamelCase(editClassroomId)}`}
         className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
         style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
         defaultValue={content}

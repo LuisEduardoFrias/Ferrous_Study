@@ -1,17 +1,20 @@
-import { Link, useLocation, useNavigate, ParsedLocationType } from '@tanstack/react-router'
+import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import { State, Actions, } from '../state_warehouse'
 import { useSubscriberState } from 'subscriber_state'
-import { BookCloseIcon } from '../assets/svgs'
-import { FerrisIcon, EditIcon, GithubIcon } from '../assets/svgs'
+import { FerrisIcon, EditIcon, GithubIcon, BookCloseIcon } from '../assets/svgs'
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
 import { useRouterState } from '@tanstack/react-router'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 
 export default function Navbar() {
   const navigate = useNavigate();
   const state = useRouterState()
+  const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
+  const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
+  const isMovil = useIsMovil();
+  
   const { param1, param2 } = useLocation({
     select: (location) => {
       const param1 = location.pathname.split("/")[1] ?? "";
@@ -20,10 +23,6 @@ export default function Navbar() {
       return { param1, param2 };
     }
   });
-
-  const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
-  const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
-  const isMovil = useIsMovil();
 
   function EditButton() {
     return (
