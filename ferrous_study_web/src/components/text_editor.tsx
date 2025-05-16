@@ -38,7 +38,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
         <span className="text-2xl mb-3">Verificacion para guardar!</span>
       </Notify>
 
-      <div className="fixed left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-14" >
+      <div className="fixed z-[49] left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-14" >
         <div className="relative flex flex-wrap w-full gap-4 items-center justify-center px-4 h-10 bg-theme-d-4-d" >
           <h1 className="text-xl text-center text-theme-0" >{toCamelCase(fileName)}</h1>
           <div className="absolute right-1 w-20 flex flex-row gap-2 items-center" >

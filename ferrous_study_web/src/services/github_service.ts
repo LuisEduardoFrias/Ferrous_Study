@@ -2,7 +2,7 @@
 //import { auth } from "@clerk/clerk-react";
 async function auth() {
   const clerk = (window as any).clerk;
-  return { token: await clerk?.session.getToken({ template: 'Test' }) };
+  return { token: await clerk?.session?.getToken({ template: 'Plantilla1' }) };
 }
 
 const API_BASE_URL = import.meta.env.VITE_PI_BASE_URL;
@@ -79,7 +79,7 @@ export const githubService = {
    * @param content El contenido del archivo.
    * @returns Una promesa que resuelve a la respuesta de la creación del archivo.
    */
-  async createMarkdownFile(fileName: string, content: string): Promise<{ message: string, data?: any }> {
+  async createMarkdownFile(fileName: string, content: string, keywords: string): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
     try {
@@ -89,7 +89,7 @@ export const githubService = {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ fileName, content }),
+        body: JSON.stringify({ fileName, content, keywords }),
       });
 
       if (!response.ok) {
@@ -99,7 +99,7 @@ export const githubService = {
       }
 
       const data: FileOperationResponse = await response.json();
-      return { message: 'Clase crrada con exito.', data };
+      return { message: 'Clase creada con exito.', data };
     } catch (error) {
       console.error(`Error al crear el archivo ${fileName}.md:`, error);
       throw error;

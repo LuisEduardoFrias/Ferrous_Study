@@ -9,12 +9,12 @@ import { useDialog } from '../hooks/use_dialog';
 import Notify from '../components/notify';
 import { toCamelCase } from '../hooks/to_camel_case';
 import { splitMenuOptions } from '../hooks/split_menu_options';
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState } from 'subscriber_state'
+import { useStore } from '../state_warehouse/index'
 
 export default function Menu() {
   useTitle('Configuracion del menu')
-  const [{ dataClass, dataMenu }] = useSubscriberState<State, Actions>(['dataClass', 'dataMenu'])
+  const dataMenu = useStore((state) => state.dataMenu);
+  const dataClass = useStore((state) => state.dataClass);
   const [content, setContent] = useState<TMenu[]>([]);
   const [optionHidden, setOptionHidden] = useState<TMenu[]>([]);
   const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);
@@ -36,7 +36,7 @@ export default function Menu() {
     } finally {
       setLoading(false);
     }
-  }, []);
+  }, [dataMenu, dataClass]);
 
   useEffect(() => {
     if (editable && inputRefs.current[editable]) {
@@ -67,7 +67,7 @@ export default function Menu() {
           return items.map(item => {
             if (item.key === targetKey) {
               const newSubKey = item.subMenu ? `${targetKey}-${item.subMenu.length}` : `${targetKey}-0`;
-              const newItem: TMenu = { key: newSubKey, to: link, text: 'Nuevo elemento', displayQuality: '' };
+              const newItem: TMenu = { key: newSubKey, to: link, text: '', displayQuality: '' };
               return { ...item, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
             }
             return item;
@@ -87,7 +87,7 @@ export default function Menu() {
 
       if (!keys || keys.length === 0) {
         const newKey = `${newContent.length}`;
-        const newItem: TMenu = { key: newKey, to: link, text: 'Nuevo elemento', displayQuality: '' };
+        const newItem: TMenu = { key: newKey, to: link, text: '', displayQuality: '' };
         return [...newContent, newItem];
       } else {
         return insertNewItemRecursive(newContent, keys);
@@ -174,7 +174,9 @@ export default function Menu() {
         </div>
       </div>
       <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
-        <span className="text-3xl mb-3">Verificacion para guardar!</span>
+        <span className="block text-xl font-semibold text-gray-800 mb-8 dark:text-gray-200 mb-2">
+          ¡Se guardaran los datos!
+        </span >
       </Notify>
       <div className="w-[34rem] px-2 mt-3">
         <Ul
@@ -273,6 +275,7 @@ const Li = memo(function Li({ value, onRemove, onAdd, classArray, onChangeLink, 
               disabled={!(value.key === isEditable)}
               className="bg-transparent outline-2 outline-theme-3 pl-1 rounded-none h-full"
               value={value.text}
+              placeholder="Opción del menú"
               onChange={(event) => onChange(value.key, event)}
             />
             {(!(value.subMenu) || value.subMenu?.length === 0) &&

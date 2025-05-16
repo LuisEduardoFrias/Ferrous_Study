@@ -10,8 +10,10 @@ export default function NewMarkdown() {
   useTitle('Crear nueva clase')
   const { dialogRef: verifyRef, open: openV, close: closeV } = useDialog();
   const { dialogRef, open, close } = useDialog();
+  const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
   const [newClassId, setNewClassId] = useState();
+  const [keywords, setKeywords] = useState();
   const [textValue, setTextValue] = useState();
   const [showLoading, setShowLoading] = useState(false);
   const [contentErrorMessage, setContentErrorMessage] = useState('');
@@ -23,6 +25,16 @@ export default function NewMarkdown() {
     if (/^[0-9]/.test(value)) return;
     const newValue = value.replace(/\s+/g, '_');
     setNewClassId(newValue);
+  };
+
+  //////////  KEY-WORDS
+  const handleInputChangeKeywords = (event) => {
+    let value = event.target.value;
+    value = value.toLowerCase();
+    if (value.startsWith(' ')) return;
+    if (/^[0-9]/.test(value)) return;
+    const newValue = value.replace(/\s+/g, ',');
+    setKeywords(newValue);
   };
 
   async function handlerSave() {
@@ -41,10 +53,15 @@ export default function NewMarkdown() {
     }
 
     setShowLoading(true);
-    const result = await githubService.createMarkdownFile(newClassId, textValue);
-    alert(result)
+    const result = await githubService.createMarkdownFile(newClassId, textValue, keywords.split(','));
     setContentErrorMessage(result?.message);
     setShowLoading(false);
+
+    if (result?.data) {
+      setNewClassId('');
+      setTextValue(' ');
+      setKeywords(' ');
+    }
     openContentNotify();
     return;
   }
@@ -68,7 +85,7 @@ export default function NewMarkdown() {
         ref={dialogRef}
         okey={() => {
           if (newClassId) {
-            openV();
+            keywordsOpen();
             close();
           }
         }}
@@ -81,6 +98,28 @@ export default function NewMarkdown() {
           value={newClassId}
           onChange={handleInputChange}
         />
+      </Notify>
+
+      <Notify
+        ref={keywordsRef}
+        okey={() => {
+          if (keywords) {
+            openV();
+            keywordsClose();
+          }
+        }}
+        cancel={keywordsClose}
+      >
+        <input
+          type="text"
+          className="bg-gray-800 text-white border border-gray-600 rounded-md py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="rust,curso,aprender,programación"
+          value={keywords}
+          onChange={handleInputChangeKeywords}
+        />
+        <span className="block text-base text-gray-600 dark:text-gray-400">
+          Agrega palabras clave que ayuden a encontrar esta clase en el buscador. Puedes separarlas con comas (,) o espacios.
+        </span>
       </Notify>
 
       <Notify
@@ -109,6 +148,7 @@ export default function NewMarkdown() {
           setTextValue(value);
           open();
         }}
+        defaultValue={textValue}
         fileName={newClassId ?? "Nueva clase"}
         className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
         style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}

@@ -1,8 +1,10 @@
 import type { TMenu } from '../types/menu'
 import type { TClass } from '../types/class'
-import { createWarehouse, update } from 'subscriber_state'
+//import { createWarehouse, update } from 'subscriber_state'
 import { githubService } from '../services/github_service'
 import { CacheEntry } from '../helps/memory_cache'
+import { create } from 'zustand'
+
 //import JsonMenu from '../jsons/menu.json';
 //import JsonClass from '../jsons/class.json';
 
@@ -12,9 +14,7 @@ export type State = {
   dataMenu: TMenu[],
   show_drawer: boolean,
   search_data: { show: boolean, data: TMenu[] },
-}
-
-export type Actions = {
+  //
   initial_state: () => void,
   on_show_drawer: (isShow: boolean) => void,
   on_search_data: (data: TMenu) => void,
@@ -22,59 +22,48 @@ export type Actions = {
   on_clear_cache: (key?: string) => void
 }
 
-async function initial_state() {
-  const [resultClass, resultNenu] = await Promise.all([
-    githubService.getFileContent("class", 'json'),
-    githubService.getFileContent("menu", 'json')
-  ]);
+const useStore = create<State>((set, get) => ({
+  cache: {},
+  dataClass: [],
+  dataMenu: [],
+  show_drawer: false,
+  search_data: { show: false, data: [] },
+  /////
+  initial_state: async () => {
+    const [resultClass, resultNenu] = await Promise.all([
+      githubService.getFileContent("class", 'json'),
+      githubService.getFileContent("menu", 'json')
+    ]);
 
-  update((state) => ({
-    ...state,
-    dataClass: JSON.parse(resultClass),
-    dataMenu: JSON.parse(resultNenu)
-  }));
-}
+    set({ dataClass: JSON.parse(resultClass), dataMenu: JSON.parse(resultNenu) });
 
-function on_miss(key: string, data: CacheEntry) {
-  update((state) => {
-    const cache = state.cache;
+  },
+
+  on_miss: (key: string, data: CacheEntry) => {
+    const cache = get().cache;
     cache[key] = data;
-    return ({ ...state, cache });
-  });
-}
+    set({ cache });
+  },
 
-function on_clear_cache(key?: string) {
-  update((state) => {
-    let cache = state.cache;
+  on_clear_cache: (key?: string) => {
+    let cache = get().cache;
 
     if (key)
       delete cache[key];
     else
       cache = {};
 
-    return ({ ...state, cache });
-  });
-}
+    set({ cache });
+  },
 
-function on_show_drawer(isShow: boolean) {
-  update((state) => ({ ...state, show_drawer: isShow }));
-}
+  on_show_drawer: (isShow: boolean) => {
+    set({ show_drawer: isShow });
+  },
 
-function on_search_data(search_data: { show: boolean, data: TMenu[] }) {
-  update((state) => ({ ...state, search_data }));
-}
+  on_search_data: (search_data: { show: boolean, data: TMenu[] }) => {
+    set({ search_data });
+  }
+}))
 
-createWarehouse<State, Actions>({
-  cache: {},
-  dataClass: [],
-  dataMenu: [],
-  show_drawer: false,
-  search_data: { show: false, data: [] },
-  //////
-  initial_state,
-  on_miss,
-  on_clear_cache,
-  on_show_drawer,
-  on_search_data
-});
+export { useStore };
 

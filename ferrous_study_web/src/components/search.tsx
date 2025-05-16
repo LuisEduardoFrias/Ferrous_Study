@@ -1,8 +1,6 @@
 import { memo } from 'react'
 import { SearchIcon } from '../assets/svgs'
 import { LoadingIcon } from '../assets/svgs'
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState } from 'subscriber_state'
 import { useGlobalRef } from '../hooks/use_global_ref'
 import useFilter from '../hooks/use_filter'
 import '../styles/search.css'

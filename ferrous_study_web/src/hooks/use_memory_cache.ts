@@ -1,5 +1,4 @@
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState, useActions } from 'subscriber_state'
+import { useStore } from '../state_warehouse/index'
 
 export type CacheEntry<T> = {
   data: T;
@@ -7,7 +6,9 @@ export type CacheEntry<T> = {
 }
 
 export function useMemoryCache(defaultTtlSeconds: number = 180000) {
-  const [{ cache }, { on_miss, on_hit }] = useSubscriberState<State, Actions>('cache')
+  const cache = useStore((state) => state.cache)
+  const on_hit = useStore((state) => state.on_hit)
+  const on_miss = useStore((state) => state.on_miss)
   const defaultTtlMs = defaultTtlSeconds * 1000;
 
   async function get<T>(key: string, fetchFunction: () => Promise<T>, ttlSeconds?: number): Promise<T | undefined> {

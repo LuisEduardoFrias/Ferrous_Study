@@ -2,11 +2,11 @@ import { Link } from '@tanstack/react-router'
 import type { TMenu } from '../types/menu'
 import { useGlobalRef } from '../hooks/use_global_ref'
 import { useClickOutside } from '../hooks/use_click_on_side'
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState } from 'subscriber_state'
+import { useStore } from '../state_warehouse/index'
 
 export default function SearchResults() {
-  const [{ search_data }, { on_search_data }] = useSubscriberState<State, Actions>('search_data');
+  const search_data = useStore((state) => state.search_data)
+  const on_search_data = useStore((state) => state.on_search_data)
   const { get } = useGlobalRef<HTMLInputElement>();
   const divRef = useClickOutside<HTMLDivElement>(() => handlerEffect());
 

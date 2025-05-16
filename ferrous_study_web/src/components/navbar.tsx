@@ -1,17 +1,17 @@
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
-import { State, Actions, } from '../state_warehouse'
-import { useSubscriberState } from 'subscriber_state'
 import { FerrisIcon, EditIcon, GithubIcon, BookCloseIcon } from '../assets/svgs'
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
 import { useRouterState } from '@tanstack/react-router'
 import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
+import { useStore } from '../state_warehouse/index'
 
 export default function Navbar() {
   const navigate = useNavigate();
   const state = useRouterState()
-  const [{ show_drawer }, { on_show_drawer }] = useSubscriberState<State, Actions>('show_drawer')
+  const show_drawer = useStore((state) => state.show_drawer)
+  const on_show_drawer = useStore((state) => state.on_show_drawer)
   const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
   const isMovil = useIsMovil();
   

@@ -3,14 +3,13 @@ import { githubService } from '../services/github_service'
 import MarkdownRenderer from '../components/markdown_renderer'
 import ButtonChangePage from '../components/button_change_page'
 import { useTitle } from '../hooks/use_title'
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState, useActions } from 'subscriber_state'
 import { useMemoryCache } from '../hooks/use_memory_cache'
+import { useStore } from '../state_warehouse/index'
 
 export default function ClassRoom({ classroomId }: { classroomId: string }) {
   useTitle(classroomId)
   const [get] = useMemoryCache();
-  const [{ dataClass }] = useSubscriberState<State, Actions>(['dataClass'])
+  const dataClass = useStore((state) => state.dataClass)
   const [content, setContent] = useState('');
   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 

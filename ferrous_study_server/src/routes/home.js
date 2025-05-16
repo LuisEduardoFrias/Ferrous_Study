@@ -39,21 +39,43 @@ router.get('/:search', async (req, res) => {
 });
 
 router.post('/', requireAuth(), async (req, res) => {
-  const { fileName, content } = req.body;
+  const { fileName, content, keywords } = req.body;
 
-  // const { userId } = getAuth(req)
-  //   const user = await clerkClient.users.getUser(userId)
+  const { userId } = getAuth(req)
+  const user = await clerkClient.users.getUser(userId)
 
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-  const message = "new file markdown";
+  const monthsage = `Creaded a new markdown file, ${fileName}`;
 
   try {
 
     const resulCreate = await GithubCore.createFiles([
-      { path: fullPath, content, message },
+      { path: fullPath, content, monthsage },
     ]);
 
-    console.log('Respuesta de creación:', resulCreate);
+    if (resulCreate[0].status === 201) {
+      const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
+
+      const content = await GithubCore.getFileContent(fullPathClass);
+      const class_ = JSON.parse(content);
+
+      class_.push({
+        key: class_.length,
+        name: fileName,
+        addInfo: {
+          addData: getData(),
+          user: {
+            key: userId,
+            name: user.fullName
+          }
+        },
+        updateInfo: null,
+        keywords: keywords
+      })
+
+      const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `add ${fileName} obj to the json of class file`);
+      //resultUpdate[0].status === 200
+    }
 
     res.json({ resulCreate });
   } catch (error) {
@@ -65,7 +87,7 @@ router.put('/', requireAuth(), async (req, res) => {
   console.log('probando');
 
   const { fileName, content, type } = req.body;
-  const message = "update file markdown";
+  const monthsage = "update file markdown";
 
   let fullPath = '';
 
@@ -74,25 +96,38 @@ router.put('/', requireAuth(), async (req, res) => {
   else
     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  try {
+  const resultUpdate = await updateFile(fullPath, content, monthsage);
 
-    const fileInfo = await GithubCore.getFile(fullPath);
-    console.log("verificando sha: ", fileInfo);
+  res.json({ resultUpdate });
 
-    if (fileInfo.data && 'sha' in fileInfo.data) {
-      console.log("updating: content ", content);
-      const resultUpdate = await GithubCore.updateFiles([
-        { path: fullPath, content, message, sha: fileInfo.data.sha },
-      ]);
-
-      console.log('Respuesta de actualización:', resultUpdate);
-
-      res.json({ resultUpdate });
-    }
-  } catch (error) {
-    console.log('try catch put error: ', error)
-  }
 });
 
 const Home = router;
 export default Home;
+
+
+async function updateFile(fullPath, content, monthsage) {
+  try {
+    const fileInfo = await GithubCore.getFile(fullPath);
+
+    if (fileInfo.data && 'sha' in fileInfo.data) {
+      const resultUpdate = await GithubCore.updateFiles([
+        { path: fullPath, content, monthsage, sha: fileInfo.data.sha },
+      ]);
+
+      console.log('Respuesta de actualización:', resultUpdate);
+
+      return resultUpdate;
+    }
+  } catch (error) {
+    console.log('try catch put error: ', error)
+  }
+}
+
+function getData() {
+  const today = new Date();
+  const day = today.getDate().toString().padStart(2, '0');
+  const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Los monthes en JS van de 0 a 11
+  const year = today.getFullYear();
+  return `${day}/${month}/${year}`;
+}

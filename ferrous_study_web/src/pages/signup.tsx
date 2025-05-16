@@ -64,8 +64,6 @@ function LoginForm(props: LoginFormProps) {
         oauthFlow="popup"
         routing="hash"
         signUpFallbackRedirectUrl="/"
-        signUpUrl="/signinup/:up"
-        //  withSignUp={true}
         appearance={appearance}
       />
       <Footer>
@@ -103,8 +101,7 @@ function SignupForm(props: SignupFormProps) {
           }
           oauthFlow="popup"
           routing="hash"
-          signUpFallbackRedirectUrl="/signinup/:in"
-          signUpUrl="/signinup/:in"
+          signUpFallbackRedirectUrl="/signinup"
           withSignUp={true}
           appearance={appearance}
         />

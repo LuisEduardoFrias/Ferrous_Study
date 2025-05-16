@@ -4,10 +4,8 @@ import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { ClerkProvider } from '@clerk/clerk-react'
 import { Clerk } from '@clerk/clerk-js'
 import { routeTree } from './routeTree.gen'
-import { Actions } from '../state_warehouse'
-import { useActions } from 'subscriber_state'
+import { useStore } from './state_warehouse/index'
 import './index.css'
-import './state_warehouse'
 
 const router = createRouter({ routeTree })
 
@@ -37,7 +35,7 @@ if (!rootElement.innerHTML) {
 }
 
 function Main() {
-  const { initial_state } = useActions<Actions>();
+  const initial_state = useStore((state) => state.initial_state)
 
   useEffect(() => {
     initial_state();

@@ -1,12 +1,11 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import type { ChangeEvent } from 'react'
 import searchj from '../jsons/searchj.json'
-import { Actions } from '../state_warehouse'
 import { githubService } from '../services/github_service'
-import { useActions } from 'subscriber_state'
+import { useStore } from '../state_warehouse/index'
 
 export default function useFilter() {
-  const { on_search_data } = useActions<Actions>()
+  const on_search_data = useStore((state) => state.on_search_data)
   const [search, setSearch] = useState<string>('');
   const [loading, setLoading] = useState<boolean>();
   const timer = useRef<NodeJS.Timeout | null>(null);

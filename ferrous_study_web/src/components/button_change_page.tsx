@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { ArrowRightIcon } from '../assets/svgs'
 import { Link } from '@tanstack/react-router'
 import type { TMenu } from '../types/menu'
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState, useActions } from 'subscriber_state'
+import { useStore } from '../state_warehouse/index'
 
 type classOrder = {
   key: string;
@@ -12,7 +11,7 @@ type classOrder = {
 }
 
 export default function ButtonChangePage({ classroomId }: { classroomId: string }) {
-  const [{ dataMenu }] = useSubscriberState<State, Actions>(['dataMenu']);
+  const dataMenu = useStore((state) => state.dataMenu)
   const [isShow, setShow] = useState(false);
   const [btnOption, setBtnOptions] = useState<{ menu: classOrder[], index: number }>();
   const TRANSITION = "transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";

@@ -1,16 +1,17 @@
 import { ReactNode, useState, useEffect } from 'react'
 import { Link } from '@tanstack/react-router'
-import { State, Actions } from '../state_warehouse'
-import { useSubscriberState, useActions } from 'subscriber_state'
 import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
 import { FerrisIcon, ArrowRightIcon, BookOpenIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
 import { SignedIn } from '@clerk/clerk-react';
 import type { TMenu } from '../types/menu'
+import { useStore } from '../state_warehouse/index'
 
 export default function Drawer() {
-  const [{ show_drawer, dataMenu }, { on_show_drawer }] = useSubscriberState<State, Actions>(['show_drawer', 'dataMenu'])
+  const show_drawer = useStore((state) => state.show_drawer)
+  const dataMenu = useStore((state) => state.dataMenu)
+  const on_show_drawer = useStore((state) => state.on_show_drawer)
   const [menu, setMenu] = useState(null);
   const divRef = useClickInSide(() => on_show_drawer(false))
 
@@ -27,7 +28,7 @@ export default function Drawer() {
     const about = authPage.filter(item => item.to && item.to.includes('/about'))[0];
     const authorizedPages = authPage.filter(item => !item.to || !item.to.includes('/about'));
     setMenu({ classroom, authorizedPages, about })
-  }, [])
+  }, [dataMenu])
 
   useEffect(() => {
   }, [menu])
@@ -103,7 +104,7 @@ type LinkCProps = {
 };
 
 function LinkC({ text, params, className, children, displayQuality, to, subMenu }: LinkCProps) {
-  const { on_show_drawer } = useActions<Actions>()
+  const on_show_drawer = useStore((state) => state.on_show_drawer)
   const [isOpen, setIsOpen] = useState(false);
 
   const hasSubMenu = subMenu && subMenu.length > 0;
