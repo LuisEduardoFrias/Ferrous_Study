@@ -190,25 +190,34 @@
         "text": "Solución Colltz",
         "displayQuality": "",
         "params": {
-          "classroomId": "loop_bucle"
+          "classroomId": "solución_collezt"
         }
       }
     ]
   },
   {
     "key": "4",
+    "to": "/classroom/$classroomId",
+    "text": "Array",
+    "displayQuality": "",
+    "params": {
+      "classroomId": "array"
+    }
+  },
+  {
+    "key": "5",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "5",
+    "key": "6",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "6",
+    "key": "7",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""

@@ -17,6 +17,7 @@ la secuencia finaliza.
 Escribe una función para calcular la longitud de la secuencia de Collatz para un número n inicial dado.
 
 ```rust
+
 /// Determina la longitud de la secuencia de Collatz que empieza por `n`.
 fn collatz_length(mut n: i32) -> u32 {
   todo!("Implementar esto")
