@@ -56,6 +56,7 @@ function LoginForm(props: LoginFormProps) {
     <div className="absolute w-full h-full bg-white rounded-lg shadow-md p-6 backface-hidden">
 
       <SignIn
+        // @ts-ignore
         fallback={
           <div className="w-full h-32">
             <Loading fill="black" />
@@ -94,7 +95,8 @@ function SignupForm(props: SignupFormProps) {
     >
       <div style={{ transform: 'rotateY(180deg)' }}>
         <SignUp
-          fallback={
+          // @ts-ignore
+fallback={
             <div className="w-full h-32">
               <Loading fill="black" />
             </div>

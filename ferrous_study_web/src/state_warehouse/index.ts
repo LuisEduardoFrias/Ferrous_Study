@@ -7,7 +7,7 @@ import { create } from 'zustand'
 
 //import JsonMenu from '../jsons/menu.json';
 //import JsonClass from '../jsons/class.json';
-type searchData = { show: boolean, data: TMenu[] };
+type searchData = { show: boolean, data?: TMenu[] };
 
 export type State = {
   cache: Record<string, CacheEntry<any>>;
@@ -19,7 +19,7 @@ export type State = {
   initial_state: () => void,
   on_show_drawer: (isShow: boolean) => void,
   on_search_data: (data: searchData) => void,
-  on_miss: (key: string, data: CacheEntry) => void,
+  on_miss:  <T>(key: string, data: CacheEntry<T>)  => void,
   on_clear_cache: (key?: string) => void
 }
 
@@ -41,7 +41,7 @@ const useStore = create<State>((set, get) => ({
 
   },
 
-  on_miss: (key: string, data: CacheEntry) => {
+  on_miss: <T>(key: string, data: CacheEntry<T>) => {
     const cache = get().cache;
     cache[key] = data;
     set({ cache });

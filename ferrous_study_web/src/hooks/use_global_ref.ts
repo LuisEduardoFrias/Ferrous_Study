@@ -29,7 +29,11 @@ class GlobalRef {
   }
 }
 
-export function useGlobalRef<T extends HTMLElement = HTMLElement>() {
+interface NamedHTMLElement extends HTMLElement {
+  name?: string;
+}
+
+export function useGlobalRef<T extends NamedHTMLElement>() {
   const ref = useRef<T>(null);
   const refs = GlobalRef.getInstance();
 

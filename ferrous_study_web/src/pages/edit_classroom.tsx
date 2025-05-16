@@ -11,20 +11,21 @@ import { useMemoryCache } from '../hooks/use_memory_cache'
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
   useTitle(editClassroomId)
   const { get, clear } = useMemoryCache();
-  const [content, setContent] = useState('');
-  const { dialogRef, open, close } = useDialog();
+  const [content, setContent] = useState<string>('');
+  const [textValue, setTextValue] = useState<string>('');
+  const [contentErrorMessage, setContentErrorMessage] = useState<string>('');
   const [showLoading, setShowLoading] = useState(false);
+  const { dialogRef, open, close } = useDialog();
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
-  const [contentErrorMessage, setContentErrorMessage] = useState('');
-  const [textValue, setTextValue] = useState();
 
   useEffect(() => {
     (async () => {
-      const result = await get(editClassroomId, async () => {
-        return await githubService.getFileContent(editClassroomId, 'markdown');;
+      const result = await get<string | null>(editClassroomId, async () => {
+        return await githubService.getFileContent(editClassroomId, 'markdown');
       });
-
-      setContent(result);
+                  
+      //TODO evaluar posibke vslor null
+      setContent(result ?? '');
     })()
   }, [editClassroomId])
 
@@ -65,7 +66,6 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
         </div>
       }
       <TextEditor
-        name="idClassRoom"
         onSave={(value: string) => {
           setTextValue(value);
           open();

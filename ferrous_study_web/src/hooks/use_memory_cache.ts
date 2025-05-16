@@ -7,7 +7,6 @@ export type CacheEntry<T> = {
 
 export function useMemoryCache(defaultTtlSeconds: number = 180000) {
   const cache = useStore((state) => state.cache)
-  const on_hit = useStore((state) => state.on_hit)
   const on_miss = useStore((state) => state.on_miss)
   const on_clear_cache = useStore((state) => state.on_clear_cache)
   const defaultTtlMs = defaultTtlSeconds * 1000;

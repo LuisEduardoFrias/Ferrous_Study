@@ -8,7 +8,7 @@ export default function useFilter() {
   const on_search_data = useStore((state) => state.on_search_data)
   const [search, setSearch] = useState<string>('');
   const [loading, setLoading] = useState<boolean>();
-  const timer = useRef<NodeJS.Timeout | null>(null);
+  const timer = useRef<number | null>(null);
 
   const executeDispatch = useCallback(() => {
     (async () => {

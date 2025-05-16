@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
 import { useTitle } from '../hooks/use_title'
@@ -14,13 +14,13 @@ export default function NewMarkdown() {
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
-  const [newClassId, setNewClassId] = useState();
-  const [keywords, setKeywords] = useState();
-  const [textValue, setTextValue] = useState();
+  const [newClassId, setNewClassId] = useState<string>('');
+  const [keywords, setKeywords] = useState<string>('');
+  const [textValue, setTextValue] = useState<string>('');
   const [showLoading, setShowLoading] = useState(false);
-  const [contentErrorMessage, setContentErrorMessage] = useState('');
+  const [contentErrorMessage, setContentErrorMessage] = useState<string>('');
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
     value = value.toLowerCase();
     if (value.startsWith(' ')) return;
@@ -30,7 +30,7 @@ export default function NewMarkdown() {
   };
 
   //////////  KEY-WORDS
-  const handleInputChangeKeywords = (event) => {
+  const handleInputChangeKeywords = (event: ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
     value = value.toLowerCase();
     if (value.startsWith(' ')) return;
@@ -62,8 +62,8 @@ export default function NewMarkdown() {
     if (result?.data) {
       initial_state();
       setNewClassId('');
-      setTextValue(' ');
-      setKeywords(' ');
+      setTextValue('');
+      setKeywords('');
     }
     openContentNotify();
     return;
@@ -146,7 +146,6 @@ export default function NewMarkdown() {
       }
 
       <TextEditor
-        name="idClassRoom"
         onSave={(value: string) => {
           setTextValue(value);
           open();

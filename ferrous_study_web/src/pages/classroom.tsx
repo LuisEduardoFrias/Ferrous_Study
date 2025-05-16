@@ -11,7 +11,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   useTitle(classroomId)
   const { get } = useMemoryCache();
   const dataClass = useStore((state) => state.dataClass)
-  const [content, setContent] = useState();
+  const [content, setContent] = useState<string>('');
   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 
   const classInfo = getData(classroomId);
@@ -30,16 +30,17 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
   useEffect(() => {
     (async () => {
-      const result = await get(classroomId, async () => {
+      const result = await get<string | null>(classroomId, async () => {
         return await githubService.getFileContent(classroomId, 'markdown');
       });
 
-      setContent(result);
+      //TODO evaluar posibke vslor null
+      setContent(result ?? '');
     })()
   }, [classroomId])
 
   return (
-    <div name="classRoom" className="p-2">
+    <div className="p-2">
       {!content &&
         <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">

@@ -1,5 +1,5 @@
-// github_service.ts
-//import { auth } from "@clerk/clerk-react";
+import type { TMenu } from '../types/menu';
+
 async function auth() {
   const clerk = (window as any).clerk;
   return { token: await clerk?.session?.getToken({ template: 'Plantilla1' }) };
@@ -51,21 +51,21 @@ export const githubService = {
    * @param search Palabra clave a buscar.
    * @returns Una promesa que resuelve a un arreglo de informacion o o null si hay un error.
    */
-  async searchContent(search: string): Promise<string | null> {
-    const { token } = await auth();
+  async searchContent(search: string): Promise<TMenu[] | null> {
+    // const { token } = await auth();
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${search}`, {
+      const response = await fetch(`${API_BASE_URL}/${search}`)/*, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-
+*/
       if (!response.ok) {
         console.error(`Error al buscar '${search}':`, response.status);
         return null;
       }
-      const data: FileContentResponse = await response.json();
+      const data = await response.json();
       return data.content || null;
     } catch (error) {
       console.error(`Error de red al buscae '${search}':`, error);
@@ -79,7 +79,7 @@ export const githubService = {
    * @param content El contenido del archivo.
    * @returns Una promesa que resuelve a la respuesta de la creación del archivo.
    */
-  async createMarkdownFile(fileName: string, content: string, keywords: string): Promise<{ message: string, data?: any }> {
+  async createMarkdownFile(fileName: string, content: string, keywords: string[]): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
     try {
@@ -113,7 +113,7 @@ export const githubService = {
    * @param type El tipo de archivo ('markdown' o 'json').
    * @returns Una promesa que resuelve a la respuesta de la actualización del archivo.
    */
-  async updateFileContent(fileName: string, content: string, type: 'markdown' | 'json'): Promise<{ message: string, data?: any }> {
+  async updateFileContent(fileName: string, content: string | TMenu[], type: 'markdown' | 'json'): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
     try {

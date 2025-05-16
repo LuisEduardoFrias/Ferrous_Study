@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export default function Paragraph({ text, children, className }: { text: string, children: ReactNode, className?: string }) {
+export default function Paragraph({  children, className }: { children: ReactNode, className?: string }) {
   return (
     <p
       style={{
@@ -13,7 +13,6 @@ export default function Paragraph({ text, children, className }: { text: string,
       }}
       className={`text-[14px] ${className}`}
     >
-      {text}
       {children}
     </p>
   )

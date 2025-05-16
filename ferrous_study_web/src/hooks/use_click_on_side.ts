@@ -1,11 +1,12 @@
 import { useEffect, useRef, MutableRefObject } from 'react';
 
-export function useClickInSide<T extends HTMLElement = HTMLElement>(onClick: () => void, refOutSede?: MutableRefObject<{ [key: string]: T | null }>) {
-  const ref = useRef<T>(refOutSede);
+export function useClickInSide<T extends HTMLElement = HTMLElement>(onClick: () => void, refOutSide?: MutableRefObject<T | null>): MutableRefObject<T | null> {
+  const initialRefValue = (refOutSide?.current as T | null) || null;
+  const ref = useRef<T | null>(initialRefValue);
 
   useEffect(() => {
-    function handleClick(event) {
-      if (ref?.current && event.target === ref?.current) {
+    function handleClick(event: MouseEvent | TouchEvent) {
+      if (ref?.current && ref.current.contains(event.target as Node)) {
         onClick();
       }
     }
@@ -26,8 +27,9 @@ export function useClickInSide<T extends HTMLElement = HTMLElement>(onClick: () 
   return ref;
 }
 
-export function useClickOutside<T extends HTMLElement = HTMLElement>(onClick: () => void, refOutSide?: MutableRefObject<{ [key: string]: T | null }>) {
-  const ref = useRef<T>(refOutSide?.current || null);
+export function useClickOutside<T extends HTMLElement = HTMLElement>(onClick: () => void, refOutSide?: MutableRefObject<T | null>): MutableRefObject<T | null> {
+  const initialRefValue = (refOutSide?.current as T | null) || null;
+  const ref = useRef<T | null>(initialRefValue);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent | TouchEvent) {

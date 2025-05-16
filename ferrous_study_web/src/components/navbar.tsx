@@ -1,20 +1,20 @@
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
-import { FerrisIcon, EditIcon, GithubIcon, BookCloseIcon } from '../assets/svgs'
+import { FerrisIcon, EditIcon, BookCloseIcon } from '../assets/svgs'
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
-import { useRouterState } from '@tanstack/react-router'
+//import { useRouterState } from '@tanstack/react-router'
 import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
 import { useStore } from '../state_warehouse/index'
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const state = useRouterState()
+  //const state = useRouterState()
   const show_drawer = useStore((state) => state.show_drawer)
   const on_show_drawer = useStore((state) => state.on_show_drawer)
   const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
   const isMovil = useIsMovil();
-  
+
   const { param1, param2 } = useLocation({
     select: (location) => {
       const param1 = location.pathname.split("/")[1] ?? "";

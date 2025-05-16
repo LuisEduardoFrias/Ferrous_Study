@@ -24,8 +24,8 @@ export default function Menu() {
   const [loading, setLoading] = useState(false);
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
   const { dialogRef, open, close } = useDialog();
-  const divRef = useRef<HTMLDivElement>({});
-  const inputRefs = useRef<HTMLInputElement>({});
+  const divRef = useRef<HTMLDivElement>(null);
+  const inputRefs = useRef<{ [key: string]: HTMLInputElement | null; }>({});
   const [showLoading, setShowLoading] = useState(false);
   const [contentErrorMessage, setContentErrorMessage] = useState('');
 
@@ -72,8 +72,8 @@ export default function Menu() {
           return items.map(item => {
             if (item.key === targetKey) {
               const newSubKey = item.subMenu ? `${targetKey}-${item.subMenu.length}` : `${targetKey}-0`;
-              const newItem: TMenu = { key: newSubKey, to: link, text: '', displayQuality: '' };
-              return { ...item, params: null, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
+              const newItem: TMenu = { key: newSubKey, to: link, text: '', displayQuality: '', params: undefined };
+              return { ...item, params: undefined, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
             }
             return item;
           });
@@ -100,10 +100,10 @@ export default function Menu() {
     });
   }
 
-  function handlerChangeLink(key, value) {
+  function handlerChangeLink(key: string, value: string) {
     setContent(prevContent => {
       return prevContent.map(item => {
-        function updateLinkRecursive(currentItem) {
+        function updateLinkRecursive(currentItem: TMenu): TMenu {
           if (currentItem.key === key) {
             if (currentItem.params) {
               return { ...currentItem, params: { ...currentItem.params, classroomId: value } };
@@ -149,14 +149,15 @@ export default function Menu() {
       try {
         setShowLoading(true);
         const lastItem = content.at(-1);
-        const id = parseInt(lastItem.key) + 1;
+
+        const id = parseInt(lastItem?.key ?? '1000') + 1;
 
         const newContent = [...content];
         newContent.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: (id + index).toString() })));
 
         const result = await githubService.updateFileContent("menu", newContent, 'json');
         //console.log(result);
-       // const result = { message: "se guardo", data: {} };
+        // const result = { message: "se guardo", data: {} };
         setContentErrorMessage(result?.message);
 
         if (result.data) {
@@ -227,14 +228,14 @@ export default function Menu() {
 }
 
 type UlProps = {
-  content: TMenu[];
+  content?: TMenu[];
   onRemove: (key: string) => void;
   onAdd: (keys: string[]) => void;
   isEditable: string;
-  classArray: TClass;
+  classArray: TClass[];
   onEditable: (value: string) => void;
   onChangeLink: (key: string, value: string) => void;
-  onChange: (key: string, event: ChangeEvent) => void;
+  onChange: (key: string, event: ChangeEvent<HTMLInputElement>) => void;
   inputRefs: MutableRefObject<{ [key: string]: HTMLInputElement | null }>;
   fatherKey?: string[];
 };
@@ -265,12 +266,12 @@ const Ul = memo(function Ul({ content, onRemove, classArray, onAdd, isEditable, 
 
 type LiProps = {
   value: TMenu;
-  classArray: TClass;
+  classArray: TClass[];
   onRemove: (key: string) => void;
   onAdd: (keys: string[]) => void;
   isEditable: string;
   onEditable: (value: string) => void;
-  onChange: (key: string, event: ChangeEvent) => void;
+  onChange: (key: string, event: ChangeEvent<HTMLInputElement>) => void;
   onChangeLink: (key: string, value: string) => void;
   inputRefs: MutableRefObject<{ [key: string]: HTMLInputElement | null }>;
   fatherKey?: string[];
