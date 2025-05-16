@@ -60,7 +60,7 @@ export default function Drawer() {
               {text}
             </LinkC>
           ))}
-
+          <hr className="my-2 border-[.4px] border-theme-o-3-d" />
           <SignedIn>
             {menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
               <LinkC

@@ -94,12 +94,12 @@ export const githubService = {
 
       if (!response.ok) {
         console.error(`Error al crear el archivo ${fileName}.md:`, response.status);
-        return { message: 'Error al crear el la nueva clase' };
+        return { message: 'Error al crear la nueva clase' };
         // throw new Error(`Error al crear el archivo: ${response.status}`);
       }
 
       const data: FileOperationResponse = await response.json();
-      return { message: 'Clase creada con exito.', data };
+      return { message: 'Clase creada con éxito.', data };
     } catch (error) {
       console.error(`Error al crear el archivo ${fileName}.md:`, error);
       throw error;
@@ -113,7 +113,7 @@ export const githubService = {
    * @param type El tipo de archivo ('markdown' o 'json').
    * @returns Una promesa que resuelve a la respuesta de la actualización del archivo.
    */
-  async updateFileContent(fileName: string, content: string, type: 'markdown' | 'json'): Promise<FileOperationResponse> {
+  async updateFileContent(fileName: string, content: string, type: 'markdown' | 'json'): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
     try {
@@ -127,10 +127,11 @@ export const githubService = {
       });
       if (!response.ok) {
         console.error(`Error al actualizar el archivo ${fileName}.${type}:`, response.status);
+        return { message: 'Error al guardas los datos.' };
         // throw new Error(`Error al actualizar el archivo: ${response.status}`);
       }
       const data: FileOperationResponse = await response.json();
-      return data;
+      return { message: 'Datos guardados con éxito.', data };
 
     } catch (error) {
       console.error(`Error al actualizar el archivo ${fileName}.${type}:`, error);

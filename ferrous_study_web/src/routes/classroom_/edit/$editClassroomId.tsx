@@ -1,9 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
+import EditClassroom from '../../../pages/edit_classroom'
+import { verifyAuthentication } from '../../../hooks/verify_authentication'
 
 export const Route = createFileRoute('/classroom_/edit/$editClassroomId')({
-  component: RouteComponent,
+  component: EditClassroomId_,
+  beforeLoad: verifyAuthentication
 })
 
-function RouteComponent() {
-  return <div>Hello "/classroom_/edit/$editClassroomId"!</div>
+function EditClassroomId_() {
+  const { editClassroomId } = Route.useParams();
+  
+  return <EditClassroom editClassroomId={editClassroomId} />
 }

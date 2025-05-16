@@ -56,7 +56,6 @@ export default function TextEditor({ onSave, fileName, className, style, default
           <textarea
             className={className}
             style={style}
-            defaultValue={defaultValue}
             value={textValue}
             onChange={handlerChangeText}
           />

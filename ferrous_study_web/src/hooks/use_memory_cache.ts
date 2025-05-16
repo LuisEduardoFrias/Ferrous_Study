@@ -9,6 +9,7 @@ export function useMemoryCache(defaultTtlSeconds: number = 180000) {
   const cache = useStore((state) => state.cache)
   const on_hit = useStore((state) => state.on_hit)
   const on_miss = useStore((state) => state.on_miss)
+  const on_clear_cache = useStore((state) => state.on_clear_cache)
   const defaultTtlMs = defaultTtlSeconds * 1000;
 
   async function get<T>(key: string, fetchFunction: () => Promise<T>, ttlSeconds?: number): Promise<T | undefined> {
@@ -50,5 +51,5 @@ export function useMemoryCache(defaultTtlSeconds: number = 180000) {
     //Toda la caché ha sido limpiada.
   }
 
-  return [get, set, clear, clearAll];
+  return { get, set, clear, clearAll };
 }

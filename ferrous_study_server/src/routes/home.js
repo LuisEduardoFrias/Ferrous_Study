@@ -84,10 +84,8 @@ router.post('/', requireAuth(), async (req, res) => {
 });
 
 router.put('/', requireAuth(), async (req, res) => {
-  console.log('probando');
-
   const { fileName, content, type } = req.body;
-  const monthsage = "update file markdown";
+  const monthsage = `Uodate the ${fileName} file.`;
 
   let fullPath = '';
 
@@ -96,7 +94,7 @@ router.put('/', requireAuth(), async (req, res) => {
   else
     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  const resultUpdate = await updateFile(fullPath, content, monthsage);
+  const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
 
   res.json({ resultUpdate });
 
@@ -115,8 +113,8 @@ async function updateFile(fullPath, content, monthsage) {
         { path: fullPath, content, monthsage, sha: fileInfo.data.sha },
       ]);
 
-      console.log('Respuesta de actualización:', resultUpdate);
-
+      //   console.log('Respuesta de actualización:', resultUpdate);
+      //
       return resultUpdate;
     }
   } catch (error) {

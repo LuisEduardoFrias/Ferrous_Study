@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import type { ChangeEvent } from 'react'
-import searchj from '../jsons/searchj.json'
+//import searchj from '../jsons/searchj.json'
 import { githubService } from '../services/github_service'
 import { useStore } from '../state_warehouse/index'
 
@@ -30,7 +30,7 @@ export default function useFilter() {
     }
 
     if (search === '') {
-      on_search_data({ show: false, data: searchj.content });
+      on_search_data({ show: false, data: [] });
       setLoading(false);
       return;
     }

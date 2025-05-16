@@ -5,9 +5,11 @@ import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import Loading from '../components/loading'
 import Notify from '../components/notify';
+import { useStore } from '../state_warehouse/index'
 
 export default function NewMarkdown() {
   useTitle('Crear nueva clase')
+  const initial_state = useStore((state) => state.initial_state)
   const { dialogRef: verifyRef, open: openV, close: closeV } = useDialog();
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
@@ -58,6 +60,7 @@ export default function NewMarkdown() {
     setShowLoading(false);
 
     if (result?.data) {
+      initial_state();
       setNewClassId('');
       setTextValue(' ');
       setKeywords(' ');

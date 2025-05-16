@@ -44,7 +44,7 @@
       {
         "key": "0-4",
         "to": "/classroom/$classroomId",
-        "text": "Ejemplos de codigo",
+        "text": "Ejemplose codigo",
         "displayQuality": "",
         "params": {
           "classroomId": "ejercicios_ejemplos_codigo"
@@ -134,7 +134,7 @@
         "text": "Expresiones if",
         "displayQuality": "",
         "params": {
-          "classroomId": "new"
+          "classroomId": "expresiones_if"
         }
       },
       {
@@ -143,7 +143,7 @@
         "text": "Bucles",
         "displayQuality": "",
         "params": {
-          "classroomId": "new"
+          "classroomId": "bucles"
         }
       },
       {
@@ -152,7 +152,7 @@
         "text": "Break y continue",
         "displayQuality": "",
         "params": {
-          "classroomId": "new"
+          "classroomId": "loop_bucle"
         }
       },
       {
@@ -161,25 +161,54 @@
         "text": "Bloques y ámbitos",
         "displayQuality": "",
         "params": {
-          "classroomId": "new"
+          "classroomId": "for_bucle"
         }
       }
     ]
   },
   {
     "key": "3",
+    "to": "/classroom/$classroomId",
+    "text": "Collatz",
+    "displayQuality": "",
+    "params": {
+      "classroomId": "collats"
+    },
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      },
+      {
+        "key": "3-1",
+        "to": "/classroom/$classroomId",
+        "text": "Solución Colltz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "loop_bucle"
+        }
+      }
+    ]
+  },
+  {
+    "key": "4",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "4",
+    "key": "5",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "5",
+    "key": "6",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""

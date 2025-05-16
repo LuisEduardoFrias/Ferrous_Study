@@ -10,19 +10,24 @@ import Notify from '../components/notify';
 import { toCamelCase } from '../hooks/to_camel_case';
 import { splitMenuOptions } from '../hooks/split_menu_options';
 import { useStore } from '../state_warehouse/index'
+import Loading from '../components/loading'
 
 export default function Menu() {
   useTitle('Configuracion del menu')
   const dataMenu = useStore((state) => state.dataMenu);
   const dataClass = useStore((state) => state.dataClass);
+  const initial_state = useStore((state) => state.initial_state);
   const [content, setContent] = useState<TMenu[]>([]);
   const [optionHidden, setOptionHidden] = useState<TMenu[]>([]);
   const [classroomIdsArray, setClassroomIdsArray] = useState<TClass[]>([]);
   const [editable, setEditable] = useState('');
   const [loading, setLoading] = useState(false);
+  const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
   const { dialogRef, open, close } = useDialog();
   const divRef = useRef<HTMLDivElement>({});
   const inputRefs = useRef<HTMLInputElement>({});
+  const [showLoading, setShowLoading] = useState(false);
+  const [contentErrorMessage, setContentErrorMessage] = useState('');
 
   useEffect(() => {
     setLoading(true);
@@ -56,7 +61,7 @@ export default function Menu() {
   }
 
   function handlerAdd(keys?: string[]) {
-    const link: string = "new";
+    const link: string = "/classroom/$classroomId";
 
     setContent(prevContent => {
       const newContent = [...prevContent];
@@ -139,19 +144,26 @@ export default function Menu() {
 
   function handlerSave() {
     setLoading(true);
+    close();
     (async () => {
       try {
-
+        setShowLoading(true);
         const lastItem = content.at(-1);
         const id = parseInt(lastItem.key) + 1;
 
         const newContent = [...content];
-        newContent.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: (id + index).toString() })))
+        newContent.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: (id + index).toString() })));
 
-        // const result = await githubService.updateFileContent("menu", content, 'json');
-        // console.log(JSON.parse(result));
-        console.log(JSON.stringify(newContent, null, 2));
-        close();
+        const result = await githubService.updateFileContent("menu", newContent, 'json');
+        //console.log(result);
+        // const result = { message: "se guardo", data: {} };
+        setContentErrorMessage(result?.message);
+
+        if (result.data) {
+          initial_state();
+          setShowLoading(false);
+          openContentNotify();
+        }
       } catch (error) {
         console.error("Error updating menu:", error);
       } finally {
@@ -178,6 +190,25 @@ export default function Menu() {
           ¡Se guardaran los datos!
         </span >
       </Notify>
+      <Notify
+        ref={notifyContentRef}
+        okey={closeContentNotify}
+      >
+        <span className="block text-xl font-semibold text-red-600 dark:text-red-400 mb-2">
+          ¡Atención!
+        </span>
+        <span className="block text-base text-gray-700 dark:text-gray-300">
+          {contentErrorMessage}
+        </span>
+      </Notify>
+
+      {showLoading &&
+        <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="w-full h-44">
+            <Loading classText="text-theme-3 font-extrabold" />
+          </div>
+        </div>
+      }
       <div className="w-[34rem] px-2 mt-3">
         <Ul
           onChange={handlerChange}
