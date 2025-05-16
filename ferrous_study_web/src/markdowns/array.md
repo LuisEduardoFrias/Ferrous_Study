@@ -1,1 +1,20 @@
-"## Arrays\n\n### pruebas:\n- P1\n- P2\n- P3\n\n```rust\nfn main() {\n    let mut a: [i8; 10] = [42; 10];\n    a[5] = 0;\n    println!(\"a: {a:?}\");\n}\n```\n\nThis slide should take about 5 minutes.\nUn valor del tipo array [T; N] contiene N (una constante en tiempo de compilación) elementos del mismo tipo T. Ten en cuenta que la longitud del array es _parte de su tipo), lo que significa que [u8; 3] y [u8; 4] se consideran dos tipos diferentes. Los slices, que tienen un tamaño determinado al tiempo de ejecución, serán discutidos mas tarde.\n\nPrueba a acceder a un array que esté fuera de los límites. Los accesos a los arrays se comprueban en el tiempo de ejecución. Rust suele optimizar estas comprobaciones y se pueden evitar utilizando Rust inseguro.\n\nPodemos usar literales para asignar valores a arrays.\n\nEl macro de impresión println! solicita la implementación de depuración con el parámetro de formato ?: {} ofrece la salida predeterminada y {:?} ofrece la salida de depuración. Tipos como números enteros y cadenas implementan la salida de depuración. Esto significan que tenemos que usar la salida de depuración en este caso.\n\nSi se añade #, por ejemplo {a:#?}, se da formato al texto para facilitar la lectura."
+## Arrays
+
+### pruebas:
+- P1
+- P2
+- P3
+
+```rust
+fn main() {
+    let mut a: [i8; 10] = [42; 10];
+    a[5] = 0;
+    println!(\"a: {a:?}\");
+}
+```
+Notitas slide should take about 5 minutes.
+Un valor del tipo array [T; N] contiene N (una constante en tiempo de compilación) elementos del mismo tipo T. Ten en cuenta que la longitud del array es _parte de su tipo), lo que significa que [u8; 3] y [u8; 4] se consideran dos tipos diferentes. Los slices, que tienen un tamaño determinado al tiempo de ejecución, serán discutidos mas tarde.
+
+Prueba a acceder a un array que esté fuera de los límites. Los accesos a los arrays se comprueban en el tiempo de ejecución. Rust suele optimizar estas comprobaciones y se pueden evitar utilizando Rust inseguro.
+
+Podemos usar literales para asignar valores a arrays.\n\nEl macro de impresión println! solicita la implementación de depuración con el parámetro de formato ?: {} ofrece la salida predeterminada y {:?} ofrece la salida de depuración. Tipos como números enteros y cadenas implementan la salida de depuración. Esto significan que tenemos que usar la salida de depuración en este caso.\n\nSi se añade #, por ejemplo {a:#?}, se da formato al texto para facilitar la lectura.
