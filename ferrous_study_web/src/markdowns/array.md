@@ -1,9 +1,4 @@
 ## Arrays
-### otra prueba
-### pruebas:
-- P1
-- P2
-- P3
 
 ```rust
 fn main() {
