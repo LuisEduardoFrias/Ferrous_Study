@@ -6,7 +6,8 @@
   padding-inline-start: 2px;
   border: 1px solid var(--theme-3);
   border-radius: 50px;
-  width: 200px;
+
+
 }
 
 .search:has(input[type='search']:focus) {
@@ -27,7 +28,7 @@
 }
 
 .search input[type='search']:focus {
-      width: 150px;
+      
       outline: none;
     }
     

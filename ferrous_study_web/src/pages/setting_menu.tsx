@@ -36,7 +36,7 @@ export default function Menu() {
     } finally {
       setLoading(false);
     }
-  }, [dataClass, dataMenu]);
+  }, []);
 
   useEffect(() => {
     if (editable && inputRefs.current[editable]) {

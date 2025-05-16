@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from "cookie-parser";
-
+import { clerkMiddleware } from '@clerk/express'
 import { PORT, /*PROTOCOL, DOMAIN, */ } from '../src/config.js';
 import configCors from '../src/config_cors.js';
 //
@@ -34,13 +34,11 @@ app.use(cookieParser());
 app.use(morgan('dev')); // combined
 
 app.use(cors());
+app.use(clerkMiddleware())
 //app.use(cors(configCors));
 
 //routers
 app.use(home);
-// app.use(session);
-// app.use('/product', phoneProduct);
-// app.use('/admin', admin);
 
 //
 app.listen(PORT, () => {

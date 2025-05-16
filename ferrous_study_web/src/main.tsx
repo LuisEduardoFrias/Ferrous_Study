@@ -1,7 +1,8 @@
-import { StrictMode ,useEffect} from 'react'
+import { StrictMode, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { ClerkProvider } from '@clerk/clerk-react'
+import { Clerk } from '@clerk/clerk-js'
 import { routeTree } from './routeTree.gen'
 import { Actions } from '../state_warehouse'
 import { useActions } from 'subscriber_state'
@@ -21,6 +22,12 @@ const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
+
+
+const clerk = new Clerk(PUBLISHABLE_KEY);
+await clerk.load();
+  (window as any).clerk = clerk;
+
 
 const rootElement = document.getElementById('root')!
 

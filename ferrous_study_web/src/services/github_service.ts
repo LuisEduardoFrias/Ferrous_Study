@@ -1,6 +1,12 @@
 // github_service.ts
+//import { auth } from "@clerk/clerk-react";
+async function auth() {
+  const clerk = (window as any).clerk;
+  return { token: await clerk?.session.getToken({ template: 'Test' }) };
+}
 
-const API_BASE_URL = 'http://localhost:3000'; // Ajusta la URL base si es diferente
+const API_BASE_URL = import.meta.env.VITE_PI_BASE_URL;
+//const API_BASE_URL = import.meta.env.BASE_URL;
 
 export type FileContentResponse = {
   content?: string | null;
@@ -19,8 +25,15 @@ export const githubService = {
    * @returns Una promesa que resuelve al contenido del archivo o null si hay un error.
    */
   async getFileContent(fileName: string, type: 'markdown' | 'json'): Promise<string | null> {
+    const { token } = await auth();
+
     try {
-      const response = await fetch(`${API_BASE_URL}/${fileName}/${type}`);
+      const response = await fetch(`${API_BASE_URL}/${fileName}/${type}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
       if (!response.ok) {
         console.error(`Error al obtener el contenido de ${fileName}.${type}:`, response.status);
         return null;
@@ -39,8 +52,14 @@ export const githubService = {
    * @returns Una promesa que resuelve a un arreglo de informacion o o null si hay un error.
    */
   async searchContent(search: string): Promise<string | null> {
+    const { token } = await auth();
+
     try {
-      const response = await fetch(`${API_BASE_URL}/${search}`);
+      const response = await fetch(`${API_BASE_URL}/${search}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
 
       if (!response.ok) {
         console.error(`Error al buscar '${search}':`, response.status);
@@ -60,21 +79,27 @@ export const githubService = {
    * @param content El contenido del archivo.
    * @returns Una promesa que resuelve a la respuesta de la creación del archivo.
    */
-  async createMarkdownFile(fileName: string, content: string): Promise<FileOperationResponse> {
+  async createMarkdownFile(fileName: string, content: string): Promise<{ message: string, data?: any }> {
+    const { token } = await auth();
+
     try {
       const response = await fetch(API_BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ fileName, content }),
       });
+
       if (!response.ok) {
         console.error(`Error al crear el archivo ${fileName}.md:`, response.status);
-        throw new Error(`Error al crear el archivo: ${response.status}`);
+        return { message: 'Error al crear el la nueva clase' };
+        // throw new Error(`Error al crear el archivo: ${response.status}`);
       }
+
       const data: FileOperationResponse = await response.json();
-      return data;
+      return { message: 'Clase crrada con exito.', data };
     } catch (error) {
       console.error(`Error al crear el archivo ${fileName}.md:`, error);
       throw error;
@@ -89,20 +114,24 @@ export const githubService = {
    * @returns Una promesa que resuelve a la respuesta de la actualización del archivo.
    */
   async updateFileContent(fileName: string, content: string, type: 'markdown' | 'json'): Promise<FileOperationResponse> {
+    const { token } = await auth();
+
     try {
       const response = await fetch(API_BASE_URL, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({ fileName, content, type }),
       });
       if (!response.ok) {
         console.error(`Error al actualizar el archivo ${fileName}.${type}:`, response.status);
-        throw new Error(`Error al actualizar el archivo: ${response.status}`);
+        // throw new Error(`Error al actualizar el archivo: ${response.status}`);
       }
       const data: FileOperationResponse = await response.json();
       return data;
+
     } catch (error) {
       console.error(`Error al actualizar el archivo ${fileName}.${type}:`, error);
       throw error;

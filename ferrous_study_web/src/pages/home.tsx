@@ -9,7 +9,7 @@ export default function Home({ userId }: { userId: string }) {
   return (
     <div className="p-2">
       <img src={ferrous} className="bg-[#ffffff] w-full" alt="ferrous gif" />
-      <h1 className="flex gap-1 font-bold -md:text-3xl justify-center items-center">
+      <h1 className="flex gap-1 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
         Bienvenido {userId} a Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
       </h1>
       <br />

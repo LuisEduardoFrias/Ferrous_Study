@@ -6,7 +6,7 @@ import '../styles/notify.css'
 type TypeValidstionsProps = {
   children: ReactNode,
   okey: () => void,
-  cancel: () => void
+  cancel?: () => void
 }
 
 const Notify = forwardRef<HTMLDialogElement, TypeValidstionsProps>(function Notify({ children, okey, cancel }: TypeValidstionsProps, ref: ForwardedRef<HTMLDialogElement>) {
@@ -23,9 +23,11 @@ const Notify = forwardRef<HTMLDialogElement, TypeValidstionsProps>(function Noti
         className="modal w-5/6 mx-4 max-w-[800px] bg-[#202020cb] text-theme-0  ">
         {children}
         <footer>
+          {cancel &&
           <button onClick={() => cancel()}>
             Cancelar
           </button>
+          }
           <button onClick={() => okey()}>
             Okey
           </button>

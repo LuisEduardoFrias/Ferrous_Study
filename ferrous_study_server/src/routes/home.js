@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { GithubCore } from '../helpers/github.js';
 import { searchFilter } from '../helpers/search.js';
+import { clerkClient, requireAuth, getAuth } from '@clerk/express'
 
 const router = express.Router();
 
@@ -32,13 +33,16 @@ router.get('/:search', async (req, res) => {
     GithubCore.getFileContent(fullPathClass)
   ]);
 
-  const content = searchFilter(search,contentMenu, contentClass);
+  const content = searchFilter(search, contentMenu, contentClass);
 
   res.json({ content });
 });
 
-router.post('/', async (req, res) => {
+router.post('/', requireAuth(), async (req, res) => {
   const { fileName, content } = req.body;
+
+  // const { userId } = getAuth(req)
+  //   const user = await clerkClient.users.getUser(userId)
 
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
   const message = "new file markdown";
@@ -57,7 +61,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.put('/', async (req, res) => {
+router.put('/', requireAuth(), async (req, res) => {
   console.log('probando');
 
   const { fileName, content, type } = req.body;
@@ -89,7 +93,6 @@ router.put('/', async (req, res) => {
     console.log('try catch put error: ', error)
   }
 });
-
 
 const Home = router;
 export default Home;

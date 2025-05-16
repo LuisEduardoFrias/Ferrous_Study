@@ -1,7 +1,10 @@
 import { redirect } from '@tanstack/react-router';
 
-export async function verifyAuthentication({ location }) {
-  if (!Clerk.user) {
+export function verifyAuthentication({ location }) {
+
+  const clerk = (window as any).clerk;
+
+  if (!clerk.user) {
     throw redirect({
       to: '/signinup',
       search: {
@@ -10,3 +13,7 @@ export async function verifyAuthentication({ location }) {
     });
   }
 }
+
+  // const canManageSettings = clerk.session.checkAuthorization({
+  //     permission: 'org:team_settings:manage',
+  //   })
