@@ -171,9 +171,6 @@
     "to": "/classroom/$classroomId",
     "text": "Collatz",
     "displayQuality": "",
-    "params": {
-      "classroomId": "collats"
-    },
     "subMenu": [
       {
         "key": "3-0",
