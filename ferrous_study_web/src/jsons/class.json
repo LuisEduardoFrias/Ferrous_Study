@@ -3,14 +3,14 @@
     "key": "0",
     "name": "que_es_rust",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -25,14 +25,14 @@
     "key": "1",
     "name": "ventajas_de_rust",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -49,14 +49,14 @@
     "key": "3",
     "name": "ecosistema_rust",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -72,14 +72,14 @@
     "key": "4",
     "name": "cargo",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -94,14 +94,14 @@
     "key": "5",
     "name": "ejercicios_ejemplos_codigo",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -115,14 +115,14 @@
     "key": "6",
     "name": "variables",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -136,14 +136,14 @@
     "key": "7",
     "name": "valores",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -157,14 +157,14 @@
     "key": "8",
     "name": "aritmetica",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -178,14 +178,14 @@
     "key": "9",
     "name": "inferencia_tipos",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -199,14 +199,14 @@
     "key": "10",
     "name": "eje_fibonacci",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
@@ -220,19 +220,94 @@
     "key": "11",
     "name": "solu_fibonacci",
     "addInfo": {
-      "addData": "12/04/2025",
+      "addData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
     "updateInfo": {
-      "updateData": "12/04/2025",
+      "updateData": "12/05/2025",
       "user": {
         "key": "0",
         "name": "Admin.Rust27"
       }
     },
+    "keywords": [
+      "punteros"
+    ]
+  },
+  {
+    "key": "12",
+    "name": "expresiones_if",
+    "addInfo": {
+      "addData": "16/05/2025",
+      "user": {
+        "key": "0",
+        "name": "Admin.Rust27"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "punteros"
+    ]
+  },
+  {
+    "key": "13",
+    "name": "bucles",
+    "addInfo": {
+      "addData": "16/05/2025",
+      "user": {
+        "key": "0",
+        "name": "Admin.Rust27"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "punteros"
+    ]
+  },
+  {
+    "key": "13",
+    "name": "for_bucle",
+    "addInfo": {
+      "addData": "16/05/2025",
+      "user": {
+        "key": "0",
+        "name": "Admin.Rust27"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "punteros"
+    ]
+  },
+  {
+    "key": "14",
+    "name": "loop_bucle",
+    "addInfo": {
+      "addData": "16/05/2025",
+      "user": {
+        "key": "0",
+        "name": "Admin.Rust27"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "punteros"
+    ]
+  },
+  {
+    "key": "15",
+    "name": "break_continue.md",
+    "addInfo": {
+      "addData": "16/05/2025",
+      "user": {
+        "key": "0",
+        "name": "Admin.Rust27"
+      }
+    },
+    "updateInfo": null,
     "keywords": [
       "punteros"
     ]
