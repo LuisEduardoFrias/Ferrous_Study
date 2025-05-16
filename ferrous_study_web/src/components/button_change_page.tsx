@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback, memo } from 'react'
 import { ArrowRightIcon } from '../assets/svgs'
 import { Link } from '@tanstack/react-router'
 import type { TMenu } from '../types/menu'
@@ -10,18 +10,19 @@ type classOrder = {
   to: string;
 }
 
-export default function ButtonChangePage({ classroomId }: { classroomId: string }) {
+function ButtonChangePage({ classroomId }: { classroomId: string }) {
   const dataMenu = useStore((state) => state.dataMenu)
   const [isShow, setShow] = useState(false);
   const [btnOption, setBtnOptions] = useState<{ menu: classOrder[], index: number }>();
   const TRANSITION = "transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";
-
+  const timer = useRef();
+  
   useEffect(() => {
     if (isShow) {
-      const timer = setTimeout(() => {
+      timer.current = setTimeout(() => {
         setShow(false)
       }, 4000)
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer.current);
     }
   }, [isShow]);
 
@@ -29,16 +30,27 @@ export default function ButtonChangePage({ classroomId }: { classroomId: string 
     const menu = convertMenu(dataMenu);
     const index = menu.findIndex((obj) => obj.classroomId.classroomId === classroomId)
     setBtnOptions({ menu, index });
-  }, [classroomId]);
+  }, [classroomId, dataMenu]);
 
-  function getOptionRight(index: number) {
+  function reTimer() {
+    clearTimeout(timer.current);
+
+    timer.current = setTimeout(() => {
+      setShow(false)
+    }, 4000)
+  }
+
+  const getOptionRight = useCallback((index: number) => {
+    reTimer();
     return btnOption?.menu[btnOption?.index + 1]
-  }
-  function getOptionLeft(index: number) {
-    return btnOption?.menu[btnOption?.index - 1]
-  }
+  }, [btnOption]);
 
-  function convertMenu(menuItems: TMenu[]): classOrder[] {
+  const getOptionLeft = useCallback((index: number) => {
+    reTimer();
+    return btnOption?.menu[btnOption?.index - 1]
+  }, [btnOption]);
+
+  const convertMenu = useCallback((menuItems: TMenu[]): classOrder[] => {
     const routes: classOrder[] = [];
 
     function processItem(item: MenuItem) {
@@ -57,10 +69,10 @@ export default function ButtonChangePage({ classroomId }: { classroomId: string 
     }
 
     return routes;
-  }
+  }, [])
 
   return (
-    <div className="fixed left-0 w-full top-1/2 flex items-center justify-between px-3">
+    <div name="button_chnage_page" className="fixed left-0 w-full top-1/2 flex items-center justify-between px-3">
       <button disabled={!getOptionLeft()} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
         <Link
           to={getOptionLeft()?.to}
@@ -83,3 +95,5 @@ export default function ButtonChangePage({ classroomId }: { classroomId: string 
     </div>
   )
 }
+
+export default memo(ButtonChangePage);

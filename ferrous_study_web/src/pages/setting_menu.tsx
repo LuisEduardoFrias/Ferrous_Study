@@ -73,7 +73,7 @@ export default function Menu() {
             if (item.key === targetKey) {
               const newSubKey = item.subMenu ? `${targetKey}-${item.subMenu.length}` : `${targetKey}-0`;
               const newItem: TMenu = { key: newSubKey, to: link, text: '', displayQuality: '' };
-              return { ...item, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
+              return { ...item, params: null, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
             }
             return item;
           });
@@ -156,7 +156,7 @@ export default function Menu() {
 
         const result = await githubService.updateFileContent("menu", newContent, 'json');
         //console.log(result);
-        // const result = { message: "se guardo", data: {} };
+       // const result = { message: "se guardo", data: {} };
         setContentErrorMessage(result?.message);
 
         if (result.data) {
