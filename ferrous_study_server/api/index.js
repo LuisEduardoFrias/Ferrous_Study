@@ -24,7 +24,7 @@ app.use(clerkMiddleware());
 
 app.use(express.static(path.join(__dirname, '../dist')));
 
-app.use('/', home);
+app.use('/api', home);
 
 app.use('/{*path}', (req, res) => {
   res.sendFile(path.join(__dirname, "../dist", "index.html"));

@@ -1,8 +1,8 @@
-import express from 'express'
-import path from 'path'
-import { GithubCore } from '../helpers/github.js'
-import { searchFilter } from '../helpers/search.js'
-import { clerkClient, requireAuth, getAuth } from '@clerk/express'
+import express from 'express';
+import path from 'path';
+import { GithubCore } from '../helpers/github.js';
+import { searchFilter } from '../helpers/search.js';
+import { clerkClient, requireAuth, getAuth } from '@clerk/express';
 
 const router = express.Router();
 
@@ -85,23 +85,21 @@ router.get('/:search', async (req, res) => {
 router.post('/', requireAuth(), async (req, res) => {
   const { fileName, content, keywords } = req.body;
 
-  const { userId } = getAuth(req)
-  const user = await clerkClient.users.getUser(userId)
-
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
   const monthsage = `Creaded a new markdown file, ${fileName}`;
 
   try {
 
-    const resulCreate = await GithubCore.createFiles([
-      { path: fullPath, content, monthsage },
-    ]);
+    const resulCreate = await GithubCore.createFiles([{ path: fullPath, content, monthsage },]);
 
     if (resulCreate[0].status === 201) {
       const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
 
       const content = await GithubCore.getFileContent(fullPathClass);
       const class_ = JSON.parse(content);
+
+      const { userId } = getAuth(req);
+      const user = await clerkClient.users.getUser(userId);
 
       class_.push({
         key: class_.length,
@@ -115,15 +113,15 @@ router.post('/', requireAuth(), async (req, res) => {
         },
         updateInfo: null,
         keywords: keywords
-      })
+      });
 
-      const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `add ${fileName} obj to the json of class file`);
+      const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
       //resultUpdate[0].status === 200
     }
 
     res.json({ resulCreate });
   } catch (error) {
-    console.log("try catch error: ", error)
+    console.log("try catch error: ", error);
   }
 });
 
@@ -185,6 +183,37 @@ router.put('/', requireAuth(), async (req, res) => {
 
   const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
 
+  if (resultUpdate[0].status !== 404 && type === 'markdown') {
+
+    const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
+
+    const content = await GithubCore.getFileContent(fullPathClass);
+    const class_ = JSON.parse(content);
+
+    const { userId } = getAuth(req);
+    const user = await clerkClient.users.getUser(userId);
+
+    const index = class_.findIndex((obj) => obj.name === fileName);
+
+    if (index > 0) {
+
+      class_[index] = {
+        ...class_[index],
+        updateInfo: {
+          updateData: getData(),
+          user: {
+            key: userId,
+            name: user.fullName
+          }
+        }
+      };
+    }
+
+
+    const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
+
+  }
+
   res.json({ resultUpdate });
 
 });
@@ -236,19 +265,19 @@ async function updateFile(fullPath, content, monthsage) {
         { path: fullPath, content, monthsage, sha: fileInfo.data.sha },
       ]);
 
-      //   console.log('Respuesta de actualización:', resultUpdate);
+      // console.log('Respuesta de actualización:', resultUpdate);
       //
       return resultUpdate;
     }
   } catch (error) {
-    console.log('try catch put error: ', error)
+    console.log('try catch put error: ', error);
   }
 }
 
 function getData() {
   const today = new Date();
   const day = today.getDate().toString().padStart(2, '0');
-  const month = (today.getMonth() + 1).toString().padStart(2, '0'); // Los monthes en JS van de 0 a 11
+  const month = (today.getMonth() + 1).toString().padStart(2, '0');
   const year = today.getFullYear();
   return `${day}/${month}/${year}`;
 }

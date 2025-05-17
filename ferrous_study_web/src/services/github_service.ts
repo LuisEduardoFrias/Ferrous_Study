@@ -6,7 +6,7 @@ async function auth() {
 }
 
 const API_BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_FULL_API_BASE_URL : '';
-const FULL_API_BASE_URL = `${API_BASE_URL}api/`;
+const FULL_API_BASE_URL = `${API_BASE_URL}/api`;
 //const FULL_API_BASE_URL = import.meta.env.BASE_URL;
 
 export type FileContentResponse = {
@@ -27,9 +27,12 @@ export const githubService = {
    */
   async getFileContent(fileName: string, type: 'markdown' | 'json'): Promise<string | null> {
     const { token } = await auth();
+    const pathCon = `${FULL_API_BASE_URL}/${fileName}/${type}`;
+
+
 
     try {
-      const response = await fetch(`${FULL_API_BASE_URL}${fileName}/${type}`, {
+      const response = await fetch(pathCon, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -55,8 +58,12 @@ export const githubService = {
   async searchContent(search: string): Promise<TMenu[] | null> {
     // const { token } = await auth();
 
+    const pathCon = `${FULL_API_BASE_URL}/${search}`;
+
+
+
     try {
-      const response = await fetch(`${FULL_API_BASE_URL}${search}`)/*, {
+      const response = await fetch(pathCon)/*, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -83,8 +90,13 @@ export const githubService = {
   async createMarkdownFile(fileName: string, content: string, keywords: string[]): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
+    const pathCon = FULL_API_BASE_URL;
+
+
+
+
     try {
-      const response = await fetch(FULL_API_BASE_URL, {
+      const response = await fetch(pathCon, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,8 +129,10 @@ export const githubService = {
   async updateFileContent(fileName: string, content: string | TMenu[], type: 'markdown' | 'json'): Promise<{ message: string, data?: any }> {
     const { token } = await auth();
 
+    const pathCon = FULL_API_BASE_URL;
+
     try {
-      const response = await fetch(FULL_API_BASE_URL, {
+      const response = await fetch(pathCon, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
