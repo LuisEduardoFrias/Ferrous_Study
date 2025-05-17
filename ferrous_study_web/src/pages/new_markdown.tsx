@@ -1,4 +1,4 @@
-import { useState,ChangeEvent } from 'react'
+import { useState, ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
 import { useTitle } from '../hooks/use_title'
@@ -14,7 +14,7 @@ export default function NewMarkdown() {
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
-  const [newClassId, setNewClassId] = useState<string>('');
+  const [newClassId, setNewClassId] = useState<string>();
   const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
   const [showLoading, setShowLoading] = useState(false);
@@ -55,7 +55,7 @@ export default function NewMarkdown() {
     }
 
     setShowLoading(true);
-    const result = await githubService.createMarkdownFile(newClassId, textValue, keywords.split(','));
+    const result = await githubService.createMarkdownFile(newClassId as string, textValue, keywords.split(','));
     setContentErrorMessage(result?.message);
     setShowLoading(false);
 
@@ -138,7 +138,7 @@ export default function NewMarkdown() {
       </Notify>
 
       {showLoading &&
-        <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">
             <Loading classText="text-theme-4 font-extrabold" />
           </div>

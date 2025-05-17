@@ -21,6 +21,20 @@ const tools: Tool[] = [
       'Editor de código potente y ligero para Android. Ofrece resaltado de sintaxis para múltiples lenguajes, autocompletado, búsqueda y reemplazo, y la capacidad de editar archivos locales y remotos.',
   },
   {
+    name: 'Clerk',
+    url: 'https://clerk.com/',
+    description:
+      `Clerk es una plataforma que simplifica la autenticación y gestión de usuarios para aplicaciones web y móviles. En lugar de construir estos sistemas desde cero, los desarrolladores pueden integrar Clerk en sus aplicaciones para manejar de forma segura tareas como:
+     
+      * Registro e inicio de sesión de usuarios.
+      * Gestión de perfiles de usuario.
+      * Gestión de sesiones.
+      * Control de acceso y autorización.
+      * Soporte para organizaciones y equipos.
+      
+      Clerk se integra fácilmente con varios frameworks y lenguajes de programación, especialmente aquellos modernos como Next.js, React, Remix y Expo. Ofrece componentes de interfaz de usuario preconstruidos y APIs flexibles para adaptarse a las necesidades de cada aplicación.`,
+  },
+  {
     name: 'React',
     url: 'https://react.dev/',
     description:

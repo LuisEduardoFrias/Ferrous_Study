@@ -24,6 +24,8 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
 
   useEffect(() => {
     (async () => {
+      setShowLoading(true);
+
       const result = await get<string | null>(editClassroomId, async () => {
         return await githubService.getFileContent(editClassroomId, 'markdown');
       });
@@ -43,6 +45,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
 
       //TODO evaluar posibke vslor null
       setContent(result ?? '');
+      setShowLoading(false);
     })()
   }, [editClassroomId])
 
@@ -69,7 +72,6 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       await githubService.updateFileContent(editClassroomId, textValue, 'markdown'),
       await githubService.updateFileContent('class', JSON.stringify(updateClass), 'json')
     ]);
-
 
     setContentErrorMessage(result?.message);
     clear(editClassroomId)

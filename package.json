@@ -4,8 +4,6 @@
   "description": "Curso de rust",
   "main": "index.js",
   "scripts": {
-    "start": "node --watch --env-file=.env ferrous_study_server/src/index.js",
-    "dev": "node --watch --env-file=.env ferrous_study_server/src/index.js"
   },
   "keywords": [
     "react",

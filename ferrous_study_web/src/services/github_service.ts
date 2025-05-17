@@ -5,8 +5,9 @@ async function auth() {
   return { token: await clerk?.session?.getToken({ template: 'Plantilla1' }) };
 }
 
-const API_BASE_URL = import.meta.env.VITE_PI_BASE_URL;
-//const API_BASE_URL = import.meta.env.BASE_URL;
+const API_BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_FULL_API_BASE_URL : '';
+const FULL_API_BASE_URL = `${API_BASE_URL}api/`;
+//const FULL_API_BASE_URL = import.meta.env.BASE_URL;
 
 export type FileContentResponse = {
   content?: string | null;
@@ -28,7 +29,7 @@ export const githubService = {
     const { token } = await auth();
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${fileName}/${type}`, {
+      const response = await fetch(`${FULL_API_BASE_URL}${fileName}/${type}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -55,7 +56,7 @@ export const githubService = {
     // const { token } = await auth();
 
     try {
-      const response = await fetch(`${API_BASE_URL}/${search}`)/*, {
+      const response = await fetch(`${FULL_API_BASE_URL}${search}`)/*, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -83,7 +84,7 @@ export const githubService = {
     const { token } = await auth();
 
     try {
-      const response = await fetch(API_BASE_URL, {
+      const response = await fetch(FULL_API_BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +118,7 @@ export const githubService = {
     const { token } = await auth();
 
     try {
-      const response = await fetch(API_BASE_URL, {
+      const response = await fetch(FULL_API_BASE_URL, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

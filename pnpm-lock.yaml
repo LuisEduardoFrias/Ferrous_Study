@@ -11,39 +11,23 @@ importers:
   ferrous_study_server:
     dependencies:
       '@clerk/express':
-        specifier: ^1.4.19
+        specifier: 1.4.19
         version: 1.4.19(express@5.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       cookie-parser:
-        specifier: ^1.4.7
+        specifier: 1.4.7
         version: 1.4.7
       cors:
-        specifier: ^2.8.5
+        specifier: 2.8.5
         version: 2.8.5
-      crypto-js:
-        specifier: ^4.2.0
-        version: 4.2.0
       express:
         specifier: ^5.1.0
         version: 5.1.0
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
       morgan:
-        specifier: ^1.10.0
+        specifier: 1.10.0
         version: 1.10.0
       octokit:
         specifier: 4.1.3
         version: 4.1.3
-    devDependencies:
-      eslint:
-        specifier: 9.13.0
-        version: 9.13.0(jiti@2.4.2)
-      typescript:
-        specifier: 5.6.2
-        version: 5.6.2
-      typescript-eslint:
-        specifier: 8.11.0
-        version: 8.11.0(eslint@9.13.0(jiti@2.4.2))(typescript@5.6.2)
 
   ferrous_study_web:
     dependencies:
@@ -1309,8 +1293,8 @@ packages:
     resolution: {integrity: sha512-NGlEHZDseJTCj8TMMFehzwa9g7On4KJMPVHDSrHxCQumL6uSQR8wIkP/qesv52fXqV1BPf4pTxwtS31ldAt9Xg==}
     engines: {node: '>= 18'}
 
-  '@octokit/webhooks@13.8.2':
-    resolution: {integrity: sha512-NgKpxIVp9MnEukvTF9s871v11bYTDZwpuyIYkU0ZIEM3d+DBOeiciIJPuCdjFMC1pQgv05MNKtdhbl8+Q+i3GA==}
+  '@octokit/webhooks@13.9.0':
+    resolution: {integrity: sha512-5Kva+/Gi7c+39d0/0MM/v/5RCZuwqm75fUD+t7Es3Iz/adui54GnjfNmJpkkPkXGC+5IWnEvgqwY6gstK/JlUQ==}
     engines: {node: '>= 18'}
 
   '@parcel/watcher-android-arm64@2.5.1':
@@ -2365,9 +2349,6 @@ packages:
     resolution: {integrity: sha512-Db1SbgBS/fg/392AblrMJk97KggmvYhr4pB5ZIMTWtaivCPMWLkmb7m21cJvpvgK+J3nsU2CmmixNBZx4vFj/w==}
     engines: {node: '>=8.0.0'}
 
-  buffer-equal-constant-time@1.0.1:
-    resolution: {integrity: sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA==}
-
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
 
@@ -2875,9 +2856,6 @@ packages:
 
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
-
-  ecdsa-sig-formatter@1.0.11:
-    resolution: {integrity: sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ==}
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
@@ -3725,19 +3703,9 @@ packages:
     engines: {node: '>=6'}
     hasBin: true
 
-  jsonwebtoken@9.0.2:
-    resolution: {integrity: sha512-PRp66vJ865SSqOlgqS8hujT5U4AOgMfhrwYIuIhfKaoSCZcirrmASQr8CX7cUg+RMih+hgznrjp99o+W4pJLHQ==}
-    engines: {node: '>=12', npm: '>=6'}
-
   junk@4.0.1:
     resolution: {integrity: sha512-Qush0uP+G8ZScpGMZvHUiRfI0YBWuB3gVBYlI0v0vvOJt5FLicco+IkP0a50LqTTQhmts/m6tP5SWE+USyIvcQ==}
     engines: {node: '>=12.20'}
-
-  jwa@1.4.2:
-    resolution: {integrity: sha512-eeH5JO+21J78qMvTIDdBXidBd6nG2kZjg5Ohz/1fpa28Z4CcsWUzJ1ZZyFq/3z3N17aZy+ZuBoHljASbL1WfOw==}
-
-  jws@3.2.2:
-    resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
 
   jwt-decode@4.0.0:
     resolution: {integrity: sha512-+KJGIyHgkGuIq3IEBNftfhW/LfWhXUIY6OmyVWjliu5KH1y0fw7VQ8YndE2O4qZdMSd9SqbnC8GOcZEy0Om7sA==}
@@ -3885,32 +3853,14 @@ packages:
   lodash.flatten@4.4.0:
     resolution: {integrity: sha512-C5N2Z3DgnnKr0LOpv/hKCgKdb7ZZwafIrsesve6lmzvZIRZRGaZ/l6Q8+2W7NaT+ZwO3fFlSCzCzrDCFdJfZ4g==}
 
-  lodash.includes@4.3.0:
-    resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
-
   lodash.isarguments@3.1.0:
     resolution: {integrity: sha512-chi4NHZlZqZD18a0imDHnZPrDeBbTtVN7GXMwuGdRH9qotxAjYs3aVLKc7zNOG9eddR5Ksd8rvFEBc9SsggPpg==}
-
-  lodash.isboolean@3.0.3:
-    resolution: {integrity: sha512-Bz5mupy2SVbPHURB98VAcw+aHh4vRV5IPNhILUCsOzRmsTmSQ17jIuqopAentWoehktxGd9e/hbIXq980/1QJg==}
-
-  lodash.isinteger@4.0.4:
-    resolution: {integrity: sha512-DBwtEWN2caHQ9/imiNeEA5ys1JoRtRfY3d7V9wkqtbycnAmTvRRmbHKDV4a0EYc678/dia0jrte4tjYwVBaZUA==}
-
-  lodash.isnumber@3.0.3:
-    resolution: {integrity: sha512-QYqzpfwO3/CWf3XP+Z+tkQsfaLL/EnUlXWVkIk5FUPc4sBdTehEqZONuyRt2P67PXAk+NXmTBcc97zw9t1FQrw==}
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
 
-  lodash.isstring@4.0.1:
-    resolution: {integrity: sha512-0wJxfxH1wgO3GrbuP+dTTk7op+6L41QCXbGINEmD+ny/G/eCqGzxyCsh7159S+mgDDcoarnBw6PC1PS5+wUGgw==}
-
   lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
-
-  lodash.once@4.1.1:
-    resolution: {integrity: sha512-Sb487aTOCr9drQVL8pIxOzVhafOjZN9UU54hiN8PU3uAiSV7lx1yYNpbNmex2PK6dSJoNTSJUUswT651yww3Mg==}
 
   lodash.union@4.6.0:
     resolution: {integrity: sha512-c4pB2CdGrGdjMKYLA+XiRDO7Y0PRQbm/Gzg8qMj+QH+pFVAoTp5sBpO0odL3FjoPCGjK96p6qsP+yQoiLoOBcw==}
@@ -5324,8 +5274,8 @@ packages:
   universal-github-app-jwt@2.2.2:
     resolution: {integrity: sha512-dcmbeSrOdTnsjGjUfAlqNDJrhxXizjAz94ija9Qw8YkZ1uu0d+GoZzyH+Jb9tIIqvGsadUfwg+22k5aDqqwzbw==}
 
-  universal-user-agent@7.0.2:
-    resolution: {integrity: sha512-0JCqzSKnStlRRQfCdowvqy3cy0Dvtlb8xecj/H8JFZuCze4rwjPZQOgvFvn0Ws/usCHQFGpyr+pB9adaGwXn4Q==}
+  universal-user-agent@7.0.3:
+    resolution: {integrity: sha512-TmnEAEAsBJVZM/AADELsK76llnwcf9vMKuPz8JflO1frO8Lchitr0fNaN9d+Ap0BjKtqWqd/J17qeDnXh8CL2A==}
 
   unixify@1.0.0:
     resolution: {integrity: sha512-6bc58dPYhCMHHuwxldQxO3RRNZ4eCogZ/st++0+fcC1nr0jiGUtAdBJ2qzmLQWSxbtz42pWt4QQMiZ9HvZf5cg==}
@@ -6714,7 +6664,7 @@ snapshots:
       '@octokit/oauth-app': 7.1.6
       '@octokit/plugin-paginate-rest': 12.0.0(@octokit/core@6.1.5)
       '@octokit/types': 14.0.0
-      '@octokit/webhooks': 13.8.2
+      '@octokit/webhooks': 13.9.0
 
   '@octokit/auth-app@7.2.1':
     dependencies:
@@ -6725,7 +6675,7 @@ snapshots:
       '@octokit/types': 14.0.0
       toad-cache: 3.7.0
       universal-github-app-jwt: 2.2.2
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/auth-oauth-app@8.1.4':
     dependencies:
@@ -6733,14 +6683,14 @@ snapshots:
       '@octokit/auth-oauth-user': 5.1.4
       '@octokit/request': 9.2.3
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/auth-oauth-device@7.1.5':
     dependencies:
       '@octokit/oauth-methods': 5.1.5
       '@octokit/request': 9.2.3
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/auth-oauth-user@5.1.4':
     dependencies:
@@ -6748,7 +6698,7 @@ snapshots:
       '@octokit/oauth-methods': 5.1.5
       '@octokit/request': 9.2.3
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/auth-token@5.1.2': {}
 
@@ -6765,18 +6715,18 @@ snapshots:
       '@octokit/request-error': 6.1.8
       '@octokit/types': 14.0.0
       before-after-hook: 3.0.2
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/endpoint@10.1.4':
     dependencies:
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/graphql@8.2.2':
     dependencies:
       '@octokit/request': 9.2.3
       '@octokit/types': 14.0.0
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/oauth-app@7.1.6':
     dependencies:
@@ -6787,7 +6737,7 @@ snapshots:
       '@octokit/oauth-authorization-url': 7.1.1
       '@octokit/oauth-methods': 5.1.5
       '@types/aws-lambda': 8.10.149
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/oauth-authorization-url@7.1.1': {}
 
@@ -6839,7 +6789,7 @@ snapshots:
       '@octokit/request-error': 6.1.8
       '@octokit/types': 14.0.0
       fast-content-type-parse: 2.0.1
-      universal-user-agent: 7.0.2
+      universal-user-agent: 7.0.3
 
   '@octokit/types@14.0.0':
     dependencies:
@@ -6847,7 +6797,7 @@ snapshots:
 
   '@octokit/webhooks-methods@5.1.1': {}
 
-  '@octokit/webhooks@13.8.2':
+  '@octokit/webhooks@13.9.0':
     dependencies:
       '@octokit/openapi-webhooks-types': 11.0.0
       '@octokit/request-error': 6.1.8
@@ -8331,8 +8281,6 @@ snapshots:
 
   buffer-crc32@1.0.0: {}
 
-  buffer-equal-constant-time@1.0.1: {}
-
   buffer-from@1.1.2: {}
 
   buffer@5.7.1:
@@ -8782,10 +8730,6 @@ snapshots:
   duplexer@0.1.2: {}
 
   eastasianwidth@0.2.0: {}
-
-  ecdsa-sig-formatter@1.0.11:
-    dependencies:
-      safe-buffer: 5.2.1
 
   ee-first@1.1.1: {}
 
@@ -9791,31 +9735,7 @@ snapshots:
 
   json5@2.2.3: {}
 
-  jsonwebtoken@9.0.2:
-    dependencies:
-      jws: 3.2.2
-      lodash.includes: 4.3.0
-      lodash.isboolean: 3.0.3
-      lodash.isinteger: 4.0.4
-      lodash.isnumber: 3.0.3
-      lodash.isplainobject: 4.0.6
-      lodash.isstring: 4.0.1
-      lodash.once: 4.1.1
-      ms: 2.1.3
-      semver: 7.7.1
-
   junk@4.0.1: {}
-
-  jwa@1.4.2:
-    dependencies:
-      buffer-equal-constant-time: 1.0.1
-      ecdsa-sig-formatter: 1.0.11
-      safe-buffer: 5.2.1
-
-  jws@3.2.2:
-    dependencies:
-      jwa: 1.4.2
-      safe-buffer: 5.2.1
 
   jwt-decode@4.0.0: {}
 
@@ -9950,23 +9870,11 @@ snapshots:
 
   lodash.flatten@4.4.0: {}
 
-  lodash.includes@4.3.0: {}
-
   lodash.isarguments@3.1.0: {}
-
-  lodash.isboolean@3.0.3: {}
-
-  lodash.isinteger@4.0.4: {}
-
-  lodash.isnumber@3.0.3: {}
 
   lodash.isplainobject@4.0.6: {}
 
-  lodash.isstring@4.0.1: {}
-
   lodash.merge@4.6.2: {}
-
-  lodash.once@4.1.1: {}
 
   lodash.union@4.6.0: {}
 
@@ -11802,7 +11710,7 @@ snapshots:
 
   universal-github-app-jwt@2.2.2: {}
 
-  universal-user-agent@7.0.2: {}
+  universal-user-agent@7.0.3: {}
 
   unixify@1.0.0:
     dependencies:
