@@ -212,18 +212,27 @@
   },
   {
     "key": "6",
+    "to": "/classroom/$classroomId",
+    "text": "Eje",
+    "displayQuality": "",
+    "params": {
+      "classroomId": "ejemplo"
+    }
+  },
+  {
+    "key": "7",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "7",
+    "key": "8",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "8",
+    "key": "9",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""
