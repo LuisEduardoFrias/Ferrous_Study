@@ -8,8 +8,6 @@ fn main() {
 }
 ```
 
-Otros 
-
 This slide should take about 5 minutes.
 Al igual que los arrays, las tuplas tienen una longitud fija.
 
