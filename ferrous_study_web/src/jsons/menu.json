@@ -212,18 +212,78 @@
   },
   {
     "key": "6",
+    "to": "/classroom/$classroomId",
+    "text": "566",
+    "displayQuality": "",
+    "subMenu": [
+      {
+        "key": "6-0",
+        "to": "/classroom/$classroomId",
+        "text": "Rtt",
+        "displayQuality": "",
+        "subMenu": [
+          {
+            "key": "6-0-0",
+            "to": "/classroom/$classroomId",
+            "text": "44",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "variables"
+            }
+          },
+          {
+            "key": "6-0-1",
+            "to": "/classroom/$classroomId",
+            "text": "54",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "valores"
+            }
+          }
+        ]
+      },
+      {
+        "key": "6-1",
+        "to": "/classroom/$classroomId",
+        "text": "Ttt",
+        "displayQuality": "",
+        "subMenu": [
+          {
+            "key": "6-1-0",
+            "to": "/classroom/$classroomId",
+            "text": "Rrr",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "expresiones_if"
+            }
+          },
+          {
+            "key": "6-1-1",
+            "to": "/classroom/$classroomId",
+            "text": "Tt",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "eje_fibonacci"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "7",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "7",
+    "key": "8",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "8",
+    "key": "9",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""
