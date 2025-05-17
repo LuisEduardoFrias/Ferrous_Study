@@ -1,4 +1,4 @@
-Ejercicio: secuencia de Collatz
+## Ejercicio: secuencia de Collatz
 La secuencia de Collatz se define de la siguiente manera, para n1 arbitrario mayor que cero:
 
 Si _ni_es 1, la secuencia termina en ni.
