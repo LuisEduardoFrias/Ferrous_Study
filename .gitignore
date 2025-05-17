@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.env
 ferrous_study_web/node_modules
 ferrous_study_web/node_modules
 ferrous_study_web/.env
@@ -28,3 +29,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
