@@ -1,21 +1,19 @@
-import express from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
-import cookieParser from "cookie-parser";
+import express from 'express'
+import cors from 'cors'
+import morgan from 'morgan'
+import cookieParser from "cookie-parser"
 import { clerkMiddleware } from '@clerk/express'
-import { PORT, /*PROTOCOL, DOMAIN, */ } from '../src/config.js';
-import configCors from '../src/config_cors.js';
+import { PORT, /*PROTOCOL, DOMAIN, */ } from '../src/config.js'
+import configCors from '../src/config_cors.js'
+import path from 'path'
+import { fileURLToPath } from 'url';
 //
 
-//sync tables dabe
-//import '../src/models/models_db.js';
-//
-// import session from '../src/routes/session.js';
-// import phoneProduct from '../src/routes/phone_product.js';
 import home from '../src/routes/home.js';
-// import admin from '../src/routes/admin.js';
-// import Socket from '../src/helpers/socket.js';
-// import Admin from '../src/controllers/admin_controller.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 //----------------------------
 
 const app = express();
@@ -35,6 +33,7 @@ app.use(morgan('dev')); // combined
 
 app.use(cors());
 app.use(clerkMiddleware())
+app.use(express.static(path.join(__dirname, '../../ferrous_study_web/dist')));
 //app.use(cors(configCors));
 
 //routers

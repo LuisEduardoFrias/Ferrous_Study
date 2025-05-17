@@ -3,7 +3,6 @@ import type { TClass } from '../types/class'
 //import { createWarehouse, update } from 'subscriber_state'
 import { githubService } from '../services/github_service'
 import type { CacheEntry } from '../hooks/use_memory_cache'
-import { ChangeEvent } from 'react'
 import { create } from 'zustand'
 
 //import JsonMenu from '../jsons/menu.json';

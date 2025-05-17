@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
 import { toCamelCase } from '../hooks/to_camel_case'
@@ -7,32 +7,69 @@ import { useDialog } from '../hooks/use_dialog'
 import Loading from '../components/loading'
 import Notify from '../components/notify'
 import { useMemoryCache } from '../hooks/use_memory_cache'
+import type { TClass } from '../types/class'
 
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
   useTitle(editClassroomId)
   const { get, clear } = useMemoryCache();
   const [content, setContent] = useState<string>('');
+  const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
   const [contentErrorMessage, setContentErrorMessage] = useState<string>('');
   const [showLoading, setShowLoading] = useState(false);
   const { dialogRef, open, close } = useDialog();
+  const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
   const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
+  const classRef = useRef<TClass[]>([]);
 
   useEffect(() => {
     (async () => {
       const result = await get<string | null>(editClassroomId, async () => {
         return await githubService.getFileContent(editClassroomId, 'markdown');
       });
-                  
+      const resultClass = await get<string | null>("class", async () => {
+        return await githubService.getFileContent('class', 'json');
+      });
+
+      if (resultClass) {
+        const deseClass = JSON.parse(resultClass);
+        const findClsss = deseClass.find((obj: TClass) => obj.name === editClassroomId);
+        classRef.current = deseClass;
+
+        if (findClsss) {
+          setKeywords(findClsss.keywords.join(','))
+        }
+      }
+
       //TODO evaluar posibke vslor null
       setContent(result ?? '');
     })()
   }, [editClassroomId])
 
+  const handleInputChangeKeywords = (event: ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value;
+    value = value.toLowerCase();
+    if (value.startsWith(' ')) return;
+    if (/^[0-9]/.test(value)) return;
+    const newValue = value.replace(/\s+/g, ',');
+    setKeywords(newValue);
+  };
+
   async function handlerSave() {
     setShowLoading(true)
     close();
-    const result = await githubService.updateFileContent(editClassroomId, textValue, 'markdown');
+    const updateClass = classRef.current.map((obj: TClass) => {
+      if (obj.name === editClassroomId) {
+        obj.keywords = keywords.split(',');
+      }
+      return obj;
+    });
+
+    const [result] = await Promise.all([
+      await githubService.updateFileContent(editClassroomId, textValue, 'markdown'),
+      await githubService.updateFileContent('class', JSON.stringify(updateClass), 'json')
+    ]);
+
 
     setContentErrorMessage(result?.message);
     clear(editClassroomId)
@@ -42,11 +79,13 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
 
   return (
     <div className="relative">
+
       <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
         <span className="block text-xl font-semibold text-gray-800 mb-8 dark:text-gray-200 mb-2">
           ¡Se guardaran los datos!
         </span >
       </Notify>
+
       <Notify
         ref={notifyContentRef}
         okey={closeContentNotify}
@@ -58,6 +97,29 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
           {contentErrorMessage}
         </span>
       </Notify>
+
+      <Notify
+        ref={keywordsRef}
+        okey={() => {
+          if (keywords) {
+            open();
+            keywordsClose();
+          }
+        }}
+        cancel={keywordsClose}
+      >
+        <input
+          type="text"
+          className="bg-gray-800 text-white border border-gray-600 rounded-md py-2 px-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          placeholder="rust,curso,aprender,programación"
+          value={keywords}
+          onChange={handleInputChangeKeywords}
+        />
+        <span className="block text-base text-gray-600 dark:text-gray-400">
+          Agrega palabras clave que ayuden a encontrar esta clase en el buscador. Puedes separarlas con comas (,) o espacios.
+        </span>
+      </Notify>
+
       {showLoading &&
         <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">
@@ -65,16 +127,18 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
           </div>
         </div>
       }
+
       <TextEditor
         onSave={(value: string) => {
           setTextValue(value);
-          open();
+          keywordsOpen();
         }}
         fileName={`Editando archivo ${toCamelCase(editClassroomId)}`}
         className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
         style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
         defaultValue={content}
       />
+
     </div>
   );
 }
