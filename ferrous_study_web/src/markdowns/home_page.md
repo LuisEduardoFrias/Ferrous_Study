@@ -9,7 +9,6 @@ La última versión del curso se puede encontrar en [comprehensive rust](https:/
 <br />
 
 ### El objetivos
-### El objetivos
 
 El objetivo del curso es enseñarte Rust. Suponiendo que no sabes nada sobre Rust y se esoers lograr lo siguiente:
 - Darte un entendimiento comprensivo de la sintaxis y lenguaje Rust.
