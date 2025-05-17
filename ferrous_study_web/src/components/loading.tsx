@@ -1,7 +1,13 @@
 import { LoadingIcon } from '../assets/svgs'
 import '../styles/search.css'
 
-export default function Loading(props) {
+type LoadingProps = {
+  className?: string,
+  classText?: string,
+  fill?: string
+}
+
+export default function Loading(props: LoadingProps) {
   const classText = props?.classText ?? '';
   const newProps = { ...props };
 

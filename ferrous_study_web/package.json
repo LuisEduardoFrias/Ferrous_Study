@@ -7,7 +7,7 @@
     "dev": "vite --port=3001",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview --port=3001"
   },
   "dependencies": {
     "@clerk/clerk-js": "^5.67.0",
@@ -34,6 +34,7 @@
     "@tanstack/router-plugin": "^1.120.2",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",

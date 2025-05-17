@@ -6,7 +6,7 @@ export function useClickInSide<T extends HTMLElement = HTMLElement>(onClick: () 
 
   useEffect(() => {
     function handleClick(event: MouseEvent | TouchEvent) {
-      if (ref?.current && ref.current.contains(event.target as Node)) {
+         if (ref?.current && event.target === ref?.current)  {
         onClick();
       }
     }

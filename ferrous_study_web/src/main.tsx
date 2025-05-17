@@ -21,10 +21,11 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
 
-
+(async()=>{
 const clerk = new Clerk(PUBLISHABLE_KEY);
 await clerk.load();
   (window as any).clerk = clerk;
+})()
 
 
 const rootElement = document.getElementById('root')!

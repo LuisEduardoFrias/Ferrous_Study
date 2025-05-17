@@ -6,7 +6,7 @@ import { useStore } from '../state_warehouse/index'
 
 type classOrder = {
   key: string;
-  classroomId: string;
+  params: { classroomId: string; }
   to: string;
 }
 
@@ -15,8 +15,9 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
   const [isShow, setShow] = useState(false);
   const [btnOption, setBtnOptions] = useState<{ menu: classOrder[], index: number }>();
   const TRANSITION = "transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";
-  const timer = useRef();
-  
+  const timer = useRef<number | undefined>();
+  const defaultParams = { classroomId: '' };
+
   useEffect(() => {
     if (isShow) {
       timer.current = setTimeout(() => {
@@ -28,7 +29,7 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
 
   useEffect(() => {
     const menu = convertMenu(dataMenu);
-    const index = menu.findIndex((obj) => obj.classroomId.classroomId === classroomId)
+    const index = menu.findIndex((obj) => obj.params.classroomId === classroomId)
     setBtnOptions({ menu, index });
   }, [classroomId, dataMenu]);
 
@@ -40,22 +41,20 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
     }, 4000)
   }
 
-  const getOptionRight = useCallback((index: number) => {
-    reTimer();
+  const getOptionRight = useCallback(() => {
     return btnOption?.menu[btnOption?.index + 1]
   }, [btnOption]);
 
-  const getOptionLeft = useCallback((index: number) => {
-    reTimer();
+  const getOptionLeft = useCallback(() => {
     return btnOption?.menu[btnOption?.index - 1]
   }, [btnOption]);
 
   const convertMenu = useCallback((menuItems: TMenu[]): classOrder[] => {
     const routes: classOrder[] = [];
 
-    function processItem(item: MenuItem) {
+    function processItem(item: TMenu) {
       if (item?.params?.classroomId) {
-        routes.push({ key: item.key, classroomId: item.params, to: item.to });
+        routes.push({ key: item.key, params: item.params, to: item.to });
       }
       if (item?.subMenu) {
         for (const subItem of item.subMenu) {
@@ -72,20 +71,20 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
   }, [])
 
   return (
-    <div name="button_chnage_page" className="fixed left-0 w-full top-1/2 flex items-center justify-between px-3">
-      <button disabled={!getOptionLeft()} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
+    <div className="fixed left-0 w-full top-1/2 flex items-center justify-between px-3">
+      <button onClick={()=>reTimer()}  disabled={!getOptionLeft()} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
         <Link
-          to={getOptionLeft()?.to}
-          params={getOptionLeft()?.classroomId}
+          to={getOptionLeft()?.to ?? ''}
+          params={getOptionLeft()?.params  ?? defaultParams}
           disabled={!getOptionLeft()}
         >
           <ArrowRightIcon className="transform rotate-180" />
         </Link>
       </button>
-      <button disabled={!getOptionRight()} className={`absolute ${TRANSITION} ${!isShow ? "-right-24" : 'right-2'}`}>
+      <button onClick={()=>reTimer()} disabled={!getOptionRight()} className={`absolute ${TRANSITION} ${!isShow ? "-right-24" : 'right-2'}`}>
         <Link
-          to={getOptionRight()?.to}
-          params={getOptionRight()?.classroomId}
+          to={getOptionRight()?.to ?? ''}
+          params={getOptionRight()?.params ?? defaultParams}
           disabled={!getOptionRight()}
         >
           <ArrowRightIcon />

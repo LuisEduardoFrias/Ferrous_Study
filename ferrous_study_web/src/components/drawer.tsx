@@ -8,12 +8,18 @@ import { SignedIn } from '@clerk/clerk-react';
 import type { TMenu } from '../types/menu'
 import { useStore } from '../state_warehouse/index'
 
+type MenuObj = {
+  classroom: TMenu[],
+  authorizedPages: TMenu[],
+  about: TMenu
+}
+
 export default function Drawer() {
   const show_drawer = useStore((state) => state.show_drawer)
   const dataMenu = useStore((state) => state.dataMenu)
   const on_show_drawer = useStore((state) => state.on_show_drawer)
-  const [menu, setMenu] = useState(null);
-  const divRef = useClickInSide(() => on_show_drawer(false))
+  const [menu, setMenu] = useState<MenuObj>();
+  const divRef = useClickInSide<HTMLDivElement>(() => on_show_drawer(false))
 
   //activa o desactiva el scroll del body si el drawer se nuestra o no.
   if (show_drawer) {
@@ -30,8 +36,7 @@ export default function Drawer() {
     setMenu({ classroom, authorizedPages, about })
   }, [dataMenu])
 
-  useEffect(() => {
-  }, [menu])
+  useEffect(() => { }, [menu])
 
   return (
     <div ref={divRef} className={`fixed top-0 left-0 z-50 flex flex-row transition-custom duration-7ms ease-in-out ${show_drawer ? 'translate-x-0 backdrop-blur-[0.8px] bg-translucent' : '-translate-x-full backdrop-blur-[0px] bg-transparent'} w-full h-[100dvh]`} >
@@ -47,22 +52,10 @@ export default function Drawer() {
           </ButtonIcon>
         </div>
 
-        <div className="flex flex-col gap-2 p-2 overflow-y-scroll">
+        <div className="flex flex-col gap-2 p-2 pb-5 overflow-y-scroll">
 
-          {menu?.classroom?.map(({ to, text, displayQuality, params, subMenu }) => (
-            <LinkC
-              key={text}
-              to={to}
-              displayQuality={displayQuality}
-              subMenu={subMenu}
-              params={params}
-            >
-              {text}
-            </LinkC>
-          ))}
-          <hr className="my-2 border-[.4px] border-theme-o-3-d" />
-          <SignedIn>
-            {menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
+          {menu &&
+            menu?.classroom?.map(({ to, text, displayQuality, params, subMenu }) => (
               <LinkC
                 key={text}
                 to={to}
@@ -73,18 +66,33 @@ export default function Drawer() {
                 {text}
               </LinkC>
             ))}
+          <hr className="my-2 border-[.4px] border-theme-o-3-d" />
+          <SignedIn>
+            {menu &&
+              menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
+                <LinkC
+                  key={text}
+                  to={to}
+                  displayQuality={displayQuality}
+                  subMenu={subMenu}
+                  params={params}
+                >
+                  {text}
+                </LinkC>
+              ))}
           </SignedIn>
 
-          <LinkC
-            key={menu?.about?.text}
-            to={menu?.about?.to}
-            displayQuality={menu?.about?.displayQuality}
-            subMenu={menu?.about?.subMenu}
-            params={menu?.about?.params}
-          >
-            {menu?.about?.text}
-          </LinkC>
-
+          {menu &&
+            <LinkC
+              key={menu?.about?.text}
+              to={menu?.about?.to}
+              displayQuality={menu?.about?.displayQuality}
+              subMenu={menu?.about?.subMenu}
+              params={menu?.about?.params}
+            >
+              {menu?.about?.text}
+            </LinkC>
+          }
         </div>
 
       </nav>
@@ -103,7 +111,7 @@ type LinkCProps = {
   children?: ReactNode;
 };
 
-function LinkC({ text, params, className, children, displayQuality, to, subMenu }: LinkCProps) {
+function LinkC({ text, params, className, children, to, subMenu }: LinkCProps) {
   const on_show_drawer = useStore((state) => state.on_show_drawer)
   const [isOpen, setIsOpen] = useState(false);
 

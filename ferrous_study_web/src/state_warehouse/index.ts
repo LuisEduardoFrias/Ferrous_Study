@@ -3,6 +3,7 @@ import type { TClass } from '../types/class'
 //import { createWarehouse, update } from 'subscriber_state'
 import { githubService } from '../services/github_service'
 import type { CacheEntry } from '../hooks/use_memory_cache'
+import { ChangeEvent } from 'react'
 import { create } from 'zustand'
 
 //import JsonMenu from '../jsons/menu.json';
@@ -19,7 +20,7 @@ export type State = {
   initial_state: () => void,
   on_show_drawer: (isShow: boolean) => void,
   on_search_data: (data: searchData) => void,
-  on_miss:  <T>(key: string, data: CacheEntry<T>)  => void,
+  on_miss: <T>(key: string, data: CacheEntry<T>) => void,
   on_clear_cache: (key?: string) => void
 }
 
@@ -68,4 +69,3 @@ const useStore = create<State>((set, get) => ({
 }))
 
 export { useStore };
-
