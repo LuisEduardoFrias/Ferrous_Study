@@ -3,6 +3,7 @@
 Muchas veces no necesitas especificar explícitamente el tipo de una variable. El compilador de Rust es lo suficientemente inteligente como para inferir el tipo basándose en el valor que se le asigna o cómo se utiliza la variable.
 
 ```rust
+&title><title&
 fn main() {
 
     let x = 10; // Rust infiere que x es de tipo i32
@@ -16,6 +17,7 @@ fn main() {
     let y = 20;
 }
 ```
+
 Este ejemplo muestra cómo el compilador de Rust infiere tipos basándose en restricciones proporcionadas por declaraciones y usos de variables.
 
 Sin embargo, a veces es necesario o recomendable especificar el tipo explícitamente, especialmente cuando el compilador no tiene suficiente información o para mayor claridad en el código.
@@ -25,6 +27,7 @@ Es muy importante subrayar que las variables que se declaran así no son de un �
 Cuando ningún elemento restringe el tipo de un literal entero, Rust lo define de forma predeterminada como i32. A veces aparece como {integer} en los mensajes de error. Del mismo modo, los literales de punto flotante se definen como f64 de forma predeterminada.
 
 ```rust
+&title><title&
 fn main() {
     let x = 3.14;
     let y = 20;
@@ -32,6 +35,7 @@ fn main() {
     // ERROR: no hay implementación para `{float} == {integer}`
 }
 ```
+
 La línea "**assert_eq!(x, y);**" intenta comparar si el valor de **x** es igual al valor de **y**. 
 
 La función "**assert_eq!**"  es conocida como macro, identificada por el sigo de "**!**" al final del nombre, se utiliza en Rust para verificar si dos expresiones son iguales y, si no lo son, el programa entrará en pánico (deteniéndose con un mensaje de error).
