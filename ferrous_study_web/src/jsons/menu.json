@@ -61,7 +61,7 @@
       {
         "key": "1-0",
         "to": "/classroom/$classroomId",
-        "text": "Entidades",
+        "text": "Identificadores",
         "displayQuality": "",
         "params": {
           "classroomId": "variables"
