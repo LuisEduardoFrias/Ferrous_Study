@@ -21,6 +21,7 @@ fn interproduct(a: i32, b: i32, c: i32) -> i32 {
 
 fn main() {
     println!("resultado: {}", interproduct(120, 100, 248));
+    //resultado: 66560
 }
 ```
 
