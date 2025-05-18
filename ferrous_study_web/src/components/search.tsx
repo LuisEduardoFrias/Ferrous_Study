@@ -25,7 +25,7 @@ export default function Search() {
 
   return (
     <div className='absolute z-40 left-1/2 -translate-x-1/2 py-2 pl-2 h-14 overflow-hidden flex items-center items-stretch gap-2'>
-      <div className='search w-44 sm:w-52 flex gap-2 pl-2'>
+      <div ref={ref} id="search" className="search border w-44 sm:w-52 flex gap-2 pl-2">
         <Loading_ />
         <input type="search" ref={ref} name="search" placeholder="Buscar" onInput={handlerSearch} />
       </div>

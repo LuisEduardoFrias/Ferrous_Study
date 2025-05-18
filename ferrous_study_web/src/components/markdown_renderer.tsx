@@ -12,14 +12,18 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
   function Code({ className, children: codeChildren, ...props }: HTMLAttributes<HTMLElement>) {
     const match = /language-(\w+)/.exec(className || "");
-    
+
+    const { title, text } = getTitle(codeChildren as string);
+
+
     const inline = false;
 
     return !inline && match ? (
       <div className="relative pt-4 px-3" >
+        {title && <span className="" >{title}</span>}
         <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
-          <CopyButton textToCopy={codeChildren as string} />
-          <CodeButton textToCode={codeChildren as string} />
+          <CopyButton textToCopy={text as string} />
+          <CodeButton textToCode={text as string} />
         </div>
 
         <SyntaxHighlighter
@@ -28,12 +32,12 @@ export default function MarkdownRenderer({ children }: { children: string }) {
           PreTag="div"
           language={match[1]}
         >
-          {String(codeChildren).replace(/\n$/, "")}
+          {String(text).replace(/\n$/, "")}
         </SyntaxHighlighter>
       </div>
     ) : (
       <code {...props} className={className} >
-        {codeChildren}
+        {text}
       </code>
     );
   }
@@ -83,4 +87,17 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       {children}
     </Markdown>
   );
+}
+
+function getTitle(text: string): { title: string | null; text: string } {
+  const regex = /&title>(.*?)<title&/;
+  const match = text.match(regex);
+
+  if (match && match[1] !== undefined) {
+    const title = match[1];
+    const textWithoutTitle = text.replace(regex, '');
+    return { title, text: textWithoutTitle };
+  } else {
+    return { title: null, text };
+  }
 }

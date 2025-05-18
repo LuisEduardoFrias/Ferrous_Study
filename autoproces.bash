@@ -1,0 +1,1 @@
+clear && cd ./ferrous_study_web/ && rm -r ./dist/ && pnpm build && cd ../ferrous_study_server && rm -r ./dist/ && cd ../ferrous_study_web && cp -r ./dist ../ferrous_study_server/ && cd ../ && pnpm -r --parallel dev                                                                                                             

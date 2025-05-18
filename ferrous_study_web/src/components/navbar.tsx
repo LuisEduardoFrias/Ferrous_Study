@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
-import { FerrisIcon, EditIcon, BookCloseIcon } from '../assets/svgs'
+import { FerrisIcon, EditIcon, BookCloseIcon, UserIcon } from '../assets/svgs'
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
@@ -58,7 +58,7 @@ export default function Navbar() {
           <SignedOut>
             {param1 !== 'signinup' &&
               <Link to="/signinup" >
-                <span className="text-theme-0 italic">{`*Unete`}</span>
+                <UserIcon />
               </Link>
             }
           </SignedOut>
