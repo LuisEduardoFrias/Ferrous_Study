@@ -61,7 +61,7 @@
       {
         "key": "1-0",
         "to": "/classroom/$classroomId",
-        "text": "Variabless",
+        "text": "Entidades",
         "displayQuality": "",
         "params": {
           "classroomId": "variables"
