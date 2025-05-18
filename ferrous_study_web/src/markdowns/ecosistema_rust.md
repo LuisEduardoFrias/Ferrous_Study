@@ -1,14 +1,12 @@
-# El ecosistema de Rust
+### El ecosistema de Rust
 
 El ecosistema de Rust se compone de varias herramientas, entre las que se incluyen las siguientes:
 
-* **rustc**: el compilador de Rust que convierte archivos `.rs` en binarios y otros formatos intermedios.
-* **cargo**: herramienta de compilación y gestión de dependencias de Rust. Cargo sabe cómo descargar dependencias, que normalmente se alojan en <https://crates.io>, y las transfiere a `rustc` al crear el proyecto. Cargo también incorpora un ejecutor de pruebas que se utiliza para realizar pruebas unitarias.
-* **rustup**: el instalador y actualizador de cadenas de herramientas de Rust. Esta herramienta se utiliza para instalar y actualizar `rustc` y `cargo` cuando se lanzan nuevas versiones de Rust. Además, `rustup` también puede descargar documentación de la biblioteca estándar. Puedes tener varias versiones de Rust instaladas a la vez y `rustup` te permitirá cambiar de una a otra según lo necesites.
+* **rustc**: El compilador de Rust que convierte archivos `.rs` en binarios y otros formatos intermedios.
+* **cargo**: Herramienta de compilación y gestión de dependencias de Rust. Cargo sabe cómo descargar dependencias, que normalmente se alojan en <https://crates.io>, y las transfiere a `rustc` al crear el proyecto. Cargo también incorpora un ejecutor de pruebas que se utiliza para realizar pruebas unitarias.
+* **rustup**: El instalador y actualizador de cadenas de herramientas de Rust. Esta herramienta se utiliza para instalar y actualizar `rustc` y `cargo` cuando se lanzan nuevas versiones de Rust. Además, `rustup` también puede descargar documentación de la biblioteca estándar. Puedes tener varias versiones de Rust instaladas a la vez y `rustup` te permitirá cambiar de una a otra según lo necesites.
 
-## Speaker Notes
-
-Puntos clave:
+### Puntos clave:
 
 * Rust cuenta con un programa de lanzamiento rápido en el que se publica una nueva versión cada seis semanas. Las nuevas versiones mantienen la retrocompatibilidad con las versiones anteriores, además de habilitar nuevas funciones.
 * Hay tres canales de lanzamiento: “stable”, “beta” y “nightly”.
