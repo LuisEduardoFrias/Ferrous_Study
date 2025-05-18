@@ -97,7 +97,7 @@
       {
         "key": "1-4",
         "to": "/classroom/$classroomId",
-        "text": "Ejercicio - Fibonacci",
+        "text": "Ejercicios",
         "displayQuality": "",
         "subMenu": [
           {
@@ -116,6 +116,15 @@
             "displayQuality": "",
             "params": {
               "classroomId": "solu_fibonacci"
+            }
+          },
+          {
+            "key": "1-4-2",
+            "to": "/classroom/$classroomId",
+            "text": "Ejercicios módulo 1",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "ejemplo"
             }
           }
         ]
