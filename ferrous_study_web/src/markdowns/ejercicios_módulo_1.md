@@ -48,7 +48,7 @@ fn main() {
 #### Requerimientos:
  * Define dos constantes numéricas (pueden ser del mismo tipo o de tipos diferentes que se puedan comparar).
 
-Define una de las constantes en **main** y otra en **verificar_rango**.
+  * Define una de las constantes en **main** y otra en **verificar_rango**.
 
  * Completa la función **verificar_rango** para comparar estas dos constantes utilizando los operadores de comparación (>, <, ==, !=, >=, <=).
  * Para cada comparación, imprime un mensaje indicando si la condición es verdadera o falsa.
