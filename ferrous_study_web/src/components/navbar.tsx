@@ -9,7 +9,17 @@ import { useStore } from '../state_warehouse/index'
 const appearance = {
   elements: {
     userButtonPopoverFooter: 'hidden',
-  },
+    userButtonPopoverCard: 'w-60 shadow-sm shadow-theme-4',
+    modalContent: 'hidden'
+    //     {
+    //       cardBox: {
+    //         footer: 'hidden',
+    //       }
+    //     }
+    // modalBackDrop: 'hidden',
+    // modalContent: 'hidden',
+    // footer: 'hidden',
+  }
 }
 
 export default function Navbar() {
@@ -53,28 +63,27 @@ export default function Navbar() {
 
   return (
     <header className={`fixed top-0 left-0 flex flex-row gap-2 items-center justify-center transition-all z-40 p-2 backdrop-blur-[0.8px] ${color} w-full h-14`} >
-      <>
-        <div className="flex items-center absolute left-4 ">
-          <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
-          {
-            isMovil ? <SignedIn><EditButton /></SignedIn> : <MenuButton />
+      <div className="flex items-center absolute left-4 ">
+        <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
+        {
+          isMovil ? <SignedIn><EditButton /></SignedIn> : <MenuButton />
+        }
+      </div>
+      <Search />
+      <div className="flex items-center absolute right-4 gap-2 ">
+        <SignedOut>
+          {param1 !== 'signinup' &&
+            <Link to="/signinup" >
+              <UserIcon />
+            </Link>
           }
-        </div>
-        <Search />
-        <div className="flex items-center absolute right-4 gap-2 ">
-          <SignedOut>
-            {param1 !== 'signinup' &&
-              <Link to="/signinup" >
-                <UserIcon />
-              </Link>
-            }
-          </SignedOut>
-          <UserButton appearance={appearance} />
-          {
-            isMovil ? <MenuButton /> : <SignedIn><EditButton /></SignedIn>
-          }
-        </div>
-      </>
+        </SignedOut>
+        <UserButton appearance={appearance} />
+
+        {
+          isMovil ? <MenuButton /> : <SignedIn><EditButton /></SignedIn>
+        }
+      </div>
     </header>
   );
 }

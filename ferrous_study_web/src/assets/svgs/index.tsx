@@ -18,6 +18,8 @@ import NotViewIcon from './not_view';
 import GithubIcon from './github';
 import UserIcon from './user';
 import MarkIcon from './mark';
+import SuccessIcon from './success';
+import ErrorIcon from './error';
 
 export {
   BookCloseIcon, BookOpenIcon, CopyIcon,
@@ -26,5 +28,6 @@ export {
   SearchIcon, LoadingIcon, ImageIcon,
   SaveIcon, DeleteIcon, AddIcon,
   ViewIcon, NotViewIcon, GithubIcon,
-  UserIcon, MarkIcon
+  UserIcon, MarkIcon, SuccessIcon,
+  ErrorIcon
 };

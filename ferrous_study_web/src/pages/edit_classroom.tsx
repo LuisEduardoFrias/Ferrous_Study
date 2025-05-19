@@ -4,6 +4,7 @@ import { githubService } from '../services/github_service'
 import { toCamelCase } from '../hooks/to_camel_case'
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog'
+import { SuccessIcon, ErrorIcon } from '../assets/svgs'
 import Loading from '../components/loading'
 import Notify from '../components/notify'
 import { useMemoryCache } from '../hooks/use_memory_cache'
@@ -15,7 +16,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
   const [content, setContent] = useState<string>('');
   const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
-  const [contentErrorMessage, setContentErrorMessage] = useState<string>('');
+  const [contentMessage, setContentErrorMessage] = useState<{ mesagge: string, data?: object }>({ mesagge: '' });
   const [showLoading, setShowLoading] = useState(false);
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
@@ -43,7 +44,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
         }
       }
 
-      //TODO evaluar posibke vslor null
+      //TODO evaluar posible valor null
       setContent(result ?? '');
       setShowLoading(false);
     })()
@@ -73,7 +74,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       await githubService.updateFileContent('class', JSON.stringify(updateClass), 'json')
     ]);
 
-    setContentErrorMessage(result?.message);
+    setContentErrorMessage({...result });
     clear(editClassroomId)
     setShowLoading(false)
     openContentNotify();
@@ -83,8 +84,8 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
     <div className="relative">
 
       <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
-        <span className="block text-xl font-semibold text-gray-800 mb-8 dark:text-gray-200 mb-2">
-          ¡Se guardaran los datos!
+        <span className="block text-xl flex gap-4 font-semibold text-gray-800 mb-8 dark:text-gray-200 mb-2">
+          <ErrorIcon fill="#006fff" /> ¡Se guardaran la información!
         </span >
       </Notify>
 
@@ -92,11 +93,17 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
         ref={notifyContentRef}
         okey={closeContentNotify}
       >
-        <span className="block text-xl font-semibold text-red-600 dark:text-red-400 mb-2">
-          ¡Atención!
-        </span>
+        <div className="flex flex-row gap-4 mb-2">
+          {contentMessage?.data ?
+            <SuccessIcon /> :
+            <ErrorIcon />
+          }
+          <span className={`block text-xl font-semibold ${contentMessage?.data ? "text-green-500" : "text-red-500"} mb-2`}>
+            ¡Atención!
+          </span>
+        </div>
         <span className="block text-base text-gray-700 dark:text-gray-300">
-          {contentErrorMessage}
+          {contentMessage.message}
         </span>
       </Notify>
 

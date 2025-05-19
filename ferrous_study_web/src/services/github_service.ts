@@ -26,24 +26,24 @@ export const githubService = {
    * @returns Una promesa que resuelve al contenido del archivo o null si hay un error.
    */
   async getFileContent(fileName: string, type: 'markdown' | 'json'): Promise<string | null> {
-    const { token } = await auth();
+    // const { token } = await auth();
     const pathCon = `${FULL_API_BASE_URL}/${fileName}/${type}`;
 
-
-
     try {
-      const response = await fetch(pathCon, {
+      const response = await fetch(pathCon);/*, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-
+*/
       if (!response.ok) {
         console.error(`Error al obtener el contenido de ${fileName}.${type}:`, response.status);
         return null;
       }
+
       const data: FileContentResponse = await response.json();
       return data.content || null;
+
     } catch (error) {
       console.error(`Error de red al obtener el contenido de ${fileName}.${type}:`, error);
       return null;
@@ -60,8 +60,6 @@ export const githubService = {
 
     const pathCon = `${FULL_API_BASE_URL}/${search}`;
 
-
-
     try {
       const response = await fetch(pathCon)/*, {
         headers: {
@@ -73,6 +71,7 @@ export const githubService = {
         console.error(`Error al buscar '${search}':`, response.status);
         return null;
       }
+
       const data = await response.json();
       return data.content || null;
     } catch (error) {
@@ -92,9 +91,6 @@ export const githubService = {
 
     const pathCon = FULL_API_BASE_URL;
 
-
-
-
     try {
       const response = await fetch(pathCon, {
         method: 'POST',
@@ -107,8 +103,7 @@ export const githubService = {
 
       if (!response.ok) {
         console.error(`Error al crear el archivo ${fileName}.md:`, response.status);
-        return { message: 'Error al crear la nueva clase' };
-        // throw new Error(`Error al crear el archivo: ${response.status}`);
+        return { message: 'Error al crear la nueva clase'};
       }
 
       const data: FileOperationResponse = await response.json();
