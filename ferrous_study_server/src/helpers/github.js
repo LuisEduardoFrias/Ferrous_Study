@@ -21,13 +21,20 @@ export const GithubCore = {
       if (response.data && 'content' in response.data && response.data.encoding === 'base64') {
         return Buffer.from(response.data.content, 'base64').toString('utf-8');
       }
+
+      console.error(`Error al obtener el contenido de ${filePath} en ${OWNER}/${REPO}:`,
+        `optencion de datos incompatible con los requerido, requerimiento:
+        response.data: ${response.data},
+        content in response.data: ${'content' in response.data},
+        response.data.encoding === 'base64: ${response.data.encoding === 'base64'}`);
+
       return null;
     } catch (error) {
       console.error(`Error al obtener el contenido de ${filePath} en ${OWNER}/${REPO}:`, error);
       return null;
     }
   },
-  
+
   async getFile(filePath) {
     try {
       const response = await octokit.rest.repos.getContent({
@@ -37,8 +44,6 @@ export const GithubCore = {
       });
 
       return response;
-
-      return null;
     } catch (error) {
       console.error(`Error al obtener el contenido de ${filePath} en ${OWNER}/${REPO}:`, error);
       return null;
@@ -67,7 +72,7 @@ export const GithubCore = {
       return responses;
     } catch (error) {
       console.error(`Error al actualizar archivos en ${OWNER}/${REPO}:`, error);
-      throw error;
+      return null;
     }
   },
 
@@ -92,7 +97,7 @@ export const GithubCore = {
       return responses;
     } catch (error) {
       console.error(`Error al crear archivos en ${OWNER}/${REPO}:`, error);
-      throw error;
+      return null;
     }
   },
 };

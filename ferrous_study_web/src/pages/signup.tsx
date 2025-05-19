@@ -31,16 +31,18 @@ export default function AuthForm() {
       <div className="relative w-full max-w-md h-auto" style={{ perspective: '3500px' }}>
         <div
           ref={formRef}
-          className="relative transition-transform duration-300 transform-style-3d h-full"
+          className="relative transition-transform duration-300 transform-style-3d h-[380px]"
           style={{ transformOrigin: 'center center' }}
         >
-          <div className={`absolute w-full h-full ${isLogin ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
+          <div className={`absolute w-full h-full ${isLogin ? 'opacity-100 border-4 border-theme-3 rounded-xl visible' : 'opacity-0 invisible'}`}>
             <LoginForm onToggleAuth={handleToggleAuth} />
           </div>
 
-          <div className={`absolute w-full h-full ${!isLogin ? 'opacity-100 visible' : 'opacity-0 invisible'}`} style={{ transform: 'rotateY(180deg)' }}>
+          <div className={`absolute w-full h-full ${!isLogin ? 'opacity-100 border-4 border-theme-4 rounded-xl visible' : 'opacity-0 invisible'}`} style={{ transform: 'rotateY(180deg)' }}>
             <SignupForm onToggleAuth={handleToggleAuth} />
           </div>
+
+          <Footer />
         </div>
       </div>
     </div>
@@ -53,8 +55,7 @@ type LoginFormProps = {
 
 function LoginForm(props: LoginFormProps) {
   return (
-    <div className="absolute w-full h-full bg-white rounded-lg shadow-md p-6 backface-hidden">
-
+    <div className="absolute w-full h-full bg-white rounded-lg shadow-md p-6 h-fulk backface-hidden">
       <SignIn
         // @ts-ignore
         fallback={
@@ -63,22 +64,21 @@ function LoginForm(props: LoginFormProps) {
           </div>
         }
         oauthFlow="popup"
+        withSignUp={true}
         routing="hash"
         signUpFallbackRedirectUrl="/"
         appearance={appearance}
       />
-      <Footer>
-        <p className="mt-4 text-sm text-gray-600 text-center">
-          ¿No tienes cuenta?{' '}
-          <button
-            type="button"
-            onClick={props.onToggleAuth}
-            className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
-          >
-            Regístrate
-          </button>
-        </p>
-      </Footer>
+      <p className="mt-4 text-sm w-full absolute bottom-0 left-1/2 -translate-x-1/2 text-gray-600 text-center">
+        ¿No tienes cuenta?{' '}
+        <button
+          type="button"
+          onClick={props.onToggleAuth}
+          className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+        >
+          Regístrate
+        </button>
+      </p>
     </div>
   );
 }
@@ -90,41 +90,36 @@ type SignupFormProps = {
 function SignupForm(props: SignupFormProps) {
   return (
     <div
-      className="absolute w-full h-full bg-white rounded-lg shadow-md p-6 backface-hidden"
-      style={{ transform: 'rotateY(180deg)' }}
+      className="absolute w-full h-full bg-white rounded-lg shadow-md p-6 h-full backface-hidden"
+      style={{ transform: 'rotateY(0deg)' }}
     >
-      <div style={{ transform: 'rotateY(180deg)' }}>
-        <SignUp
-          // @ts-ignore
-fallback={
-            <div className="w-full h-32">
-              <Loading fill="black" />
-            </div>
-          }
-          oauthFlow="popup"
-          routing="hash"
-          signUpFallbackRedirectUrl="/signinup"
-          withSignUp={true}
-          appearance={appearance}
-        />
-        <Footer>
-          <p className="mt-4 text-sm text-gray-600 text-center">
-            ¿Ya tienes una cuenta?{' '}
-            <button
-              type="button"
-              onClick={props.onToggleAuth}
-              className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
-            >
-              Inicia Sesión
-            </button>
-          </p>
-        </Footer>
-      </div>
+      <SignUp
+        // @ts-ignore
+        fallback={
+          <div className="w-full h-32">
+            <Loading fill="black" />
+          </div>
+        }
+        oauthFlow="popup"
+        routing="hash"
+        withSignUp={true}
+        appearance={appearance}
+      />
+      <p className="mt-4 text-sm w-full absolute bottom-5 left-1/2 -translate-x-1/2 text-gray-600 text-center">
+        ¿Ya tienes una cuenta?{' '}
+        <button
+          type="button"
+          onClick={props.onToggleAuth}
+          className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+        >
+          Inicia Sesión
+        </button>
+      </p>
     </div>
   );
 }
 
-function Footer({ children }: { children: ReactNode }) {
+function Footer() {
   const [showExplanation, setShowExplanation] = useState(false);
 
   const toggleExplanation = () => {
@@ -132,29 +127,25 @@ function Footer({ children }: { children: ReactNode }) {
   };
 
   return (
-    <div>
-      {children}
-
-      <div className="mt-4 text-center">
-        <button
-          type="button"
-          onClick={toggleExplanation}
-          className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
-        >
-          {showExplanation ?
-            <ArrowRightIcon fill="back" className="transform -rotate-90 " /> : '¿Por qué tener una cuenta de FerrousStudy?'}
-        </button>
-        <div className={`text-sm text-left text-gray-700 transition-all duration-300 ease-in-out overflow-hidden ${showExplanation ? 'max-h-50 opacity-100' : 'max-h-0 opacity-0'}`}>
-          <Paragraph>
-            Al crear una cuenta en FerrousStudy, te unes a una comunidad apasionada por Rust.
-          </Paragraph>
-          <Paragraph>
-            Podrás contribuir directamente a la creación de nuevas clases y ejercicios, enriquecer las explicaciones existentes y colaborar en la traducción de contenido para que el aprendizaje de Rust sea accesible para todos.
-          </Paragraph>
-          <Paragraph>
-            ¡Tu aporte es fundamental para hacer crecer esta plataforma!
-          </Paragraph>
-        </div>
+    <div className="mt-4 text-center">
+      <button
+        type="button"
+        onClick={toggleExplanation}
+        className="font-semibold text-theme-3 hover:text-theme-4 focus:outline-none"
+      >
+        {showExplanation ?
+          <ArrowRightIcon fill="back" className="transform -rotate-90 " /> : '¿Por qué tener una cuenta de FerrousStudy?'}
+      </button>
+      <div className={`text-sm text-left text-gray-700 transition-all duration-300 ease-in-out overflow-hidden ${showExplanation ? 'max-h-50 opacity-100' : 'max-h-0 opacity-0'}`}>
+        <Paragraph>
+          Al crear una cuenta en FerrousStudy, te unes a una comunidad apasionada por Rust.
+        </Paragraph>
+        <Paragraph>
+          Podrás contribuir directamente a la creación de nuevas clases y ejercicios, enriquecer las explicaciones existentes y colaborar en la traducción de contenido para que el aprendizaje de Rust sea accesible para todos.
+        </Paragraph>
+        <Paragraph>
+          ¡Tu aporte es fundamental para hacer crecer esta plataforma!
+        </Paragraph>
       </div>
     </div>
   );

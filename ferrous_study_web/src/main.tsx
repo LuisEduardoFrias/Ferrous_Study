@@ -5,6 +5,7 @@ import { ClerkProvider } from '@clerk/clerk-react'
 import { Clerk } from '@clerk/clerk-js'
 import { routeTree } from './routeTree.gen'
 import { useStore } from './state_warehouse/index'
+import { esES } from '@clerk/localizations'
 import './index.css'
 
 const router = createRouter({ routeTree })
@@ -21,9 +22,9 @@ if (!PUBLISHABLE_KEY) {
   throw new Error('Missing Publishable Key')
 }
 
-(async()=>{
-const clerk = new Clerk(PUBLISHABLE_KEY);
-await clerk.load();
+(async () => {
+  const clerk = new Clerk(PUBLISHABLE_KEY);
+  await clerk.load();
   (window as any).clerk = clerk;
 })()
 
@@ -44,7 +45,13 @@ function Main() {
 
   return (
     <StrictMode>
-      <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl='/'>
+      <ClerkProvider
+        localization={esES}
+        publishableKey={PUBLISHABLE_KEY}
+        signInFallbackRedirectUrl="/"
+        afterSignOutUrl='/'
+        signInUrl='/'
+      >
         <RouterProvider router={router} />
       </ClerkProvider>
     </StrictMode>

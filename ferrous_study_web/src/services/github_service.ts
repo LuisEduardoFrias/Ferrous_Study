@@ -5,7 +5,7 @@ async function auth() {
   return { token: await clerk?.session?.getToken({ template: 'Plantilla1' }) };
 }
 
-const API_BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_FULL_API_BASE_URL : '';
+const API_BASE_URL = import.meta.env.DEV ? import.meta.env.VITE_API_BASE_URL : '';
 const FULL_API_BASE_URL = `${API_BASE_URL}/api`;
 //const FULL_API_BASE_URL = import.meta.env.BASE_URL;
 

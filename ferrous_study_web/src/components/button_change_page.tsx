@@ -71,7 +71,7 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
   }, [])
 
   return (
-    <div className="fixed left-0 w-full top-1/2 flex items-center justify-between px-3">
+    <div className="fixed z-20 left-0 w-full top-1/2 flex items-center justify-between px-3">
       <button onClick={()=>reTimer()}  disabled={!getOptionLeft()} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
         <Link
           to={getOptionLeft()?.to ?? ''}

@@ -1,5 +1,8 @@
 
 export function searchFilter(search, contentMenu, contentClass) {
+  
+  if(!contentMenu || !contentClas) return null;
+  
   const objClass = JSON.parse(contentClass);
 
   const classFiltered = objClass.filter((obj) =>

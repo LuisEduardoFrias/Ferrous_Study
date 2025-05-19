@@ -17,6 +17,7 @@ import ViewIcon from './view';
 import NotViewIcon from './not_view';
 import GithubIcon from './github';
 import UserIcon from './user';
+import MarkIcon from './mark';
 
 export {
   BookCloseIcon, BookOpenIcon, CopyIcon,
@@ -24,6 +25,6 @@ export {
   EditIcon, LinkIcon, TableIcon,
   SearchIcon, LoadingIcon, ImageIcon,
   SaveIcon, DeleteIcon, AddIcon,
-  ViewIcon,NotViewIcon,GithubIcon,
-  UserIcon
+  ViewIcon, NotViewIcon, GithubIcon,
+  UserIcon, MarkIcon
 };

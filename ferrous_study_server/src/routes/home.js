@@ -6,20 +6,7 @@ import { clerkClient, requireAuth, getAuth } from '@clerk/express';
 
 const router = express.Router();
 
-// router.get('/settings/menu/:fileName/:type', async (req, res) => {
-//   const { fileName, type } = req.params;
-// 
-//   let fullPath = '';
-// 
-//   if (type === 'markdown')
-//     fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   else
-//     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
-// 
-//   const content = await GithubCore.getFileContent(fullPath);
-// 
-//   res.json({ content });
-// });
+//TODO Hay logicas que no deverian estar en estas rutas.
 
 router.get('/:fileName/:type', async (req, res) => {
   const { fileName, type } = req.params;
@@ -33,38 +20,12 @@ router.get('/:fileName/:type', async (req, res) => {
 
   const content = await GithubCore.getFileContent(fullPath);
 
-  res.json({ content });
+  if (content)
+    res.status(200).json({ content });
+  else
+    res.status(500);
+
 });
-
-// router.get('/classroom/:fileName/:type', async (req, res) => {
-//   const { fileName, type } = req.params;
-// 
-//   let fullPath = '';
-// 
-//   if (type === 'markdown')
-//     fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   else
-//     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
-// 
-//   const content = await GithubCore.getFileContent(fullPath);
-// 
-//   res.json({ content });
-// });
-
-// router.get('/classroom/edit/:fileName/:type', async (req, res) => {
-//   const { fileName, type } = req.params;
-// 
-//   let fullPath = '';
-// 
-//   if (type === 'markdown')
-//     fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   else
-//     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
-// 
-//   const content = await GithubCore.getFileContent(fullPath);
-// 
-//   res.json({ content });
-// });
 
 router.get('/:search', async (req, res) => {
   const { search } = req.params;
@@ -79,7 +40,10 @@ router.get('/:search', async (req, res) => {
 
   const content = searchFilter(search, contentMenu, contentClass);
 
-  res.json({ content });
+  if (content)
+    res.status(200).json({ content });
+  else
+    res.status(500);
 });
 
 router.post('/', requireAuth(), async (req, res) => {
@@ -91,8 +55,9 @@ router.post('/', requireAuth(), async (req, res) => {
   try {
 
     const resulCreate = await GithubCore.createFiles([{ path: fullPath, content, monthsage },]);
+    let resultUpdate = null;
 
-    if (resulCreate[0].status === 201) {
+    if (resulCreate && !(resulCreate[0].status >= 400)) {
       const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
 
       const content = await GithubCore.getFileContent(fullPathClass);
@@ -115,60 +80,27 @@ router.post('/', requireAuth(), async (req, res) => {
         keywords: keywords
       });
 
-      const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
-      //resultUpdate[0].status === 200
+      resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
+
+      if (!resultUpdate) {
+        res.status(500)
+      }
+
+      if (resultUpdate[0].status >= 400)
+        await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
     }
 
-    res.json({ resulCreate });
+    if (content) {
+      console.log(`${resulCreate} \n\n  ${resultUpdate}`)
+      res.status(200).json({ resulCreate, resultUpdate });
+    }
+    else
+      res.status(500);
+
   } catch (error) {
     console.log("try catch error: ", error);
   }
 });
-
-// router.post('/classroom/:x', requireAuth(), async (req, res) => {
-//   const { fileName, content, keywords } = req.body;
-// 
-//   const { userId } = getAuth(req)
-//   const user = await clerkClient.users.getUser(userId)
-// 
-//   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   const monthsage = `Creaded a new markdown file, ${fileName}`;
-// 
-//   try {
-// 
-//     const resulCreate = await GithubCore.createFiles([
-//       { path: fullPath, content, monthsage },
-//     ]);
-// 
-//     if (resulCreate[0].status === 201) {
-//       const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
-// 
-//       const content = await GithubCore.getFileContent(fullPathClass);
-//       const class_ = JSON.parse(content);
-// 
-//       class_.push({
-//         key: class_.length,
-//         name: fileName,
-//         addInfo: {
-//           addData: getData(),
-//           user: {
-//             key: userId,
-//             name: user.fullName
-//           }
-//         },
-//         updateInfo: null,
-//         keywords: keywords
-//       })
-// 
-//       const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `add ${fileName} obj to the json of class file`);
-//       //resultUpdate[0].status === 200
-//     }
-// 
-//     res.json({ resulCreate });
-//   } catch (error) {
-//     console.log("try catch error: ", error)
-//   }
-// });
 
 router.put('/', requireAuth(), async (req, res) => {
   const { fileName, content, type } = req.body;
@@ -182,95 +114,80 @@ router.put('/', requireAuth(), async (req, res) => {
     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
   const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
+  let resultUpdateClass = null;
 
-  if (resultUpdate[0].status !== 404 && type === 'markdown') {
+  if (resultUpdate[0].status >= 400) {
+    res.status(resultUpdate[0].status);
+  }
+
+  if (type === 'markdown') {
 
     const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
 
     const content = await GithubCore.getFileContent(fullPathClass);
-    const class_ = JSON.parse(content);
 
-    const { userId } = getAuth(req);
-    const user = await clerkClient.users.getUser(userId);
+    if (content) {
+      const class_ = JSON.parse(content);
 
-    const index = class_.findIndex((obj) => obj.name === fileName);
+      const { userId } = getAuth(req);
+      const user = await clerkClient.users.getUser(userId);
 
-    if (index > 0) {
+      const index = class_.findIndex((obj) => obj.name === fileName);
 
-      class_[index] = {
-        ...class_[index],
-        updateInfo: {
-          updateData: getData(),
-          user: {
-            key: userId,
-            name: user.fullName
+      if (index > 0) {
+        class_[index] = {
+          ...class_[index],
+          updateInfo: {
+            updateData: getData(),
+            user: {
+              key: userId,
+              name: user.fullName
+            }
           }
-        }
-      };
+        };
+      }
+
+      resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
+
+      if (!resultUpdateClass) {
+        res.status(500)
+      }
+
+      if (resultUpdateClass[0].status >= 400)
+        resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
+
     }
-
-
-    const resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
-
   }
 
-  res.json({ resultUpdate });
+  if (content) {
+    console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
+    res.status(200).json({ resultUpdate, resultUpdateClass });
+
+  }
+  else
+    res.status(500);
 
 });
 
-// router.put('/classroom/edit/:x', requireAuth(), async (req, res) => {
-//   const { fileName, content, type } = req.body;
-//   const monthsage = `Uodate the ${fileName} file.`;
-// 
-//   let fullPath = '';
-// 
-//   if (type === 'markdown')
-//     fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   else
-//     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
-// 
-//   const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
-// 
-//   res.json({ resultUpdate });
-// 
-// });
-
-// router.put('/settings/menu', requireAuth(), async (req, res) => {
-//   const { fileName, content, type } = req.body;
-//   const monthsage = `Uodate the ${fileName} file.`;
-// 
-//   let fullPath = '';
-// 
-//   if (type === 'markdown')
-//     fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-//   else
-//     fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
-// 
-//   const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
-// 
-//   res.json({ resultUpdate });
-// 
-// });
-
 const Home = router;
 export default Home;
-
 
 async function updateFile(fullPath, content, monthsage) {
   try {
     const fileInfo = await GithubCore.getFile(fullPath);
 
-    if (fileInfo.data && 'sha' in fileInfo.data) {
-      const resultUpdate = await GithubCore.updateFiles([
-        { path: fullPath, content, monthsage, sha: fileInfo.data.sha },
-      ]);
-
-      // console.log('Respuesta de actualización:', resultUpdate);
-      //
-      return resultUpdate;
+    if (fileInfo.data || !('sha' in fileInfo.data)) {
+      return null;
     }
+
+    const resultUpdate = await GithubCore.updateFiles([
+      { path: fullPath, content, monthsage, sha: fileInfo.data.sha },
+    ]);
+
+    return resultUpdate;
   } catch (error) {
     console.log('try catch put error: ', error);
+    return null;
   }
 }
 

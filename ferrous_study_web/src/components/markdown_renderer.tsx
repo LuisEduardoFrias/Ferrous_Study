@@ -1,4 +1,4 @@
-import { Children, HTMLAttributes } from 'react'
+import { Children, HTMLAttributes, useState, ReactNode } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -20,7 +20,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
     return !inline && match ? (
       <div className="relative pt-4 px-3" >
-        {title && <span className="" >{title}</span>}
+        {title && <span className="absolute -top-0 underline" >{title}</span>}
         <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
           <CopyButton textToCopy={text as string} />
           <CodeButton textToCode={text as string} />
@@ -39,6 +39,39 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       <code {...props} className={className} >
         {text}
       </code>
+    );
+  }
+
+  function MARK({ children, ...props }: HTMLAttributes<HTMLMarqueeElement>) {
+    const { title, text } = getTitle(children as string);
+    const [isHovering, setIsHovering] = useState(false);
+
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+    };
+
+    return (
+      <span className="relative">
+        {isHovering && (
+          <mark
+            {...props}
+            className="bg-theme-0  left-1/2 -translate-x-1/2 z-10 w-72 top-6 border border-theme-00 rounded absolute p-2"
+          >
+            {text}
+          </mark>
+        )}
+        <mark
+          {...props}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          {title}
+        </mark>
+      </span>
     );
   }
 
@@ -65,6 +98,27 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       </h3>
     );
   }
+  function H4({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+    return (
+      <h4 {...props} className="font-bold mb-2 text-xl" >
+        {children}
+      </h4>
+    );
+  }
+  function H5({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+    return (
+      <h5 {...props} className="font-bold mb-2 text-lg" >
+        {children}
+      </h5>
+    );
+  }
+  function H6({ children, ...props }: HTMLAttributes<HTMLHeadingElement>) {
+    return (
+      <h6 {...props} className="font-bold mb-2 text-base" >
+        {children}
+      </h6>
+    );
+  }
 
   function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
     return (
@@ -83,7 +137,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
     <Markdown
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeRaw]}
-      components={{ ul: Ul, code: Code, p: P, h2: H2, h3: H3 }}>
+      components={{ ul: Ul, code: Code, p: P, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, mark: MARK }}>
       {children}
     </Markdown>
   );
