@@ -5,22 +5,26 @@ import MarkdownRenderer from "../components/markdown_renderer"
 import { useTitle } from '../hooks/use_title'
 import { githubService } from '../services/github_service'
 import { useMemoryCache } from '../hooks/use_memory_cache'
+import { useStore } from '../state_warehouse/index'
 // import markdownHomePage from '../markdowns/home_page.md?raw'
 
 export default function Home({ userId }: { userId: string }) {
   useTitle('')
   const { get } = useMemoryCache();
+  const on_setClassId = useStore((state) => state.on_setClassId)
   const [content, setContent] = useState<string>('');
 
   useEffect(() => {
-    (async () => {
-      const result = await get<string | null>("home_page", async () => {
-        return await githubService.getFileContent("home_page", 'markdown');
-      });
+    on_setClassId("home_page");
+    
+      (async () => {
+        const result = await get<string | null>("home_page", async () => {
+          return await githubService.getFileContent("home_page", 'markdown');
+        });
 
-      //TODO evaluar posibke vslor null
-      setContent(result ?? '');
-    })()
+        //TODO evaluar posibke vslor null
+        setContent(result ?? '');
+      })()
   }, [])
 
   return (

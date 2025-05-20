@@ -44,7 +44,16 @@
       {
         "key": "0-4",
         "to": "/classroom/$classroomId",
-        "text": "Ejemplose codigo",
+        "text": "Playgrown",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "playgrown"
+        }
+      },
+      {
+        "key": "0-5",
+        "to": "/classroom/$classroomId",
+        "text": "Ejemplos codigo",
         "displayQuality": "",
         "params": {
           "classroomId": "ejercicios_ejemplos_codigo"
@@ -124,7 +133,7 @@
             "text": "Fibonacci",
             "displayQuality": "",
             "params": {
-              "classroomId": "eje_fibonacci"
+              "classroomId": "ejercicio_fibonacci"
             }
           },
           {
@@ -133,7 +142,7 @@
             "text": "Solución",
             "displayQuality": "",
             "params": {
-              "classroomId": "solu_fibonacci"
+              "classroomId": "solucion_fibonacci"
             }
           },
           {
@@ -142,7 +151,16 @@
             "text": "Ejercicios módulo 1",
             "displayQuality": "",
             "params": {
-              "classroomId": "ejercicios_módulo_1"
+              "classroomId": "ejercicios_modulo1"
+            }
+          },
+          {
+            "key": "1-6-2",
+            "to": "/classroom/$classroomId",
+            "text": "Solucion módulo 1",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "solucion_modulo1"
             }
           }
         ]
@@ -169,18 +187,61 @@
         "to": "/classroom/$classroomId",
         "text": "Bucles",
         "displayQuality": "",
-        "params": {
-          "classroomId": "bucles"
-        }
+        "subMenu": [
+          {
+            "key": "2-0",
+            "to": "/classroom/$classroomId",
+            "text": "Bucles",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "bucles"
+            }
+          },
+          {
+            "key": "2-0",
+            "to": "/classroom/$classroomId",
+            "text": "Loop",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "loop_bucle"
+            }
+          },
+          {
+            "key": "2-0",
+            "to": "/classroom/$classroomId",
+            "text": "For",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "for_bucle"
+            }
+          }
+        ]
       },
       {
         "key": "2-2",
         "to": "/classroom/$classroomId",
         "text": "Break y continue",
         "displayQuality": "",
-        "params": {
-          "classroomId": "loop_bucle"
-        }
+        "subMenu": [
+          {
+            "key": "2-2-0",
+            "to": "/classroom/$classroomId",
+            "text": "Break y continue",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "break_y_continue"
+            }
+          },
+          {
+            "key": "2-2-1",
+            "to": "/classroom/$classroomId",
+            "text": "Etiquetas",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "etiquetas"
+            }
+          }
+        ]
       },
       {
         "key": "2-3",
@@ -188,50 +249,68 @@
         "text": "Bloques y ámbitos",
         "displayQuality": "",
         "params": {
-          "classroomId": "for_bucle"
+          "classroomId": "bloque_y_ambito"
         }
+      },
+      {
+        "key": "2-4",
+        "to": "/classroom/$classroomId",
+        "text": "Collatz",
+        "displayQuality": "",
+        "subMenu": [
+          {
+            "key": "2-4-0",
+            "to": "/classroom/$classroomId",
+            "text": "Ejercicio Collatz",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "collats"
+            }
+          },
+          {
+            "key": "2-4-1",
+            "to": "/classroom/$classroomId",
+            "text": "Solución Colltz",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "solucion_collezt"
+            }
+          }
+        ]
       }
     ]
   },
   {
     "key": "3",
     "to": "/classroom/$classroomId",
-    "text": "Collatz",
+    "text": "Macros",
     "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "3-0",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "collats"
-        }
-      },
-      {
-        "key": "3-1",
-        "to": "/classroom/$classroomId",
-        "text": "Solución Colltz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "solución_collezt"
-        }
-      }
-    ]
+    "params": {
+      "classroomId": "macros"
+    }
   },
   {
     "key": "4",
     "to": "/classroom/$classroomId",
-    "text": "Control de flijo",
+    "text": "Tuplas y Arrays",
     "displayQuality": "",
     "subMenu": [
       {
-        "key": "3-0",
+        "key": "4-0",
         "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
+        "text": "Arrays",
         "displayQuality": "",
         "params": {
-          "classroomId": "collats"
+          "classroomId": "array"
+        }
+      },
+      {
+        "key": "4-1",
+        "to": "/classroom/$classroomId",
+        "text": "Arrays",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "tuplas"
         }
       }
     ]
@@ -239,85 +318,26 @@
   {
     "key": "5",
     "to": "/classroom/$classroomId",
-    "text": "Tiplas y Arrays",
+    "text": "RAII",
     "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "3-0",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "collats"
-        }
-      }
-    ]
+    "params": {
+      "classroomId": "raii_concepto"
+    }
   },
   {
     "key": "6",
-    "to": "/classroom/$classroomId",
-    "text": "Referencias",
-    "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "3-0",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "collats"
-        }
-      }
-    ]
-  },
-  {
-    "key": "7",
-    "to": "/classroom/$classroomId",
-    "text": "Struts",
-    "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "3-0",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "collats"
-        }
-      }
-    ]
-  },
-  {
-    "key": "8",
-    "to": "/classroom/$classroomId",
-    "text": "Traits y Netodos",
-    "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "3-0",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicio Collatz",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "collats"
-        }
-      }
-    ]
-  },
-  {
-    "key": "9",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "10",
+    "key": "7",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "11",
+    "key": "8",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""

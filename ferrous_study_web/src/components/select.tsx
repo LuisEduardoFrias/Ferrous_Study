@@ -1,4 +1,4 @@
-import {  ChangeEvent, memo } from 'react';
+import { ChangeEvent, memo } from 'react';
 import type { TClass } from '../types/class';
 import { toCamelCase } from '../hooks/to_camel_case';
 

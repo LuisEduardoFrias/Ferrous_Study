@@ -15,12 +15,14 @@ export type State = {
   dataMenu: TMenu[],
   show_drawer: boolean,
   search_data: searchData,
+  classId: string | null,
   //
   initial_state: () => void,
   on_show_drawer: (isShow: boolean) => void,
   on_search_data: (data: searchData) => void,
   on_miss: <T>(key: string, data: CacheEntry<T>) => void,
   on_clear_cache: (key?: string) => void
+  on_setClassId: (classId: string) => void
 }
 
 const useStore = create<State>((set, get) => ({
@@ -29,6 +31,7 @@ const useStore = create<State>((set, get) => ({
   dataMenu: [],
   show_drawer: false,
   search_data: { show: false, data: [] },
+  classId: null,
   /////
   initial_state: async () => {
     const [resultClass, resultMennu] = await Promise.all([
@@ -64,7 +67,12 @@ const useStore = create<State>((set, get) => ({
 
   on_search_data: (search_data: searchData) => {
     set({ search_data });
+  },
+  
+  on_setClassId: (classId: string) => {
+    set({ classId });
   }
+  
 }))
 
 export { useStore };

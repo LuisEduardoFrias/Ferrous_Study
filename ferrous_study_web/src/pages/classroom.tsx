@@ -11,6 +11,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   useTitle(classroomId)
   const { get } = useMemoryCache();
   const dataClass = useStore((state) => state.dataClass)
+  const on_setClassId = useStore((state) => state.on_setClassId)
   const [content, setContent] = useState<string>('');
   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 
@@ -29,6 +30,8 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   }
 
   useEffect(() => {
+    on_setClassId(classroomId);
+
     (async () => {
       const result = await get<string | null>(classroomId, async () => {
         return await githubService.getFileContent(classroomId, 'markdown');

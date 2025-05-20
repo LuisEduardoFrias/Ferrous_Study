@@ -3,7 +3,7 @@ import { FerrisIcon, EditIcon, BookCloseIcon, BookOpenIcon, UserIcon } from '../
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
-import { SignedIn, SignedOut, UserButton } from '@clerk/clerk-react';
+import { SignedIn, SignedOut, UserButton, useUser } from '@clerk/clerk-react';
 import { useStore } from '../state_warehouse/index'
 
 const appearance = {
@@ -11,20 +11,14 @@ const appearance = {
     userButtonPopoverFooter: 'hidden',
     userButtonPopoverCard: 'w-60 shadow-sm shadow-theme-4',
     modalContent: 'hidden'
-    //     {
-    //       cardBox: {
-    //         footer: 'hidden',
-    //       }
-    //     }
-    // modalBackDrop: 'hidden',
-    // modalContent: 'hidden',
-    // footer: 'hidden',
   }
 }
 
 export default function Navbar() {
   const navigate = useNavigate();
   const show_drawer = useStore((state) => state.show_drawer)
+  const classId = useStore((state) => state.classId)
+  const dataClass = useStore((state) => state.dataClass)
   const on_show_drawer = useStore((state) => state.on_show_drawer)
   const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
   const isMovil = useIsMovil();
@@ -39,6 +33,18 @@ export default function Navbar() {
   });
 
   function EditButton() {
+    const { user } = useUser();
+
+    const classInfo = dataClass.find((obj) => obj.name === classId);
+
+    // if (classId === 'home_page') {
+    //       return null;
+    //     }
+    // 
+    //     if (classId && classInfo.addInfo.user.key !== user.id) {
+    //       return null;
+    //     }
+
     return (
       <>
         {((param1 === 'classroom' || param1 === '') && param2 !== 'newmd' && param2 !== 'edit') &&

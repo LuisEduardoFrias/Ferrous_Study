@@ -32,7 +32,10 @@ export default function Menu() {
   useEffect(() => {
     setLoading(true);
     try {
-      setClassroomIdsArray(dataClass);
+      console.log('validando: ', dataClass);
+
+      setClassroomIdsArray(orderAsc(dataClass));
+
       const { classroom, authorizedPages } = splitMenuOptions(dataMenu);
       setContent(classroom);
       setOptionHidden(authorizedPages);
@@ -206,7 +209,7 @@ export default function Menu() {
       {showLoading &&
         <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">
-            <Loading  />
+            <Loading />
           </div>
         </div>
       }
@@ -225,4 +228,8 @@ export default function Menu() {
       </div >
     </div >
   );
+}
+
+function orderAsc<T extends TClass>(arr: T[]): T[] {
+  return arr?.sort((a, b) => a.name.localeCompare(b.name));
 }
