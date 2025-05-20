@@ -29,12 +29,12 @@ export function useLocalStorageMemo(defaultTtlSeconds?: number) {
 
     if (stored) {
       try {
-      const parsed: StoredValueWithExpiry<T> = JSON.parse(stored);
+        const parsed: StoredValueWithExpiry<T> = JSON.parse(stored);
 
-      if (parsed.expiry < Date.now()) {
-        localStorage.removeItem(key);
-        return null;
-      }
+        if (parsed?.expiry && parsed?.expiry < Date.now()) {
+          localStorage.removeItem(key);
+          return null;
+        }
 
         return parsed.value;
       } catch (error) {

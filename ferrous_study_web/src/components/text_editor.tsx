@@ -142,7 +142,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
       const selectionStart = textarea.selectionStart;
       const selectionEnd = textarea.selectionEnd;
 
-      const newText = "<hr />"
+      const newText = "<hr />\n"
 
       const newValue =
         textarea.value.substring(0, selectionStart) +
@@ -162,7 +162,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
       const selectionStart = textarea.selectionStart;
       const selectionEnd = textarea.selectionEnd;
 
-      const newText = "<br />"
+      const newText = "<br />\n"
 
       const newValue =
         textarea.value.substring(0, selectionStart) +
@@ -234,7 +234,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
                 <CodeIcon onClick={ContentCode} />
               </ButtonIcon>
               <ButtonIcon>
-                <TableIcon onClick={() => {setShowAskPanel(false);setShowTablePanel(!showTablePanel)}} />
+                <TableIcon onClick={() => { setShowAskPanel(false); setShowTablePanel(!showTablePanel) }} />
               </ButtonIcon>
               <ButtonIcon>
                 <LinkIcon onClick={Link} />
@@ -255,7 +255,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
               </ButtonIcon>
             </div>
             {showTablePanel && <TablePanel onClick={Table} />}
-            {showAskPanel && <AskPanel onClick={() => { }} />}
+            {showAskPanel && <AskPanel />}
 
 
           </div>
@@ -328,7 +328,7 @@ function TablePanel({ onClick }: TablePanelProps) {
         className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-32"
         name="row"
         placeholder="Filas"
-        autofocus={true}
+        autoFocus
         type="number"
         value={rows !== undefined ? rows : ''}
         onChange={handleChange}

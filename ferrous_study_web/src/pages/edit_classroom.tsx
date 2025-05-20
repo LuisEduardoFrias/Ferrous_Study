@@ -86,7 +86,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
 
       <Notify ref={dialogRef} okey={handlerSave} cancel={close}>
         <span className="block text-xl flex gap-4 font-semibold text-gray-800 mb-8 dark:text-gray-200 mb-2">
-          <ErrorIcon fill="#006fff" /> ¡Se guardaran la información!
+          <ErrorIcon fill="#006fff" /> ¡Se guardara la información!
         </span >
       </Notify>
 
@@ -133,7 +133,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       {showLoading &&
         <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">
-            <Loading classText="text-theme-4 font-extrabold" />
+            <Loading />
           </div>
         </div>
       }

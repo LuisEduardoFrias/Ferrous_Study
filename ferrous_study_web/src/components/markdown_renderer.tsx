@@ -20,7 +20,11 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
     return !inline && match ? (
       <div className="relative pt-4 px-3" >
-        {title && <span className="absolute -top-0 underline" >{title}</span>}
+        {title &&
+          <div className="absolute -top-0 w-[320px] overflow-y-scroll pr-3 z-40 " >
+            <span className="underline" >{title}</span>
+          </div>
+        }
         <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
           <CopyButton textToCopy={text as string} />
           <CodeButton textToCode={text as string} />

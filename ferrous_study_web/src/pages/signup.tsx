@@ -156,7 +156,7 @@ import Loading from '../components/loading';
 import { useTitle } from '../hooks/use_title';
 import Paragraph from '../components/paragraph';
 import { ArrowRightIcon } from '../assets/svgs';
-import { SignIn, SignUp } from '@clerk/tanstack-react-start';
+import { SignIn, SignUp } from '@clerk/clerk-react';;
 import { useLocation } from '@tanstack/react-router'; // Importa useLocation
 
 const appearance = {
@@ -174,7 +174,7 @@ export default function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
   const formRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-          // @ts-ignore
+  // @ts-ignore
   const searchParams = new URLSearchParams(location.search);
   const redirectTo = searchParams.get('redirect_url') || '/';
 
@@ -260,6 +260,7 @@ function SignupForm(props: SignupFormProps) {
             <Loading fill="black" />
           </div>
         }
+        // @ts-ignore
         withSignUp={false}
         oauthFlow="popup"
         routing="hash"

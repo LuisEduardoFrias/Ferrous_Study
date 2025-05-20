@@ -204,9 +204,9 @@ export default function Menu() {
       </Notify>
 
       {showLoading &&
-        <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="w-full h-44">
-            <Loading classText="text-theme-3 font-extrabold" />
+            <Loading  />
           </div>
         </div>
       }

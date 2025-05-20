@@ -2,7 +2,13 @@ import { redirect, BeforeLoadFn } from '@tanstack/react-router'
 import { Route as RootRoute } from '../routes/__root'
 import { AnyContext } from '@tanstack/react-router'
 
-export async function verifyAuthentication({ location }: BeforeLoadFn<typeof RootRoute, unknown, Record<string, any>, AnyContext, AnyContext>) {
+export const verifyAuthentication: BeforeLoadFn<
+  typeof RootRoute,
+  unknown,
+  Record<string, any>, 
+  AnyContext,
+  AnyContext
+> = async ({ location }) => {
   const clerk = (window as any).Clerk;
 
   if (!clerk || !clerk?.user) {

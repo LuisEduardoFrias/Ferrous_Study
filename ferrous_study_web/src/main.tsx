@@ -1,8 +1,8 @@
 import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
-import { ClerkProvider, ClerkLoading, ClerkLoaded } from '@clerk/clerk-react'; 
-import { Clerk } from '@clerk/clerk-js';
+import { ClerkProvider, ClerkLoading, ClerkLoaded } from '@clerk/clerk-react';
+//import { Clerk } from '@clerk/clerk-react';
 import PageLoading from './pages/page_loading';
 import { routeTree } from './routeTree.gen';
 import { useStore } from './state_warehouse/index';
@@ -17,11 +17,11 @@ declare module '@tanstack/react-router' {
   }
 }
 
-declare global {
-  interface Window {
-    clerk: Clerk | undefined
-  }
-}
+// declare global {
+//   interface Window {
+//     clerk: Clerk | undefined
+//   }
+// }
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
