@@ -20,6 +20,10 @@ import UserIcon from './user';
 import MarkIcon from './mark';
 import SuccessIcon from './success';
 import ErrorIcon from './error';
+import CloudIcon from './cloud';
+import AskIcon from './ask';
+import EnterIcon from './enter';
+import DivideIcon from './divide';
 
 export {
   BookCloseIcon, BookOpenIcon, CopyIcon,
@@ -29,5 +33,6 @@ export {
   SaveIcon, DeleteIcon, AddIcon,
   ViewIcon, NotViewIcon, GithubIcon,
   UserIcon, MarkIcon, SuccessIcon,
-  ErrorIcon
+  ErrorIcon, CloudIcon, AskIcon,
+  EnterIcon, DivideIcon
 };

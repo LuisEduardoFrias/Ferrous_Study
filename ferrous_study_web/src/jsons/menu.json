@@ -204,44 +204,102 @@
   {
     "key": "4",
     "to": "/classroom/$classroomId",
-    "text": "Array",
+    "text": "Control de flijo",
     "displayQuality": "",
-    "params": {
-      "classroomId": "array"
-    }
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      }
+    ]
   },
   {
     "key": "5",
     "to": "/classroom/$classroomId",
-    "text": "Tuplas",
+    "text": "Tiplas y Arrays",
     "displayQuality": "",
-    "params": {
-      "classroomId": "tuplas"
-    }
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      }
+    ]
   },
   {
     "key": "6",
     "to": "/classroom/$classroomId",
-    "text": "Eje",
+    "text": "Referencias",
     "displayQuality": "",
-    "params": {
-      "classroomId": "tuplas"
-    }
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      }
+    ]
   },
   {
     "key": "7",
+    "to": "/classroom/$classroomId",
+    "text": "Struts",
+    "displayQuality": "",
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      }
+    ]
+  },
+  {
+    "key": "8",
+    "to": "/classroom/$classroomId",
+    "text": "Traits y Netodos",
+    "displayQuality": "",
+    "subMenu": [
+      {
+        "key": "3-0",
+        "to": "/classroom/$classroomId",
+        "text": "Ejercicio Collatz",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "collats"
+        }
+      }
+    ]
+  },
+  {
+    "key": "9",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase",
     "displayQuality": ""
   },
   {
-    "key": "8",
+    "key": "10",
     "to": "/settings/menu",
     "text": "Configuraciones del menu",
     "displayQuality": ""
   },
   {
-    "key": "9",
+    "key": "11",
     "to": "/about",
     "text": "Acerca de Ferrous Study!",
     "displayQuality": ""

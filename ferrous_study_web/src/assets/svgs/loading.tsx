@@ -6,9 +6,9 @@ export default function LoadingIcon(props: Props) {
 
   return (
     <svg
-      width="24px"
-      height="24px"
-      viewBox="0 0 24.00 24.00"
+      width="32px"
+      height="32px"
+      viewBox="4 4 16 16"
       id="svg"
       {...props}
       fill="none"

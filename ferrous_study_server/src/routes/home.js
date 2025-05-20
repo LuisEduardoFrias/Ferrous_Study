@@ -82,12 +82,15 @@ router.post('/', requireAuth(), async (req, res) => {
 
       resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
 
+      console.log(`vslidsndo reouesta con error:  \n\n  ${resultUpdate}`)
+
       if (!resultUpdate) {
         res.status(500)
       }
 
-      if (resultUpdate[0].status >= 400)
+      if (resultUpdate[0].status >= 400) {
         await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
+      }
     }
 
     if (content) {
@@ -99,6 +102,7 @@ router.post('/', requireAuth(), async (req, res) => {
 
   } catch (error) {
     console.log("try catch error: ", error);
+    res.status(500);
   }
 });
 
@@ -106,67 +110,73 @@ router.put('/', requireAuth(), async (req, res) => {
   const { fileName, content, type } = req.body;
   const monthsage = `Uodate the ${fileName} file.`;
 
-  let fullPath = '';
+  try {
 
-  if (type === 'markdown')
-    fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-  else
-    fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
-  let resultUpdateClass = null;
+    let fullPath = '';
 
-  if (resultUpdate[0].status >= 400) {
-    res.status(resultUpdate[0].status);
-  }
+    if (type === 'markdown')
+      fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
+    else
+      fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  if (type === 'markdown') {
+    const resultUpdate = await updateFile(fullPath, typeof content === "string" ? content : JSON.stringify(content, null, 2), monthsage);
+    let resultUpdateClass = null;
 
-    const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
+    if (resultUpdate[0].status >= 400) {
+      res.status(resultUpdate[0].status);
+    }
 
-    const content = await GithubCore.getFileContent(fullPathClass);
+    if (type === 'markdown') {
 
-    if (content) {
-      const class_ = JSON.parse(content);
+      const fullPathClass = path.join('ferrous_study_web', 'src', 'jsons', `class.json`);
 
-      const { userId } = getAuth(req);
-      const user = await clerkClient.users.getUser(userId);
+      const content = await GithubCore.getFileContent(fullPathClass);
 
-      const index = class_.findIndex((obj) => obj.name === fileName);
+      if (content) {
+        const class_ = JSON.parse(content);
 
-      if (index > 0) {
-        class_[index] = {
-          ...class_[index],
-          updateInfo: {
-            updateData: getData(),
-            user: {
-              key: userId,
-              name: user.fullName
+        const { userId } = getAuth(req);
+        const user = await clerkClient.users.getUser(userId);
+
+        const index = class_.findIndex((obj) => obj.name === fileName);
+
+        if (index > 0) {
+          class_[index] = {
+            ...class_[index],
+            updateInfo: {
+              updateData: getData(),
+              user: {
+                key: userId,
+                name: user.fullName
+              }
             }
-          }
-        };
-      }
+          };
+        }
 
-      resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
-
-      if (!resultUpdateClass) {
-        res.status(500)
-      }
-
-      if (resultUpdateClass[0].status >= 400)
         resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
 
+        if (!resultUpdateClass) {
+          res.status(500)
+        }
+
+        if (resultUpdateClass[0].status >= 400) {
+          resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
+        }
+      }
     }
-  }
 
-  if (content) {
-    console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
-    res.status(200).json({ resultUpdate, resultUpdateClass });
-
-  }
-  else
+    if (content) {
+      console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
+      res.status(200).json({ resultUpdate, resultUpdateClass });
+    }
+    else {
+      res.status(500);
+    }
+  } catch (error) {
+    console.log("try catch error: ", error);
     res.status(500);
-
+  }
 });
 
 const Home = router;
@@ -176,7 +186,7 @@ async function updateFile(fullPath, content, monthsage) {
   try {
     const fileInfo = await GithubCore.getFile(fullPath);
 
-    if (fileInfo.data || !('sha' in fileInfo.data)) {
+    if (!fileInfo.data || !('sha' in fileInfo.data)) {
       return null;
     }
 

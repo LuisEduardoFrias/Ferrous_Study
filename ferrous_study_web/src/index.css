@@ -241,3 +241,7 @@ button:focus-visible {
 .cl-modalBackdrop .cl-modalContent .cl-footer {
   display: none;
 }
+
+.custonClassSignin {
+  height: 290px;
+}

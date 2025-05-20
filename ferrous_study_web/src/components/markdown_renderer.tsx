@@ -1,4 +1,4 @@
-import { Children, HTMLAttributes, useState, ReactNode } from 'react'
+import { Children, HTMLAttributes, useState } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'

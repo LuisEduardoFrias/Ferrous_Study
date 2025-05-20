@@ -9,6 +9,7 @@ import Loading from '../components/loading'
 import Notify from '../components/notify'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import type { TClass } from '../types/class'
+import type { TServiceResult } from '../types/service_result'
 
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
   useTitle(editClassroomId)
@@ -16,7 +17,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
   const [content, setContent] = useState<string>('');
   const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
-  const [contentMessage, setContentErrorMessage] = useState<{ mesagge: string, data?: object }>({ mesagge: '' });
+  const [contentMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
   const [showLoading, setShowLoading] = useState(false);
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
@@ -74,7 +75,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       await githubService.updateFileContent('class', JSON.stringify(updateClass), 'json')
     ]);
 
-    setContentErrorMessage({...result });
+    setContentErrorMessage({ ...result });
     clear(editClassroomId)
     setShowLoading(false)
     openContentNotify();

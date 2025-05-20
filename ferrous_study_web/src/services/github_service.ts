@@ -1,7 +1,8 @@
 import type { TMenu } from '../types/menu';
+import type { TServiceResult } from '../types/service_result';
 
 async function auth() {
-  const clerk = (window as any).clerk;
+  const clerk = (window as any).Clerk;
   return { token: await clerk?.session?.getToken({ template: 'Plantilla1' }) };
 }
 
@@ -86,7 +87,7 @@ export const githubService = {
    * @param content El contenido del archivo.
    * @returns Una promesa que resuelve a la respuesta de la creación del archivo.
    */
-  async createMarkdownFile(fileName: string, content: string, keywords: string[]): Promise<{ message: string, data?: any }> {
+  async createMarkdownFile(fileName: string, content: string, keywords: string[]): Promise<TServiceResult> {
     const { token } = await auth();
 
     const pathCon = FULL_API_BASE_URL;
@@ -103,14 +104,14 @@ export const githubService = {
 
       if (!response.ok) {
         console.error(`Error al crear el archivo ${fileName}.md:`, response.status);
-        return { message: 'Error al crear la nueva clase'};
+        return { message: 'Error al crear la nueva clase' };
       }
 
       const data: FileOperationResponse = await response.json();
       return { message: 'Clase creada con éxito.', data };
     } catch (error) {
-      console.error(`Error al crear el archivo ${fileName}.md:`, error);
-      throw error;
+      console.error(`Error web al crear el archivo ${fileName}.md:`, error);
+      return { message: 'Error al crear la nueva clase' };
     }
   },
 
@@ -121,7 +122,7 @@ export const githubService = {
    * @param type El tipo de archivo ('markdown' o 'json').
    * @returns Una promesa que resuelve a la respuesta de la actualización del archivo.
    */
-  async updateFileContent(fileName: string, content: string | TMenu[], type: 'markdown' | 'json'): Promise<{ message: string, data?: any }> {
+  async updateFileContent(fileName: string, content: string | TMenu[], type: 'markdown' | 'json'): Promise<TServiceResult> {
     const { token } = await auth();
 
     const pathCon = FULL_API_BASE_URL;
@@ -144,8 +145,8 @@ export const githubService = {
       return { message: 'Datos guardados con éxito.', data };
 
     } catch (error) {
-      console.error(`Error al actualizar el archivo ${fileName}.${type}:`, error);
-      throw error;
+      console.error(`Error web al actualizar el archivo ${fileName}.${type}:`, error);
+      return { message: 'Error al guardas los datos.' };
     }
   },
 };

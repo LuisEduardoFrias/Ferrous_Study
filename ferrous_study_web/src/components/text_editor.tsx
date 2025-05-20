@@ -1,9 +1,10 @@
-import Mark from '../assets/svgs/mark';
-import { ReactNode, useState, useEffect, RefObject, CSSProperties, useRef, ChangeEvent } from 'react'
-//import { TableIcon, CodeIcon, LinkIcon, ImageIcon, SaveIcon } from '../assets/svgs'
-import { NotViewIcon, ViewIcon, SaveIcon, MarkIcon, CodeIcon } from '../assets/svgs'
-import { toCamelCase } from "../hooks/to_camel_case.ts"
-import MarkdownRenderer from "../components/markdown_renderer"
+import { useLocalStorageMemo } from '../hooks/use_local_storage_memo';
+import { ReactNode, useState, useEffect, KeyboardEvent, CSSProperties, useRef, ChangeEvent } from 'react'
+//import { ImageIcon } from '../assets/svgs'
+import { NotViewIcon, TableIcon, LinkIcon, DivideIcon, EnterIcon, ViewIcon, AskIcon, SaveIcon, MarkIcon, CodeIcon, CloudIcon } from '../assets/svgs'
+import { toCamelCase } from '../hooks/to_camel_case.ts'
+import ButtonIcon from '../components/button_icon'
+import MarkdownRenderer from '../components/markdown_renderer'
 
 type TextEditorProps = {
   fileName: string,
@@ -15,11 +16,14 @@ type TextEditorProps = {
 
 export default function TextEditor({ onSave, fileName, className, style, defaultValue }: TextEditorProps) {
   const [view, setView] = useState(true);
-  const textareaRef = useRef<HTMLTextAreaElement>()
+  const [showTablePanel, setShowTablePanel] = useState(false);
+  const [showAskPanel, setShowAskPanel] = useState(false);
+  const { getValue, saveValue } = useLocalStorageMemo(10);
+  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const [textValue, setTextValue] = useState(defaultValue || '');
 
   useEffect(() => {
-    setTextValue(defaultValue)
+    setTextValue(getValue('textEditClass') ?? defaultValue);
   }, [defaultValue])
 
   function handlerSave() {
@@ -32,6 +36,8 @@ export default function TextEditor({ onSave, fileName, className, style, default
   }
 
   function Mark() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
 
     if (textareaRef.current) {
       const textarea = textareaRef.current;
@@ -43,7 +49,7 @@ export default function TextEditor({ onSave, fileName, className, style, default
       }
 
       const selectedText = textarea.value.substring(selectionStart, selectionEnd);
-      const parts = selectedText.split('&content>');
+      const parts = selectedText.split('&>');
 
       if (parts.length === 2) {
         const newText = `<mark>&title>${parts[0]}<title&${parts[1]}</mark>`;
@@ -57,7 +63,119 @@ export default function TextEditor({ onSave, fileName, className, style, default
     }
   }
 
+  function Link() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
+
+    if (textareaRef.current) {
+      const textarea = textareaRef.current;
+      const selectionStart = textarea.selectionStart;
+      const selectionEnd = textarea.selectionEnd;
+
+      if (selectionStart === selectionEnd) {
+        return;
+      }
+
+      const selectedText = textarea.value.substring(selectionStart, selectionEnd);
+      const parts = selectedText.split('&>');
+
+      if (parts.length === 2) {
+        const newText = `[${parts[0]}](${parts[1]})`;
+        const newValue =
+          textarea.value.substring(0, selectionStart) +
+          newText +
+          textarea.value.substring(selectionEnd);
+
+        setTextValue(newValue);
+      }
+    }
+  }
+
+  function Table(rows: number, cols: number) {
+    setShowTablePanel(false);
+
+    if (textareaRef.current) {
+      const textarea = textareaRef.current;
+      const selectionStart = textarea.selectionStart;
+      const selectionEnd = textarea.selectionEnd;
+
+      const colSeparator = "------|";
+      const rowSeparator = "      |";
+      const newLine = "\n";
+
+      let separatorLine = "|";
+      for (let i = 0; i < cols; i++) {
+        separatorLine += rowSeparator;
+      }
+
+      let headerRow = "|";
+      for (let i = 0; i < cols; i++) {
+        headerRow += colSeparator;
+      }
+
+      let body = "";
+      for (let i = 0; i < rows; i++) {
+        let row = "|";
+        for (let j = 0; j < cols; j++) {
+          row += rowSeparator;
+        }
+        body += row + newLine;
+      }
+
+      const newText = separatorLine + newLine + headerRow + newLine + body;
+
+      const newValue =
+        textarea.value.substring(0, selectionStart) +
+        newText +
+        textarea.value.substring(selectionEnd);
+
+      setTextValue(newValue);
+    }
+  }
+
+  function Divide() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
+
+    if (textareaRef.current) {
+      const textarea = textareaRef.current;
+      const selectionStart = textarea.selectionStart;
+      const selectionEnd = textarea.selectionEnd;
+
+      const newText = "<hr />"
+
+      const newValue =
+        textarea.value.substring(0, selectionStart) +
+        newText +
+        textarea.value.substring(selectionEnd);
+
+      setTextValue(newValue);
+    }
+  }
+
+  function Enter() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
+
+    if (textareaRef.current) {
+      const textarea = textareaRef.current;
+      const selectionStart = textarea.selectionStart;
+      const selectionEnd = textarea.selectionEnd;
+
+      const newText = "<br />"
+
+      const newValue =
+        textarea.value.substring(0, selectionStart) +
+        newText +
+        textarea.value.substring(selectionEnd);
+
+      setTextValue(newValue);
+    }
+  }
+
   function ContentCode() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
 
     if (textareaRef.current) {
       const textarea = textareaRef.current;
@@ -81,28 +199,65 @@ export default function TextEditor({ onSave, fileName, className, style, default
     }
   }
 
+  function SaveCode() {
+    setShowTablePanel(false);
+    setShowAskPanel(false);
+    saveValue('textEditClass', textValue)
+  }
+
   return (
     <div className="relative p-2 pt-28  w-full h-full" >
 
       <div className="fixed z-[49] left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-28" >
 
-        <div className="relative flex flex-col w-full items-center justify-center px-4 h-20 bg-theme-d-4-d" >
+        <div className="relative grid grid-rows-2 gap-0 w-full items-center  px-2 h-20 bg-gray-700" >
 
-          <div className="flex w-full items-center justify-center h-10" >
+          <div className="flex w-full h-full items-center justify-center" >
             <h1 className="text-xl text-center text-theme-0" >{toCamelCase(fileName)}</h1>
 
             <div className="absolute right-1 w-20 flex flex-row gap-2 items-center" >
               <ViewMarkdown onClick={(value: boolean) => setView(value)} />
               <Option>
-                <SaveIcon onClick={handlerSave} />
+                <CloudIcon onClick={handlerSave} />
               </Option>
             </div>
 
           </div>
 
-          <div className="flex flex-row w-full overflow-x-scroll gap-2 items-center" >
-            <MarkIcon onClick={Mark} />
-            <CodeIcon onClick={ContentCode} />
+
+          <div className="relative w-full h-full grid grid-cols-[1fr,30px] " >
+            <div className="flex flex-row px-2 w-full h-full overflow-x-scroll gap-2 items-center" >
+              <ButtonIcon>
+                <MarkIcon onClick={Mark} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <CodeIcon onClick={ContentCode} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <TableIcon onClick={() => {setShowAskPanel(false);setShowTablePanel(!showTablePanel)}} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <LinkIcon onClick={Link} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <DivideIcon onClick={Divide} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <EnterIcon onClick={Enter} />
+              </ButtonIcon>
+              <ButtonIcon>
+                <SaveIcon onClick={SaveCode} />
+              </ButtonIcon>
+            </div>
+            <div className="flex w-full h-full justify-center items-center" >
+              <ButtonIcon>
+                <AskIcon onClick={() => { setShowTablePanel(false); setShowAskPanel(!showAskPanel) }} />
+              </ButtonIcon>
+            </div>
+            {showTablePanel && <TablePanel onClick={Table} />}
+            {showAskPanel && <AskPanel onClick={() => { }} />}
+
+
           </div>
 
         </div>
@@ -125,8 +280,119 @@ export default function TextEditor({ onSave, fileName, className, style, default
   )
 }
 
+interface TablePanelProps {
+  onClick: (rows: number, cols: number) => void;
+}
 
+function TablePanel({ onClick }: TablePanelProps) {
+  const [rows, setRows] = useState<number | undefined>(undefined);
+  const [cols, setCols] = useState<number | undefined>(undefined);
+  const colInputRef = useRef<HTMLInputElement>(null);
 
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const numericValue = parseInt(value, 10);
+
+    if (!isNaN(numericValue) && numericValue >= 0) {
+      if (name === 'row') {
+        setRows(numericValue);
+      } else if (name === 'col') {
+        setCols(numericValue);
+      }
+    } else if (value === '') {
+      if (name === 'row') {
+        setRows(undefined);
+      } else if (name === 'col') {
+        setCols(undefined);
+      }
+    }
+  };
+
+  const handleClick = () => {
+    if (rows !== undefined && cols !== undefined) {
+      onClick(rows, cols);
+    } else {
+      alert('Por favor, ingresa un número válido de filas y columnas.');
+    }
+  };
+
+  const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter' && colInputRef.current === document.activeElement && rows !== undefined && cols !== undefined) {
+      onClick(rows, cols);
+    }
+  };
+
+  return (
+    <div className="absolute top-12 left-5 bg-gray-600 p-5 rounded-md shadow-md z-10 flex gap-2 items-center">
+      <input
+        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-32"
+        name="row"
+        placeholder="Filas"
+        autofocus={true}
+        type="number"
+        value={rows !== undefined ? rows : ''}
+        onChange={handleChange}
+      />
+      <input
+        className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-32"
+        name="col"
+        placeholder="Columnas"
+        type="number"
+        value={cols !== undefined ? cols : ''}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        ref={colInputRef}
+      />
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-400 cursor-pointer"
+        onClick={handleClick}
+        disabled={rows === undefined || cols === undefined}
+      >
+        Agregar
+      </button>
+    </div>
+  );
+};
+
+function AskPanel() {
+  return (
+    <div className="absolute top-12 -right-2 bg-gray-700 overflow-y-scroll h-96 shadow shadow-theme-o-4 border border-gray-300 shadow-lg rounded-md p-6 z-50 w-full max-w-md">
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-xl font-semibold text-theme-0">Información de Ayuda</h3>
+      </div>
+      <div className="space-y-7 text-theme-0">
+        <p>
+          <MarkIcon /> Es una opción que crea un marcado. Para ello, separa el título de lo que quieres marcar con '&&gt;', Ejemplo: 'título&&gt;marcado', luego selecciona todo y presiona el botón de marcado.
+        </p>
+        <p>
+          <CodeIcon /> Es una opción para presentar código de programación. Escribe tu código, selecciónalo y presiona el botón. Puedes poner un
+          título en la opción de título &title&gt;&lt;title&.
+        </p>
+        <p>
+          <TableIcon /> Esta opción te permite crear tablas. Presiona el botón e introduce la cantidad de filas y la cantidad de columnas de tu tabla. Haz clic donde requieres colocar tu tabla en el lienzo y presiona agregar.
+        </p>
+        <p>
+          <LinkIcon /> Es una opción para crear links más cortos. Escribe un título y sepáralo del link con '&&gt;'. Ejemplo: 'título&&gt;link'. Selecciona todo y presiona el botón.
+        </p>
+        <p>
+          <DivideIcon /> Es una opción para crear un divisor. Solo haz clic donde quieres colocar tu división en el lienzo y presiona la opción.
+        </p>
+        <p>
+          <EnterIcon /> Esta opción agrega un salto de línea. Selecciona en qué lugar quieres agregar el salto en tu lienzo y haz clic en la opción.
+        </p>
+        <p>
+          <SaveIcon /> Este botón guarda por un lapso de 1 minuto todo tu texto. Ideal por si cometes el error de actualizar la página. Solo presiona el botón.
+        </p>
+        <p>
+          <CloudIcon />Este botón publica todo el texto.
+        </p>
+        <p>
+          <ViewIcon />Esta opción te enseña el lienzo en modo Markdown.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function Option({ children }: { children: ReactNode }): JSX.Element {
   return (
@@ -156,47 +422,3 @@ function ViewMarkdown({ onClick }: { onClick: (value: boolean) => void }) {
       }
     </div>)
 }
-
-/*
-          <Option>
-            <b className="font-extrabold" >B</b>
-          </Option>
-
-          <Option>
-            <span className="font-bold" >H1</span>
-          </Option>
-
-          <Option>
-            <span className="font-bold" >H2</span>
-          </Option>
-
-          <Option>
-            <span className="font-bold" >H3</span>
-          </Option>
-
-          <Option>
-            <span className="font-bold" onClick={() => {
-              console.log(textareaRef.current.value)
-            }} >H4</span>
-          </Option>
-
-          <Option>
-            <em className="italic font-bold">I</em>
-          </Option>
-
-          <Option>
-            <TableIcon />
-          </Option>
-          <Option>
-            <CodeIcon />
-          </Option>
-
-          <Option>
-            <ImageIcon />
-          </Option>
-
-          <Option>
-            <LinkIcon />
-          </Option>
-
-*/

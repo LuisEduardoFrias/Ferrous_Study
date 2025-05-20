@@ -10,14 +10,12 @@
     "preview": "vite preview --port=3001"
   },
   "dependencies": {
-    "@clerk/clerk-js": "^5.67.0",
-    "@clerk/clerk-react": "^5.31.2",
     "@clerk/localizations": "^3.16.0",
-    "@clerk/react-router": "^1.4.2",
     "@clerk/tanstack-react-start": "^0.15.2",
     "@tailwindcss/postcss": "^4.1.5",
     "@tanstack/react-router": "^1.120.2",
     "@tanstack/react-router-devtools": "^1.120.2",
+    "@tanstack/react-start-server": "^1.120.5",
     "@vitejs/plugin-react": "^4.4.1",
     "autoprefixer": "^10.4.21",
     "postcss": "8.5.3",

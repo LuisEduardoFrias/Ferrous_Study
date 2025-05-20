@@ -6,9 +6,9 @@ export default function CodeIcon(props: Props) {
 
   return (
     <svg
-      width="32px"
-      height="32px"
-      viewBox="-12.32 -12.32 40.64 40.64"
+      width="24px"
+      height="24px"
+      viewBox="-2 -2 20 20"
       fill="#ffff"
       id="svg"
       {...props}
