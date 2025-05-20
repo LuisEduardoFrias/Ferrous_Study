@@ -1,4 +1,4 @@
-## Funciones en Rust: Bloques de Código Reutilizables
+### Funciones en Rust: Bloques de Código Reutilizables
 
 Las funciones son bloques fundamentales de código que realizan una tarea específica. En Rust, se definen utilizando la palabra clave `fn`, seguida del nombre de la función, sus parámetros (si los tiene) y el tipo de valor que retorna (si lo hace).
 
