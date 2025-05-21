@@ -1,10 +1,10 @@
-import { useState, useRef } from 'react';
-import Loading from '../components/loading';
-import { useTitle } from '../hooks/use_title';
-import Paragraph from '../components/paragraph';
-import { ArrowRightIcon } from '../assets/svgs';
-import { SignIn, SignUp } from '@clerk/clerk-react';;
-import { useLocation } from '@tanstack/react-router'; // Importa useLocation
+import { useState, useRef } from 'react'
+import Loading from '../components/loading'
+import { useTitle } from '../hooks/use_title'
+import Paragraph from '../components/paragraph'
+import { ArrowRightIcon } from '../assets/svgs'
+import { SignIn, SignUp } from '@clerk/clerk-react'
+import { useLocation } from '@tanstack/react-router'
 
 const appearance = {
   elements: {
@@ -69,11 +69,12 @@ function LoginForm(props: LoginFormProps) {
             <Loading fill="black" />
           </div>
         }
-        redirectUrl={props.redirectTo}// Usa el redirectTo que obtuvimos de la URL
+        redirectUrl={props.redirectTo}
         appearance={appearance}
-        signInUrl="/signinup" // Si la página de inicio de sesión es la misma
-        routing="hash" // 'path' es el valor por defecto
-        signInFallbackRedirectUrl="/" // Si quieres un valor específico de fallback para signin
+        signInUrl="/signinup"
+        routing="hash"
+          // @ts-ignore
+        signInFallbackRedirectUrl="/"
       />
 
       <p className="text-sm w-full absolute bottom-3 left-1/2 -translate-x-1/2 text-gray-600 text-center">
@@ -108,10 +109,8 @@ function SignupForm(props: SignupFormProps) {
           </div>
         }
         appearance={appearance}
-        // Asumiendo que tu ruta es '/signinup', no necesitas 'path' si usas 'routing="path"' por defecto
-        // Considera si necesitas initialValues, oauthFlow, etc.
-        routing="hash" // 'path' es el valor por defecto para frameworks con routing como Tanstack Router
-        fallbackRedirectUrl="/" // Si quieres un valor específico de fallback para signup
+        routing="hash"
+        fallbackRedirectUrl="/" 
       />
       <p className="text-sm w-full absolute bottom-3 left-1/2 -translate-x-1/2 text-gray-600 text-center">
         ¿Ya tienes una cuenta?{' '}

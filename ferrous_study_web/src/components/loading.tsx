@@ -11,6 +11,11 @@ export default function Loading(props: LoadingProps) {
   const [ferrisVisible, setFerrisVisible] = useState([false, false, false]);
   const animationTimeout = useRef<number | null>(null);
   const animationDelay = 500;
+  
+  useEffect(()=>{
+    document.body.style.overflow = 'hidden';
+    return ()=>{document.body.style.overflow = 'auto';}
+  },[])
 
   useEffect(() => {
     const animateSequence = (step: number) => {

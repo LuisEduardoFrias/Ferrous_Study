@@ -17,7 +17,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
   const [content, setContent] = useState<string>('');
   const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
-  const [contentMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
+  const [contentErrorMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
   const [showLoading, setShowLoading] = useState(false);
   const { dialogRef, open, close } = useDialog();
   const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
@@ -95,16 +95,16 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
         okey={closeContentNotify}
       >
         <div className="flex flex-row gap-4 mb-2">
-          {contentMessage?.data ?
+          {contentErrorMessage?.data ?
             <SuccessIcon /> :
             <ErrorIcon />
           }
-          <span className={`block text-xl font-semibold ${contentMessage?.data ? "text-green-500" : "text-red-500"} mb-2`}>
+          <span className={`block text-xl font-semibold ${contentErrorMessage?.data ? "text-green-500" : "text-red-500"} mb-2`}>
             ¡Atención!
           </span>
         </div>
         <span className="block text-base text-gray-700 dark:text-gray-300">
-          {contentMessage.message}
+          {contentErrorMessage.message}
         </span>
       </Notify>
 
@@ -131,7 +131,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       </Notify>
 
       {showLoading &&
-        <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="bg-[rgba(96,96,96,0.441)] z-50 pt-20 backdrop-blur-sm w-full h-full absolute top-0 left-0">
           <div className="w-full h-44">
             <Loading />
           </div>

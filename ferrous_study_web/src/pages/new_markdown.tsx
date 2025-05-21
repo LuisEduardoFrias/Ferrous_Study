@@ -3,9 +3,11 @@ import TextEditor from '../components/text_editor'
 import { githubService } from '../services/github_service'
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
+import { SuccessIcon, ErrorIcon } from '../assets/svgs'
 import Loading from '../components/loading'
 import Notify from '../components/notify';
 import { useStore } from '../state_warehouse/index'
+import type { TServiceResult } from '../types/service_result'
 
 export default function NewMarkdown() {
   useTitle('Crear nueva clase')
@@ -18,7 +20,7 @@ export default function NewMarkdown() {
   const [keywords, setKeywords] = useState<string>('');
   const [textValue, setTextValue] = useState<string>('');
   const [showLoading, setShowLoading] = useState(false);
-  const [contentErrorMessage, setContentErrorMessage] = useState<string>('');
+  const [contentErrorMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     let value = event.target.value;
@@ -43,13 +45,13 @@ export default function NewMarkdown() {
     closeV();
 
     if (!textValue || textValue.trim().length === 0) {
-      setContentErrorMessage('La clase debe tener contenido para poder ser guardada.');
+      setContentErrorMessage({ message: 'La clase debe tener contenido para poder ser guardada.' });
       openContentNotify();
       return;
     }
 
     if (textValue.length < 100) {
-      setContentErrorMessage('El contenido de la clase es muy pequeño. El mínimo de caracteres es 100.');
+      setContentErrorMessage({ message: 'El contenido de la clase es muy pequeño. El mínimo de caracteres es 100.' });
       openContentNotify();
       return;
     }
@@ -57,7 +59,7 @@ export default function NewMarkdown() {
     setShowLoading(true);
     const result = await githubService.createMarkdownFile(newClassId as string, textValue, keywords.split(','));
 
-    setContentErrorMessage(result?.message);
+    setContentErrorMessage({ ...result });
     setShowLoading(false);
 
     if (result?.data) {
@@ -130,11 +132,15 @@ export default function NewMarkdown() {
         ref={notifyContentRef}
         okey={closeContentNotify}
       >
-        <span className="block text-xl font-semibold text-red-600 dark:text-red-400 mb-2">
+        {contentErrorMessage?.data ?
+          <SuccessIcon /> :
+          <ErrorIcon />
+        }
+        <span className={`block text-xl font-semibold ${contentErrorMessage?.data ? "text-green-500" : "text-red-500"} mb-2`}>
           ¡Atención!
         </span>
         <span className="block text-base text-gray-700 dark:text-gray-300">
-          {contentErrorMessage}
+          {contentErrorMessage.message}
         </span>
       </Notify>
 
@@ -152,7 +158,7 @@ export default function NewMarkdown() {
           open();
         }}
         defaultValue={textValue}
-        fileName={newClassId === '' ?  "Nueva clase" : newClassId}
+        fileName={newClassId === '' ? "Nueva clase" : newClassId}
         className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
         style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
       />

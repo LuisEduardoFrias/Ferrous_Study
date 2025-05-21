@@ -13,6 +13,7 @@ type classOrder = {
 function ButtonChangePage({ classroomId }: { classroomId: string }) {
   const dataMenu = useStore((state) => state.dataMenu)
   const [isShow, setShow] = useState(false);
+  const [active, setActive] = useState(true);
   const [btnOption, setBtnOptions] = useState<{ menu: classOrder[], index: number }>();
   const TRANSITION = "transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";
   const timer = useRef<number | undefined>();
@@ -28,6 +29,7 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
   }, [isShow]);
 
   useEffect(() => {
+    setActive(true);
     const menu = convertMenu(dataMenu);
     const index = menu.findIndex((obj) => obj.params.classroomId === classroomId)
     setBtnOptions({ menu, index });
@@ -72,16 +74,16 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
 
   return (
     <div className="fixed z-20 left-0 w-full top-1/2 flex items-center justify-between px-3">
-      <button onClick={()=>reTimer()}  disabled={!getOptionLeft()} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
+      <button onClick={() => { reTimer(); setActive(false) }} disabled={active ? !getOptionLeft() : true} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
         <Link
           to={getOptionLeft()?.to ?? ''}
-          params={getOptionLeft()?.params  ?? defaultParams}
+          params={getOptionLeft()?.params ?? defaultParams}
           disabled={!getOptionLeft()}
         >
           <ArrowRightIcon className="transform rotate-180" />
         </Link>
       </button>
-      <button onClick={()=>reTimer()} disabled={!getOptionRight()} className={`absolute ${TRANSITION} ${!isShow ? "-right-24" : 'right-2'}`}>
+      <button onClick={() => { reTimer(); setActive(false); }} disabled={active ? !getOptionRight() : true} className={`absolute ${TRANSITION} ${!isShow ? "-right-24" : 'right-2'}`}>
         <Link
           to={getOptionRight()?.to ?? ''}
           params={getOptionRight()?.params ?? defaultParams}

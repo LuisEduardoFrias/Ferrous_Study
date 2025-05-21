@@ -13,18 +13,21 @@ router.get('/:fileName/:type', async (req, res) => {
 
   let fullPath = '';
 
-  if (type === 'markdown')
-    fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-  else
-    fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
+  try {
+    if (type === 'markdown')
+      fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
+    else
+      fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-  const content = await GithubCore.getFileContent(fullPath);
+    const content = await GithubCore.getFileContent(fullPath);
 
-  if (content)
-    res.status(200).json({ content });
-  else
-    res.status(500);
+    if (content)
+      return res.status(200).json({ content });
 
+  } catch (error) {
+    console.log("Error: ", error);
+    return res.status(500).json({ content: null });
+  }
 });
 
 router.get('/:search', async (req, res) => {
@@ -41,9 +44,9 @@ router.get('/:search', async (req, res) => {
   const content = searchFilter(search, contentMenu, contentClass);
 
   if (content)
-    res.status(200).json({ content });
+    return res.status(200).json({ content });
   else
-    res.status(500);
+    return res.status(500).json({ content: null });
 });
 
 router.post('/', requireAuth(), async (req, res) => {
@@ -82,10 +85,10 @@ router.post('/', requireAuth(), async (req, res) => {
 
       resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
 
-      console.log(`vslidsndo reouesta con error:  \n\n  ${resultUpdate}`)
+    //  console.log(`vslidsndo reouesta con error:  \n\n  ${resultUpdate}`)
 
       if (!resultUpdate) {
-        res.status(500)
+        return res.status(500).json({ content: null });
       }
 
       if (resultUpdate[0].status >= 400) {
@@ -94,15 +97,14 @@ router.post('/', requireAuth(), async (req, res) => {
     }
 
     if (content) {
-      console.log(`${resulCreate} \n\n  ${resultUpdate}`)
-      res.status(200).json({ resulCreate, resultUpdate });
+    //  console.log(`${resulCreate} \n\n  ${resultUpdate}`);
+      return res.status(200).json({ resulCreate, resultUpdate });
+    } else {
+      return res.status(500).json({ content: null });
     }
-    else
-      res.status(500);
-
   } catch (error) {
     console.log("try catch error: ", error);
-    res.status(500);
+    return res.status(500).json({ content: null });
   }
 });
 
@@ -157,7 +159,7 @@ router.put('/', requireAuth(), async (req, res) => {
         resultUpdateClass = await updateFile(fullPathClass, JSON.stringify(class_), `Update the '${fileName} ' object in the class.json file.`);
 
         if (!resultUpdateClass) {
-          res.status(500)
+          return res.status(500).json({ content: null });
         }
 
         if (resultUpdateClass[0].status >= 400) {
@@ -167,15 +169,15 @@ router.put('/', requireAuth(), async (req, res) => {
     }
 
     if (content) {
-      console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
-      res.status(200).json({ resultUpdate, resultUpdateClass });
+     // console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
+      return res.status(200).json({ resultUpdate, resultUpdateClass });
     }
     else {
-      res.status(500);
+      return res.status(500).json({ content: null });
     }
   } catch (error) {
     console.log("try catch error: ", error);
-    res.status(500);
+    return res.status(500).json({ content: null });
   }
 });
 

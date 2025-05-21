@@ -12,6 +12,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   const { get } = useMemoryCache();
   const dataClass = useStore((state) => state.dataClass)
   const on_setClassId = useStore((state) => state.on_setClassId)
+  const [loading, setLoading] = useState(false);
   const [content, setContent] = useState<string>('');
   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 
@@ -31,21 +32,31 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
   useEffect(() => {
     on_setClassId(classroomId);
+    setLoading(true);
 
     (async () => {
-      const result = await get<string | null>(classroomId, async () => {
-        return await githubService.getFileContent(classroomId, 'markdown');
-      });
+      try {
+        const result = await get<string | null>(classroomId, async () => {
+          return await githubService.getFileContent(classroomId, 'markdown');
+        });
 
-      //TODO evaluar posibke vslor null
-      setContent(result ?? '');
+        //TODO evaluar posibke valor null
+        setContent(result ?? '');
+        setLoading(false)
+      } catch (error) {
+        setLoading(false)
+        console.log('developer: ', error)
+      }
+      finally {
+        setLoading(false)
+      }
     })()
   }, [classroomId])
 
   return (
     <div className="p-2">
-      {!content &&
-        <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      {loading &&
+        <div className="bg-[rgba(96,96,96,0.441)] z-30 pt-20 backdrop-blur-sm w-full h-full absolute top-0 left-0">
           <div className="w-full h-44">
             <Loading />
           </div>

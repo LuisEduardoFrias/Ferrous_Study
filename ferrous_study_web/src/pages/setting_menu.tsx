@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, ChangeEvent } from 'react';
-import { SaveIcon, AddIcon, LoadingIcon } from '../assets/svgs';
+import { SaveIcon, AddIcon, LoadingIcon,SuccessIcon, ErrorIcon  } from '../assets/svgs';
 import { githubService } from '../services/github_service';
 import { useTitle } from '../hooks/use_title'
 import type { TMenu } from '../types/menu';
@@ -11,6 +11,7 @@ import { splitMenuOptions } from '../hooks/split_menu_options';
 import { useStore } from '../state_warehouse/index'
 import Loading from '../components/loading'
 import Ul from '../components/ul'
+import type { TServiceResult } from '../types/service_result'
 
 export default function Menu() {
   useTitle('Configuracion del menu')
@@ -27,7 +28,7 @@ export default function Menu() {
   const divRef = useRef<HTMLDivElement>(null);
   const inputRefs = useRef<{ [key: string]: HTMLInputElement | null; }>({});
   const [showLoading, setShowLoading] = useState(false);
-  const [contentErrorMessage, setContentErrorMessage] = useState('');
+  const [contentErrorMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
 
   useEffect(() => {
     setLoading(true);
@@ -161,7 +162,7 @@ export default function Menu() {
         const result = await githubService.updateFileContent("menu", newContent, 'json');
         //console.log(result);
         // const result = { message: "se guardo", data: {} };
-        setContentErrorMessage(result?.message);
+        setContentErrorMessage({ ...result });
 
         if (result.data) {
           initial_state();
@@ -198,16 +199,20 @@ export default function Menu() {
         ref={notifyContentRef}
         okey={closeContentNotify}
       >
-        <span className="block text-xl font-semibold text-red-600 dark:text-red-400 mb-2">
+        {contentErrorMessage?.data ?
+          <SuccessIcon /> :
+          <ErrorIcon />
+        }
+        <span className={`block text-xl font-semibold ${contentErrorMessage?.data ? "text-green-500" : "text-red-500"} mb-2`}>
           ¡Atención!
         </span>
         <span className="block text-base text-gray-700 dark:text-gray-300">
-          {contentErrorMessage}
+          {contentErrorMessage.message}
         </span>
       </Notify>
 
       {showLoading &&
-        <div className="bg-[rgba(96,96,96,0.441)] z-50 backdrop-blur-sm w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="bg-[rgba(96,96,96,0.441)] z-30 pt-20 backdrop-blur-sm w-full h-full absolute top-0 left-0">
           <div className="w-full h-44">
             <Loading />
           </div>

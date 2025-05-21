@@ -149,13 +149,14 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
 function getTitle(text: string): { title: string | null; text: string } {
   const regex = /&title>(.*?)<title&/;
-  const match = text.match(regex);
 
-  if (match && match[1] !== undefined) {
-    const title = match[1];
-    const textWithoutTitle = text.replace(regex, '');
-    return { title, text: textWithoutTitle };
-  } else {
-    return { title: null, text };
-  }
+    const match = text?.match(regex);
+
+    if (match && match[1] !== undefined) {
+      const title = match[1];
+      const textWithoutTitle = text.replace(regex, '');
+      return { title, text: textWithoutTitle };
+    } else {
+      return { title: null, text };
+    }
 }

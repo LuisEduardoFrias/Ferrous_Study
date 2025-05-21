@@ -43,7 +43,7 @@ export const githubService = {
       }
 
       const data: FileContentResponse = await response.json();
-      return data.content || null;
+      return data?.content || null;
 
     } catch (error) {
       console.error(`Error de red al obtener el contenido de ${fileName}.${type}:`, error);
@@ -74,7 +74,7 @@ export const githubService = {
       }
 
       const data = await response.json();
-      return data.content || null;
+      return data?.content || null;
     } catch (error) {
       console.error(`Error de red al buscae '${search}':`, error);
       return null;

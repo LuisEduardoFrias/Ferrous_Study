@@ -149,8 +149,8 @@ function LinkC({ text, params, className, children, to, subMenu }: LinkCProps) {
       {hasSubMenu && (
         <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
           <ul className="ml-4">
-            {subMenu.map((subItem) => (
-              <li key={subItem.text} className="py-2 px-4">
+            {subMenu.map((subItem,index) => (
+              <li key={`${subItem.text}-${index}`}  className="py-2 px-4">
                 <LinkC
                   key={text}
                   to={subItem.to}
