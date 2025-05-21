@@ -39,10 +39,8 @@
       }
     },
     "keywords": [
-      "struct",
-      "int",
-      "bool",
-      "boolean"
+      "rust",
+      "ventajas"
     ]
   },
   {
@@ -57,7 +55,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "punteros"
+      "loop",
+      "bucles"
     ]
   },
   {
@@ -101,8 +100,7 @@
       }
     },
     "keywords": [
-      "borrowing",
-      "puntero"
+      "cargo"
     ]
   },
   {
@@ -145,7 +143,8 @@
       }
     },
     "keywords": [
-      "references"
+      "variables",
+      "constantes"
     ]
   },
   {
@@ -215,7 +214,7 @@
   },
   {
     "key": "10",
-    "name": "eje_fibonacci",
+    "name": "ejercicio_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
       "user": {
@@ -231,12 +230,13 @@
       }
     },
     "keywords": [
-      "fibonacci"
+      "fibonacci",
+      "ejercicio"
     ]
   },
   {
     "key": "11",
-    "name": "solu_fibonacci",
+    "name": "solucion_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
       "user": {
@@ -252,7 +252,8 @@
       }
     },
     "keywords": [
-      "punteros"
+      "solucion",
+      "fibonacci"
     ]
   },
   {
@@ -267,7 +268,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "punteros"
+      "expresiones",
+      "if"
     ]
   },
   {
@@ -282,7 +284,7 @@
     },
     "updateInfo": null,
     "keywords": [
-      "punteros"
+      "bucles"
     ]
   },
   {
@@ -297,7 +299,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "punteros"
+      "for",
+      "bucles"
     ]
   },
   {
@@ -312,7 +315,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "punteros"
+      "break",
+      "continue"
     ]
   },
   {
@@ -333,7 +337,7 @@
   },
   {
     "key": 17,
-    "name": "solución_collezt",
+    "name": "solucion_collezt",
     "addInfo": {
       "addData": "16/05/2025",
       "user": {
@@ -374,8 +378,7 @@
     },
     "updateInfo": null,
     "keywords": [
-      "tuplas",
-      "twpla"
+      "tuplas"
     ]
   },
   {
@@ -390,7 +393,7 @@
     },
     "updateInfo": null,
     "keywords": [
-      "eje"
+      "etiquetas"
     ]
   },
   {
@@ -410,7 +413,7 @@
   },
   {
     "key": 22,
-    "name": "ejercicios_módulo_1",
+    "name": "ejercicios_modulo1",
     "addInfo": {
       "addData": "18/05/2025",
       "user": {
@@ -452,7 +455,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "ññññ"
+      "bloque",
+      "ambito"
     ]
   },
   {
@@ -485,7 +489,7 @@
     },
     "updateInfo": null,
     "keywords": [
-      "ññññ"
+      "macros"
     ]
   },
   {
@@ -500,12 +504,12 @@
     },
     "updateInfo": null,
     "keywords": [
-      "ññññ"
+      "playground"
     ]
   },
   {
     "key": 28,
-    "name": "ámbito_y_shadowing",
+    "name": "ambito_y_shadowing",
     "addInfo": {
       "addData": "19/05/2025",
       "user": {
@@ -515,7 +519,8 @@
     },
     "updateInfo": null,
     "keywords": [
-      "ññññ"
+      "ámbito",
+      "shadowing"
     ]
   },
   {
