@@ -33,7 +33,7 @@ export default function Menu() {
   useEffect(() => {
     setLoading(true);
     try {
-      console.log('validando: ', dataClass);
+     // console.log('validando: ', dataClass);
 
       setClassroomIdsArray(orderAsc(dataClass));
 

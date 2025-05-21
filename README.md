@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# FerrousStudy: Aprende y Colabora con Rust
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**FerrousStudy** es una aplicación web interactiva diseñada para que aprendas **Rust**, el lenguaje de programación. Aquí no solo podrás estudiar a tu propio ritmo, sino que también tendrás la oportunidad de contribuir creando tus propias clases y ejercicios.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características Principales
 
-## Expanding the ESLint configuration
+* **Cursos de Rust interactivos**: Aprende Rust desde cero o profundiza tus conocimientos con clases y ejercicios prácticos.
+* **Contribución de contenido**: Crea y comparte tus propias clases y ejercicios con la comunidad.
+* **Gestión de clases**: Edita y organiza tu contenido de manera sencilla.
+* **Perfiles de usuario**: Personaliza tu experiencia, gestiona tu cuenta y controla tu privacidad.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## ¿Cómo Empezar?
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Estudiar Clases Existentes
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Para comenzar a estudiar, simplemente ve al menú y encontrarás una clase lista para usar. ¡Haz clic en ella y empieza a aprender!
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Crear Nuevas Clases
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+¿Quieres contribuir y compartir tu conocimiento? Sigue estos pasos:
+
+1.  **Regístrate**: Si aún no tienes una cuenta, haz clic en el botón "**Logearse**" y crea un nuevo usuario.
+2.  **Crea una nueva clase**: Una vez registrado, ve al menú y selecciona la opción "**Crear nueva clase**". Esto te llevará a un lienzo con herramientas para escribir tu contenido.
+3.  **Enlaza tu clase al menú**: Después de crear tu clase, regresa al menú, selecciona "**Configuración del menú**" y luego "**Agregar una nueva opción del menú**". Aquí podrás enlazar tu clase recién creada para que sea visible en el menú principal.
+
+### Editar Clases Existentes
+
+Si necesitas modificar una clase que ya creaste:
+
+* Abre la clase que deseas editar.
+* Busca el botón "**Editar**" en el encabezado de la clase.
+* Haz clic en él y serás redirigido a una página similar a la de creación de clases, donde podrás realizar tus modificaciones.
+* Guarda los cambios y ¡listo!
+
+---
+
+## Gestión de Usuarios
+
+FerrousStudy te ofrece un control total sobre tu cuenta:
+
+* **Iniciar Sesión / Registrarse**: El botón "**Logearse**" te llevará a una página donde podrás iniciar sesión con tu cuenta existente o crear una nueva si eres un usuario nuevo.
+* **Panel de Usuario**: Una vez que hayas iniciado sesión, tendrás acceso a tu panel de usuario. Aquí podrás:
+    * Editar tu imagen de perfil.
+    * Enlazar otras opciones para iniciar sesión (por ejemplo, con servicios de terceros).
+    * Eliminar tu cuenta en cualquier momento.
+    * Cerrar tu sesión.

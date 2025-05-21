@@ -1,6 +1,6 @@
 [
   {
-    "key": "0",
+    "key": 0,
     "name": "que_es_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "key": "1",
+    "key": 1,
     "name": "ventajas_de_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "key": "2",
+    "key": 2,
     "name": "loop_bucle",
     "addInfo": {
       "addData": "16/05/2025",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "key": "3",
+    "key": 3,
     "name": "ecosistema_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -83,7 +83,7 @@
     ]
   },
   {
-    "key": "4",
+    "key": 4,
     "name": "cargo",
     "addInfo": {
       "addData": "12/05/2025",
@@ -104,7 +104,7 @@
     ]
   },
   {
-    "key": "5",
+    "key": 5,
     "name": "ejercicios_ejemplos_codigo",
     "addInfo": {
       "addData": "12/05/2025",
@@ -126,7 +126,7 @@
     ]
   },
   {
-    "key": "6",
+    "key": 6,
     "name": "variables",
     "addInfo": {
       "addData": "12/05/2025",
@@ -148,7 +148,7 @@
     ]
   },
   {
-    "key": "7",
+    "key": 7,
     "name": "valores",
     "addInfo": {
       "addData": "12/05/2025",
@@ -170,7 +170,7 @@
     ]
   },
   {
-    "key": "8",
+    "key": 8,
     "name": "aritmetica",
     "addInfo": {
       "addData": "12/05/2025",
@@ -191,7 +191,7 @@
     ]
   },
   {
-    "key": "9",
+    "key": 9,
     "name": "inferencia_tipos",
     "addInfo": {
       "addData": "12/05/2025",
@@ -213,7 +213,7 @@
     ]
   },
   {
-    "key": "10",
+    "key": 10,
     "name": "ejercicio_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
@@ -235,7 +235,7 @@
     ]
   },
   {
-    "key": "11",
+    "key": 11,
     "name": "solucion_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
@@ -257,7 +257,7 @@
     ]
   },
   {
-    "key": "12",
+    "key": 12,
     "name": "expresiones_if",
     "addInfo": {
       "addData": "16/05/2025",
@@ -273,7 +273,7 @@
     ]
   },
   {
-    "key": "13",
+    "key": 13,
     "name": "bucles",
     "addInfo": {
       "addData": "16/05/2025",
@@ -288,7 +288,7 @@
     ]
   },
   {
-    "key": "14",
+    "key": 14,
     "name": "for_bucle",
     "addInfo": {
       "addData": "16/05/2025",
@@ -304,7 +304,7 @@
     ]
   },
   {
-    "key": "15",
+    "key": 15,
     "name": "break_continue",
     "addInfo": {
       "addData": "16/05/2025",
