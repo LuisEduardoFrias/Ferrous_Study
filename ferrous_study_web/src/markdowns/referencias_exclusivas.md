@@ -2,6 +2,16 @@
 
 Las referencias exclusivas, también denominadas referencias mutables, permiten cambiar el valor al que hacen referencia. Tienen el tipo &mut T.
 
+```rust
+&title><title&
+fn main() {
+    let mut point = (1, 2);
+    let x_coord = &mut point.0;
+    *x_coord = 20;
+    println!("point: {point:?}");
+}
+```
+<br />
 
 Puntos clave:
 
