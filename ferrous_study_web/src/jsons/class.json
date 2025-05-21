@@ -533,5 +533,36 @@
       "println",
       "macro"
     ]
+  },
+  {
+    "key": 30,
+    "name": "enums",
+    "addInfo": {
+      "addData": "20/05/2025",
+      "user": {
+        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+        "name": "Luis Eduardo"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "enum"
+    ]
+  },
+  {
+    "key": 31,
+    "name": "referencias_exclusivas",
+    "addInfo": {
+      "addData": "20/05/2025",
+      "user": {
+        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+        "name": "Luis Eduardo"
+      }
+    },
+    "updateInfo": null,
+    "keywords": [
+      "referencias",
+      "exclusivas"
+    ]
   }
 ]
