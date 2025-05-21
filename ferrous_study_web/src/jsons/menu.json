@@ -307,7 +307,7 @@
       {
         "key": "4-1",
         "to": "/classroom/$classroomId",
-        "text": "Arrays",
+        "text": "Tupla",
         "displayQuality": "",
         "params": {
           "classroomId": "tuplas"
