@@ -10,7 +10,7 @@ keywords:
  - return
 languages:
  - key: Español
-   value:es-ES
+   value: es-ES
  - key: English
    value: en-En
 ---
