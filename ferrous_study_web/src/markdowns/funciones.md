@@ -12,9 +12,9 @@ languages:
  - key: Español
    value: es-ES
  - key: English
-   value: en-En
+   value: en-EN
 ---
-language&>es-Es<&
+language&>es-ES<&
 ### Funciones en Rust: Bloques de Código Reutilizables
 
 Las funciones son bloques fundamentales de código que realizan una tarea específica. En Rust, se definen utilizando la palabra clave `fn`, seguida del nombre de la función, sus parámetros (si los tiene) y el tipo de valor que retorna (si lo hace).
@@ -123,8 +123,8 @@ En este ejemplo, la función `saludar` toma una referencia a un string (`&str`) 
 <br />
 
 Las funciones son bloques de construcción esenciales en Rust que te permiten organizar y reutilizar tu código de manera eficiente. Comprender cómo definirlas, pasarles parámetros y manejar los valores de retorno es fundamental para escribir programas en Rust.
-language&>es-Es<&
-language&>en-En<&
+language&>es-ES<&
+language&>en-EN<&
 ## Functions in Rust: Reusable Code Blocks
 Functions are fundamental blocks of code that perform a specific task. In Rust, they are defined using the keyword fn, followed by the function's name, its parameters (if it has them) and the type of value it returns (if it does).
 
@@ -223,4 +223,4 @@ Important Characteristics of Functions in Rust
 
 Functions are essential building blocks in Rust that allow you to organize and reuse your code efficiently. Understanding how to define them, pass parameters to them, and handle return values is fundamental to writing programs in Rust.
 
-language&>en-En<&
+language&>en-EN<&
