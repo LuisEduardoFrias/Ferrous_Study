@@ -24,6 +24,7 @@ import CloudIcon from './cloud';
 import AskIcon from './ask';
 import EnterIcon from './enter';
 import DivideIcon from './divide';
+import WorldIcon from './world';
 
 export {
   BookCloseIcon, BookOpenIcon, CopyIcon,
@@ -34,5 +35,5 @@ export {
   ViewIcon, NotViewIcon, GithubIcon,
   UserIcon, MarkIcon, SuccessIcon,
   ErrorIcon, CloudIcon, AskIcon,
-  EnterIcon, DivideIcon
+  EnterIcon, DivideIcon,WorldIcon
 };

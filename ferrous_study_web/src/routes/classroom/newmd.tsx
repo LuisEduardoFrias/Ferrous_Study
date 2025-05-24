@@ -4,5 +4,5 @@ import { verifyAuthentication } from '../../hooks/verify_authentication'
 
 export const Route = createFileRoute('/classroom/newmd')({
   component: NewMarkdown,
-  beforeLoad: verifyAuthentication
+//  beforeLoad: verifyAuthentication
 })

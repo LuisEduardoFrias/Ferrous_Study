@@ -4,5 +4,5 @@ import Menu from '../../pages/setting_menu'
 
 export const Route = createFileRoute('/settings/menu')({
   component: Menu,
-  beforeLoad: verifyAuthentication
+//  beforeLoad: verifyAuthentication
 });

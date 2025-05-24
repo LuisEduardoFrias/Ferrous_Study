@@ -5,13 +5,12 @@ import { AnyContext } from '@tanstack/react-router'
 export const verifyAuthentication: BeforeLoadFn<
   typeof RootRoute,
   unknown,
-  Record<string, any>, 
+  Record<string, any>,
   AnyContext,
   AnyContext
 > = async ({ location }) => {
-  const clerk = (window as any).Clerk;
 
-  if (!clerk || !clerk?.user) {
+  if (false) {
     throw redirect({
       to: '/signinup',
       search: {

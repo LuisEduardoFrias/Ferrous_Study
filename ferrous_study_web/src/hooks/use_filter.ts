@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
 import type { ChangeEvent } from 'react'
 //import searchj from '../jsons/searchj.json'
-import { githubService } from '../services/github_service'
+import { githubServiceApi } from '../services/github_service'
 import { useStore } from '../state_warehouse/index'
 
 export default function useFilter() {
@@ -12,7 +12,7 @@ export default function useFilter() {
 
   const executeDispatch = useCallback(() => {
     (async () => {
-      const result = await githubService.searchContent(search);
+      const result = await githubServiceApi.searchContent(search);
 
       on_search_data({ show: true, data: result ?? [] });
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { githubService } from '../services/github_service'
+import { githubServiceApi } from '../services/github_service'
 import MarkdownRenderer from '../components/markdown_renderer'
 import ButtonChangePage from '../components/button_change_page'
 import Loading from '../components/loading'
@@ -13,6 +13,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   const dataClass = useStore((state) => state.dataClass)
   const on_setClassId = useStore((state) => state.on_setClassId)
   const [loading, setLoading] = useState(false);
+  const [language, setLanguage] = useState({ selected: 'Español', langs: [] });
   const [content, setContent] = useState<string>('');
   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 
@@ -37,11 +38,14 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
     (async () => {
       try {
         const result = await get<string | null>(classroomId, async () => {
-          return await githubService.getFileContent(classroomId, 'markdown');
+          return await githubServiceApi.getFileContentByMarkdown(classroomId);
         });
-
+        setLanguage({ selected: result.metadatalanguages[0].key, langs: result.metadatalanguages })
         //TODO evaluar posibke valor null
-        setContent(result ?? '');
+
+        const text = result?.textByLanguage?.find((obj) => obj.language === "en-EN").text;
+
+        setContent(text ?? result.content ?? '');
         setLoading(false)
       } catch (error) {
         setLoading(false)
@@ -62,10 +66,14 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
           </div>
         </div>
       }
-      <MarkdownRenderer>
-        {content ?? ''}
-      </MarkdownRenderer>
-      {classInfo &&
+      <div>
+        <SelectdLanguage language={language} />
+        <MarkdownRenderer>
+          {content ?? ''}
+        </MarkdownRenderer>
+      </div>
+      {
+        classInfo &&
         <div className="flex flex-row justify-between text-gray-400 border-t border-gray-200 mt-14 py-4 " >
           <span className={STYLE_SPAN}>Creado: {classInfo.addData}</span>
           {classInfo.updateData &&
@@ -75,10 +83,26 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
         </div>
       }
       <ButtonChangePage key="buttonPage" classroomId={classroomId} />
-    </div>
+    </div >
   );
 }
 
+function SelectdLanguage({ language }) {
+  const [togger, setTogger] = useState(false);
+  console.log(language)
+  return (
+    <button onClick={() => setTogger(true)}>
+      {language.selected}
+      <div>
+        {language.langs?.map((lang) =>
+          <button>
+            {lang}
+          </button>
+        )}
+      </div>
+    </button>
+  )
+}
   //   (async () => {
   //     const DynamicComponent = await import(`@/${classroomId}.md?raw`);
   //     setContent(DynamicComponent.default);

@@ -5,7 +5,7 @@ import ErrorBoundary from '../../../components/error_boundery'
 
 export const Route = createFileRoute('/classroom_/edit/$editClassroomId')({
   component: EditClassroomId_,
-  beforeLoad: verifyAuthentication
+//  beforeLoad: verifyAuthentication
 })
 
 function EditClassroomId_() {

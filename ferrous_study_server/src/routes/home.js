@@ -2,27 +2,42 @@ import express from 'express';
 import path from 'path';
 import { GithubCore } from '../helpers/github.js';
 import { searchFilter } from '../helpers/search.js';
-import { clerkClient, requireAuth, getAuth } from '@clerk/express';
+import requireAuth from '../auth.js';
+import matter from 'gray-matter';
 
 const router = express.Router();
 
 //TODO Hay logicas que no deverian estar en estas rutas.
 
-router.get('/:fileName/:type', async (req, res) => {
+router.get('/markdowns/:fileName/', requireAuth, async (req, res) => {
   const { fileName, type } = req.params;
 
-  let fullPath = '';
-
   try {
-    if (type === 'markdown')
-      fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
-    else
-      fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
 
-    const content = await GithubCore.getFileContent(fullPath);
+    const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
 
-    if (content)
-      return res.status(200).json({ content });
+    const result = await GithubCore.getFileContent(fullPath);
+
+    if (result) {
+
+      const { data, content } = matter(result);
+
+      let textByLanguage = [];
+
+      if (data && content) {
+        textByLanguage = data?.languages?.map((lang) => {
+
+          const regex = new RegExp(`language&>${lang.value}<&\\n([\\s\\S]*?)\\nlanguage&>${lang.value}<&`, 's');
+          const match = content.match(regex);
+
+          const textTranslate = match ? match[1].trim() : null;
+
+          return { language: lang.value, text: textTranslate };
+        });
+      }
+
+      return res.status(200).json({ content: content ?? result, metadata: data, textByLanguage });
+    }
 
   } catch (error) {
     console.log("Error: ", error);
@@ -30,7 +45,24 @@ router.get('/:fileName/:type', async (req, res) => {
   }
 });
 
-router.get('/:search', async (req, res) => {
+router.get('/jsons/:fileName/', requireAuth, async (req, res) => {
+  const { fileName, type } = req.params;
+
+  try {
+
+    const fullPath = path.join('ferrous_study_web', 'src', 'jsons', `${fileName}.json`);
+
+    const content = await GithubCore.getFileContent(fullPath);
+
+    return res.status(200).json({ content });
+
+  } catch (error) {
+    console.log("Error: ", error);
+    return res.status(500).json({ content: null });
+  }
+});
+
+router.get('/:search', requireAuth, async (req, res) => {
   const { search } = req.params;
 
   let fullPathMenu = path.join('ferrous_study_web', 'src', 'jsons', `menu.json`);
@@ -49,7 +81,7 @@ router.get('/:search', async (req, res) => {
     return res.status(500).json({ content: null });
 });
 
-router.post('/', requireAuth(), async (req, res) => {
+router.post('/', requireAuth, async (req, res) => {
   const { fileName, content, keywords } = req.body;
 
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
@@ -66,8 +98,7 @@ router.post('/', requireAuth(), async (req, res) => {
       const content = await GithubCore.getFileContent(fullPathClass);
       const class_ = JSON.parse(content);
 
-      const { userId } = getAuth(req);
-      const user = await clerkClient.users.getUser(userId);
+      const userId = "hnrt7hehi84rbopte23g8bdt7kn"
 
       class_.push({
         key: class_.length,
@@ -76,7 +107,7 @@ router.post('/', requireAuth(), async (req, res) => {
           addData: getData(),
           user: {
             key: userId,
-            name: user.fullName
+            name: "LuisEduardo"
           }
         },
         updateInfo: null,
@@ -85,7 +116,7 @@ router.post('/', requireAuth(), async (req, res) => {
 
       resultUpdate = await updateFile(fullPathClass, JSON.stringify(class_), `Added the '${fileName} ' object in the class.json file.`);
 
-    //  console.log(`vslidsndo reouesta con error:  \n\n  ${resultUpdate}`)
+      //  console.log(`vslidsndo reouesta con error:  \n\n  ${resultUpdate}`)
 
       if (!resultUpdate) {
         return res.status(500).json({ content: null });
@@ -97,7 +128,7 @@ router.post('/', requireAuth(), async (req, res) => {
     }
 
     if (content) {
-    //  console.log(`${resulCreate} \n\n  ${resultUpdate}`);
+      //  console.log(`${resulCreate} \n\n  ${resultUpdate}`);
       return res.status(200).json({ resulCreate, resultUpdate });
     } else {
       return res.status(500).json({ content: null });
@@ -108,7 +139,7 @@ router.post('/', requireAuth(), async (req, res) => {
   }
 });
 
-router.put('/', requireAuth(), async (req, res) => {
+router.put('/', requireAuth, async (req, res) => {
   const { fileName, content, type } = req.body;
   const monthsage = `Uodate the ${fileName} file.`;
 
@@ -138,8 +169,7 @@ router.put('/', requireAuth(), async (req, res) => {
       if (content) {
         const class_ = JSON.parse(content);
 
-        const { userId } = getAuth(req);
-        const user = await clerkClient.users.getUser(userId);
+        const userId = "hnrt7hehi84rbopte23g8bdt7kn"
 
         const index = class_.findIndex((obj) => obj.name === fileName);
 
@@ -150,7 +180,7 @@ router.put('/', requireAuth(), async (req, res) => {
               updateData: getData(),
               user: {
                 key: userId,
-                name: user.fullName
+                name: "LuisEduardo"
               }
             }
           };
@@ -169,7 +199,7 @@ router.put('/', requireAuth(), async (req, res) => {
     }
 
     if (content) {
-     // console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
+      // console.log(`${resultUpdate} \n\n  ${resultUpdateClass}`);
       return res.status(200).json({ resultUpdate, resultUpdateClass });
     }
     else {

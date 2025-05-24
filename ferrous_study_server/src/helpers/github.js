@@ -5,11 +5,7 @@ const OWNER = process.env.GITHUB_USER_NAME;
 const REPO = process.env.GITHUB_PROJECT;
 
 export const GithubCore = {
-  /**
-   * Obtiene el contenido de un archivo específico del repositorio 'Ferrous_Study'.
-   * @param {string} filePath - La ruta del archivo dentro del repositorio.
-   * @returns {Promise<string|null>} El contenido del archivo como string, o null si hay un error.
-   */
+
   async getFileContent(filePath) {
     try {
       const response = await octokit.rest.repos.getContent({
@@ -50,11 +46,6 @@ export const GithubCore = {
     }
   },
 
-  /**
-   * Actualiza el contenido de uno o varios archivos específicos del repositorio 'Ferrous_Study'.
-   * @param {Array<{path: string, content: string, message?: string, sha?: string}>} filesToUpdate - Un array de objetos con la ruta, el nuevo contenido, un mensaje de commit opcional y el SHA del archivo (obligatorio para archivos existentes).
-   * @returns {Promise<Array<any>>} Un array con las respuestas de la API para cada actualización.
-   */
   async updateFiles(filesToUpdate) {
     try {
       const responses = await Promise.all(
@@ -76,11 +67,6 @@ export const GithubCore = {
     }
   },
 
-  /**
-   * Crea uno o varios archivos nuevos en el repositorio 'Ferrous_Study'.
-   * @param {Array<{path: string, content: string, message?: string}>} filesToCreate - Un array de objetos con la ruta, el contenido y un mensaje de commit opcional.
-   * @returns {Promise<Array<any>>} Un array con las respuestas de la API para cada creación.
-   */
   async createFiles(filesToCreate) {
     try {
       const responses = await Promise.all(

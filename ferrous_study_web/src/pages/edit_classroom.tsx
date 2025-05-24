@@ -29,10 +29,10 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       setShowLoading(true);
 
       const result = await get<string | null>(editClassroomId, async () => {
-        return await githubService.getFileContent(editClassroomId, 'markdown');
+        return await githubService.getFileContentByMarkdown(editClassroomId);
       });
       const resultClass = await get<string | null>("class", async () => {
-        return await githubService.getFileContent('class', 'json');
+        return await githubService.getFileContentByJson('class');
       });
 
       if (resultClass) {
@@ -46,7 +46,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       }
 
       //TODO evaluar posible valor null
-      setContent(result ?? '');
+      setContent(result?.textByLanguage?.find((obj) => obj.language === "en-En") ?? result.content ?? '');
       setShowLoading(false);
     })()
   }, [editClassroomId])

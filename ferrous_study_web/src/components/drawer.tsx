@@ -4,9 +4,17 @@ import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
 import { FerrisIcon, ArrowRightIcon, BookOpenIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
-import { SignedIn } from '@clerk/clerk-react';
+//import { SignedIn } from '@clerk/clerk-react';
 import type { TMenu } from '../types/menu'
 import { useStore } from '../state_warehouse/index'
+
+function SignedIn({ children }: { children: ReactNode }) {
+  return (
+    <div>
+      {children}
+    </div>
+  )
+}
 
 type MenuObj = {
   classroom: TMenu[],
@@ -43,7 +51,7 @@ export default function Drawer() {
 
       <nav className="flex flex-col gap-2 max-w-[400px] min-w-[180px] bg-theme-d-4 shadow shadow-blue-800"   >
 
-        <div className="w-full h-14 flex items-center justify-between p-1 bg-theme-3 shadow shadow-amber-300">
+        <div className="absolute w-[235px] z-40 h-14 flex items-center justify-between p-1 bg-theme-3 shadow shadow-amber-300">
           <LinkC to="/" className="hover:text-theme-1-d">
             <span className="flex gap-1 text-[14px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" /></span>
           </LinkC>
@@ -52,7 +60,7 @@ export default function Drawer() {
           </ButtonIcon>
         </div>
 
-        <div className="flex flex-col gap-2 p-2 pb-5 overflow-y-scroll">
+        <div className="flex flex-col pt-20 gap-2 p-2 pb-5 overflow-y-scroll">
 
           {menu &&
             menu?.classroom?.map(({ to, text, displayQuality, params, subMenu }) => (
@@ -67,7 +75,7 @@ export default function Drawer() {
               </LinkC>
             ))}
           <hr className="my-2 border-[.4px] border-theme-o-3-d" />
-          <SignedIn>
+          <>
             {menu &&
               menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
                 <LinkC
@@ -80,7 +88,7 @@ export default function Drawer() {
                   {text}
                 </LinkC>
               ))}
-          </SignedIn>
+          </>
 
           {menu &&
             <LinkC
@@ -149,8 +157,8 @@ function LinkC({ text, params, className, children, to, subMenu }: LinkCProps) {
       {hasSubMenu && (
         <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-screen' : 'max-h-0'}`}>
           <ul className="ml-4">
-            {subMenu.map((subItem,index) => (
-              <li key={`${subItem.text}-${index}`}  className="py-2 px-4">
+            {subMenu.map((subItem, index) => (
+              <li key={`${subItem.text}-${index}`} className="py-2 px-4">
                 <LinkC
                   key={text}
                   to={subItem.to}

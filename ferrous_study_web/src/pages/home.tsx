@@ -3,7 +3,7 @@ import ferrous from '../assets/ferrous.gif'
 import { FerrisIcon } from '../assets/svgs'
 import MarkdownRenderer from "../components/markdown_renderer"
 import { useTitle } from '../hooks/use_title'
-import { githubService } from '../services/github_service'
+import { githubServiceApi } from '../services/github_service'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import { useStore } from '../state_warehouse/index'
 // import markdownHomePage from '../markdowns/home_page.md?raw'
@@ -16,15 +16,15 @@ export default function Home({ userId }: { userId: string }) {
 
   useEffect(() => {
     on_setClassId("home_page");
-    
-      (async () => {
-        const result = await get<string | null>("home_page", async () => {
-          return await githubService.getFileContent("home_page", 'markdown');
-        });
 
-        //TODO evaluar posibke vslor null
-        setContent(result ?? '');
-      })()
+    (async () => {
+      const result = await get<string | null>("home_page", async () => {
+        return await githubServiceApi.getFileContentByMarkdown("home_page");
+      });
+
+      //TODO evaluar posibke vslor null
+      setContent(result?.textByLanguage?.find((obj) => obj.language === "es-Es") ?? result.content?? '');
+    })()
   }, [])
 
   return (

@@ -3,8 +3,21 @@ import { FerrisIcon, EditIcon, BookCloseIcon, BookOpenIcon, UserIcon } from '../
 import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
-import { SignedIn, SignedOut, UserButton, /*useUser*/ } from '@clerk/clerk-react';
+import LanguageButton from './language-button'
+//import { SignedIn, SignedOut, UserButton, /*useUser*/ } from '@clerk/clerk-react';
 import { useStore } from '../state_warehouse/index'
+
+function SignedIn(children) {
+  return (<div>{children}</div>)
+}
+function SignedOut(children) {
+  return (<div>{children}</div>)
+}
+function UserButton(children) {
+  return (<div>{children}</div>)
+}
+
+
 
 const appearance = {
   elements: {
@@ -18,7 +31,7 @@ export default function Navbar() {
   const navigate = useNavigate();
   const show_drawer = useStore((state) => state.show_drawer)
   // const classId = useStore((state) => state.classId)
-//   const dataClass = useStore((state) => state.dataClass)
+  //   const dataClass = useStore((state) => state.dataClass)
   const on_show_drawer = useStore((state) => state.on_show_drawer)
   const color = show_drawer ? 'bg-theme-d-3' : 'bg-theme-d-4';
   const isMovil = useIsMovil();
@@ -34,9 +47,9 @@ export default function Navbar() {
 
   function EditButton() {
     // const { user } = useUser();
-// 
-//     const classInfo = dataClass.find((obj) => obj.name === classId);
-// 
+    // 
+    //     const classInfo = dataClass.find((obj) => obj.name === classId);
+    // 
     // if (classId === 'home_page') {
     //       return null;
     //     }
@@ -72,24 +85,26 @@ export default function Navbar() {
       <div className="flex items-center absolute left-4 ">
         <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
         {
-          isMovil ? <SignedIn><EditButton /></SignedIn> : <MenuButton />
+          isMovil ? <><EditButton /></> : <MenuButton />
         }
       </div>
       <Search />
       <div className="flex items-center absolute right-4 gap-2 ">
-        <SignedOut>
-          {param1 !== 'signinup' &&
-            <Link to="/signinup" >
-              <UserIcon />
-            </Link>
+        <>
+          {// param1 !== 'signinup' &&
+            //             <Link to="/signinup" >
+            //               <UserIcon />
+            //             </Link>
+            <LanguageButton />
           }
-        </SignedOut>
-        <UserButton appearance={appearance} />
-
-        {
-          isMovil ? <MenuButton /> : <SignedIn><EditButton /></SignedIn>
+        </>
+        {//} <UserButton appearance={appearance} />
         }
+        <div className="h-full flex justify-center items-center w-12">
+          {isMovil ? <MenuButton /> : <><EditButton /></>}
+        </div>
       </div>
     </header>
   );
 }
+
