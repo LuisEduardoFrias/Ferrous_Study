@@ -1,3 +1,16 @@
+---
+key: 3
+name: loop_bucle
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - loop
+ - bucle
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## loop
 El bucle loop repite hasta encontrar un break.
 
@@ -13,3 +26,4 @@ fn main() {
     }
 }
 ```
+language&>es-ES<&

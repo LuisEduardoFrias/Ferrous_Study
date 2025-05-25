@@ -1,3 +1,16 @@
+---
+key: 30
+name: println
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - println
+ - macro
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Introducción a la macro `println!` en Rust
 
 La macro `println!` es una de las herramientas más fundamentales en Rust para mostrar información en la consola (la salida estándar), generalmente añade un salto de línea al final de la salida.
@@ -84,3 +97,4 @@ La suma de 10 y 20 es 30
 ```
 
 La macro println! es una herramienta esencial para mostrar información en Rust. Con su sintaxis básica y la capacidad de interpolar variables con varios especificadores de formato, te permite comunicar de manera efectiva los resultados y el estado de tu programa.
+language&>es-ES<&

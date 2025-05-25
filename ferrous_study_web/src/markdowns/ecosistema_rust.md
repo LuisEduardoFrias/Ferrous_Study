@@ -1,3 +1,17 @@
+---
+key: 4
+name: ecosistema_rust
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - rust
+ - rustc
+ - cargo
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### El ecosistema de Rust
 
 El ecosistema de Rust se compone de varias herramientas, entre las que se incluyen las siguientes:
@@ -25,3 +39,4 @@ El ecosistema de Rust se compone de varias herramientas, entre las que se incluy
     * Instalación global
 * También es extensible con plugins de subcomandos (como `cargo clippy`).
 * Consulta más información en el [libro oficial de Cargo](https://doc.rust-lang.org/cargo/).
+language&>es-ES<&

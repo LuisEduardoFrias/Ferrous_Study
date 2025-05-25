@@ -1,3 +1,16 @@
+---
+key: 24
+name: solucion_modulo1
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - solución
+ - modulo1
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Solución 1: Calculadora Simple
 
 #### Requerimientos:
@@ -117,3 +130,4 @@ fn main() {
     verificar_rango(LIMITE);
 }
 ```
+language&>es-ES<&

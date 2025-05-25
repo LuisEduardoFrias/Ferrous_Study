@@ -1,6 +1,6 @@
 [
   {
-    "key": 0,
+    "key": 1,
     "name": "que_es_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -22,7 +22,7 @@
     ]
   },
   {
-    "key": 1,
+    "key": 2,
     "name": "ventajas_de_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -44,7 +44,7 @@
     ]
   },
   {
-    "key": 2,
+    "key": 3,
     "name": "loop_bucle",
     "addInfo": {
       "addData": "16/05/2025",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "key": 3,
+    "key": 4,
     "name": "ecosistema_rust",
     "addInfo": {
       "addData": "12/05/2025",
@@ -83,7 +83,7 @@
     ]
   },
   {
-    "key": 4,
+    "key": 5,
     "name": "cargo",
     "addInfo": {
       "addData": "12/05/2025",
@@ -104,7 +104,7 @@
     ]
   },
   {
-    "key": 5,
+    "key": 6,
     "name": "ejercicios_ejemplos_codigo",
     "addInfo": {
       "addData": "12/05/2025",
@@ -126,7 +126,7 @@
     ]
   },
   {
-    "key": 6,
+    "key": 7,
     "name": "variables",
     "addInfo": {
       "addData": "12/05/2025",
@@ -144,11 +144,12 @@
     },
     "keywords": [
       "variables",
-      "constantes"
+      "constantes",
+      "static"
     ]
   },
   {
-    "key": 7,
+    "key": 8,
     "name": "valores",
     "addInfo": {
       "addData": "12/05/2025",
@@ -170,7 +171,7 @@
     ]
   },
   {
-    "key": 8,
+    "key": 9,
     "name": "aritmetica",
     "addInfo": {
       "addData": "12/05/2025",
@@ -191,7 +192,7 @@
     ]
   },
   {
-    "key": 9,
+    "key": 10,
     "name": "inferencia_tipos",
     "addInfo": {
       "addData": "12/05/2025",
@@ -213,7 +214,7 @@
     ]
   },
   {
-    "key": 10,
+    "key": 11,
     "name": "ejercicio_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
@@ -235,7 +236,7 @@
     ]
   },
   {
-    "key": 11,
+    "key": 12,
     "name": "solucion_fibonacci",
     "addInfo": {
       "addData": "12/05/2025",
@@ -252,13 +253,13 @@
       }
     },
     "keywords": [
-      "solucion",
+      "solución",
       "fibonacci"
     ]
   },
   {
-    "key": 12,
-    "name": "expresiones_if",
+    "key": 13,
+    "name": "expresion_if",
     "addInfo": {
       "addData": "16/05/2025",
       "user": {
@@ -273,7 +274,7 @@
     ]
   },
   {
-    "key": 13,
+    "key": 14,
     "name": "bucles",
     "addInfo": {
       "addData": "16/05/2025",
@@ -288,7 +289,7 @@
     ]
   },
   {
-    "key": 14,
+    "key": 15,
     "name": "for_bucle",
     "addInfo": {
       "addData": "16/05/2025",
@@ -304,7 +305,7 @@
     ]
   },
   {
-    "key": 15,
+    "key": 16,
     "name": "break_continue",
     "addInfo": {
       "addData": "16/05/2025",
@@ -320,7 +321,7 @@
     ]
   },
   {
-    "key": 16,
+    "key": 17,
     "name": "collats",
     "addInfo": {
       "addData": "16/05/2025",
@@ -336,7 +337,7 @@
     ]
   },
   {
-    "key": 17,
+    "key": 18,
     "name": "solucion_collezt",
     "addInfo": {
       "addData": "16/05/2025",
@@ -348,11 +349,11 @@
     "updateInfo": null,
     "keywords": [
       "collatz",
-      "solucion"
+      "solución"
     ]
   },
   {
-    "key": 18,
+    "key": 19,
     "name": "array",
     "addInfo": {
       "addData": "16/05/2025",
@@ -367,7 +368,7 @@
     ]
   },
   {
-    "key": 19,
+    "key": 20,
     "name": "tuplas",
     "addInfo": {
       "addData": "16/05/2025",
@@ -382,7 +383,7 @@
     ]
   },
   {
-    "key": 20,
+    "key": 21,
     "name": "etiquetas",
     "addInfo": {
       "addData": "17/05/2025",
@@ -397,7 +398,7 @@
     ]
   },
   {
-    "key": 21,
+    "key": 22,
     "name": "raii_concepto",
     "addInfo": {
       "addData": "17/05/2025",
@@ -412,7 +413,7 @@
     ]
   },
   {
-    "key": 22,
+    "key": 23,
     "name": "ejercicios_modulo1",
     "addInfo": {
       "addData": "18/05/2025",
@@ -428,7 +429,7 @@
     ]
   },
   {
-    "key": 23,
+    "key": 24,
     "name": "solucion_modulo1",
     "addInfo": {
       "addData": "18/05/2025",
@@ -444,7 +445,7 @@
     ]
   },
   {
-    "key": 24,
+    "key": 25,
     "name": "bloque_y_ambito",
     "addInfo": {
       "addData": "19/05/2025",
@@ -460,7 +461,7 @@
     ]
   },
   {
-    "key": 25,
+    "key": 26,
     "name": "funciones",
     "addInfo": {
       "addData": "19/05/2025",
@@ -478,7 +479,7 @@
     ]
   },
   {
-    "key": 26,
+    "key": 27,
     "name": "macros",
     "addInfo": {
       "addData": "19/05/2025",
@@ -493,7 +494,7 @@
     ]
   },
   {
-    "key": 27,
+    "key": 28,
     "name": "playground",
     "addInfo": {
       "addData": "19/05/2025",
@@ -508,7 +509,7 @@
     ]
   },
   {
-    "key": 28,
+    "key": 29,
     "name": "ambito_y_shadowing",
     "addInfo": {
       "addData": "19/05/2025",
@@ -524,7 +525,7 @@
     ]
   },
   {
-    "key": 29,
+    "key": 30,
     "name": "println",
     "addInfo": {
       "addData": "19/05/2025",
@@ -540,7 +541,7 @@
     ]
   },
   {
-    "key": 30,
+    "key": 31,
     "name": "enums",
     "addInfo": {
       "addData": "20/05/2025",
@@ -555,7 +556,7 @@
     ]
   },
   {
-    "key": 31,
+    "key": 32,
     "name": "referencias_exclusivas",
     "addInfo": {
       "addData": "20/05/2025",

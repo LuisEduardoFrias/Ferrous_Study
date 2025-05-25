@@ -1,3 +1,16 @@
+---
+key: 11
+name: ejercicio_fibonacci
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - ejercicios
+ - fibonacci
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Ejercicio Fibonacci
 
 La secuencie de Fibonacci empieza con [0, 1]. Para n>1, el número de Fibonacci en la posición n se calcula de forma recursiva como la suma de los números de Fibonacci n-1 y n-2.
@@ -20,3 +33,4 @@ fn main() {
     println!("fib({n}) = {}", fib(n));
 }
 ```
+language&>es-ES<&

@@ -1,4 +1,4 @@
-import { useLocalStorageMemo } from '../hooks/use_local_storage_memo';
+import { getValue, saveValue } from '../hooks/local_storage';
 import { ReactNode, useState, useEffect, KeyboardEvent, CSSProperties, useRef, ChangeEvent } from 'react'
 //import { ImageIcon } from '../assets/svgs'
 import { NotViewIcon, TableIcon, LinkIcon, DivideIcon, EnterIcon, ViewIcon, AskIcon, SaveIcon, MarkIcon, CodeIcon, CloudIcon } from '../assets/svgs'
@@ -18,7 +18,6 @@ export default function TextEditor({ onSave, fileName, className, style, default
   const [view, setView] = useState(true);
   const [showTablePanel, setShowTablePanel] = useState(false);
   const [showAskPanel, setShowAskPanel] = useState(false);
-  const { getValue, saveValue } = useLocalStorageMemo(10);
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   const [textValue, setTextValue] = useState(defaultValue || '');
 
@@ -207,75 +206,73 @@ export default function TextEditor({ onSave, fileName, className, style, default
 
   return (
     <div className="relative p-2 pt-28  w-full h-full" >
+      {
+        <div className="fixed z-[39] left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-28" >
 
-      <div className="fixed z-[49] left-0 top-14 flex justify-center bg-theme-0 items-center px-2 w-full h-28" >
+          <div className="relative grid grid-rows-2 gap-0 w-full items-center  px-2 h-20 bg-gray-700" >
 
-        <div className="relative grid grid-rows-2 gap-0 w-full items-center  px-2 h-20 bg-gray-700" >
+            <div className="flex w-full h-full items-center justify-center" >
+              <h1 className="text-xl text-center text-theme-0" >{toCamelCase(fileName)}</h1>
 
-          <div className="flex w-full h-full items-center justify-center" >
-            <h1 className="text-xl text-center text-theme-0" >{toCamelCase(fileName)}</h1>
+              <div className="absolute right-1 w-20 flex flex-row gap-2 items-center" >
+                <ViewMarkdown onClick={(value: boolean) => setView(value)} />
+                <Option>
+                  <CloudIcon onClick={handlerSave} />
+                </Option>
+              </div>
 
-            <div className="absolute right-1 w-20 flex flex-row gap-2 items-center" >
-              <ViewMarkdown onClick={(value: boolean) => setView(value)} />
-              <Option>
-                <CloudIcon onClick={handlerSave} />
-              </Option>
+            </div>
+
+            <div className="relative w-full h-full grid grid-cols-[1fr,30px] " >
+              <div className="flex flex-row px-2 w-full h-full overflow-x-scroll gap-2 items-center" >
+                <ButtonIcon>
+                  <MarkIcon onClick={Mark} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <CodeIcon onClick={ContentCode} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <TableIcon onClick={() => { setShowAskPanel(false); setShowTablePanel(!showTablePanel) }} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <LinkIcon onClick={Link} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <DivideIcon onClick={Divide} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <EnterIcon onClick={Enter} />
+                </ButtonIcon>
+                <ButtonIcon>
+                  <SaveIcon onClick={SaveCode} />
+                </ButtonIcon>
+              </div>
+              <div className="flex w-full h-full justify-center items-center" >
+                <ButtonIcon>
+                  <AskIcon onClick={() => { setShowTablePanel(false); setShowAskPanel(!showAskPanel) }} />
+                </ButtonIcon>
+              </div>
+              {showTablePanel && <TablePanel onClick={Table} />}
+              {showAskPanel && <AskPanel />}
+
             </div>
 
           </div>
-
-
-          <div className="relative w-full h-full grid grid-cols-[1fr,30px] " >
-            <div className="flex flex-row px-2 w-full h-full overflow-x-scroll gap-2 items-center" >
-              <ButtonIcon>
-                <MarkIcon onClick={Mark} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <CodeIcon onClick={ContentCode} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <TableIcon onClick={() => { setShowAskPanel(false); setShowTablePanel(!showTablePanel) }} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <LinkIcon onClick={Link} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <DivideIcon onClick={Divide} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <EnterIcon onClick={Enter} />
-              </ButtonIcon>
-              <ButtonIcon>
-                <SaveIcon onClick={SaveCode} />
-              </ButtonIcon>
-            </div>
-            <div className="flex w-full h-full justify-center items-center" >
-              <ButtonIcon>
-                <AskIcon onClick={() => { setShowTablePanel(false); setShowAskPanel(!showAskPanel) }} />
-              </ButtonIcon>
-            </div>
-            {showTablePanel && <TablePanel onClick={Table} />}
-            {showAskPanel && <AskPanel />}
-
-
-          </div>
-
         </div>
-      </div>
-      {view ?
-        <div>
+      }
+      <div>
+        {view ?
           <textarea
             ref={textareaRef}
-            className={className}
-            style={style}
+            className="h-[100dvh] w-full resize-none overflow-hidden p-2 font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
             value={textValue}
             onChange={handlerChangeText}
-          />
-        </div> :
-        <MarkdownRenderer>
-          {textValue}
-        </MarkdownRenderer>
-      }
+          /> :
+          <MarkdownRenderer>
+            {textValue}
+          </MarkdownRenderer>
+        }
+      </div>
     </div>
   )
 }

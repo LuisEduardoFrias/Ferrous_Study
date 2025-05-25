@@ -1,3 +1,16 @@
+---
+key: 8
+name: valores
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - valores
+ - tipos
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Valores y tipos de datos
 A continuación, se muestran algunos tipos integrados básicos, así como la sintaxis de los valores literales de cada tipo.
 
@@ -25,3 +38,4 @@ Hay algunas sintaxis que no se han mostrado anteriormente:
 Todos guiones bajos en los números pueden no utilizarse, ya que solo sirven para facilitar la lectura. Por lo tanto, 1000 se puede escribir como 1_000 (o 10_00), y 123i64 se puede escribir como 123_i64.
 
 Consideraciones sobre isize y usize, ambos dependen de la arquitectura del sistema en el que se está ejecutando el código. Generalmente, se utilizan para indexar colecciones o representar tamaños de memoria. Usar estos tipos es apropiado cuando estás trabajando con la memoria directamente o con estructuras de datos cuyo tamaño depende de la arquitectura.
+language&>es-ES<&

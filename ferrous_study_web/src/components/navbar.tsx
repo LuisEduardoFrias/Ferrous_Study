@@ -4,20 +4,8 @@ import Search from '../components/search'
 import ButtonIcon from '../components/button_icon'
 import useIsMovil from '../hooks/use_is_movil'
 import LanguageButton from './language-button'
-//import { SignedIn, SignedOut, UserButton, /*useUser*/ } from '@clerk/clerk-react';
+import { SignedIn } from '../components/auth';
 import { useStore } from '../state_warehouse/index'
-
-function SignedIn(children) {
-  return (<div>{children}</div>)
-}
-function SignedOut(children) {
-  return (<div>{children}</div>)
-}
-function UserButton(children) {
-  return (<div>{children}</div>)
-}
-
-
 
 const appearance = {
   elements: {
@@ -46,26 +34,14 @@ export default function Navbar() {
   });
 
   function EditButton() {
-    // const { user } = useUser();
-    // 
-    //     const classInfo = dataClass.find((obj) => obj.name === classId);
-    // 
-    // if (classId === 'home_page') {
-    //       return null;
-    //     }
-    // 
-    //     if (classId && classInfo.addInfo.user.key !== user.id) {
-    //       return null;
-    //     }
-
     return (
-      <>
+      <SignedIn>
         {((param1 === 'classroom' || param1 === '') && param2 !== 'newmd' && param2 !== 'edit') &&
           (<ButtonIcon>
             <EditIcon onClick={() => navigate({ href: `/classroom/edit/${param2}`, viewTransition: true })} />
           </ButtonIcon>)
         }
-      </>
+      </SignedIn>
     )
   }
 
@@ -90,16 +66,7 @@ export default function Navbar() {
       </div>
       <Search />
       <div className="flex items-center absolute right-4 gap-2 ">
-        <>
-          {// param1 !== 'signinup' &&
-            //             <Link to="/signinup" >
-            //               <UserIcon />
-            //             </Link>
-            <LanguageButton />
-          }
-        </>
-        {//} <UserButton appearance={appearance} />
-        }
+        <LanguageButton />
         <div className="h-full flex justify-center items-center w-12">
           {isMovil ? <MenuButton /> : <><EditButton /></>}
         </div>

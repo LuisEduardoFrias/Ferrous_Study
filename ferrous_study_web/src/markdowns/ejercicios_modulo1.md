@@ -1,3 +1,16 @@
+---
+key: 23
+name: ejercicios_modulo1
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - ejercicios
+ - modulo1
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Ejercicio 1: Calculadora Simple
 
 #### Requerimientos:
@@ -67,3 +80,4 @@ fn main() {
 ```
 
 Si te atascas o tienes alguna pregunta sobre cómo abordar alguno de los requerimientos, en ir a las soluciones, en la siguiente página 📄.
+language&>es-ES<&

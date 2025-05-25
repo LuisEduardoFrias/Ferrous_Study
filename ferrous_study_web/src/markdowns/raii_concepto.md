@@ -1,3 +1,15 @@
+---
+key: 22
+name: raii_concepto
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - raii
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## ¿Qué es RAII?
 
 RAII son las siglas de Resource Acquisition Is Initialization (La adquisición de recursos es inicialización). Es un paradigma de programación, principalmente utilizado en lenguajes como C++, que vincula la vida útil de un recurso (como memoria, archivos, sockets, mutexes, etc.) con la vida útil de un objeto.
@@ -51,3 +63,4 @@ Diferencias clave con C++:
  * Move Semantics: Rust utiliza semántica de movimiento de forma predeterminada, lo que a menudo evita la necesidad de copias profundas y facilita la transferencia de la propiedad de los recursos.
 
 En resumen, mientras que C++ implementa RAII principalmente a través de destructores, Rust logra una gestión de recursos segura y automática a través del Drop Trait integrado con su sistema de ownership y borrowing. Ambos enfoques buscan el mismo objetivo: garantizar la liberación oportuna de los recursos y simplificar la vida del programador al evitar la gestión manual.
+language&>es-ES<&

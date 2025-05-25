@@ -1,6 +1,6 @@
 import { useState, ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
-import { githubService } from '../services/github_service'
+import { githubServiceApi } from '../services/github_service'
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import { SuccessIcon, ErrorIcon } from '../assets/svgs'
@@ -57,7 +57,7 @@ export default function NewMarkdown() {
     }
 
     setShowLoading(true);
-    const result = await githubService.createMarkdownFile(newClassId as string, textValue, keywords.split(','));
+    const result = await githubServiceApi.createMarkdownFile(newClassId as string, textValue, keywords.split(','));
 
     setContentErrorMessage({ ...result });
     setShowLoading(false);

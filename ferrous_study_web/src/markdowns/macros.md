@@ -1,3 +1,15 @@
+---
+key: 27
+name: macros
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - macros
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Macros
 Las macros se amplían a código de Rust durante la compilación y pueden adoptar un número variable de argumentos. Se distinguen por utilizar un símbolo ! al final. La biblioteca estándar de Rust incluye una serie de macros útiles.
 
@@ -30,3 +42,4 @@ This slide should take about 2 minutes.
 El objetivo de esta sección es mostrar que existen estos elementos útiles y cómo usarlos. Por qué se definen como macros y a qué se expanden no es muy importante.
 
 En el curso no se imparte la definición de macros, pero en una sección posterior se describirá el uso de las macros de derivación.
+language&>es-ES<&

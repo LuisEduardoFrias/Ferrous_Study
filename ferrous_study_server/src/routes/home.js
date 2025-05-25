@@ -2,8 +2,9 @@ import express from 'express';
 import path from 'path';
 import { GithubCore } from '../helpers/github.js';
 import { searchFilter } from '../helpers/search.js';
-import requireAuth from '../auth.js';
+import { requireAuth, requireApiAuth, generateToken, verifyToken } from '../auth.js';
 import matter from 'gray-matter';
+import jwt from 'jsonwebtoken';
 
 const router = express.Router();
 
@@ -81,7 +82,44 @@ router.get('/:search', requireAuth, async (req, res) => {
     return res.status(500).json({ content: null });
 });
 
-router.post('/', requireAuth, async (req, res) => {
+router.post('/login', requireAuth, async (req, res) => {
+  const { username, password } = req.body;
+
+  const envUsername = process.env.USERNAME;
+  const envPassword = process.env.PASSWORD;
+  const jwtSecret = process.env.JWT_SECRET;
+
+  if (!envUsername || !envPassword || !jwtSecret) {
+    console.error('Variables de entorno de autenticación no configuradas correctamente.');
+    return res.status(500).json({ message: 'Error de configuración del servidor.' });
+  }
+
+  if (username === envUsername && password === envPassword) {
+    const userPayload = {
+      username: username,
+      role: 'admin',
+    };
+
+    try {
+      const token = generateToken(userPayload);
+
+      return res.status(200).json({
+        message: 'Inicio de sesión exitoso',
+        user: {
+          username: username,
+          token: token,
+        },
+      });
+    } catch (error) {
+      console.error('Error al generar el token:', error);
+      return res.status(500).json({ message: 'Error interno del servidor al generar el token.' });
+    }
+  } else {
+    return res.status(401).json({ message: 'Credenciales inválidas.' });
+  }
+});
+
+router.post('/', requireApiAuth, async (req, res) => {
   const { fileName, content, keywords } = req.body;
 
   const fullPath = path.join('ferrous_study_web', 'src', 'markdowns', `${fileName}.md`);
@@ -139,7 +177,8 @@ router.post('/', requireAuth, async (req, res) => {
   }
 });
 
-router.put('/', requireAuth, async (req, res) => {
+
+router.put('/', requireApiAuth, async (req, res) => {
   const { fileName, content, type } = req.body;
   const monthsage = `Uodate the ${fileName} file.`;
 

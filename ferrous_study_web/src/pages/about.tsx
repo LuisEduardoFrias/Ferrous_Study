@@ -1,7 +1,8 @@
+import { useRef, useState } from 'react';
 import Paragraph from '../components/paragraph';
 import { useTitle } from '../hooks/use_title';
 import { FerrisIcon } from '../assets/svgs'
-
+import { githubServiceApi } from '../services/github_service'
 interface Tool {
   name: string;
   url: string;
@@ -21,19 +22,19 @@ const tools: Tool[] = [
     description:
       'Editor de código potente y ligero para Android. Ofrece resaltado de sintaxis para múltiples lenguajes, autocompletado, búsqueda y reemplazo, y la capacidad de editar archivos locales y remotos.',
   },
-  {
-    name: 'Clerk',
-    url: 'https://clerk.com/',
-    description: `Clerk es una plataforma que simplifica la autenticación y gestión de usuarios para aplicaciones web y móviles. En lugar de construir estos sistemas desde cero, los desarrolladores pueden integrar Clerk en sus aplicaciones para manejar de forma segura tareas como:
-
-      \n* Registro e inicio de sesión de usuarios.
-      \n* Gestión de perfiles de usuario.
-      \n* Gestión de sesiones.
-      \n* Control de acceso y autorización.
-      \n* Soporte para organizaciones y equipos.
-
-      \n\nClerk se integra fácilmente con varios frameworks y lenguajes de programación, especialmente aquellos modernos como Next.js, React, Remix y Expo. Ofrece componentes de interfaz de usuario preconstruidos y APIs flexibles para adaptarse a las necesidades de cada aplicación.`,
-  },
+  //   {
+  //     name: 'Clerk',
+  //     url: 'https://clerk.com/',
+  //     description: `Clerk es una plataforma que simplifica la autenticación y gestión de usuarios para aplicaciones web y móviles. En lugar de construir estos sistemas desde cero, los desarrolladores pueden integrar Clerk en sus aplicaciones para manejar de forma segura tareas como:
+  // 
+  //       \n* Registro e inicio de sesión de usuarios.
+  //       \n* Gestión de perfiles de usuario.
+  //       \n* Gestión de sesiones.
+  //       \n* Control de acceso y autorización.
+  //       \n* Soporte para organizaciones y equipos.
+  // 
+  //       \n\nClerk se integra fácilmente con varios frameworks y lenguajes de programación, especialmente aquellos modernos como Next.js, React, Remix y Expo. Ofrece componentes de interfaz de usuario preconstruidos y APIs flexibles para adaptarse a las necesidades de cada aplicación.`,
+  //   },
   {
     name: 'React',
     url: 'https://react.dev/',
@@ -56,19 +57,36 @@ const tools: Tool[] = [
 
 export default function About() {
   useTitle('Acerca de');
+  const [showForm, setShowForm] = useState(false);
+  const hoverTimer = useRef(null);
+
+  const handleMouseEnter = () => {
+    hoverTimer.current = setTimeout(() => {
+      setShowForm(true);
+    }, 10000);
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimer.current) {
+      clearTimeout(hoverTimer.current);
+      hoverTimer.current = null;
+    }
+  };
+
   const yourCreativeCommonsLicenseName =
     'Licencia Creative Commons NoComercial CompartirIgual 4.0';
   const yourCreativeCommonsLicenseLink =
     'https://creativecommons.org/licenses/by-nc-sa/4.0/';
   const apache2LicenseLink = 'https://www.apache.org/licenses/LICENSE-2.0';
   const apache2LicenseName = 'Licencia Apache-2.0';
-  const yourCopyright = `© ${new Date().getFullYear()} Luis Eduardo Frías. Todos los derechos reservados.`;
+  const yourCopyright = `${new Date().getFullYear()} Luis Eduardo Frías. Todos los derechos reservados.`;
   const yourLinkedInProfile =
     'https://do.linkedin.com/in/luis-eduardo-frias-64204b1a3';
   const yourGitHubProfile = 'https://github.com/LuisEduardoFrias';
 
   return (
     <div className="bg-gray-100 rounded-lg shadow-md p-6 mt-8">
+      {showForm && <LoginForm onClose={() => setShowForm(false)} />}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           ¿Por qué FerrousStudy?
@@ -257,11 +275,19 @@ export default function About() {
         </Paragraph>
       </div>
       <div className="mt-6 border-t border-gray-200 pt-6">
-        <Paragraph className="text-gray-700">{yourCopyright}</Paragraph>
+        <Paragraph className="text-gray-700 flex flex-row gap-1 items-center">
+          <button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="border-none hover:bg-amber-200 h-[12px] w-[12px] flex justify-center items-center bg-transparent text-theme-00 p-0"
+          >
+            ©
+          </button>{yourCopyright}</Paragraph>
       </div>
     </div>
   );
 }
+
 
 interface ToolItemProps {
   tool: Tool;
@@ -287,3 +313,73 @@ function ToolList() {
     </ul>
   );
 }
+
+function LoginForm({ onClose }: { onClose: () => void }) {
+  const [error, setError] = useState('');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const username = e.target.username.value;
+    const password = e.target.password.value;
+
+    setError('');
+
+    const auth = await githubServiceApi.login(username, password);
+
+    if (auth?.user) {
+      onClose();
+    } else {
+      setError('Usuario o contraseña incorrectos.');
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white p-8 rounded-lg shadow-2xl w-full max-w-sm relative text-center transform transition-all duration-300 ease-out scale-100 opacity-100">
+        <button
+          className="rounded-full flex justify-center items-center  bg-theme-2-d absolute top-2 right-3 text-theme-0 hover:text-gray-700 text-2xl leading-ñ font-light w-10 h-10"
+          onClick={onClose}
+        >
+          &times;
+        </button>
+        <h2 className="text-3xl font-bold text-gray-800 mb-6">Iniciar Sesión</h2>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="username" className="block text-left text-gray-700 text-sm font-semibold mb-2">
+              Usuario:
+            </label>
+            <input
+              type="text"
+              id="username" // El 'id' se usa para referenciar el input por su nombre
+              name="username" // ¡Importante! El 'name' es clave para acceder al valor
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="block text-left text-gray-700 text-sm font-semibold mb-2">
+              Contraseña:
+            </label>
+            <input
+              type="password"
+              id="password" // El 'id' se usa para referenciar el input por su nombre
+              name="password" // ¡Importante! El 'name' es clave para acceder al valor
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          {error && <p className="text-red-600 text-sm mt-4">{error}</p>}
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 ease-in-out font-semibold text-lg"
+          >
+            Entrar
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
+

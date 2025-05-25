@@ -1,5 +1,7 @@
 
 export function saveValue<T>(key: string, value: T) {
+  if(!key || !value)
+  throw new Error('No agregaste elnprimer parametro "key" a la funcion "setValue" de "local_storage".');
   localStorage.setItem(key, JSON.stringify(value));
 }
 

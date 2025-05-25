@@ -27,6 +27,7 @@ export const GithubCore = {
       return null;
     } catch (error) {
       console.error(`Error al obtener el contenido de "${filePath}" en "${OWNER}/${REPO}":`);
+      console.error(`Error: `, error);
       return null;
     }
   },

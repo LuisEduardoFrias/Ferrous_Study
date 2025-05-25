@@ -1,8 +1,6 @@
 import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
-//import { ClerkProvider, ClerkLoading, ClerkLoaded } from '@clerk/clerk-react';
-//import { Clerk } from '@clerk/clerk-react';
 import PageLoading from './pages/page_loading';
 import { routeTree } from './routeTree.gen';
 import { useStore } from './state_warehouse/index';
@@ -16,18 +14,6 @@ declare module '@tanstack/react-router' {
     router: typeof router
   }
 }
-
-// declare global {
-//   interface Window {
-//     clerk: Clerk | undefined
-//   }
-// }
-
-// const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
-// 
-// if (!PUBLISHABLE_KEY) {
-//   throw new Error('Missing Publishable Key');
-// }
 
 const rootElement = document.getElementById('root')!;
 
@@ -45,18 +31,6 @@ function Main() {
 
   return (
     <StrictMode>
-      {
-        /*
-      <ClerkProvider localization={esES} publishableKey={PUBLISHABLE_KEY} >
-          <ClerkLoading>
-            <PageLoading />
-          </ClerkLoading>
-          <ClerkLoaded>
-            <RouterProvider router={router} />
-          </ClerkLoaded>
-        </ClerkProvider>
-        */
-      }
       <RouterProvider router={router} />
     </StrictMode>
   );

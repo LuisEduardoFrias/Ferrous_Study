@@ -101,8 +101,8 @@
   --theme-o-4-d: #9A56CC;
   /* Más oscuro */
 
-  --theme-00: white;
-  --theme-0: black;
+  --theme-0: white;
+  --theme-00: black;
   color: white;
   background-color: #131313;
 
@@ -244,4 +244,33 @@ button:focus-visible {
 
 .custonClassSignin {
   height: 200px;
+}
+
+
+/*///// Manejo del scrooll   ///////////*/
+
+/* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
+/* Oculta la barra de desplazamiento entera */
+::-webkit-scrollbar {
+  display: none;
+  /* Esta es la propiedad clave */
+}
+
+/* Opcional: También puedes establecer el ancho/alto a 0 para asegurar que no ocupe espacio */
+/* ::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+} */
+
+/* Para Firefox (propiedad estándar moderna) */
+/* 'none' oculta la barra de desplazamiento visualmente */
+body {
+  scrollbar-width: none;
+}
+
+/* Para Microsoft Edge (antiguo, antes de la adopción de Chromium) y algunos IE */
+/* Aunque Edge ahora usa Chromium, esta meta propiedad puede ser útil para versiones anteriores */
+body {
+  -ms-overflow-style: none;
+  /* Oculta la barra de desplazamiento */
 }

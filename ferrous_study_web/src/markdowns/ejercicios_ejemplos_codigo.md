@@ -1,3 +1,16 @@
+---
+key: 6
+name: ejercicios_ejemplos_codigo
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - ejercicios
+ - playgrownd
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Código de ejemplo
 
 En este curso, aprenderemos el lenguaje Rust principalmente con ejemplos que podrás ejecutar con tu navegador. De este modo, la configuración es mucho más sencilla y se asegura una experiencia homogénea para todos.
@@ -13,3 +26,4 @@ fn main() {
 }
 
 ```
+language&>es-ES<&

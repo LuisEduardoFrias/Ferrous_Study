@@ -1,3 +1,17 @@
+---
+key: 7
+name: variables
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - variables
+ - constantes
+ - static
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Identificadores
 
 Un identificador es el nombre que se le da a una entidad dentro del código fuente, como una variable, una constante, una función, una clase, etc. Su propósito principal es permitirnos referirnos a esa entidad de una manera única y fácil de recordar dentro de nuestro programa.
@@ -115,3 +129,4 @@ fn main() {
  * Eficiencia: En algunos casos, el compilador puede optimizar el uso de constantes.
 
 Este es un ejemplo básico, pero las constantes son una herramienta fundamental en Rust (y en muchos otros lenguajes de programación) para definir valores que no deben cambiar.
+language&>es-ES<&

@@ -1,3 +1,16 @@
+---
+key: 2
+name: ventajas_de_rust
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - ventajas
+ - rust
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Ventajas de Rust
 
 Estas son algunas de las ventajas competitivas de Rust:
@@ -37,3 +50,4 @@ Experiencia con Java, Go, Python, JavaScript, etc.: Consigues la misma seguridad
 
 También consigues un rendimiento rápido y predecible como en C y C++ (sin recolector de memoria residual), así como
 acceso a hardware de bajo nivel (si lo necesitas).
+language&>es-ES<&

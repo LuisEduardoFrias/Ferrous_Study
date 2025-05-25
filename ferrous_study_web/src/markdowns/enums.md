@@ -1,3 +1,15 @@
+---
+key: 31
+name: enums
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - enums
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Enums compartidas
 
 Una referencia ofrece una forma de acceder a otro valor sin asumir la responsabilidad del valor. También se denomina “préstamo”. Las referencias compartidas son de solo lectura y los datos a los que se hace referencia no pueden cambiar.
@@ -41,3 +53,4 @@ Una referencia compartida no permite modificar el valor al que hace referencia, 
 Rust hace un seguimiento del tiempo de vida de todas las referencias para asegurarse de que duran lo suficiente. En Rust seguro no se dan referencias colgantes. x_axis devolvería una referencia a point, pero point se desasignará cuando se devuelva la función, por lo que no se compilará.
 
 Más adelante hablaremos de los préstamos cuando lleguemos a la parte de propiedad.
+language&>es-ES<&

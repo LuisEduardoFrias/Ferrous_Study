@@ -8,6 +8,10 @@ import { create } from 'zustand'
 
 type searchData = { show: boolean, data?: TMenu[] };
 
+const prueba = [{ key: 'Español', value: "esp" }, { key: 'Ingles', value: 'ing' }, { key: 'Japones', value: 'jap' }, { key: 'Chino', value: 'chi' }, {
+  key: 'Frances', value: 'fra'
+}];
+
 export type State = {
   cache: Record<string, CacheEntry<any>>;
   dataClass: TClass[],
@@ -15,7 +19,7 @@ export type State = {
   show_drawer: boolean,
   search_data: searchData,
   languages: TLanguages[],
-  languageSelected: TLanguages,
+  languageSelected: TLanguages | null,
   classId: string | null,
   //
   initial_state: () => void,
@@ -34,10 +38,8 @@ const useStore = create<State>((set, get) => ({
   dataMenu: [],
   show_drawer: false,
   search_data: { show: false, data: [] },
-  languages: [{ key: 'Español', value: "esp" }, { key: 'Ingles', value: 'ing' }, { key: 'Japones', value: 'jap' }, { key: 'Chino', value: 'chi' }, {
-    key: 'Frances', value: 'fra'
-  }],
-  languageSelected: { key: 'Español', value: "esp" },
+  languages: [],
+  languageSelected: null,
   classId: null,
   /////
   initial_state: async () => {
@@ -49,7 +51,7 @@ const useStore = create<State>((set, get) => ({
     let languageSelected = getValue<TLanguages>('language_selected');
 
     if (!languageSelected)
-      languageSelected = get().languageSelected;
+      languageSelected = null
 
     if (resultClass && resultMennu)
       set({ dataClass: JSON.parse(resultClass), languageSelected, dataMenu: JSON.parse(resultMennu) });
@@ -57,20 +59,24 @@ const useStore = create<State>((set, get) => ({
   },
 
   on_miss: <T>(key: string, data: CacheEntry<T>) => {
-    const cache = get().cache;
-    cache[key] = data;
-    set({ cache });
+    set((state) => ({
+      cache: {
+        ...state.cache,
+        [key]: data
+      },
+    }));
   },
 
   on_clear_cache: (key?: string) => {
-    let cache = get().cache;
-
-    if (key)
-      delete cache[key];
-    else
-      cache = {};
-
-    set({ cache });
+    set((state) => {
+      if (key) {
+        const newCache = { ...state.cache };
+        delete newCache[key];
+        return { cache: newCache };
+      } else {
+        return { cache: {} };
+      }
+    });
   },
 
   on_show_drawer: (isShow: boolean) => {
@@ -86,8 +92,9 @@ const useStore = create<State>((set, get) => ({
   },
 
   on_change_language: (languageSelected: TLanguages) => {
+    console.log("cambiandi lenguaje: ", languageSelected)
     set({ languageSelected })
-    saveValue<TLanguages>(languageSelected);
+    saveValue<TLanguages>('language_selected', languageSelected);
   },
 
   on_add_languages: (languages: TLanguages[]) => {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
-import { githubService } from '../services/github_service'
+import { githubServiceApi } from '../services/github_service'
 import { toCamelCase } from '../hooks/to_camel_case'
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog'
@@ -29,10 +29,10 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       setShowLoading(true);
 
       const result = await get<string | null>(editClassroomId, async () => {
-        return await githubService.getFileContentByMarkdown(editClassroomId);
+        return await githubServiceApi.getFileContentByMarkdown(editClassroomId);
       });
       const resultClass = await get<string | null>("class", async () => {
-        return await githubService.getFileContentByJson('class');
+        return await githubServiceApi.getFileContentByJson('class');
       });
 
       if (resultClass) {
@@ -71,8 +71,8 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
     });
 
     const [result] = await Promise.all([
-      await githubService.updateFileContent(editClassroomId, textValue, 'markdown'),
-      await githubService.updateFileContent('class', JSON.stringify(updateClass), 'json')
+      await githubServiceApi.updateFileContent(editClassroomId, textValue, 'markdown'),
+      await githubServiceApi.updateFileContent('class', JSON.stringify(updateClass), 'json')
     ]);
 
     setContentErrorMessage({ ...result });
@@ -144,8 +144,6 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
           keywordsOpen();
         }}
         fileName={`Editando archivo ${toCamelCase(editClassroomId)}`}
-        className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
-        style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
         defaultValue={content}
       />
 

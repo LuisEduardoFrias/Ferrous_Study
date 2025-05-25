@@ -1,3 +1,16 @@
+---
+key: 17
+name: break_continue
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - break
+ - continue
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## break y continue
 Si quieres iniciar inmediatamente la siguiente iteración, usa continue.
 
@@ -18,3 +31,4 @@ fn main() {
     }
 }
 ```
+language&>es-ES<&

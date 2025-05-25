@@ -1,3 +1,16 @@
+---
+key: 13
+name: expresion_if
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - if
+ - expresiones
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Expresiones `if` en Rust: Control de Flujo y Evaluación Condicional
 
 La expresión `if` en Rust te permite ejecutar diferentes bloques de código basándote en el valor de una condición booleana. Además de su uso tradicional para el control de flujo, en Rust, `if` también puede actuar como una expresión que evalúa a un valor.
@@ -143,3 +156,4 @@ El compilador esperará un punto y coma para marcar el final de la declaración 
 <br />
 
 La expresión `if` en Rust es una herramienta versátil para el control de flujo y la evaluación condicional de valores. Comprender su doble funcionalidad y las reglas sobre los tipos coincidentes y el uso del punto y coma es crucial para escribir código Rust correcto y eficiente. 
+language&>es-ES<&

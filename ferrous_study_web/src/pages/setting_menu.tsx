@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { SaveIcon, AddIcon, LoadingIcon,SuccessIcon, ErrorIcon  } from '../assets/svgs';
-import { githubService } from '../services/github_service';
+import { githubServiceApi } from '../services/github_service';
 import { useTitle } from '../hooks/use_title'
 import type { TMenu } from '../types/menu';
 import type { TClass } from '../types/class';
@@ -159,7 +159,7 @@ export default function Menu() {
         const newContent = [...content];
         newContent.push(...optionHidden.map((item: TMenu, index: number) => ({ ...item, key: (id + index).toString() })));
 
-        const result = await githubService.updateFileContent("menu", newContent, 'json');
+        const result = await githubServiceApi.updateFileContent("menu", newContent, 'json');
         //console.log(result);
         // const result = { message: "se guardo", data: {} };
         setContentErrorMessage({ ...result });

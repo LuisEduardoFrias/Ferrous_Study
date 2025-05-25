@@ -1,3 +1,15 @@
+---
+key: 21
+name: etiquetas
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - etiquetas
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Etiquetas
 De forma opcional, tanto continue como break pueden utilizar un argumento de etiqueta para interrumpir los bucles anidados:
 
@@ -19,3 +31,4 @@ fn main() {
 ```
 
 Ten en cuenta que loop es la única construcción de bucle que devuelve un valor no trivial. Esto se debe a que es inevitable que se introduzca al menos una vez (a diferencia de los bucles while y for).
+language&>es-ES<&

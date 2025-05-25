@@ -1,3 +1,15 @@
+---
+key: 5
+name: cargo
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - cargo
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Usando Cargo
 
 Cargo es la herramienta estándar que se utiliza en el ecosistema de Rust para crear y ejecutar sus aplicaciones. En este artículo, te ofrecemos una breve descripción de lo que es Cargo, cómo se integra en el ecosistema más amplio y cómo encaja en esta formación.
@@ -101,3 +113,4 @@ Cargo también archivos como:
 En resumen, Cargo te ayuda a revisar, construir y gestionar las "piezas" que necesita tu programa de Rust. ¡Es una herramienta muy útil!
 
 Te animo a instalar Cargo y utilizar un editor local, te facilitará mucho las cosas, ya que dispondrás de un entorno de desarrollo normal.
+language&>es-ES<&

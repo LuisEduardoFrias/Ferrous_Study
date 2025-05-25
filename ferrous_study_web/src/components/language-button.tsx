@@ -1,36 +1,77 @@
-import Li from './li';
-import { useState } from "react"
+import { useState, useCallback, useMemo } from 'react'
 import { useClickOutside } from '../hooks/use_click_on_side'
 import { WorldIcon } from '../assets/svgs'
 import { useStore } from '../state_warehouse/index'
+import { getValue } from '../hooks/local_storage'
 import type { TLanguages } from '../types/language'
 
 export default function LanguageButton() {
-  const [togger, setTogger] = useState(false)
-  const languages = useStore((state) => state.languages)
-  const languageSelected = useStore((state) => state.languageSelected)
-  const on_change_language = useStore((state) => state.on_change_language)
-  const ulRef = useClickOutside<HTMLDivElement>(() => setTogger(false))
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const ulRef = useClickOutside<HTMLDivElement>(() => setIsMenuOpen(false));
+  const languages = useStore((state) => state.languages);
+  const on_change_language = useStore((state) => state.on_change_language);
+  const languageSelected = useStore((state) => state.languageSelected);
 
-  function select(lang: TLanguages) {
-    return languageSelected.value === lang.value && "bg-theme-4 font-bold border-t border-b border-theme-3";
-  }
+  const isLanguageSelected = useCallback((lang: TLanguages): string => {
+
+    let languageSelected_ = languageSelected;
+
+    if (languageSelected_)
+      return languageSelected_.value === lang.value
+        ? 'bg-theme-4 font-bold border-t border-b border-theme-3'
+        : '';
+
+    languageSelected_ = getValue<TLanguages>('language_selected');
+
+    if (!languageSelected_ || !languages.includes(languageSelected_)) {
+      //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+      languageSelected_ = languages[0];
+    }
+
+    return languageSelected_?.value === lang.value
+      ? 'bg-theme-4 font-bold border-t border-b border-theme-3'
+      : '';
+  }, [languageSelected]);
+
+  const handleLanguageClick = useCallback((lang: TLanguages) => {
+    setIsMenuOpen(false);
+    on_change_language(lang);
+  }, [on_change_language]);
 
   return (
-    <div ref={ulRef}  >
-      <WorldIcon onClick={() => setTogger(!togger)} />
-      <ul style={{ backdropFilter: 'blur(10px)' }} className={`absolute top-12 right-10 transition-all shadow shadow-theme-4 w-32 py-2 ${togger ? "h-auto py-2" : "py-0 h-[0px]"} flex flex-col gap-2 bg-translucent text-theme-0 backdrop-blur-3xl overflow-y-scroll`} >
+    <div ref={ulRef} className="relative">
+      <WorldIcon onClick={() => setIsMenuOpen(!isMenuOpen)} className="cursor-pointer" />
+
+      <ul
+        className={`
+          absolute top-12 right-0 transition-all shadow shadow-theme-4 w-32
+          ${isMenuOpen ? 'h-auto py-2' : 'py-0 h-0'}
+          flex flex-col gap-2 bg-translucent text-theme-0 backdrop-blur-xl
+          overflow-hidden z-50 rounded-md
+          ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
+        `}
+      >
 
         <div className="h-full absolute inset-0 bg-translucent -z-10"></div>
 
-        {languages.length < 1 && <span className="text-center" >No hay traducciones</span>}
-
-        {languages.map((lang: TLanguages, index: number) =>
-          <li key={index} className={`hover:bg-theme-3 ${select(lang)} px-2 ${togger ? 'opacity-1' : 'opacity-0'}`}
-            onClick={() => { setTogger(false); on_change_language(lang); }} >{lang.key}</li>
+        {languages.length === 0 && (
+          <span className="text-center p-2 text-sm text-theme-1">No hay traducciones disponibles.</span>
         )}
 
+        {languages.map((lang: TLanguages) => (
+          <li
+            key={lang.value}
+            className={`
+              hover:bg-theme-3 cursor-pointer
+              ${isLanguageSelected(lang)}
+              px-2 py-1 text-sm
+            `}
+            onClick={() => handleLanguageClick(lang)}
+          >
+            {lang.key}
+          </li>
+        ))}
       </ul>
     </div>
-  )
+  );
 }

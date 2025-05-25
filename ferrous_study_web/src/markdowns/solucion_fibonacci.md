@@ -1,3 +1,16 @@
+---
+key: 12
+name: solucion_fibonacci
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - solución
+ - fibonacci
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Solución fibonacci
 
 ```rust
@@ -15,3 +28,4 @@ fn main() {
 }
 
 ```
+language&>es-ES<&

@@ -1,13 +1,10 @@
 ---
-key: 25
+key: 26
 name: funciones
 addData: 19/05/2025
 updateData: null
 keywords: 
  - funciones
- - sobrecarga
- - genéricos
- - return
 languages:
  - key: Español
    value: es-ES

@@ -1,3 +1,16 @@
+---
+key: 17
+name: collats
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - collats
+ - ejercicio
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Ejercicio Secuencia de Collatz
 
 La secuencia de Collatz se define de la siguiente manera, para n1 arbitrario mayor que cero:
@@ -28,3 +41,4 @@ fn main() {
   todo!("Implementar esto")
 }
 ```
+language&>es-ES<&

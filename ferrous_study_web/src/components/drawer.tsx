@@ -4,17 +4,9 @@ import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
 import { FerrisIcon, ArrowRightIcon, BookOpenIcon } from '../assets/svgs'
 import ButtonIcon from '../components/button_icon'
-//import { SignedIn } from '@clerk/clerk-react';
+import { SignedIn } from '../components/auth';
 import type { TMenu } from '../types/menu'
 import { useStore } from '../state_warehouse/index'
-
-function SignedIn({ children }: { children: ReactNode }) {
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
 
 type MenuObj = {
   classroom: TMenu[],
@@ -75,7 +67,7 @@ export default function Drawer() {
               </LinkC>
             ))}
           <hr className="my-2 border-[.4px] border-theme-o-3-d" />
-          <>
+          <SignedIn>
             {menu &&
               menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
                 <LinkC
@@ -88,7 +80,7 @@ export default function Drawer() {
                   {text}
                 </LinkC>
               ))}
-          </>
+          </SignedIn>
 
           {menu &&
             <LinkC

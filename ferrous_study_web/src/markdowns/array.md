@@ -1,3 +1,15 @@
+---
+key: 19
+name: array
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - array
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ## Arrays
 
 ```rust
@@ -13,3 +25,4 @@ Un valor del tipo array [T; N] contiene N (una constante en tiempo de compilaci�
 Prueba a acceder a un array que esté fuera de los límites. Los accesos a los arrays se comprueban en el tiempo de ejecución. Rust suele optimizar estas comprobaciones y se pueden evitar utilizando Rust inseguro.
 
 Podemos usar literales para asignar valores a arrays.\n\nEl macro de impresión println! solicita la implementación de depuración con el parámetro de formato ?: {} ofrece la salida predeterminada y {:?} ofrece la salida de depuración. Tipos como números enteros y cadenas implementan la salida de depuración. Esto significan que tenemos que usar la salida de depuración en este caso.\n\nSi se añade #, por ejemplo {a:#?}, se da formato al texto para facilitar la lectura.
+language&>es-ES<&

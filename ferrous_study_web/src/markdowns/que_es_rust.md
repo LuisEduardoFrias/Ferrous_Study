@@ -1,3 +1,16 @@
+---
+key: 1
+name: que_es_rust
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - rust
+ - cargo
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### ¿Qué es Rust?
 Rust es un nuevo lenguaje de programación que lanzó su versión 1.0 en el 2015.
 
@@ -21,3 +34,4 @@ Rust satisface las mismas necesidades que C++:
 - Se puede reducir verticalmente a dispositivos muy limitados, como los microcontroladores.
 - No tiene runtime ni garbage collection.
 - Se centra en la fiabilidad y la seguridad sin sacrificar el rendimiento.
+language&>es-ES<&

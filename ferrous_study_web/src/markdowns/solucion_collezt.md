@@ -1,3 +1,16 @@
+---
+key: 18
+name: solucion_collezt
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - solución
+ - collezt
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 ### Solución
 
 ```rust
@@ -21,3 +34,4 @@ fn main() {
     println!("Longitud: {}", collatz_length(11));
 }
 ```
+language&>es-ES<&
