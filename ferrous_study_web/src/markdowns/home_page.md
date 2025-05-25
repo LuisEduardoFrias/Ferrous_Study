@@ -11,7 +11,7 @@ languages:
    value: en-EN
 ---
 language&>es-ES<&
-Este es un curso gratuito de Rust, basado en el desarrollado por el equipo de Android en Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
+Este es un curso gratuito de Rust, basado en el curso desarrollado por el equipo de Android en Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
 
 El curso abarca el espectro completo de Rust, desde la sintaxis básica hasta temas avanzados como genéricos y el manejo de errores.
 
@@ -50,7 +50,7 @@ El curso presupone que ya sabes programar. Rust es un lenguaje estáticamente ti
 Si sabes programar en un lenguaje dinámicamente tipado, como Python o JavaScript, podrás seguir el ritmo sin problema.
 language&>es-ES<&
 language&>en-EN<&
-This is a free Rust course, based on the one developed by the Android team at Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
+This is a free Rust course, based on the course developed by the Android team at Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
 
 The course covers the full spectrum of Rust, from basic syntax to advanced topics like generics and error handling.
 

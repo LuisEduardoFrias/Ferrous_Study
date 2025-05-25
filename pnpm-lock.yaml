@@ -37,12 +37,6 @@ importers:
 
   ferrous_study_web:
     dependencies:
-      '@clerk/clerk-react':
-        specifier: ^5.31.4
-        version: 5.31.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/localizations':
-        specifier: ^3.16.0
-        version: 3.16.0
       '@tailwindcss/postcss':
         specifier: ^4.1.5
         version: 4.1.6
@@ -289,22 +283,11 @@ packages:
       svix:
         optional: true
 
-  '@clerk/clerk-react@5.31.4':
-    resolution: {integrity: sha512-VtjOEzq/ncwHRn23xhmy4DRefrrSeUkKHiB/EighusYVkjmpzWMXYGD9Wdd79hwUhJesUsBiQdZhE5qkJ+mnJA==}
-    engines: {node: '>=18.17.0'}
-    peerDependencies:
-      react: ^18.0.0 || ^19.0.0 || ^19.0.0-0
-      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-0
-
   '@clerk/express@1.4.19':
     resolution: {integrity: sha512-hKVdDgNRuE4LLdUi6oLkElmp3m333CPAcv04XS61ZH/zf+oTr+H8FCbsJeJLhSI+NvaE0wvMjcw5af11gPJG0w==}
     engines: {node: '>=18.17.0'}
     peerDependencies:
       express: ^4.17.0 || ^5.0.0
-
-  '@clerk/localizations@3.16.0':
-    resolution: {integrity: sha512-NOS0y9fEmRATzB6owcbmjirygXv2PaiVKBECqnpSvb0CYvQmhU+uVUqfim9+Xv/PEXiW+h2eH+tvd+X9VzxwFw==}
-    engines: {node: '>=18.17.0'}
 
   '@clerk/shared@3.9.1':
     resolution: {integrity: sha512-Gw7yPaas3lv+pkkbBwuqVVtWVH1nZl1hF8kVvdEhPALOkf6ww6azL6qcHaiFUHCW+iult3flJjplduFrfWF50g==}
@@ -3405,14 +3388,6 @@ snapshots:
       - react
       - react-dom
 
-  '@clerk/clerk-react@5.31.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@clerk/shared': 3.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@clerk/types': 4.59.0
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-      tslib: 2.8.1
-
   '@clerk/express@1.4.19(express@5.1.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@clerk/backend': 1.32.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -3424,10 +3399,6 @@ snapshots:
       - react
       - react-dom
       - svix
-
-  '@clerk/localizations@3.16.0':
-    dependencies:
-      '@clerk/types': 4.59.0
 
   '@clerk/shared@3.9.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:

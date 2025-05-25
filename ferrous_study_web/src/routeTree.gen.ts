@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as SuggestionsImport } from './routes/suggestions'
 import { Route as SigninupImport } from './routes/signinup'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
@@ -20,6 +21,12 @@ import { Route as ClassroomClassroomIdImport } from './routes/classroom/$classro
 import { Route as ClassroomEditEditClassroomIdImport } from './routes/classroom_/edit/$editClassroomId'
 
 // Create/Update Routes
+
+const SuggestionsRoute = SuggestionsImport.update({
+  id: '/suggestions',
+  path: '/suggestions',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const SigninupRoute = SigninupImport.update({
   id: '/signinup',
@@ -89,6 +96,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SigninupImport
       parentRoute: typeof rootRoute
     }
+    '/suggestions': {
+      id: '/suggestions'
+      path: '/suggestions'
+      fullPath: '/suggestions'
+      preLoaderRoute: typeof SuggestionsImport
+      parentRoute: typeof rootRoute
+    }
     '/classroom/$classroomId': {
       id: '/classroom/$classroomId'
       path: '/classroom/$classroomId'
@@ -126,6 +140,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/signinup': typeof SigninupRoute
+  '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
@@ -136,6 +151,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/signinup': typeof SigninupRoute
+  '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
@@ -147,6 +163,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/signinup': typeof SigninupRoute
+  '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
   '/settings/menu': typeof SettingsMenuRoute
@@ -159,6 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/signinup'
+    | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
     | '/settings/menu'
@@ -168,6 +186,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/signinup'
+    | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
     | '/settings/menu'
@@ -177,6 +196,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/signinup'
+    | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
     | '/settings/menu'
@@ -188,6 +208,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   SigninupRoute: typeof SigninupRoute
+  SuggestionsRoute: typeof SuggestionsRoute
   ClassroomClassroomIdRoute: typeof ClassroomClassroomIdRoute
   ClassroomNewmdRoute: typeof ClassroomNewmdRoute
   SettingsMenuRoute: typeof SettingsMenuRoute
@@ -198,6 +219,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   SigninupRoute: SigninupRoute,
+  SuggestionsRoute: SuggestionsRoute,
   ClassroomClassroomIdRoute: ClassroomClassroomIdRoute,
   ClassroomNewmdRoute: ClassroomNewmdRoute,
   SettingsMenuRoute: SettingsMenuRoute,
@@ -217,6 +239,7 @@ export const routeTree = rootRoute
         "/",
         "/about",
         "/signinup",
+        "/suggestions",
         "/classroom/$classroomId",
         "/classroom/newmd",
         "/settings/menu",
@@ -231,6 +254,9 @@ export const routeTree = rootRoute
     },
     "/signinup": {
       "filePath": "signinup.tsx"
+    },
+    "/suggestions": {
+      "filePath": "suggestions.tsx"
     },
     "/classroom/$classroomId": {
       "filePath": "classroom/$classroomId.tsx"

@@ -39,9 +39,9 @@
       {
         "key": "0-4",
         "to": "/classroom/$classroomId",
-        "text": "Playgrown",
+        "text": "Playground",
         "params": {
-          "classroomId": "playgrown"
+          "classroomId": "playground"
         }
       },
       {
@@ -315,6 +315,11 @@
   },
   {
     "key": "10",
+    "to": "/suggestions",
+    "text": "Sugerencias"
+  },
+  {
+    "key": "11",
     "to": "/about",
     "text": "Acerca de Ferrous Study!"
   }

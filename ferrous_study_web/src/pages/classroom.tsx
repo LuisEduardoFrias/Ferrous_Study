@@ -18,8 +18,8 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   const { get } = useMemoryCache();
 
   const dataClass = useStore((state) => state.dataClass);
-  const on_add_languages = useStore((state) => state.on_add_languages);
   const on_setClassId = useStore((state) => state.on_setClassId);
+  const on_add_languages = useStore((state) => state.on_add_languages);
   const languageSelected = useStore((state) => state.languageSelected);
 
   const [loading, setLoading] = useState(false);
@@ -36,11 +36,20 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
     };
   }, [dataClass, classroomId]);
 
-  const verifyLanguageSelected = useCallback((languages: TLanguages[]) => {
+  const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage): string => {
+
     let languageSelected_ = languageSelected;
 
-    if (languageSelected_)
-      return languageSelected_.value;
+    if (languageSelected_) {
+      if (!languages.includes(languageSelected_)) {
+        //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+        languageSelected_ = languages[0];
+      }
+
+      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+
+      return value?.text;
+    }
 
     languageSelected_ = getValue<TLanguages>('language_selected');
 
@@ -49,7 +58,9 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
       languageSelected_ = languages[0];
     }
 
-    return languageSelected_.value;
+    const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+
+    return value?.text;
   }, [languageSelected])
 
   useEffect(() => {
@@ -69,7 +80,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
           on_add_languages(languages as TLanguages[]);
         }
 
-        const text = result?.textByLanguage?.find((obj: any) => obj.language === verifyLanguageSelected(languages))?.text;
+        const text = verifyLanguageSelected(languages, result?.textByLanguage);
 
         setContent(text ?? result?.content ?? '');
       } catch (error) {

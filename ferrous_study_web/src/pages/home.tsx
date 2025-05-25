@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import ferrous from '../assets/ferrous.gif'
 import { FerrisIcon } from '../assets/svgs'
 import MarkdownRenderer from "../components/markdown_renderer"
@@ -6,13 +6,43 @@ import { useTitle } from '../hooks/use_title'
 import { githubServiceApi } from '../services/github_service'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import { useStore } from '../state_warehouse/index'
+import { getValue } from '../hooks/local_storage'
 // import markdownHomePage from '../markdowns/home_page.md?raw'
 
 export default function Home({ userId }: { userId: string }) {
   useTitle('')
   const { get } = useMemoryCache();
   const on_setClassId = useStore((state) => state.on_setClassId)
+  const on_add_languages = useStore((state) => state.on_add_languages);
+  const languageSelected = useStore((state) => state.languageSelected);
   const [content, setContent] = useState<string>('');
+
+  const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage): string => {
+
+    let languageSelected_ = languageSelected;
+
+    if (languageSelected_) {
+      if (!languages.includes(languageSelected_)) {
+      //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+      languageSelected_ = languages[0];
+    }
+    
+      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+
+      return value?.text;
+    }
+
+    languageSelected_ = getValue<TLanguages>('language_selected');
+
+    if (!languageSelected_ || !languages.includes(languageSelected_)) {
+      //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+      languageSelected_ = languages[0];
+    }
+
+    const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+
+    return value?.text;
+  }, [languageSelected])
 
   useEffect(() => {
     on_setClassId("home_page");
@@ -22,10 +52,17 @@ export default function Home({ userId }: { userId: string }) {
         return await githubServiceApi.getFileContentByMarkdown("home_page");
       });
 
-      //TODO evaluar posibke vslor null
-      setContent(result?.textByLanguage?.find((obj) => obj.language === "es-Es") ?? result.content?? '');
+      const languages = result.metadata.languages;
+
+      if (languages) {
+        on_add_languages(languages as TLanguages[]);
+      }
+
+      const text = verifyLanguageSelected(languages, result?.textByLanguage);
+
+      setContent(text ?? result?.content ?? '');
     })()
-  }, [])
+  }, [languageSelected, get, on_add_languages, on_setClassId]);
 
   return (
     <div className="p-2">
