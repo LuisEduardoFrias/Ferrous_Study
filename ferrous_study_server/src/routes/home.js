@@ -1,10 +1,11 @@
-import express from 'express';
-import path from 'path';
-import { GithubCore } from '../helpers/github.js';
-import { searchFilter } from '../helpers/search.js';
-import { requireAuth, requireApiAuth, generateToken, verifyToken } from '../auth.js';
-import matter from 'gray-matter';
-import jwt from 'jsonwebtoken';
+import express from 'express'
+import path from 'path'
+import { GithubCore } from '../helpers/github.js'
+import {sendSuggestionEmail} from '../helpers/send_email.js'
+import { searchFilter } from '../helpers/search.js'
+import { requireAuth, requireApiAuth, generateToken, verifyToken } from '../auth.js'
+import matter from 'gray-matter'
+import jwt from 'jsonwebtoken'
 
 const router = express.Router();
 
@@ -119,6 +120,28 @@ router.post('/login', requireAuth, async (req, res) => {
   }
 });
 
+router.post('/suggestions', requireAuth, async (req, res) => {
+  const suggestion = req.body;
+
+  if (!suggestion || !suggestion.name || !suggestion.email || !suggestion.subject || !suggestion.message) {
+    return res.status(400).json({ message: 'Todos los campos de la sugerencia son requeridos.' });
+  }
+
+  try {
+    const result = await sendSuggestionEmail(suggestion);
+    
+    console.log(result)
+    if (result.success) {
+      res.status(200).json({ message: 'Sugerencia enviada exitosamente.' });
+    } else {
+      res.status(500).json({ message: result.message || 'Error interno del servidor al enviar la sugerencia.' });
+    }
+  } catch (error) {
+    console.error('Error en el endpoint /api/send-suggestion-email:', error);
+    res.status(500).json({ message: 'Error interno del servidor.' });
+  }
+});
+
 router.post('/', requireApiAuth, async (req, res) => {
   const { fileName, content, keywords } = req.body;
 
@@ -176,7 +199,6 @@ router.post('/', requireApiAuth, async (req, res) => {
     return res.status(500).json({ content: null });
   }
 });
-
 
 router.put('/', requireApiAuth, async (req, res) => {
   const { fileName, content, type } = req.body;
@@ -279,3 +301,5 @@ function getData() {
   const year = today.getFullYear();
   return `${day}/${month}/${year}`;
 }
+
+

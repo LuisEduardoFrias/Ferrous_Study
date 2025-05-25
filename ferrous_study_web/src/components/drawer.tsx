@@ -32,8 +32,9 @@ export default function Drawer() {
     const { classroom, authorizedPages: authPage } = splitMenuOptions(dataMenu);
 
     const about = authPage.filter(item => item.to && item.to.includes('/about'))[0];
-    const authorizedPages = authPage.filter(item => !item.to || !item.to.includes('/about'));
-    setMenu({ classroom, authorizedPages, about })
+    const suggestions = authPage.filter(item => item.to && item.to.includes('/suggestions'))[0];
+    const authorizedPages = authPage.filter(item => !item.to || !item.to.includes('/about') || !item.to.includes('/suggestions'));
+    setMenu({ classroom, authorizedPages, suggestions, about })
   }, [dataMenu])
 
   useEffect(() => { }, [menu])
@@ -82,6 +83,17 @@ export default function Drawer() {
               ))}
           </SignedIn>
 
+          {menu &&
+            <LinkC
+              key={menu?.suggestions?.text}
+              to={menu?.suggestions?.to}
+              displayQuality={menu?.suggestions?.displayQuality}
+              subMenu={menu?.suggestions?.subMenu}
+              params={menu?.suggestions?.params}
+            >
+              {menu?.suggestions?.text}
+            </LinkC>
+          }
           {menu &&
             <LinkC
               key={menu?.about?.text}

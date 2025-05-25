@@ -2,6 +2,7 @@ import User from '../assets/svgs/user';
 import type { TMenu } from '../types/menu';
 import type { TUser } from '../types/user';
 import type { TServiceResult } from '../types/service_result';
+import { TSuggestion } from '../types/suggestion'
 import { setUser } from '../components/auth'
 import Cookies from 'js-cookie';
 
@@ -116,6 +117,28 @@ export const githubServiceApi = {
     } catch (error) {
       console.error(`Error al inisial sección`, error);
       return { error: 'Error al inisial sección' };
+    }
+  },
+
+  async sendEmail(suggestion: TSuggestion): Promise<TServiceResult> {
+    try {
+      const response = await fetch(`${FULL_API_BASE_URL}/suggestions`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${TOKEN}`,
+        },
+        body: JSON.stringify(suggestion),
+      });
+
+      if (!response.ok) {
+        return false;
+      }
+
+      return true;
+    } catch (error) {
+      console.log(error)
+      return false;
     }
   },
 
