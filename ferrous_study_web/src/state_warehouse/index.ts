@@ -92,7 +92,6 @@ const useStore = create<State>((set, get) => ({
   },
 
   on_change_language: (languageSelected: TLanguages) => {
-    console.log("cambiandi lenguaje: ", languageSelected)
     set({ languageSelected })
     saveValue<TLanguages>('language_selected', languageSelected);
   },

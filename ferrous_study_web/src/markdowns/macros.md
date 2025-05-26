@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Macros
+# Macros
 Las macros se amplían a código de Rust durante la compilación y pueden adoptar un número variable de argumentos. Se distinguen por utilizar un símbolo ! al final. La biblioteca estándar de Rust incluye una serie de macros útiles.
 
 println!(format, ..) imprime una linea a la salida estándar (“standard output”), aplicando el formato descrito en std::fmt.

@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### ¿Qué es Rust?
+# ¿Qué es Rust?
 Rust es un nuevo lenguaje de programación que lanzó su versión 1.0 en el 2015.
 
 Rust es un lenguaje compilado estático similar a C++,

@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Usando Cargo
+# Usando Cargo
 
 Cargo es la herramienta estándar que se utiliza en el ecosistema de Rust para crear y ejecutar sus aplicaciones. En este artículo, te ofrecemos una breve descripción de lo que es Cargo, cómo se integra en el ecosistema más amplio y cómo encaja en esta formación.
 

@@ -12,7 +12,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### El ecosistema de Rust
+# El ecosistema de Rust
 
 El ecosistema de Rust se compone de varias herramientas, entre las que se incluyen las siguientes:
 

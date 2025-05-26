@@ -11,9 +11,11 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Ejercicio 1: Calculadora Simple
+# ejercicios
 
-#### Requerimientos:
+## Ejercicio 1: Calculadora Simple
+
+### Requerimientos:
  * Crea un programa que realice operaciones aritméticas básicas (suma, resta, multiplicación, división) entre dos números enteros, usando funciones.
  * Define dos variables constantes para almacenar los dos números con los que vas a operar.
  * Realiza cada una de las cuatro operaciones e imprime el resultado de cada una utilizando inferencia de tipos cuando sea posible.
@@ -37,9 +39,9 @@ fn main() {
 <hr />
 <br>
 
-### Ejercicio 2: Cálculo de Área de un Rectángulo
+## Ejercicio 2: Cálculo de Área de un Rectángulo
 
-#### Requerimientos:
+### Requerimientos:
  * Define dos constantes llamadas BASE y ALTURA para representar las dimensiones de un rectángulo. Asigna valores numéricos enteros a ambas constantes.
  * Calcula el área del rectángulo multiplicando la BASE por la ALTURA y asigna el resultado a un variable area.
  * Imprime el valor del área del rectángulo utilizando println!. El mensaje debe incluir los valores de la base y la altura.
@@ -56,9 +58,9 @@ fn main() {
 <hr />
 <br>
 
-### Ejercicio 3: Comparación de Constantes
+## Ejercicio 3: Comparación de Constantes
 
-#### Requerimientos:
+### Requerimientos:
  * Define dos constantes numéricas (pueden ser del mismo tipo o de tipos diferentes que se puedan comparar).
 
   * Define una de las constantes en **main** y otra en **verificar_rango**.

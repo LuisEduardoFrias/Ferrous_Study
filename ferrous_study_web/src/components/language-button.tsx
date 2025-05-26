@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback } from 'react'
 import { useClickOutside } from '../hooks/use_click_on_side'
 import { WorldIcon } from '../assets/svgs'
 import { useStore } from '../state_warehouse/index'
@@ -9,29 +9,21 @@ export default function LanguageButton() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const ulRef = useClickOutside<HTMLDivElement>(() => setIsMenuOpen(false));
   const languages = useStore((state) => state.languages);
-  const on_change_language = useStore((state) => state.on_change_language);
   const languageSelected = useStore((state) => state.languageSelected);
+  const on_change_language = useStore((state) => state.on_change_language);
 
   const isLanguageSelected = useCallback((lang: TLanguages): string => {
-
     let languageSelected_ = languageSelected;
 
-    if (languageSelected_)
-      return languageSelected_.value === lang.value
-        ? 'bg-theme-4 font-bold border-t border-b border-theme-3'
-        : '';
-
-    languageSelected_ = getValue<TLanguages>('language_selected');
-
-    if (!languageSelected_ || !languages.includes(languageSelected_)) {
+    if (!languageSelected_) {
       //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
       languageSelected_ = languages[0];
     }
 
-    return languageSelected_?.value === lang.value
+    return languageSelected_.value === lang.value
       ? 'bg-theme-4 font-bold border-t border-b border-theme-3'
       : '';
-  }, [languageSelected]);
+  }, [languageSelected, languages]);
 
   const handleLanguageClick = useCallback((lang: TLanguages) => {
     setIsMenuOpen(false);

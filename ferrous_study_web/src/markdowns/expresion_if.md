@@ -11,11 +11,11 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Expresiones `if` en Rust: Control de Flujo y Evaluación Condicional
+# Expresiones `if` en Rust: Control de Flujo y Evaluación Condicional
 
 La expresión `if` en Rust te permite ejecutar diferentes bloques de código basándote en el valor de una condición booleana. Además de su uso tradicional para el control de flujo, en Rust, `if` también puede actuar como una expresión que evalúa a un valor.
 
-### `if` como Declaración Condicional
+## `if` como Declaración Condicional
 
 La forma más común de usar `if` es para ejecutar un bloque de código si una condición es verdadera. Opcionalmente, puedes incluir un bloque `else` que se ejecuta si la condición es falsa, y también puedes encadenar múltiples condiciones con `else if`.
 

@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## loop
+# loop
 El bucle loop repite hasta encontrar un break.
 
 ```rust

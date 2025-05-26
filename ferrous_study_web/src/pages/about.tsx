@@ -85,7 +85,7 @@ export default function About() {
   const yourGitHubProfile = 'https://github.com/LuisEduardoFrias';
 
   return (
-    <div className="bg-gray-100 rounded-lg shadow-md p-6 mt-8">
+    <div className="bg-gray-100 rounded-lg shadow-md p-6 ">
       {showForm && <LoginForm onClose={() => setShowForm(false)} />}
       <div className="mb-8">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">

@@ -14,7 +14,7 @@ export function getValue<T>(key: string): T | null {
 
   try {
     const parsed: T = JSON.parse(stored);
-    return parsed.value;
+    return parsed;
   } catch (error) {
     console.error('Error parsing stored value:', error);
     localStorage.removeItem(key);

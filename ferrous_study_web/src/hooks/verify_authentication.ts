@@ -4,20 +4,17 @@ import { AnyContext } from '@tanstack/react-router'
 import { getUser } from '../components/auth';
 
 export const verifyAuthentication: BeforeLoadFn<
-  typeof RootRoute,
-  unknown,
-  Record<string, any>,
-  AnyContext,
-  AnyContext
+   typeof RootRoute,
+   unknown,
+   Record<string, any>,
+   AnyContext,
+   AnyContext
 > = async ({ location }) => {
 
-  if (!getUser()) {
-    throw redirect({
-      to: '/signinup',
-      search: {
-        redirect_url: encodeURIComponent(location.href),
-      },
-    });
-  }
-  return;
+   if (!getUser()) {
+      throw redirect({
+         to: '/',
+      });
+   }
+   return;
 };

@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Ejercicio Fibonacci
+# Ejercicio Fibonacci
 
 La secuencie de Fibonacci empieza con [0, 1]. Para n>1, el número de Fibonacci en la posición n se calcula de forma recursiva como la suma de los números de Fibonacci n-1 y n-2.
 

@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Bucles while
+# Bucles while
 La palabra clave while es muy similar a la de otros lenguajes y ejecuta el cuerpo del bucle mientras que la condición sea valida.
 
 ```rust

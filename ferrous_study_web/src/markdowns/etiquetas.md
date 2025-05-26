@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Etiquetas
+# Etiquetas
 De forma opcional, tanto continue como break pueden utilizar un argumento de etiqueta para interrumpir los bucles anidados:
 
 ```rust

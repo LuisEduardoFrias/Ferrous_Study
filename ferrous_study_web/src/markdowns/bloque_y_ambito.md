@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Bloques y ámbitos
+# Bloques y ámbitos
 ### Bloques
 
 En Rust, un bloque contiene una secuencia de expresiones rodeados por llaves {}. Cada bloque tiene el tipo y valor de la última expresión del bloque:

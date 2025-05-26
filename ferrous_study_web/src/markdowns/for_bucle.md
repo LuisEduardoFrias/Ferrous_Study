@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## for 
+# for 
 El bucle for itera sobre rangos de valores o las entradas de una colección:
 
 ``` rust

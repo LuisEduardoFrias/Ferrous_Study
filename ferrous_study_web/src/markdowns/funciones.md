@@ -12,11 +12,11 @@ languages:
    value: en-EN
 ---
 language&>es-ES<&
-### Funciones en Rust: Bloques de Código Reutilizables
+# Funciones en Rust: Bloques de Código Reutilizables
 
 Las funciones son bloques fundamentales de código que realizan una tarea específica. En Rust, se definen utilizando la palabra clave `fn`, seguida del nombre de la función, sus parámetros (si los tiene) y el tipo de valor que retorna (si lo hace).
 
-### Definición de una Función
+## Definición de una Función
 
 La sintaxis general para definir una función en Rust es la siguiente:
 
@@ -39,7 +39,7 @@ Analicemos cada parte:
 
 <br />
 
-### Ejemplo Básico: Una Función que Suma Dos Números
+## Ejemplo Básico: Una Función que Suma Dos Números
 
 Veamos un ejemplo sencillo de una función que toma dos números enteros de 32 bits sin signo (`u32`) y devuelve su suma, también como `u32`:
 
@@ -68,7 +68,7 @@ En este ejemplo:
 
 <br />
 
-### Retorno Implícito vs. `return` Explícito
+## Retorno Implícito vs. `return` Explícito
 
 Como se mencionó, Rust permite un retorno implícito donde la última expresión de la función es el valor retornado. También puedes usar la palabra clave `return` explícitamente para devolver un valor en cualquier punto de la función.
 
@@ -89,7 +89,7 @@ fn main() {
 
 Ambos estilos son válidos, pero el retorno implícito al final de la función es considerado más idiomático en Rust para casos sencillos.
 
-### Funciones sin Valor de Retorno
+## Funciones sin Valor de Retorno
 
 Algunas funciones realizan acciones pero no necesitan devolver un valor específico. En estos casos, el tipo de retorno es el "tipo unitario" `()`, que a menudo se omite en la declaración.
 
@@ -106,7 +106,7 @@ fn main() {
 
 En este ejemplo, la función `saludar` toma una referencia a un string (`&str`) como parámetro y simplemente imprime un saludo. No hay una instrucción `return` y no se especifica un tipo de retorno explícitamente, lo que significa que implícitamente retorna `()`.
 
-### Características Importantes de las Funciones en Rust
+## Características Importantes de las Funciones en Rust
 
 * **Parámetros con Tipo:** Siempre debes especificar el tipo de cada parámetro en la declaración de la función.
 * **Tipo de Retorno:** Es obligatorio especificar el tipo de valor que la función retorna (a menos que sea `()`).
@@ -122,10 +122,10 @@ En este ejemplo, la función `saludar` toma una referencia a un string (`&str`) 
 Las funciones son bloques de construcción esenciales en Rust que te permiten organizar y reutilizar tu código de manera eficiente. Comprender cómo definirlas, pasarles parámetros y manejar los valores de retorno es fundamental para escribir programas en Rust.
 language&>es-ES<&
 language&>en-EN<&
-## Functions in Rust: Reusable Code Blocks
+# Functions in Rust: Reusable Code Blocks
 Functions are fundamental blocks of code that perform a specific task. In Rust, they are defined using the keyword fn, followed by the function's name, its parameters (if it has them) and the type of value it returns (if it does).
 
-### Defining a Function
+## Defining a Function
 The general syntax for defining a function in Rust is as follows:
 
 ```rust

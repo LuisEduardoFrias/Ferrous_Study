@@ -33,7 +33,7 @@ export default function Drawer() {
 
     const about = authPage.filter(item => item.to && item.to.includes('/about'))[0];
     const suggestions = authPage.filter(item => item.to && item.to.includes('/suggestions'))[0];
-    const authorizedPages = authPage.filter(item => !item.to || !item.to.includes('/about') || !item.to.includes('/suggestions'));
+    const authorizedPages = authPage.filter(item => !item.to ||( !item.to.includes('/about') && !item.to.includes('/suggestions')));
     setMenu({ classroom, authorizedPages, suggestions, about })
   }, [dataMenu])
 

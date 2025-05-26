@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Aritmética en Rust
+# Aritmética en Rust
 
 En Rust, al igual que en la mayoría de los lenguajes de programación, la aritmética juega un papel fundamental. Las operaciones básicas como la suma, resta, multiplicación y división están disponibles de forma intuitiva. Además, Rust ofrece un control preciso sobre cómo se manejan los tipos numéricos y sus posibles <mark>&title>desbordamientos<title&En un lenguaje de programación, el desbordamiento (overflow) ocurre cuando el resultado de una operación aritmética o cálculo supera el rango máximo que puede representar el tipo de dato que se está utilizando. Esto puede resultar en datos incorrectos o incluso errores en el programa.</mark>, lo que lo convierte en un lenguaje robusto para cálculos.
 

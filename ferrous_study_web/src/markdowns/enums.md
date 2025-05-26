@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Enums compartidas
+# Enums compartidas
 
 Una referencia ofrece una forma de acceder a otro valor sin asumir la responsabilidad del valor. También se denomina “préstamo”. Las referencias compartidas son de solo lectura y los datos a los que se hace referencia no pueden cambiar.
 

@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Introducción a la macro `println!` en Rust
+# Introducción a la macro `println!` en Rust
 
 La macro `println!` es una de las herramientas más fundamentales en Rust para mostrar información en la consola (la salida estándar), generalmente añade un salto de línea al final de la salida.
 

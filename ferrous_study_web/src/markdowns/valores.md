@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Valores y tipos de datos
+# Valores y tipos de datos
 A continuación, se muestran algunos tipos integrados básicos, así como la sintaxis de los valores literales de cada tipo.
 
 <hr />

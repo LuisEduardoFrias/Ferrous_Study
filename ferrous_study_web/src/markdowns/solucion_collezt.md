@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Solución
+# Solución collatz
 
 ```rust
 

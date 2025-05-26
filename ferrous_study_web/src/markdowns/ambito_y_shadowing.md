@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Ámbitos y Shadowing
+# Ámbitos y Shadowing
 
 El ámbito de una variable se limita al bloque que la contiene.
 

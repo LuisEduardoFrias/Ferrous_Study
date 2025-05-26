@@ -22,7 +22,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   const on_add_languages = useStore((state) => state.on_add_languages);
   const languageSelected = useStore((state) => state.languageSelected);
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [content, setContent] = useState<string>('');
 
   const classInfo = useMemo(() => {
@@ -64,9 +64,6 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
   }, [languageSelected])
 
   useEffect(() => {
-    on_setClassId(classroomId);
-    setLoading(true);
-    console.log("vvvvvvvv");
 
     (async () => {
       try {
@@ -86,6 +83,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
       } catch (error) {
         console.error('Failed to fetch class content:', error);
       } finally {
+        on_setClassId(classroomId);
         setLoading(false);
       }
     })()

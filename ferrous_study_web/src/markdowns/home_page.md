@@ -21,7 +21,7 @@ La última versión del curso se puede encontrar en [comprehensive rust](https:/
 <hr />
 <br />
 
-### El objetivos
+## El objetivos
 
 El objetivo del curso es enseñarte Rust. Suponiendo que no sabes nada sobre Rust y se espera lograr lo siguiente:
 - Darte un entendimiento comprensivo de la sintaxis y lenguaje Rust.
@@ -39,12 +39,12 @@ Basándonos en esto, te invitamos a profundizar en uno o más temas especializad
 <hr />
 <br />
 
-### Objetivos que no trataremos
+## Objetivos que no trataremos
 Rust es un lenguaje muy amplio y no podremos abarcarlo todo en unos pocos días. Algunos de los objetivos que no se plantean en este curso son los siguientes:
 
 Aprender a desarrollar macros: consulta el capítulo 19.5 del Libro de Rust y Rust by Example.
 
-### Suposiciones
+## Suposiciones
 El curso presupone que ya sabes programar. Rust es un lenguaje estáticamente tipado y, a veces, haremos comparaciones con C y C++ para explicarlo mejor o contrastar nuestro enfoque.
 
 Si sabes programar en un lenguaje dinámicamente tipado, como Python o JavaScript, podrás seguir el ritmo sin problema.
@@ -60,7 +60,7 @@ The latest version of the course can be found at [comprehensive rust](https://go
 <hr />
 <br />
 
-### Objectives
+## Objectives
 
 The goal of the course is to teach you Rust. Assuming you know nothing about Rust, the following is expected to be achieved:
 - Give you a comprehensive understanding of Rust syntax and language.
@@ -78,12 +78,12 @@ Based on this, we invite you to delve into one or more specialized topics:
 <hr />
 <br />
 
-### Objectives we will not cover
+## Objectives we will not cover
 Rust is a very broad language and we won't be able to cover everything in a few days. Some of the objectives not covered in this course are:
 
 Learning to develop macros: refer to chapter 19.5 of The Rust Book and Rust by Example.
 
-### Assumptions
+## Assumptions
 The course assumes you already know how to program. Rust is a statically typed language, and we will sometimes make comparisons with C and C++ to better explain or contrast our approach.
 
 If you know how to program in a dynamically typed language, such as Python or JavaScript, you will be able to keep up without a problem.

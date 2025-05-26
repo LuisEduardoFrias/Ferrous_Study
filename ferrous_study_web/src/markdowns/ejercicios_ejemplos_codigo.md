@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Código de ejemplo
+# Código de ejemplo
 
 En este curso, aprenderemos el lenguaje Rust principalmente con ejemplos que podrás ejecutar con tu navegador. De este modo, la configuración es mucho más sencilla y se asegura una experiencia homogénea para todos.
 

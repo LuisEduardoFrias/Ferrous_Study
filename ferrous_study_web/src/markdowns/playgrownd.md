@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-Playground
+# Playground
 El playground de Rust ofrece una forma sencilla de ejecutar programas cortos de Rust y es la base de los ejemplos y ejercicios de este curso. Prueba a ejecutar el programa “hello-world” con el que empieza. Incluye algunas funciones útiles:
 
 En “Tools”, usa la opción rustfmt para dar formato al código de forma “estándar”.

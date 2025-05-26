@@ -11,7 +11,9 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Solución 1: Calculadora Simple
+# Soluciones
+
+## Solución 1: Calculadora Simple
 
 #### Requerimientos:
 Crea un programa que realice operaciones aritméticas básicas (suma, resta, multiplicación, división) entre dos números enteros, usando funciones.
@@ -69,7 +71,7 @@ fn main() {
 <hr />
 <br />
 
-### Solución 2: Cálculo de Área de un Rectángulo
+## Solución 2: Cálculo de Área de un Rectángulo
 
 #### Requerimientos:
 Define dos constantes llamadas BASE y ALTURA para representar las dimensiones de un rectángulo. Asigna valores numéricos enteros a ambas constantes.
@@ -99,7 +101,7 @@ fn main() {
 <hr />
 <br />
 
-### Solución 3: Comparación de Constantes
+## Solución 3: Comparación de Constantes
 
 #### Requerimientos:
 Define dos constantes numéricas.

@@ -12,11 +12,11 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Identificadores
+# Identificadores
 
 Un identificador es el nombre que se le da a una entidad dentro del código fuente, como una variable, una constante, una función, una clase, etc. Su propósito principal es permitirnos referirnos a esa entidad de una manera única y fácil de recordar dentro de nuestro programa.
 
-### Variables
+## Variables
 
 Rust las variables se definen con la palabra clave **let**:
 
@@ -51,7 +51,7 @@ fn main() {
 
 En este caso, se usa la inferencia de tipos; el valor entero 15 se copia de numero1 a numero2. Ambas variables tienen su propia copia independiente del valor.
 
-### Contantes
+## Contantes
 
 Las constantes se evalúan en tiempo de compilación y no pueden cambiar durante la ejecución del programa, sus valores se insertan donde sean utilizados.
 

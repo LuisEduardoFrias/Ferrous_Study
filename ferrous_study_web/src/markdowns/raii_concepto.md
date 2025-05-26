@@ -10,13 +10,13 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## ¿Qué es RAII?
+# ¿Qué es RAII?
 
 RAII son las siglas de Resource Acquisition Is Initialization (La adquisición de recursos es inicialización). Es un paradigma de programación, principalmente utilizado en lenguajes como C++, que vincula la vida útil de un recurso (como memoria, archivos, sockets, mutexes, etc.) con la vida útil de un objeto.
 
 La idea central es que un recurso se adquiere (se asigna, se abre, se bloquea, etc.) durante la inicialización de un objeto, y se libera (se desasigna, se cierra, se desbloquea, etc.) automáticamente cuando el objeto se destruye. Esto se logra mediante el uso de destructores en los objetos.
 
-### ¿Cómo surge?
+## ¿Cómo surge?
 
 RAII surgió como una solución a los problemas de gestión de recursos manual en lenguajes como C. En C, el programador es responsable de adquirir y liberar explícitamente los recursos. Esto lleva fácilmente a errores como:
 
@@ -27,7 +27,7 @@ RAII surgió como una solución a los problemas de gestión de recursos manual e
 
 Bjarne Stroustrup, el creador de C++, introdujo el concepto de RAII como una forma de automatizar la gestión de recursos y hacer el código más seguro y robusto. Los destructores en C++ juegan un papel fundamental en la implementación de RAII, ya que se ejecutan automáticamente cuando un objeto sale de su ámbito, independientemente de cómo se abandone ese ámbito (por un return normal, por una excepción, etc.).
 
-### ¿Qué resuelve?
+## ¿Qué resuelve?
 
 RAII resuelve los problemas de gestión manual de recursos al:
  * Garantizar la liberación de recursos: Al vincular la vida del recurso a la vida del objeto, se asegura que el recurso se libere cuando el objeto se destruye, incluso en caso de excepciones.
@@ -38,7 +38,7 @@ RAII resuelve los problemas de gestión manual de recursos al:
 <br />
 <hr />
 
-### ¿Dónde se aplica?
+## ¿Dónde se aplica?
 
 El patrón RAII se aplica extensamente en C++ para gestionar una amplia variedad de recursos, incluyendo:
  * Memoria dinámica: A través de punteros inteligentes (como std::unique_ptr y std::shared_ptr).
@@ -53,7 +53,7 @@ Aunque Rust no utiliza destructores de la misma manera que C++, el concepto de R
 <br />
 <hr />
 
-### En Rust
+## En Rust
 
  * Cuando una variable sale de su ámbito, el compilador inserta automáticamente una llamada a la función drop() del tipo de esa variable si implementa el Drop trait.
  * Los tipos estándar de Rust que gestionan recursos (como Vec, String, File, MutexGuard, etc.) implementan el Drop trait para liberar automáticamente los recursos que poseen cuando salen de su ámbito.

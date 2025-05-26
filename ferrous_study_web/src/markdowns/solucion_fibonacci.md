@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Solución fibonacci
+# Solución fibonacci
 
 ```rust
 fn fib(n: u32) -> u32 {

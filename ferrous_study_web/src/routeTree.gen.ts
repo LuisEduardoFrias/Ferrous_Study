@@ -12,7 +12,6 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as SuggestionsImport } from './routes/suggestions'
-import { Route as SigninupImport } from './routes/signinup'
 import { Route as AboutImport } from './routes/about'
 import { Route as IndexImport } from './routes/index'
 import { Route as SettingsMenuImport } from './routes/settings/menu'
@@ -25,12 +24,6 @@ import { Route as ClassroomEditEditClassroomIdImport } from './routes/classroom_
 const SuggestionsRoute = SuggestionsImport.update({
   id: '/suggestions',
   path: '/suggestions',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const SigninupRoute = SigninupImport.update({
-  id: '/signinup',
-  path: '/signinup',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -89,13 +82,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
-    '/signinup': {
-      id: '/signinup'
-      path: '/signinup'
-      fullPath: '/signinup'
-      preLoaderRoute: typeof SigninupImport
-      parentRoute: typeof rootRoute
-    }
     '/suggestions': {
       id: '/suggestions'
       path: '/suggestions'
@@ -139,7 +125,6 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/signinup': typeof SigninupRoute
   '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
@@ -150,7 +135,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/signinup': typeof SigninupRoute
   '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
@@ -162,7 +146,6 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/signinup': typeof SigninupRoute
   '/suggestions': typeof SuggestionsRoute
   '/classroom/$classroomId': typeof ClassroomClassroomIdRoute
   '/classroom/newmd': typeof ClassroomNewmdRoute
@@ -175,7 +158,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/signinup'
     | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
@@ -185,7 +167,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/signinup'
     | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
@@ -195,7 +176,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/signinup'
     | '/suggestions'
     | '/classroom/$classroomId'
     | '/classroom/newmd'
@@ -207,7 +187,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  SigninupRoute: typeof SigninupRoute
   SuggestionsRoute: typeof SuggestionsRoute
   ClassroomClassroomIdRoute: typeof ClassroomClassroomIdRoute
   ClassroomNewmdRoute: typeof ClassroomNewmdRoute
@@ -218,7 +197,6 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  SigninupRoute: SigninupRoute,
   SuggestionsRoute: SuggestionsRoute,
   ClassroomClassroomIdRoute: ClassroomClassroomIdRoute,
   ClassroomNewmdRoute: ClassroomNewmdRoute,
@@ -238,7 +216,6 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/about",
-        "/signinup",
         "/suggestions",
         "/classroom/$classroomId",
         "/classroom/newmd",
@@ -251,9 +228,6 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.tsx"
-    },
-    "/signinup": {
-      "filePath": "signinup.tsx"
     },
     "/suggestions": {
       "filePath": "suggestions.tsx"

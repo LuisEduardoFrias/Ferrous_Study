@@ -43,19 +43,19 @@ const subscribers: Set<() => void> = new Set(); // Un Set para almacenar funcion
 
 // Función para notificar a todos los suscriptores
 function notifySubscribers() {
-  subscribers.forEach(callback => callback());
+   subscribers.forEach(callback => callback());
 }
 
 // Función para actualizar el usuario y notificar
 export function setUser(newUser: TUser | null) {
-  currentUser = newUser; // Actualizamos nuestro estado interno
-  saveValue<TUser>(USER_STORAGE_KEY, newUser); // Guardamos en localStorage
-  notifySubscribers(); // Notificamos a todos los componentes suscritos
+   currentUser = newUser; // Actualizamos nuestro estado interno
+   saveValue<TUser>(USER_STORAGE_KEY, newUser); // Guardamos en localStorage
+   notifySubscribers(); // Notificamos a todos los componentes suscritos
 }
 
 // Función para obtener el usuario (ahora desde nuestro estado interno observable)
 export function getUser() {
-  return currentUser;
+   return currentUser;
 }
 
 // Escuchamos los cambios de localStorage desde otras pestañas/ventanas
@@ -63,10 +63,10 @@ export function getUser() {
 // esta pestaña también se actualice.
 
 const handleStorageChange = (event: StorageEvent) => {
-  if (event.key === USER_STORAGE_KEY) {
-    currentUser = getValue<TUser>(USER_STORAGE_KEY); // Actualizamos nuestro estado interno
-    notifySubscribers(); // Notificamos a los componentes
-  }
+   if (event.key === USER_STORAGE_KEY) {
+      currentUser = getValue<TUser>(USER_STORAGE_KEY); // Actualizamos nuestro estado interno
+      notifySubscribers(); // Notificamos a los componentes
+   }
 };
 
 window.addEventListener('storage', handleStorageChange);
@@ -77,35 +77,35 @@ window.addEventListener('storage', handleStorageChange);
 
 // Hook personalizado para que los componentes se suscriban a los cambios del usuario
 function useUserSubscription() {
-  // Usamos useState para forzar un re-render cuando el usuario cambie
-  const [user, setUserState] = useState<TUser | null>(getUser());
+   // Usamos useState para forzar un re-render cuando el usuario cambie
+   const [user, setUserState] = useState<TUser | null>(getUser());
 
-  useEffect(() => {
-    // Función para actualizar el estado del componente y re-renderizar
-    const updateComponentUser = () => {
-      setUserState(getUser());
-    };
+   useEffect(() => {
+      // Función para actualizar el estado del componente y re-renderizar
+      const updateComponentUser = () => {
+         setUserState(getUser());
+      };
 
-    // Suscribimos el componente a los cambios del usuario
-    subscribers.add(updateComponentUser);
+      // Suscribimos el componente a los cambios del usuario
+      subscribers.add(updateComponentUser);
 
-    // Función de limpieza al desmontar el componente
-    return () => {
-      subscribers.delete(updateComponentUser); // Dejamos de suscribirnos
-    };
-  }, []); // El array vacío asegura que esto se ejecuta solo una vez al montar
+      // Función de limpieza al desmontar el componente
+      return () => {
+         subscribers.delete(updateComponentUser); // Dejamos de suscribirnos
+      };
+   }, []); // El array vacío asegura que esto se ejecuta solo una vez al montar
 
-  return user;
+   return user;
 }
 
 export function SignedIn({ children }: { children: ReactNode }) {
-  const user = useUserSubscription(); // Usamos nuestro hook de suscripción
-  if (!user) return null;
-  return <>{children}</>;
+   const user = useUserSubscription(); // Usamos nuestro hook de suscripción
+   if (!user) return null;
+   return <>{children}</>;
 };
 
 export function SignedOut({ children }: { children: ReactNode }) {
-  const user = useUserSubscription(); // Usamos nuestro hook de suscripción
-  if (user) return null;
-  return <>{children}</>;
+   const user = useUserSubscription(); // Usamos nuestro hook de suscripción
+   if (user) return null;
+   return <>{children}</>;
 };

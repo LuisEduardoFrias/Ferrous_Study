@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Ejercicio Secuencia de Collatz
+# Ejercicio Secuencia de Collatz
 
 La secuencia de Collatz se define de la siguiente manera, para n1 arbitrario mayor que cero:
 

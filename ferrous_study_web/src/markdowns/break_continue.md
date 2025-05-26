@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## break y continue
+# break y continue
 Si quieres iniciar inmediatamente la siguiente iteración, usa continue.
 
 Si quieres salir de un bucle antes de que termine, usa break. Para loop, este puede tomar una expresión opcional que se vuelve el valor de la expresión loop.

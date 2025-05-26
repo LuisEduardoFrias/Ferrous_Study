@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Inferencia de tipos
+# Inferencia de tipos
 
 Muchas veces no necesitas especificar explícitamente el tipo de una variable. El compilador de Rust es lo suficientemente inteligente como para inferir el tipo basándose en el valor que se le asigna o cómo se utiliza la variable.
 
@@ -58,3 +58,4 @@ Este es el error que genera el compilador. La razón fundamental es que Rust no 
 
 Los números de punto flotante y los enteros se representan de manera diferente en la memoria y tienen semánticas distintas. Compararlos directamente podría llevar a resultados inesperados o imprecisos. Por ejemplo, ¿cómo decidir si el entero 20 es "igual" al flotante 20.0.
 inferencia_tipos
+language&>es-ES<&

@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Tuplas
+# Tuplas
 
 ```rust
 fn main() {
@@ -19,9 +19,6 @@ fn main() {
     println!("t.1: {}", t.1);
 }
 ```
-
-
-## Twplas
 
 This slide should take about 5 minutes.
 Al igual que los arrays, las tuplas tienen una longitud fija.

@@ -10,7 +10,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-## Arrays
+# Arrays
 
 ```rust
 fn main() {

@@ -11,7 +11,7 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-### Ventajas de Rust
+# Ventajas de Rust
 
 Estas son algunas de las ventajas competitivas de Rust:
 
