@@ -5,245 +5,246 @@
 
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+   line-height: 1.5;
+   font-weight: 400;
 
-  /* Amarillo verdoso */
-  --theme-1: #BFFF00;
-  --theme-1-l: #DAFF7F;
-  /* Más claro */
-  --theme-1-d: #8CFF00;
-  /* Más oscuro */
+   /* Amarillo verdoso */
+   --theme-1: #BFFF00;
+   --theme-1-l: #DAFF7F;
+   /* Más claro */
+   --theme-1-d: #8CFF00;
+   /* Más oscuro */
 
-  /* Cian */
-  --theme-2: #00BFFF;
-  --theme-2-l: #80FFFF;
-  /* Más claro */
-  --theme-2-d: #008CFF;
-  /* Más oscuro */
+   /* Cian */
+   --theme-2: #00BFFF;
+   --theme-2-l: #80FFFF;
+   /* Más claro */
+   --theme-2-d: #008CFF;
+   /* Más oscuro */
 
-  /* Naranja */
-  --theme-3: #FF8000;
-  --theme-3-l: #FFB347;
-  /* Más claro */
-  --theme-3-d: #FF4D00;
-  /* Más oscuro */
+   /* Naranja */
+   --theme-3: #FF8000;
+   --theme-3-l: #FFB347;
+   /* Más claro */
+   --theme-3-d: #FF4D00;
+   /* Más oscuro */
 
-  /* Morado */
-  --theme-4: #8000FF;
-  --theme-4-l: #D180FF;
-  /* Más claro */
-  --theme-4-d: #4D00FF;
-  /* Más oscuro */
+   /* Morado */
+   --theme-4: #8000FF;
+   --theme-4-l: #D180FF;
+   /* Más claro */
+   --theme-4-d: #4D00FF;
+   /* Más oscuro */
 
-  /*//////////////// DARK ///////////////*/
+   /*//////////////// DARK ///////////////*/
 
-  /* Amarillo verdoso */
-  --theme-d-1: #558000;
-  /* Tonalidad más oscura */
-  --theme-d-1-l: #80B300;
-  /* Un poco más claro que el oscuro */
-  --theme-d-1-d: #2A4000;
-  /* Aún más oscuro */
+   /* Amarillo verdoso */
+   --theme-d-1: #558000;
+   /* Tonalidad más oscura */
+   --theme-d-1-l: #80B300;
+   /* Un poco más claro que el oscuro */
+   --theme-d-1-d: #2A4000;
+   /* Aún más oscuro */
 
-  /* Cian */
-  --theme-d-2: #006680;
-  /* Tonalidad más oscura */
-  --theme-d-2-l: #0080A6;
-  /* Un poco más claro que el oscuro */
-  --theme-d-2-d: #003340;
-  /* Aún más oscuro */
+   /* Cian */
+   --theme-d-2: #006680;
+   /* Tonalidad más oscura */
+   --theme-d-2-l: #0080A6;
+   /* Un poco más claro que el oscuro */
+   --theme-d-2-d: #003340;
+   /* Aún más oscuro */
 
-  /* Naranja */
-  --theme-d-3: #804000;
-  /* Tonalidad más oscura */
-  --theme-d-3-l: #B35900;
-  /* Un poco más claro que el oscuro */
-  --theme-d-3-d: #402000;
-  /* Aún más oscuro */
+   /* Naranja */
+   --theme-d-3: #804000;
+   /* Tonalidad más oscura */
+   --theme-d-3-l: #B35900;
+   /* Un poco más claro que el oscuro */
+   --theme-d-3-d: #402000;
+   /* Aún más oscuro */
 
-  /* Morado */
-  --theme-d-4: #400080;
-  /* Tonalidad más oscura */
-  --theme-d-4-l: #6600B3;
-  /* Un poco más claro que el oscuro */
-  --theme-d-4-d: #200040;
-  /* Aún más oscuro */
+   /* Morado */
+   --theme-d-4: #400080;
+   /* Tonalidad más oscura */
+   --theme-d-4-l: #6600B3;
+   /* Un poco más claro que el oscuro */
+   --theme-d-4-d: #200040;
+   /* Aún más oscuro */
 
-  /*//////////////// OPACITI ///////////////*/
+   /*//////////////// OPACITI ///////////////*/
 
-  /* Amarillo verdoso */
-  --theme-o--1: #D4FF7F;
-  --theme-o-1-l: #FFFFB2;
-  /* Más claro */
-  --theme-o-1-d: #A1CC56;
-  /* Más oscuro */
+   /* Amarillo verdoso */
+   --theme-o--1: #D4FF7F;
+   --theme-o-1-l: #FFFFB2;
+   /* Más claro */
+   --theme-o-1-d: #A1CC56;
+   /* Más oscuro */
 
-  /* Cian */
-  --theme-o-2: #80FFFF;
-  --theme-o-2-l: #BFFFFF;
-  /* Más claro */
-  --theme-o-2-d: #4DB2CC;
-  /* Más oscuro */
+   /* Cian */
+   --theme-o-2: #80FFFF;
+   --theme-o-2-l: #BFFFFF;
+   /* Más claro */
+   --theme-o-2-d: #4DB2CC;
+   /* Más oscuro */
 
-  /* Naranja */
-  --theme-o-3: #FFB347;
-  --theme-o-3-l: #FFE08A;
-  /* Más claro */
-  --theme-o-3-d: #CC8A31;
-  /* Más oscuro */
+   /* Naranja */
+   --theme-o-3: #FFB347;
+   --theme-o-3-l: #FFE08A;
+   /* Más claro */
+   --theme-o-3-d: #CC8A31;
+   /* Más oscuro */
 
-  /* Morado */
-  --theme-o-4: #D180FF;
-  --theme-o-4-l: #F2B2FF;
-  /* Más claro */
-  --theme-o-4-d: #9A56CC;
-  /* Más oscuro */
+   /* Morado */
+   --theme-o-4: #D180FF;
+   --theme-o-4-l: #F2B2FF;
+   /* Más claro */
+   --theme-o-4-d: #9A56CC;
+   /* Más oscuro */
 
-  --theme-0: white;
-  --theme-00: black;
-  color: white;
-  background-color: #131313;
+   --theme-0: white;
+   --theme-00: black;
+   color: white;
+   background-color: #131313;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+   font-synthesis: none;
+   text-rendering: optimizeLegibility;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-size: 14px;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-size: 14px;
 }
 
 a {
-  font-weight: 500;
-  text-decoration: inherit;
-  color: var(--theme-3-d);
+   font-weight: 500;
+   text-decoration: inherit;
+   color: var(--theme-3-d);
 }
 
 a:visited {
-  color: var(--theme-4);
+   color: var(--theme-4);
 }
 
 a:hover {
-  /*   text-decoration: underline; */
-  color: var(--theme-3-l);
+   /*   text-decoration: underline; */
+   color: var(--theme-3-l);
 }
 
 html {
-  touch-action: manipulation;
+   touch-action: manipulation;
 }
 
 html,
 body {
-  height: 100dvh;
-  width: 100dvw;
+   height: 100dvh;
+   width: 100dvw;
+   background-color: var(--theme-00);
 }
 
 body {
-  min-width: 320px;
-  min-height: 100vh;
+   min-width: 320px;
+   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+   font-size: 3.2em;
+   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: var(--theme-4);
-  color: var(--theme-0);
-  cursor: pointer;
-  transition: border-color 0.25s;
+   border-radius: 8px;
+   border: 1px solid transparent;
+   padding: 0.6em 1.2em;
+   font-size: 1em;
+   font-weight: 500;
+   font-family: inherit;
+   background-color: var(--theme-4);
+   color: var(--theme-0);
+   cursor: pointer;
+   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color: var(--theme-3);
+   border-color: var(--theme-3);
 }
 
 button:focus,
 button:focus-visible {
-  outline: 0px auto -webkit-focus-ring-color;
+   outline: 0px auto -webkit-focus-ring-color;
 }
 
 @media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
+   :root {
+      color: #213547;
+      background-color: #ffffff;
+   }
 
-  a:hover {
-    color: var(--theme-4);
-  }
+   a:hover {
+      color: var(--theme-4);
+   }
 
-  button {
-    background-color: #f9f9f9;
-  }
+   button {
+      background-color: #f9f9f9;
+   }
 }
 
 .progress {
-  animation: rotatde 2s 0s infinite linear;
+   animation: rotatde 2s 0s infinite linear;
 }
 
 @keyframes rotatde {
-  from {
-    transform: rotate(0deg);
-  }
+   from {
+      transform: rotate(0deg);
+   }
 
-  to {
-    transform: rotate(360deg);
-  }
+   to {
+      transform: rotate(360deg);
+   }
 }
 
 
 /* estlis del user profil */
 .cl-cardBox {
-  height: 430px;
+   height: 430px;
 }
 
 .cl-cardBox .cl-modalCloseButton {
-  margin-bottom: 3px;
-  position: relative;
-  bottom: 5px;
+   margin-bottom: 3px;
+   position: relative;
+   bottom: 5px;
 }
 
 .cl-cardBox .cl-modalCloseButton svg {
-  width: 24px;
-  height: 24px;
-  padding: 2px;
-  border-radius: 3px;
-  color: black;
+   width: 24px;
+   height: 24px;
+   padding: 2px;
+   border-radius: 3px;
+   color: black;
 }
 
 .cl-scrollBox {
-  box-shadow: inset 0 0 13px 0px var(--theme-4);
+   box-shadow: inset 0 0 13px 0px var(--theme-4);
 }
 
 .cl-modalBackdrop .cl-modalContent .cl-rootBox .cl-cardBox .cl-navbarMobileMenuRow {
-  background: var(--theme-o-4);
+   background: var(--theme-o-4);
 }
 
 .cl-modalBackdrop .cl-modalContent .cl-rootBox .cl-cardBox .cl-scrollBox .cl-header,
 .cl-profileSection {
-  border-bottom: 1.5px solid var(--theme-3);
+   border-bottom: 1.5px solid var(--theme-3);
 }
 
 .cl-modalBackdrop .cl-modalContent .cl-footer {
-  display: none;
+   display: none;
 }
 
 .custonClassSignin {
-  height: 200px;
+   height: 200px;
 }
 
 
@@ -252,8 +253,8 @@ button:focus-visible {
 /* Para navegadores basados en WebKit (Chrome, Safari, Edge) */
 /* Oculta la barra de desplazamiento entera */
 ::-webkit-scrollbar {
-  display: none;
-  /* Esta es la propiedad clave */
+   display: none;
+   /* Esta es la propiedad clave */
 }
 
 /* Opcional: También puedes establecer el ancho/alto a 0 para asegurar que no ocupe espacio */
@@ -265,12 +266,12 @@ button:focus-visible {
 /* Para Firefox (propiedad estándar moderna) */
 /* 'none' oculta la barra de desplazamiento visualmente */
 body {
-  scrollbar-width: none;
+   scrollbar-width: none;
 }
 
 /* Para Microsoft Edge (antiguo, antes de la adopción de Chromium) y algunos IE */
 /* Aunque Edge ahora usa Chromium, esta meta propiedad puede ser útil para versiones anteriores */
 body {
-  -ms-overflow-style: none;
-  /* Oculta la barra de desplazamiento */
+   -ms-overflow-style: none;
+   /* Oculta la barra de desplazamiento */
 }
