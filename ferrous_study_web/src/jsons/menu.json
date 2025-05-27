@@ -218,10 +218,27 @@
       {
         "key": "2-3",
         "to": "/classroom/$classroomId",
-        "text": "Bloques y ámbitos",
-        "params": {
-          "classroomId": "bloque_y_ambito"
-        }
+        "text": "Bloques, ámbitos y shadowing",
+        "subMenu": [
+          {
+            "key": "2-3-0",
+            "to": "/classroom/$classroomId",
+            "text": "Bloque",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "bloque_y_ambito"
+            }
+          },
+          {
+            "key": "2-3-1",
+            "to": "/classroom/$classroomId",
+            "text": "Shadowing",
+            "displayQuality": "",
+            "params": {
+              "classroomId": "ambito_y_shadowing"
+            }
+          }
+        ]
       },
       {
         "key": "2-4",
