@@ -1,574 +1,782 @@
 [
-  {
-    "key": 1,
-    "name": "que_es_rust",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "keywords": [
-      "rust",
-      "cargo"
-    ]
-  },
-  {
-    "key": 2,
-    "name": "ventajas_de_rust",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "keywords": [
-      "rust",
-      "ventajas"
-    ]
-  },
-  {
-    "key": 3,
-    "name": "loop_bucle",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "loop",
-      "bucles"
-    ]
-  },
-  {
-    "key": 4,
-    "name": "ecosistema_rust",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "keywords": [
-      "rust",
-      "rustc",
-      "cargo"
-    ]
-  },
-  {
-    "key": 5,
-    "name": "cargo",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "keywords": [
-      "cargo"
-    ]
-  },
-  {
-    "key": 6,
-    "name": "ejercicios_ejemplos_codigo",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "keywords": [
-      "ejercicio",
-      "playground"
-    ]
-  },
-  {
-    "key": 7,
-    "name": "variables",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "18/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "keywords": [
-      "variables",
-      "constantes",
-      "static"
-    ]
-  },
-  {
-    "key": 8,
-    "name": "valores",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "keywords": [
-      "valores",
-      "tipos"
-    ]
-  },
-  {
-    "key": 9,
-    "name": "aritmetica",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "keywords": [
-      "aritmetica"
-    ]
-  },
-  {
-    "key": 10,
-    "name": "inferencia_tipos",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "keywords": [
-      "inferencia",
-      "tipos"
-    ]
-  },
-  {
-    "key": 11,
-    "name": "ejercicio_fibonacci",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "keywords": [
-      "fibonacci",
-      "ejercicio"
-    ]
-  },
-  {
-    "key": 12,
-    "name": "solucion_fibonacci",
-    "addInfo": {
-      "addData": "12/05/2025",
-      "user": {
-        "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
-        "name": "Eduardo"
-      }
-    },
-    "updateInfo": {
-      "updateData": "12/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "keywords": [
-      "solución",
-      "fibonacci"
-    ]
-  },
-  {
-    "key": 13,
-    "name": "expresion_if",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "expresiones",
-      "if"
-    ]
-  },
-  {
-    "key": 14,
-    "name": "bucles",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "bucles"
-    ]
-  },
-  {
-    "key": 15,
-    "name": "for_bucle",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "for",
-      "bucles"
-    ]
-  },
-  {
-    "key": 16,
-    "name": "break_continue",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "break",
-      "continue"
-    ]
-  },
-  {
-    "key": 17,
-    "name": "collats",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "ejercicio",
-      "collats"
-    ]
-  },
-  {
-    "key": 18,
-    "name": "solucion_collezt",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "collatz",
-      "solución"
-    ]
-  },
-  {
-    "key": 19,
-    "name": "array",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "array"
-    ]
-  },
-  {
-    "key": 20,
-    "name": "tuplas",
-    "addInfo": {
-      "addData": "16/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "tuplas"
-    ]
-  },
-  {
-    "key": 21,
-    "name": "etiquetas",
-    "addInfo": {
-      "addData": "17/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "etiquetas"
-    ]
-  },
-  {
-    "key": 22,
-    "name": "raii_concepto",
-    "addInfo": {
-      "addData": "17/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "raii"
-    ]
-  },
-  {
-    "key": 23,
-    "name": "ejercicios_modulo1",
-    "addInfo": {
-      "addData": "18/05/2025",
-      "user": {
-        "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "ejercicios",
-      "modulo1"
-    ]
-  },
-  {
-    "key": 24,
-    "name": "solucion_modulo1",
-    "addInfo": {
-      "addData": "18/05/2025",
-      "user": {
-        "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
-        "name": "Luis"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "solución",
-      "modulo1"
-    ]
-  },
-  {
-    "key": 25,
-    "name": "bloque_y_ambito",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "bloque",
-      "ambito"
-    ]
-  },
-  {
-    "key": 26,
-    "name": "funciones",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "funciones",
-      "sobrecarga",
-      "genéricos",
-      "return"
-    ]
-  },
-  {
-    "key": 27,
-    "name": "macros",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "macros"
-    ]
-  },
-  {
-    "key": 28,
-    "name": "playground",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "playground"
-    ]
-  },
-  {
-    "key": 29,
-    "name": "ambito_y_shadowing",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "ámbito",
-      "shadowing"
-    ]
-  },
-  {
-    "key": 30,
-    "name": "println",
-    "addInfo": {
-      "addData": "19/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "println",
-      "macro"
-    ]
-  },
-  {
-    "key": 31,
-    "name": "enums",
-    "addInfo": {
-      "addData": "20/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "enum"
-    ]
-  },
-  {
-    "key": 32,
-    "name": "referencias_exclusivas",
-    "addInfo": {
-      "addData": "20/05/2025",
-      "user": {
-        "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
-        "name": "Luis Eduardo"
-      }
-    },
-    "updateInfo": null,
-    "keywords": [
-      "referencias",
-      "exclusivas"
-    ]
-  }
+   {
+      "key": 1,
+      "name": "que_es_rust",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "keywords": [
+         "rust",
+         "cargo"
+      ]
+   },
+   {
+      "key": 2,
+      "name": "ventajas_de_rust",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "keywords": [
+         "rust",
+         "ventajas"
+      ]
+   },
+   {
+      "key": 3,
+      "name": "loop_bucle",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "loop",
+         "bucles"
+      ]
+   },
+   {
+      "key": 4,
+      "name": "ecosistema_rust",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "keywords": [
+         "rust",
+         "rustc",
+         "cargo"
+      ]
+   },
+   {
+      "key": 5,
+      "name": "cargo",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "keywords": [
+         "cargo"
+      ]
+   },
+   {
+      "key": 6,
+      "name": "ejercicios_ejemplos_codigo",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "keywords": [
+         "ejercicio",
+         "playground"
+      ]
+   },
+   {
+      "key": 7,
+      "name": "variables",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "18/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "keywords": [
+         "variables",
+         "constantes",
+         "static"
+      ]
+   },
+   {
+      "key": 8,
+      "name": "valores",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "keywords": [
+         "valores",
+         "tipos"
+      ]
+   },
+   {
+      "key": 9,
+      "name": "aritmetica",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "keywords": [
+         "aritmetica"
+      ]
+   },
+   {
+      "key": 10,
+      "name": "inferencia_tipos",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "keywords": [
+         "inferencia",
+         "tipos"
+      ]
+   },
+   {
+      "key": 11,
+      "name": "ejercicio_fibonacci",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "keywords": [
+         "fibonacci",
+         "ejercicio"
+      ]
+   },
+   {
+      "key": 12,
+      "name": "solucion_fibonacci",
+      "addInfo": {
+         "addData": "12/05/2025",
+         "user": {
+            "key": "user_2xNSgHBVTuw4VR0m1SKm3C1GqVM",
+            "name": "Eduardo"
+         }
+      },
+      "updateInfo": {
+         "updateData": "12/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "keywords": [
+         "solución",
+         "fibonacci"
+      ]
+   },
+   {
+      "key": 13,
+      "name": "expresion_if",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "expresiones",
+         "if"
+      ]
+   },
+   {
+      "key": 14,
+      "name": "bucles",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "bucles"
+      ]
+   },
+   {
+      "key": 15,
+      "name": "for_bucle",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "for",
+         "bucles"
+      ]
+   },
+   {
+      "key": 16,
+      "name": "break_continue",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "break",
+         "continue"
+      ]
+   },
+   {
+      "key": 17,
+      "name": "collats",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "collats"
+      ]
+   },
+   {
+      "key": 18,
+      "name": "solucion_collezt",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "collatz",
+         "solución"
+      ]
+   },
+   {
+      "key": 19,
+      "name": "array",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "array"
+      ]
+   },
+   {
+      "key": 20,
+      "name": "tuplas",
+      "addInfo": {
+         "addData": "16/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tuplas"
+      ]
+   },
+   {
+      "key": 21,
+      "name": "etiquetas",
+      "addInfo": {
+         "addData": "17/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "etiquetas"
+      ]
+   },
+   {
+      "key": 22,
+      "name": "raii_concepto",
+      "addInfo": {
+         "addData": "17/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "raii"
+      ]
+   },
+   {
+      "key": 23,
+      "name": "ejercicios_modulo1",
+      "addInfo": {
+         "addData": "18/05/2025",
+         "user": {
+            "key": "user_2x4dVOZQea6uUA3d4PK2IeFgwU5",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicios",
+         "modulo1"
+      ]
+   },
+   {
+      "key": 24,
+      "name": "solucion_modulo1",
+      "addInfo": {
+         "addData": "18/05/2025",
+         "user": {
+            "key": "user_2x4dV28gwo6uUA3d4PK2IeFgwU5",
+            "name": "Luis"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "modulo1"
+      ]
+   },
+   {
+      "key": 25,
+      "name": "bloque_y_ambito",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "bloque",
+         "ambito"
+      ]
+   },
+   {
+      "key": 26,
+      "name": "funciones",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "funciones",
+         "sobrecarga",
+         "genéricos",
+         "return"
+      ]
+   },
+   {
+      "key": 27,
+      "name": "macros",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "macros"
+      ]
+   },
+   {
+      "key": 28,
+      "name": "playground",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "playground"
+      ]
+   },
+   {
+      "key": 29,
+      "name": "ambito_y_shadowing",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ámbito",
+         "shadowing"
+      ]
+   },
+   {
+      "key": 30,
+      "name": "println",
+      "addInfo": {
+         "addData": "19/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "println",
+         "macro"
+      ]
+   },
+   {
+      "key": 31,
+      "name": "referencias_compartida",
+      "addInfo": {
+         "addData": "20/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "referencias",
+         "compartida"
+      ]
+   },
+   {
+      "key": 32,
+      "name": "referencias_exclusivas",
+      "addInfo": {
+         "addData": "20/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "referencias",
+         "exclusivas"
+      ]
+   },
+   {
+      "key": 33,
+      "name": "ejercicio_array_anidado",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "array"
+      ]
+   },
+   {
+      "key": 34,
+      "name": "solucion_array_anidado",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "array anidado"
+      ]
+   },
+   {
+      "key": 35,
+      "name": "slice",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "slice"
+      ]
+   },
+   {
+      "key": 36,
+      "name": "cadena_de_text_string",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "text",
+         "cadena",
+         "string",
+         "&str"
+      ]
+   },
+   {
+      "key": 37,
+      "name": "ejercicio_geometria",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "geometris"
+      ]
+   },
+   {
+      "key": 38,
+      "name": "solucion_geometria",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "geometris"
+      ]
+   },
+   {
+      "key": 39,
+      "name": "estructuras",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructuras",
+         "struc"
+      ]
+   },
+   {
+      "key": 40,
+      "name": "estructuras_tupla",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructuras",
+         "tuplas"
+      ]
+   },
+   {
+      "key": 41,
+      "name": "enums",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "enums"
+      ]
+   },
+   {
+      "key": 42,
+      "name": "static",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "static"
+      ]
+   },
+   {
+      "key": 43,
+      "name": "alias_de_tipo",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "alias",
+         "tipos"
+      ]
+   },
+   {
+      "key": 44,
+      "name": "ejercicio_eventos_ascensor",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "eventos de ascensor"
+      ]
+   },
+   {
+      "key": 45,
+      "name": "solucion_eventos_ascensor",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "eventos de ascensor"
+      ]
+   }
 ]

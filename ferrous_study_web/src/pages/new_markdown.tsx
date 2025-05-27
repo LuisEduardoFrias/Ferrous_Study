@@ -153,13 +153,13 @@ export default function NewMarkdown() {
       }
 
       <TextEditor
-        onSave={(value: string) => {
+        on_save={(value: string) => {
           setTextValue(value);
           open();
         }}
-        defaultValue={textValue}
-        fileName={newClassId === '' ? "Nueva clase" : newClassId}
-        className="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
+        default_value={textValue}
+        file_name={newClassId === '' ? "Nueva clase" : newClassId}
+        class_name="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
         style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
       />
     </div >

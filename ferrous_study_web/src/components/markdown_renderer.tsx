@@ -1,6 +1,4 @@
-import Li from './li';
-import Ul from './ul';
-import { Children, HTMLAttributes, useState, ReactNode, isValidElement } from 'react'
+import { Children, HTMLAttributes, useState, ReactNode, cloneElement, isValidElement } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -16,7 +14,21 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       const match = /language-(\w+)/.exec(className || "");
 
       const { title, text } = getTitle(codeChildren as string);
+      const notPlay = !text.includes('&>notplay');
+      const notCopy = !text.includes('&>notcopy');
+      let newtext = text.replace('&>notplay\n', '').replace('&>notcopy\n','');
 
+      const regex = new RegExp(`notcopy&>\\n([\\s\\S]*?)\\<&notcopy`, 's');
+      const match2 = newtext.match(regex);
+      let copytext = newtext;
+
+      if (match2)
+         match2.map((va) => {
+            const notcopytext = va.trim();
+            copytext = copytext.replace(notcopytext, '');
+         })
+
+      newtext = newtext.replace('notcopy&>\n', '').replace('<&notcopy\n', '');
 
       const inline = false;
 
@@ -28,8 +40,8 @@ export default function MarkdownRenderer({ children }: { children: string }) {
                </div>
             }
             <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
-               <CopyButton textToCopy={text as string} />
-               <CodeButton textToCode={text as string} />
+              {notCopy &&  <CopyButton textToCopy={copytext as string} />}
+               {notPlay && <CodeButton textToCode={newtext as string} />}
             </div>
 
             <SyntaxHighlighter
@@ -38,12 +50,12 @@ export default function MarkdownRenderer({ children }: { children: string }) {
                PreTag="div"
                language={match[1]}
             >
-               {String(text).replace(/\n$/, "")}
+               {String(newtext).replace(/\n$/, "")}
             </SyntaxHighlighter>
          </div>
       ) : (
          <code {...props} className={className} >
-            {text}
+            {newtext}
          </code>
       );
    }
@@ -78,6 +90,91 @@ export default function MarkdownRenderer({ children }: { children: string }) {
                {title}
             </mark>
          </span>
+      );
+   }
+
+   function Table({ children, ...props }: HTMLAttributes<HTMLParagraphElement>) {
+      const theadChild = children[0];
+      const tbodyChild = children[1];
+
+      let WIDTH = 0;
+      const CHARACTER_WIDTH_FACTOR = 7;
+      const MIN_COLUMN_PIXEL_WIDTH = 100
+
+      const thElements = theadChild.props.children.props.children;
+      if (Array.isArray(thElements)) {
+         let maxContentLength = 0;
+
+         thElements.forEach((thChild: ReactNode) => {
+            const content = ((thChild as any).props.children);
+
+            if (content.length > maxContentLength) {
+               maxContentLength = content.length;
+            }
+         });
+
+         WIDTH = Math.max(MIN_COLUMN_PIXEL_WIDTH, maxContentLength * CHARACTER_WIDTH_FACTOR);
+      }
+
+      const applyCellStyles = (element: ReactNode) => {
+         if (!isValidElement(element)) {
+            return element;
+         }
+         const className = `px-2 py-2 text-left border border-gray-300 min-w-[${WIDTH}px] text-wrap  align-top`
+
+         if (element.type === 'th') {
+            const newClassName = `text-xs font-medium text-gray-600 uppercase ${className}`;
+            return cloneElement(element, {
+               className: newClassName.trim(),
+               style: null,
+               children: Children.map(element.props.children, applyCellStyles),
+            });
+         }
+
+         if (element.type === 'td') {
+            const newClassName = `text-sm text-gray-800 break-words ${className}`;
+            return cloneElement(element, {
+               className: newClassName.trim(),
+               style: null,
+               children: Children.map(element.props.children, applyCellStyles),
+            });
+         }
+
+         if (element.props.children) {
+            return cloneElement(element, {
+               children: Children.map(element.props.children, applyCellStyles),
+            });
+         }
+
+         return element;
+      };
+
+      const styledThead = applyCellStyles(theadChild);
+      const styledTbody = applyCellStyles(tbodyChild);
+
+      return (
+         <div className="flex flex-col">
+            <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+               <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <div className="overflow-hidden rounded-lg shadow-md border border-gray-200">
+                     <table className="min-w-full divide-y divide-gray-300 table-fixed">
+                        {
+                           cloneElement(styledThead, {
+                              className: "bg-gray-100",
+                              style: null,
+                           })
+                        }
+                        {
+                           cloneElement(styledTbody, {
+                              className: "divide-y divide-gray-200 bg-white",
+                              style: null,
+                           })
+                        }
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
       );
    }
 
@@ -182,7 +279,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       <Markdown
          remarkPlugins={[remarkGfm]}
          rehypePlugins={[rehypeRaw]}
-         components={{ ul: Ul, code: Code, p: P, h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, mark: MARK }}>
+         components={{ ul: Ul, code: Code, p: P, h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, mark: MARK, table: Table }}>
          {children}
       </Markdown>
    );

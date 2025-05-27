@@ -1,7 +1,7 @@
 ---
-key: 31
+key: 41
 name: enums
-addData: 19/05/2025
+addData: 26/05/2025
 updateData: null
 keywords: 
  - enums
@@ -10,47 +10,100 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-# Enums compartidas
+# Enumeraciones
 
-Una referencia ofrece una forma de acceder a otro valor sin asumir la responsabilidad del valor. También se denomina “préstamo”. Las referencias compartidas son de solo lectura y los datos a los que se hace referencia no pueden cambiar.
+La palabra clave enum permite crear un tipo que tiene diferentes variantes:
 
 ```rust
-&title><title&
+#[derive(Debug)]
+enum Direction {
+    Left,
+    Right,
+}
+
+#[derive(Debug)]
+enum PlayerMove {
+    Pass,                        // Variante simple
+    Run(Direction),              // Variante de tupla
+    Teleport { x: u32, y: u32 }, // Variante de struct
+}
+
 fn main() {
-    let a = 'A';
-    let b = 'B';
-    let mut r: &char = &a;
-    println!("r: {}", *r);
-    r = &b;
-    println!("r: {}", *r);
+    let m: PlayerMove = PlayerMove::Run(Direction::Left);
+    println!("En este turno: {:?}", m);
 }
 ```
 
-Una referencia compartida a un tipo T tiene el tipo &T. Se crea un valor de referencia con el operador &. El operador * “desreferencia” una referencia, dando lugar a su valor.
+Puntos Clave:
+
+Las enumeraciones te permiten colectar un conjunto de valores en un solo tipo.
+Direction es un tipo con variantes. Hay dos valores de Direction: Direction::Left y Direction::Right.
+PlayerMove es un tipo con tres variantes. Además de las cargas útiles, Rust almacenará un discriminante para saber qué variante se encuentra en un valor PlayerMove en el tiempo de ejecución.
+Este es un buen momento para comparar las estructuras y las enumeraciones:
+En ambas puedes tener una versión sencilla sin campos (estructura unitaria) o una versión con distintos tipos de campos (variantes con carga útil).
+Incluso podrías implementar las distintas variantes de una enumeración con estructuras diferentes, pero entonces no serían del mismo tipo como lo serían si estuvieran todas definidas en una enumeración.
+Rust usa muy poco espacio para almacenar el discriminante.
+Si es necesario, almacena un número entero del tamaño más pequeño requerido
+
+Si los valores de la variante permitidos no cubren todos los patrones de bits, se utilizarán patrones de bits no válidos para codificar el discriminante (la “optimización de nicho”). Por ejemplo, Option<&u8> almacena un puntero en un número entero o NULL para la variante None.
+
+Puedes controlar el discriminante si es necesario (por ejemplo, para asegurar la compatibilidad con C):
 
 ```rust
-&title><title&
-fn x_axis(x: &i32) -> &(i32, i32) {
-    let point = (*x, 0);
-    return &point;
+#[repr(u32)]
+enum Bar {
+    A, // 0
+    B = 10000,
+    C, // 10001
+}
+
+fn main() {
+    println!("A: {}", Bar::A as u32);
+    println!("B: {}", Bar::B as u32);
+    println!("C: {}", Bar::C as u32);
 }
 ```
 
-Rust prohibirá estáticamente las referencias colgantes:
+Sin repr, el tipo discriminante ocupa 2 bytes, debido a que 10001 se cabe en 2 bytes.
 
-Se dice que una referencia “toma prestado” el valor al que hace referencia. Este es un buen modelo para los estudiantes que no están familiarizados con los punteros, ya que el código puede usar la referencia para acceder al valor, pero este sigue “perteneciendo” a la variable original. En el curso hablaremos con más profundidad sobre la propiedad el tercer día.
+Más información
+Rust cuenta con varias optimizaciones que puede utilizar para hacer que las enums ocupen menos espacio.
 
-Las referencias se implementan como punteros y una ventaja clave es que pueden ser mucho más pequeñas del elemento al que apuntan. Los participantes que estén familiarizados con C o C++ reconocerán las referencias como punteros. A lo largo del curso, hablaremos sobre cómo Rust evita los errores de seguridad en la memoria derivados del uso de punteros sin formato.
+Optimización de puntero nulo: para algunos tipos, Rust asegura que size_of::<T>() es igual a size_of::<Option<T> >().
 
-Rust no crea referencias automáticamente, & siempre es obligatorio.
+Fragmento de código de ejemplo si quieres mostrar cómo puede ser la representación bit a bit en la práctica. Es importante tener en cuenta que el compilador no ofrece garantías con respecto a esta representación, por lo tanto es totalmente inseguro.
 
-Rust realizará una desreferencia automática en algunos casos, en especial al invocar métodos (prueba ref_x.count_ones()). No hay necesidad para un operador -> como en C++.
+```rust
+use std::mem::transmute;
 
-En este ejemplo, r es mutable para que se pueda reasignar (r = &b). Debes tener en cuenta que se vuelve a enlazar r para que haga referencia a otro elemento. Es distinto de C++, donde la asignación a una referencia modifica el valor referenciado.
+macro_rules! dbg_bits {
+    ($e:expr, $bit_type:ty) => {
+        println!("- {}: {:#x}", stringify!($e), transmute::<_, $bit_type>($e));
+    };
+}
 
-Una referencia compartida no permite modificar el valor al que hace referencia, incluso aunque el valor sea mutable. Prueba con *r = 'X'.
+fn main() {
+    unsafe {
+        println!("bool:");
+        dbg_bits!(false, u8);
+        dbg_bits!(true, u8);
 
-Rust hace un seguimiento del tiempo de vida de todas las referencias para asegurarse de que duran lo suficiente. En Rust seguro no se dan referencias colgantes. x_axis devolvería una referencia a point, pero point se desasignará cuando se devuelva la función, por lo que no se compilará.
+        println!("Option<bool>:");
+        dbg_bits!(None::<bool>, u8);
+        dbg_bits!(Some(false), u8);
+        dbg_bits!(Some(true), u8);
 
-Más adelante hablaremos de los préstamos cuando lleguemos a la parte de propiedad.
+        println!("Option<Option<bool>>:");
+        dbg_bits!(Some(Some(false)), u8);
+        dbg_bits!(Some(Some(true)), u8);
+        dbg_bits!(Some(None::<bool>), u8);
+        dbg_bits!(None::<Option<bool>>, u8);
+
+        println!("Option<&i32>:");
+        dbg_bits!(None::<&i32>, usize);
+        dbg_bits!(Some(&0i32), usize);
+    }
+}
+```
+
 language&>es-ES<&
