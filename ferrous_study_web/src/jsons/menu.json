@@ -305,38 +305,48 @@
     }
   },
   {
-    "key": "6",
-    "to": "/classroom/$classroomId",
-    "text": "Enums",
-    "params": {
-      "classroomId": "enums"
-    }
-  },
-  {
-    "key": "7",
-    "to": "/classroom/$classroomId",
-    "text": "Referencias exclusivas",
-    "params": {
-      "classroomId": "referencias_exclusivas"
-    }
-  },
-  {
     "key": "8",
+    "to": "/classroom/$classroomId",
+    "text": "Referencias",
+    "displayQuality": "",
+    "subMenu": [
+      {
+        "key": "8-0",
+        "to": "/classroom/$classroomId",
+        "text": "Enums",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "enums"
+        }
+      },
+      {
+        "key": "8-1",
+        "to": "/classroom/$classroomId",
+        "text": "Referencia exclusiva",
+        "displayQuality": "",
+        "params": {
+          "classroomId": "referencias_exclusivas"
+        }
+      }
+    ]
+  },
+  {
+    "key": "9",
     "to": "/classroom/newmd",
     "text": "Crear nueva clase"
   },
   {
-    "key": "9",
+    "key": "10",
     "to": "/settings/menu",
     "text": "Configuraciones del menu"
   },
   {
-    "key": "10",
+    "key": "11",
     "to": "/suggestions",
     "text": "Sugerencias"
   },
   {
-    "key": "11",
+    "key": "12",
     "to": "/about",
     "text": "Acerca de Ferrous Study!"
   }
