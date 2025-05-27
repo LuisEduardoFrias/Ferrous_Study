@@ -1,3 +1,16 @@
+---
+key: 48
+name: framework_web
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - framework
+ - web
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 # Frameworks Web en Rust **"Cliente y Servidor"**
 
 Rust es un lenguaje excelente, y aunque es más joven que otros, su ecosistema de frameworks está creciendo rápidamente.
@@ -54,4 +67,4 @@ Un framework web centrado en la seguridad, la ergonomía y la facilidad de uso. 
 
 Rust es un lenguaje versátil, y con esta lista, espero que tengas un buen punto de partida para explorar las muchas oportunidades de desarrollo que
 ofrece.
-
+language&>es-ES<&

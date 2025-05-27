@@ -1,3 +1,17 @@
+---
+key: 49
+name: game_engines
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - framework
+ - engines
+ - game
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 # Game engines en Rust
 
 El ecosistema de desarrollo de juegos en Rust está en pleno crecimiento, y aunque no hay un "Unity" o "Unreal Engine" con todas las funciones y la madurez de décadas, hay proyectos muy prometedores y robustos.
@@ -50,3 +64,4 @@ Ambient es un motor de juego multijugador diseñado para ser colaborativo. Está
  * Rendimiento: Rust, por su naturaleza, ofrece un rendimiento excelente, lo que es crucial para los juegos. Los motores de Rust están diseñados para aprovechar esto al máximo.
 
 Si estás interesado en el desarrollo de juegos con Rust, Bevy y Fyrox son excelentes puntos de partida si buscas un motor más completo, mientras que Macroquad o ggez son fantásticas opciones para empezar con juegos 2D o prototipos rápidos.
+language&>es-ES<&

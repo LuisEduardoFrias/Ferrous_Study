@@ -1,3 +1,16 @@
+---
+key: 47
+name: framework_movil
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - framework
+ - movil
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 # Frameworks Móvil en Rust
 
 Rust es un lenguaje excelente, y aunque es más joven que otros, su ecosistema de frameworks está creciendo rápidamente.
@@ -50,3 +63,4 @@ Un proyecto más experimental que busca proporcionar una forma de construir inte
 
 Rust es un lenguaje versátil, y con esta lista, espero que tengas un buen punto de partida para explorar las muchas oportunidades de desarrollo que
 ofrece.
+language&>es-ES<&

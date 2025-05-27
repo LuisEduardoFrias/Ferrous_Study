@@ -1,3 +1,16 @@
+---
+key: 46
+name: framework_desktop
+addData: 19/05/2025
+updateData: null
+keywords: 
+ - framework
+ - desktop
+languages:
+ - key: Español
+   value: es-ES
+---
+language&>es-ES<&
 # Frameworks desktop en Rust
 
 Rust es un lenguaje excelente, y aunque es más joven que otros, su ecosistema de frameworks está creciendo rápidamente.
@@ -57,3 +70,4 @@ Un framework de interfaz de usuario <mark>&title>inmediata<title&Immediate mode 
 
 Rust es un lenguaje versátil, y con esta lista, espero que tengas un buen punto de partida para explorar las muchas oportunidades de desarrollo que
 ofrece.
+language&>es-ES<&
