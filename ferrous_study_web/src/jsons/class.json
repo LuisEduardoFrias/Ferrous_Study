@@ -778,5 +778,70 @@
          "solución",
          "eventos de ascensor"
       ]
+   },
+   {
+      "key": 46,
+      "name": "framework_desktop",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "framework",
+         "desktop"
+      ]
+   },
+   {
+      "key": 47,
+      "name": "framework_movil",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "framework",
+         "movil"
+      ]
+   },
+   {
+      "key": 48,
+      "name": "framework_web",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "framework",
+         "web"
+      ]
+   },
+   {
+      "key": 49,
+      "name": "game_engines",
+      "addInfo": {
+         "addData": "26/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "framework",
+         "engines",
+         "game"
+      ]
    }
 ]
