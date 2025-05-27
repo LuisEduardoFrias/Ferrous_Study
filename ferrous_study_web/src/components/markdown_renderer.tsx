@@ -16,7 +16,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       const { title, text } = getTitle(codeChildren as string);
       const notPlay = !text.includes('&>notplay');
       const notCopy = !text.includes('&>notcopy');
-      let newtext = text.replace('&>notplay\n', '').replace('&>notcopy\n','');
+      let newtext = text.replace('&>notplay\n', '').replace('&>notcopy\n', '');
 
       const regex = new RegExp(`notcopy&>\\n([\\s\\S]*?)\\<&notcopy`, 's');
       const match2 = newtext.match(regex);
@@ -40,7 +40,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
                </div>
             }
             <div className="absolute w-full flex gap-2 justify-end -top-1 right-8" >
-              {notCopy &&  <CopyButton textToCopy={copytext as string} />}
+               {notCopy && <CopyButton textToCopy={copytext as string} />}
                {notPlay && <CodeButton textToCode={newtext as string} />}
             </div>
 
@@ -97,7 +97,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       const theadChild = children[0];
       const tbodyChild = children[1];
 
-      let WIDTH = 0;
+      let WIDTH = 150;
       const CHARACTER_WIDTH_FACTOR = 7;
       const MIN_COLUMN_PIXEL_WIDTH = 100
 
@@ -108,8 +108,10 @@ export default function MarkdownRenderer({ children }: { children: string }) {
          thElements.forEach((thChild: ReactNode) => {
             const content = ((thChild as any).props.children);
 
-            if (content.length > maxContentLength) {
+            if (content?.length > maxContentLength) {
                maxContentLength = content.length;
+            } else {
+               maxContentLength = 22;
             }
          });
 
