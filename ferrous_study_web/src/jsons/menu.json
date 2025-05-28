@@ -1,394 +1,472 @@
 [
-  {
-    "key": "0",
-    "to": "/classroom/$classroomId",
-    "text": "Rust y su ecosistema",
-    "subMenu": [
-      {
-        "key": "0-0",
-        "to": "/classroom/$classroomId",
-        "text": "Que es Rust",
-        "params": {
-          "classroomId": "que_es_rust"
-        }
-      },
-      {
-        "key": "0-1",
-        "to": "/classroom/$classroomId",
-        "text": "Ventajas de Rust",
-        "params": {
-          "classroomId": "ventajas_de_rust"
-        }
-      },
-      {
-        "key": "0-2",
-        "to": "/classroom/$classroomId",
-        "text": "Ecosistema",
-        "params": {
-          "classroomId": "ecosistema_rust"
-        }
-      },
-      {
-        "key": "0-3",
-        "to": "/classroom/$classroomId",
-        "text": "Cargo",
-        "params": {
-          "classroomId": "cargo"
-        }
-      },
-      {
-        "key": "0-4",
-        "to": "/classroom/$classroomId",
-        "text": "Playground",
-        "params": {
-          "classroomId": "playground"
-        }
-      },
-      {
-        "key": "0-5",
-        "to": "/classroom/$classroomId",
-        "text": "Ejemplos codigo",
-        "params": {
-          "classroomId": "ejercicios_ejemplos_codigo"
-        }
-      }
-    ]
-  },
-  {
-    "key": "1",
-    "to": "/classroom/$classroomId",
-    "text": "Tipos y Valores",
-    "subMenu": [
-      {
-        "key": "1-0",
-        "to": "/classroom/$classroomId",
-        "text": "Identificadores",
-        "params": {
-          "classroomId": "variables"
-        }
-      },
-      {
-        "key": "1-1",
-        "to": "/classroom/$classroomId",
-        "text": "Valores",
-        "params": {
-          "classroomId": "valores"
-        }
-      },
-      {
-        "key": "1-2",
-        "to": "/classroom/$classroomId",
-        "text": "Aritmética",
-        "params": {
-          "classroomId": "aritmetica"
-        }
-      },
-      {
-        "key": "1-3",
-        "to": "/classroom/$classroomId",
-        "text": "Inferencia de tipos",
-        "params": {
-          "classroomId": "inferencia_tipos"
-        }
-      },
-      {
-        "key": "1-4",
-        "to": "/classroom/$classroomId",
-        "text": "Funciones",
-        "params": {
-          "classroomId": "funciones"
-        }
-      },
-      {
-        "key": "1-5",
-        "to": "/classroom/$classroomId",
-        "text": "Macro println!",
-        "params": {
-          "classroomId": "println"
-        }
-      },
-      {
-        "key": "1-6",
-        "to": "/classroom/$classroomId",
-        "text": "Ejercicios",
-        "subMenu": [
-          {
-            "key": "1-6-0",
+   {
+      "key": "0",
+      "to": "/classroom/$classroomId",
+      "text": "Rust y su ecosistema",
+      "subMenu": [
+         {
+            "key": "0-0",
             "to": "/classroom/$classroomId",
-            "text": "Fibonacci",
+            "text": "Que es Rust",
             "params": {
-              "classroomId": "ejercicio_fibonacci"
+               "classroomId": "que_es_rust"
             }
-          },
-          {
-            "key": "1-6-1",
+         },
+         {
+            "key": "0-1",
             "to": "/classroom/$classroomId",
-            "text": "Solución",
+            "text": "Ventajas de Rust",
             "params": {
-              "classroomId": "solucion_fibonacci"
+               "classroomId": "ventajas_de_rust"
             }
-          },
-          {
-            "key": "1-6-2",
+         },
+         {
+            "key": "0-2",
             "to": "/classroom/$classroomId",
-            "text": "Ejercicios módulo 1",
+            "text": "Ecosistema",
             "params": {
-              "classroomId": "ejercicios_modulo1"
+               "classroomId": "ecosistema_rust"
             }
-          },
-          {
-            "key": "1-6-2",
+         },
+         {
+            "key": "0-3",
             "to": "/classroom/$classroomId",
-            "text": "Solucion módulo 1",
+            "text": "Cargo",
             "params": {
-              "classroomId": "solucion_modulo1"
+               "classroomId": "cargo"
             }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "2",
-    "to": "/classroom/$classroomId",
-    "text": "Controles de flujo básicos",
-    "subMenu": [
-      {
-        "key": "2-0",
-        "to": "/classroom/$classroomId",
-        "text": "Expresiones if",
-        "params": {
-          "classroomId": "expresiones_if"
-        }
-      },
-      {
-        "key": "2-1",
-        "to": "/classroom/$classroomId",
-        "text": "Bucles",
-        "subMenu": [
-          {
+         },
+         {
+            "key": "0-4",
+            "to": "/classroom/$classroomId",
+            "text": "Playground",
+            "params": {
+               "classroomId": "playground"
+            }
+         },
+         {
+            "key": "0-5",
+            "to": "/classroom/$classroomId",
+            "text": "Ejemplos codigo",
+            "params": {
+               "classroomId": "ejercicios_ejemplos_codigo"
+            }
+         }
+      ]
+   },
+   {
+      "key": "1",
+      "to": "/classroom/$classroomId",
+      "text": "Tipos y Valores",
+      "subMenu": [
+         {
+            "key": "1-0",
+            "to": "/classroom/$classroomId",
+            "text": "Identificadores",
+            "params": {
+               "classroomId": "variables"
+            }
+         },
+         {
+            "key": "1-1",
+            "to": "/classroom/$classroomId",
+            "text": "Valores",
+            "params": {
+               "classroomId": "valores"
+            }
+         },
+         {
+            "key": "1-2",
+            "to": "/classroom/$classroomId",
+            "text": "Aritmética",
+            "params": {
+               "classroomId": "aritmetica"
+            }
+         },
+         {
+            "key": "1-3",
+            "to": "/classroom/$classroomId",
+            "text": "Inferencia de tipos",
+            "params": {
+               "classroomId": "inferencia_tipos"
+            }
+         },
+         {
+            "key": "1-4",
+            "to": "/classroom/$classroomId",
+            "text": "Funciones",
+            "params": {
+               "classroomId": "funciones"
+            }
+         },
+         {
+            "key": "1-5",
+            "to": "/classroom/$classroomId",
+            "text": "Macro println!",
+            "params": {
+               "classroomId": "println"
+            }
+         },
+         {
+            "key": "1-6",
+            "to": "/classroom/$classroomId",
+            "text": "Ejercicios",
+            "subMenu": [
+               {
+                  "key": "1-6-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Fibonacci",
+                  "params": {
+                     "classroomId": "ejercicio_fibonacci"
+                  }
+               },
+               {
+                  "key": "1-6-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "params": {
+                     "classroomId": "solucion_fibonacci"
+                  }
+               },
+               {
+                  "key": "1-6-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicios módulo 1",
+                  "params": {
+                     "classroomId": "ejercicios_modulo1"
+                  }
+               },
+               {
+                  "key": "1-6-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solucion módulo 1",
+                  "params": {
+                     "classroomId": "solucion_modulo1"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "2",
+      "to": "/classroom/$classroomId",
+      "text": "Controles de flujo básicos",
+      "subMenu": [
+         {
             "key": "2-0",
+            "to": "/classroom/$classroomId",
+            "text": "Expresiones if",
+            "params": {
+               "classroomId": "expresiones_if"
+            }
+         },
+         {
+            "key": "2-1",
             "to": "/classroom/$classroomId",
             "text": "Bucles",
-            "params": {
-              "classroomId": "bucles"
-            }
-          },
-          {
-            "key": "2-0",
-            "to": "/classroom/$classroomId",
-            "text": "Loop",
-            "params": {
-              "classroomId": "loop_bucle"
-            }
-          },
-          {
-            "key": "2-0",
-            "to": "/classroom/$classroomId",
-            "text": "For",
-            "params": {
-              "classroomId": "for_bucle"
-            }
-          }
-        ]
-      },
-      {
-        "key": "2-2",
-        "to": "/classroom/$classroomId",
-        "text": "Break y continue",
-        "subMenu": [
-          {
-            "key": "2-2-0",
+            "subMenu": [
+               {
+                  "key": "2-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Bucles",
+                  "params": {
+                     "classroomId": "bucles"
+                  }
+               },
+               {
+                  "key": "2-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Loop",
+                  "params": {
+                     "classroomId": "loop_bucle"
+                  }
+               },
+               {
+                  "key": "2-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "For",
+                  "params": {
+                     "classroomId": "for_bucle"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "2-2",
             "to": "/classroom/$classroomId",
             "text": "Break y continue",
-            "params": {
-              "classroomId": "break_continue"
-            }
-          },
-          {
-            "key": "2-2-1",
+            "subMenu": [
+               {
+                  "key": "2-2-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Break y continue",
+                  "params": {
+                     "classroomId": "break_continue"
+                  }
+               },
+               {
+                  "key": "2-2-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Etiquetas",
+                  "params": {
+                     "classroomId": "etiquetas"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "2-3",
             "to": "/classroom/$classroomId",
-            "text": "Etiquetas",
-            "params": {
-              "classroomId": "etiquetas"
-            }
-          }
-        ]
-      },
-      {
-        "key": "2-3",
-        "to": "/classroom/$classroomId",
-        "text": "Bloques, ámbitos y shadowing",
-        "subMenu": [
-          {
-            "key": "2-3-0",
+            "text": "Bloques, ámbitos y shadowing",
+            "subMenu": [
+               {
+                  "key": "2-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Bloque",
+                  "displayQuality": "",
+                  "params": {
+                     "classroomId": "bloque_y_ambito"
+                  }
+               },
+               {
+                  "key": "2-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Shadowing",
+                  "displayQuality": "",
+                  "params": {
+                     "classroomId": "ambito_y_shadowing"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "2-4",
             "to": "/classroom/$classroomId",
-            "text": "Bloque",
+            "text": "Collatz",
+            "subMenu": [
+               {
+                  "key": "2-4-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio Collatz",
+                  "params": {
+                     "classroomId": "collats"
+                  }
+               },
+               {
+                  "key": "2-4-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución Colltz",
+                  "params": {
+                     "classroomId": "solucion_collezt"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "3",
+      "to": "/classroom/$classroomId",
+      "text": "Macros",
+      "params": {
+         "classroomId": "macros"
+      }
+   },
+   {
+      "key": "4",
+      "to": "/classroom/$classroomId",
+      "text": "Tuplas y Arrays",
+      "subMenu": [
+         {
+            "key": "4-0",
+            "to": "/classroom/$classroomId",
+            "text": "Arrays",
+            "params": {
+               "classroomId": "array"
+            }
+         },
+         {
+            "key": "4-1",
+            "to": "/classroom/$classroomId",
+            "text": "Tuplas",
+            "params": {
+               "classroomId": "tuplas"
+            }
+         }
+      ]
+   },
+   {
+      "key": "5",
+      "to": "/classroom/$classroomId",
+      "text": "RAII",
+      "params": {
+         "classroomId": "raii_concepto"
+      }
+   },
+   {
+      "key": "8",
+      "to": "/classroom/$classroomId",
+      "text": "Referencias",
+      "displayQuality": "",
+      "subMenu": [
+         {
+            "key": "8-0",
+            "to": "/classroom/$classroomId",
+            "text": "Enums",
             "displayQuality": "",
             "params": {
-              "classroomId": "bloque_y_ambito"
+               "classroomId": "enums"
             }
-          },
-          {
-            "key": "2-3-1",
+         },
+         {
+            "key": "8-1",
             "to": "/classroom/$classroomId",
-            "text": "Shadowing",
+            "text": "Referencia exclusiva",
             "displayQuality": "",
             "params": {
-              "classroomId": "ambito_y_shadowing"
+               "classroomId": "referencias_exclusivas"
             }
-          }
-        ]
-      },
-      {
-        "key": "2-4",
-        "to": "/classroom/$classroomId",
-        "text": "Collatz",
-        "subMenu": [
-          {
-            "key": "2-4-0",
+         }
+      ]
+   },
+   {
+      "key": "7",
+      "to": "/classroom/$classroomId",
+      "text": "Frameworks",
+      "displayQuality": "",
+      "subMenu": [
+         {
+            "key": "7-0",
             "to": "/classroom/$classroomId",
-            "text": "Ejercicio Collatz",
+            "text": "Web 📃",
+            "displayQuality": "",
             "params": {
-              "classroomId": "collats"
+               "classroomId": "framework_web"
             }
-          },
-          {
-            "key": "2-4-1",
+         },
+         {
+            "key": "7-1",
             "to": "/classroom/$classroomId",
-            "text": "Solución Colltz",
+            "text": "Móvil 📱",
+            "displayQuality": "",
             "params": {
-              "classroomId": "solucion_collezt"
+               "classroomId": "framework_movil"
             }
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "3",
-    "to": "/classroom/$classroomId",
-    "text": "Macros",
-    "params": {
-      "classroomId": "macros"
-    }
-  },
-  {
-    "key": "4",
-    "to": "/classroom/$classroomId",
-    "text": "Tuplas y Arrays",
-    "subMenu": [
-      {
-        "key": "4-0",
-        "to": "/classroom/$classroomId",
-        "text": "Arrays",
-        "params": {
-          "classroomId": "array"
-        }
-      },
-      {
-        "key": "4-1",
-        "to": "/classroom/$classroomId",
-        "text": "Tuplas",
-        "params": {
-          "classroomId": "tuplas"
-        }
-      }
-    ]
-  },
-  {
-    "key": "5",
-    "to": "/classroom/$classroomId",
-    "text": "RAII",
-    "params": {
-      "classroomId": "raii_concepto"
-    }
-  },
-  {
-    "key": "8",
-    "to": "/classroom/$classroomId",
-    "text": "Referencias",
-    "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "8-0",
-        "to": "/classroom/$classroomId",
-        "text": "Enums",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "enums"
-        }
-      },
-      {
-        "key": "8-1",
-        "to": "/classroom/$classroomId",
-        "text": "Referencia exclusiva",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "referencias_exclusivas"
-        }
-      }
-    ]
-  },
-  {
-    "key": "7",
-    "to": "/classroom/$classroomId",
-    "text": "Frameworks",
-    "displayQuality": "",
-    "subMenu": [
-      {
-        "key": "7-0",
-        "to": "/classroom/$classroomId",
-        "text": "Web 📃",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "framework_web"
-        }
-      },
-      {
-        "key": "7-1",
-        "to": "/classroom/$classroomId",
-        "text": "Móvil 📱",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "framework_movil"
-        }
-      },
-      {
-        "key": "7-2",
-        "to": "/classroom/$classroomId",
-        "text": "Desktop 🖥️",
-        "displayQuality": ""
-      },
-      {
-        "key": "7-3",
-        "to": "/classroom/$classroomId",
-        "text": "Game engines 🎮",
-        "displayQuality": "",
-        "params": {
-          "classroomId": "game_engines"
-        }
-      }
-    ]
-  },
-  {
-    "key": "8",
-    "to": "/classroom/newmd",
-    "text": "Crear nueva clase"
-  },
-  {
-    "key": "9",
-    "to": "/settings/menu",
-    "text": "Configuraciones del menu"
-  },
-  {
-    "key": "10",
-    "to": "/suggestions",
-    "text": "Sugerencias"
-  },
-  {
-    "key": "11",
-    "to": "/about",
-    "text": "Acerca de Ferrous Study!"
-  }
+         },
+         {
+            "key": "7-2",
+            "to": "/classroom/$classroomId",
+            "text": "Desktop 🖥️",
+            "displayQuality": ""
+         },
+         {
+            "key": "7-3",
+            "to": "/classroom/$classroomId",
+            "text": "Game engines 🎮",
+            "displayQuality": "",
+            "params": {
+               "classroomId": "game_engines"
+            }
+         }
+      ]
+   },
+   {
+      "key": "8",
+      "to": "/classroom/$classroomId",
+      "text": "Patrones en Rust",
+      "displayQuality": true,
+      "subMenu": [
+         {
+            "key": "8-0",
+            "to": "/classroom/$classroomId",
+            "text": "Patrones MVC",
+            "displayQuality": true,
+            "params": {
+               "classroomId": "patron_mvc"
+            }
+         },
+         {
+            "key": "8-0",
+            "to": "/classroom/$classroomId",
+            "text": "Patrones Creacionales",
+            "displayQuality": true,
+            "subMenu": [
+               {
+                  "key": "8-0-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Patrones Creacionales",
+                  "displayQuality": true,
+                  "params": {
+                     "classroomId": "framework_web"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "9",
+      "to": "/classroom/$classroomId",
+      "text": "Arquitegturas en Rust",
+      "displayQuality": true,
+      "subMenu": [
+         {
+            "key": "9-0",
+            "to": "/classroom/$classroomId",
+            "text": "Arquitectura en capas",
+            "displayQuality": true,
+            "params": {
+               "classroomId": "arquitectura_en_capas"
+            }
+         },
+         {
+            "key": "9-1",
+            "to": "/classroom/$classroomId",
+            "text": "Arquitectura limpia",
+            "displayQuality": true,
+            "params": {
+               "classroomId": "arquitectura_limpia"
+            }
+         },
+         {
+            "key": "9-2",
+            "to": "/classroom/$classroomId",
+            "text": "Arquitectura hexagonal",
+            "displayQuality": true,
+            "params": {
+               "classroomId": "arquitectura_hexagonal"
+            }
+         },
+         {
+            "key": "9-2",
+            "to": "/classroom/$classroomId",
+            "text": "Arquitectura cebolla",
+            "displayQuality": true,
+            "params": {
+               "classroomId": "arquitectura_cebolla"
+            }
+         }
+      ]
+   },
+   {
+      "key": "10",
+      "to": "/classroom/newmd",
+      "text": "Crear nueva clase"
+   },
+   {
+      "key": "11",
+      "to": "/settings/menu",
+      "text": "Configuraciones del menu"
+   },
+   {
+      "key": "12",
+      "to": "/suggestions",
+      "text": "Sugerencias"
+   },
+   {
+      "key": "13",
+      "to": "/about",
+      "text": "Acerca de Ferrous Study!"
+   }
 ]

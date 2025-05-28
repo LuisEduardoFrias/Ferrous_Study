@@ -3,7 +3,7 @@ export type TMenu = {
   key:string,
   to: string,
   text: string,
-  displayQuality: string,
+  displayQuality: boolean,
   params?: {
     classroomId:string
   },
