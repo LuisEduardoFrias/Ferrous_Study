@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { CloudIcon, ViewIcon, NotViewIcon } from '../../assets/svgs'
 import { toCamelCase } from '../../hooks/to_camel_case.ts'
-import ButtonIcon from '../button_icon'
+//import ButtonIcon from '../button_icon'
 import Option from './option'
 
 type TextEditorHeaderProps = {

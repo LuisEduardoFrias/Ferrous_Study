@@ -9,6 +9,7 @@ import Loading from '../components/loading'
 import Notify from '../components/notify'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import type { TClass } from '../types/class'
+import type { TMarkdownResult, TTextByLanguage } from '../types/markdown_result'
 import type { TServiceResult } from '../types/service_result'
 
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
@@ -28,12 +29,20 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
       (async () => {
          setShowLoading(true);
 
-         const result = await get<string | null>(editClassroomId, async () => {
+         const result = await get<TMarkdownResult | null>(editClassroomId, async () => {
             return await githubServiceApi.getFileContentByMarkdown(editClassroomId);
          });
+
          const resultClass = await get<string | null>("class", async () => {
             return await githubServiceApi.getFileContentByJson('class');
          });
+
+         if (!result) {
+            setContentErrorMessage({ message: 'Error en el servidor, por favor intente mas tarde.' });
+            setShowLoading(false)
+            openContentNotify();
+            return;
+         }
 
          if (resultClass) {
             const deseClass = JSON.parse(resultClass);
@@ -46,7 +55,7 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
          }
 
          //TODO evaluar posible valor null
-         setContent(result?.textByLanguage?.find((obj) => obj.language === "en-En") ?? result.content ?? '');
+         setContent(result?.textByLanguage?.find((obj: TTextByLanguage) => obj.language === "en-En")?.text ?? result.content ?? '');
          setShowLoading(false);
       })()
    }, [editClassroomId])

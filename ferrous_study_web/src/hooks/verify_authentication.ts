@@ -9,7 +9,7 @@ export const verifyAuthentication: BeforeLoadFn<
    Record<string, any>,
    AnyContext,
    AnyContext
-> = async ({ location }) => {
+> = async (_) => {
 
    if (!getUser()) {
       throw redirect({

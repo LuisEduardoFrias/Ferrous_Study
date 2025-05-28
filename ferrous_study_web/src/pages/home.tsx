@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import ferrous from '../assets/ferrous.gif'
+import type { TLanguages } from '../types/language'
+import type { TMarkdownResult } from '../types/markdown_result'
 import { FerrisIcon } from '../assets/svgs'
 import MarkdownRenderer from "../components/markdown_renderer"
 import { useTitle } from '../hooks/use_title'
@@ -10,70 +12,75 @@ import { getValue } from '../hooks/local_storage'
 // import markdownHomePage from '../markdowns/home_page.md?raw'
 
 export default function Home({ userId }: { userId: string }) {
-  useTitle('')
-  const { get } = useMemoryCache();
-  const on_setClassId = useStore((state) => state.on_setClassId)
-  const on_add_languages = useStore((state) => state.on_add_languages);
-  const languageSelected = useStore((state) => state.languageSelected);
-  const [content, setContent] = useState<string>('');
+   useTitle('')
+   const { get } = useMemoryCache();
+   const on_setClassId = useStore((state) => state.on_setClassId)
+   const on_add_languages = useStore((state) => state.on_add_languages);
+   const languageSelected = useStore((state) => state.languageSelected);
+   const [content, setContent] = useState<string>('');
 
-  const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage): string => {
+   const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage: { language: string, text: string }[]): string => {
 
-    let languageSelected_ = languageSelected;
+      let languageSelected_ = languageSelected;
 
-    if (languageSelected_) {
-      if (!languages.includes(languageSelected_)) {
-      //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
-      languageSelected_ = languages[0];
-    }
-    
-      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+      if (languageSelected_) {
+         if (!languages.includes(languageSelected_)) {
+            //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+            languageSelected_ = languages[0];
+         }
 
-      return value?.text;
-    }
+         const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_?.value)
 
-    languageSelected_ = getValue<TLanguages>('language_selected');
-
-    if (!languageSelected_ || !languages.includes(languageSelected_)) {
-      //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
-      languageSelected_ = languages[0];
-    }
-
-    const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
-
-    return value?.text;
-  }, [languageSelected])
-
-  useEffect(() => {
-    on_setClassId("home_page");
-
-    (async () => {
-      const result = await get<string | null>("home_page", async () => {
-        return await githubServiceApi.getFileContentByMarkdown("home_page");
-      });
-
-      const languages = result.metadata.languages;
-
-      if (languages) {
-        on_add_languages(languages as TLanguages[]);
+         return value?.text ?? "";
       }
 
-      const text = verifyLanguageSelected(languages, result?.textByLanguage);
+      languageSelected_ = getValue<TLanguages>('language_selected');
 
-      setContent(text ?? result?.content ?? '');
-    })()
-  }, [languageSelected, get, on_add_languages, on_setClassId]);
+      if (!languageSelected_ || !languages.includes(languageSelected_)) {
+         //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+         languageSelected_ = languages[0];
+      }
 
-  return (
-    <div className="p-2">
-      <img src={ferrous} loading="eager" className="bg-[#ffffff] w-full" alt="ferrous gif" />
-      <h1 className="flex gap-1 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
-        Bienvenido {userId} a Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
-      </h1>
-      <br />
-      <MarkdownRenderer>
-        {content ?? ''}
-      </MarkdownRenderer>
-    </div>
-  )
+      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+
+      return value?.text ?? "";
+   }, [languageSelected])
+
+   useEffect(() => {
+      on_setClassId("home_page");
+
+      (async () => {
+         const result = await get<TMarkdownResult | null>("home_page", async () => {
+            return await githubServiceApi.getFileContentByMarkdown("home_page");
+         });
+
+         if (!result) {
+            alert("Error en el servidor, por favor intente mas tarde.");
+            return;
+         }
+
+         const languages = result.metadata.languages;
+
+         if (languages) {
+            on_add_languages(languages as TLanguages[]);
+         }
+
+         const text = verifyLanguageSelected(languages, result?.textByLanguage);
+
+         setContent(text ?? result?.content ?? '');
+      })()
+   }, [languageSelected, get, on_add_languages, on_setClassId]);
+
+   return (
+      <div className="p-2">
+         <img src={ferrous} loading="eager" className="bg-[#ffffff] w-full" alt="ferrous gif" />
+         <h1 className="flex gap-1 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
+            Bienvenido {userId} a Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
+         </h1>
+         <br />
+         <MarkdownRenderer>
+            {content ?? ''}
+         </MarkdownRenderer>
+      </div>
+   )
 }

@@ -460,7 +460,7 @@ function ViewMarkdown({ onClick }: { onClick: (value: boolean) => void }) {
 
 import { useState, useEffect, CSSProperties, useRef, ChangeEvent } from 'react';
 import { getValue, saveValue, removeValue } from '../../hooks/local_storage';
-import { toCamelCase } from '../../hooks/to_camel_case.ts';
+//import { toCamelCase } from '../../hooks/to_camel_case.ts';
 import MarkdownRenderer from '../markdown_renderer';
 import TextEditorToolbar from './text_editor_toolbar'; // Nuevo componente
 import TextEditorHeader from './text_editor_header';   // Nuevo componente

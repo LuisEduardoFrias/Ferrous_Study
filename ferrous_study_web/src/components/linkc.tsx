@@ -19,25 +19,27 @@ export default function LinkC({ text, params, className, displayQuality, childre
 
    const hasSubMenu = subMenu && subMenu.length > 0;
 
-   const handleClick = () => {
+   const handleClick = (displayQuality:boolean) => {
       if (hasSubMenu) {
          setIsOpen(!isOpen);
          return;
       }
 
+if (!displayQuality) {
       on_show_drawer(false)
+}
    };
 
    return (
       <div className="w-full" >
          <Link
-            to={hasSubMenu ? '' : to}
+            to={hasSubMenu ? '' : (displayQuality ? '' : to)}
             params={params}
-            className={`flex items-center justify-between w-full text-theme-3 [&.active]:font-extrabold ${className} ${displayQuality&&'text-theme-1-d'}`}
-            onClick={handleClick}
+            className={`flex items-center justify-between w-full text-theme-3 [&.active]:font-extrabold ${className} `}
+            onClick={() => handleClick(displayQuality)}
          >
             {text}
-            <span className="text-theme-3 [&.active]:font-extrabold" >
+            <span className={`[&.active]:font-extrabold ${displayQuality ? 'text-gray-500' : 'text-theme-3 '}`} >
                {children}
             </span>
 

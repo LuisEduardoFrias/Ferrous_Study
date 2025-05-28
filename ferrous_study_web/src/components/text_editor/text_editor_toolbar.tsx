@@ -1,10 +1,10 @@
 import {
-   NotViewIcon, TableIcon, LinkIcon, DivideIcon, EnterIcon, ListIcon, ViewIcon, AskIcon, SaveIcon, MarkIcon, CodeIcon, CloudIcon
+    TableIcon, LinkIcon, DivideIcon, EnterIcon, ListIcon, SaveIcon, MarkIcon, CodeIcon, AskIcon
 } from '../../assets/svgs';
 import ButtonIcon from '../button_icon';
 import TablePanel from './table_panel'; // Nuevo componente
 import AskPanel from './ask_panel';     // Nuevo componente
-import Option from './option';           // Asumo que Option es un componente genérico para botones con ícono
+//import Option from './option';           // Asumo que Option es un componente genérico para botones con ícono
 
 type TextEditorToolbarProps = {
    on_mark: () => void;

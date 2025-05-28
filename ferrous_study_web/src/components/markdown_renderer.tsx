@@ -243,9 +243,11 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       );
    }
 
+   type custonHtmlLi = ReactNode & { props: { children: string } };
+
    function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
 
-      const filteredChildren = children.filter(child => {
+      const filteredChildren = (children as ReactNode[])?.filter((child: HTMLLIElement | string) => {
          if (typeof child === 'string' && child.trim() === '') {
             return false;
          }
@@ -255,7 +257,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       let title: ReactNode | null = null;
       let listItems: ReactNode[] = [];
 
-      filteredChildren.forEach(child => {
+      filteredChildren.forEach((child: custonHtmlLi) => {
          if (isValidElement(child) && typeof child.props.children === 'string' && child.props.children.includes("title&>")) {
             title = child.props.children.replace('title&>', '').trim();
          } else {
