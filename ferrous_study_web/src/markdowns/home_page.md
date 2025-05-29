@@ -9,7 +9,10 @@ languages:
    value: es-ES
  - key: English
    value: en-EN
-data:{welcome:{"es-ES": "Bienvenido a", "en-EN":"Welcome to"}}
+data:
+ welcome:
+  es-ES: Bienvenido a
+  en-EN: Welcome to
 ---
 language&>es-ES<&
 Este es un curso gratuito de Rust, basado en el curso desarrollado por el equipo de Android en Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).

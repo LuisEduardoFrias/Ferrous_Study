@@ -1,10 +1,10 @@
 import express from 'express';
-import cors from 'cors';
-import { join, dirname } from 'path';
 import morgan from 'morgan';
 import cookieParser from "cookie-parser";
+import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import home from '../src/routes/home.js';
+import cors from 'cors';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

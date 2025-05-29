@@ -3,7 +3,7 @@ import path from 'path'
 import { GithubCore } from '../helpers/github.js'
 import {sendSuggestionEmail} from '../helpers/send_email.js'
 import { searchFilter } from '../helpers/search.js'
-import { requireAuth, requireApiAuth, generateToken, verifyToken } from '../auth.js'
+import { requireAuth, requireApiAuth, generateToken } from '../auth.js'
 import matter from 'gray-matter'
 import jwt from 'jsonwebtoken'
 

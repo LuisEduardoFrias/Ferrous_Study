@@ -224,7 +224,7 @@
                   "key": "2-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Bloque",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "bloque_y_ambito"
                   }
@@ -233,7 +233,7 @@
                   "key": "2-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Shadowing",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "ambito_y_shadowing"
                   }
@@ -308,13 +308,13 @@
       "key": "6",
       "to": "/classroom/$classroomId",
       "text": "Referencias",
-      "displayQuality": true,
+      "displayQuality": false,
       "subMenu": [
          {
             "key": "6-0",
             "to": "/classroom/$classroomId",
             "text": "Enums",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "enums"
             }
@@ -323,7 +323,7 @@
             "key": "6-1",
             "to": "/classroom/$classroomId",
             "text": "Referencia exclusiva",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "referencias_exclusivas"
             }
@@ -334,13 +334,13 @@
       "key": "7",
       "to": "/classroom/$classroomId",
       "text": "Frameworks",
-      "displayQuality": true,
+      "displayQuality": false,
       "subMenu": [
          {
             "key": "7-0",
             "to": "/classroom/$classroomId",
             "text": "Web 📃",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "framework_web"
             }
@@ -349,7 +349,7 @@
             "key": "7-1",
             "to": "/classroom/$classroomId",
             "text": "Móvil 📱",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "framework_movil"
             }
@@ -364,7 +364,7 @@
             "key": "7-3",
             "to": "/classroom/$classroomId",
             "text": "Game engines 🎮",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "game_engines"
             }
@@ -375,13 +375,13 @@
       "key": "8",
       "to": "/classroom/$classroomId",
       "text": "Conceptos",
-      "displayQuality": true,
+      "displayQuality": false,
       "subMenu": [
          {
             "key": "8-0",
             "to": "/classroom/$classroomId",
             "text": "Coeccion",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "coeccion"
             }
@@ -390,7 +390,7 @@
             "key": "8-1",
             "to": "/classroom/$classroomId",
             "text": "Acoplamiento",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "acoplamiento"
             }
@@ -401,7 +401,7 @@
       "key": "9",
       "to": "/classroom/$classroomId",
       "text": "Solid",
-      "displayQuality": true,
+      "displayQuality": false,
       "params": {
          "classroomId": "solid"
       }
@@ -410,13 +410,13 @@
       "key": "10",
       "to": "/classroom/$classroomId",
       "text": "Patrones en Rust",
-      "displayQuality": true,
+      "displayQuality": false,
       "subMenu": [
          {
             "key": "10-0",
             "to": "/classroom/$classroomId",
             "text": "Patrones MVC",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "patron_mvc"
             }
@@ -425,13 +425,13 @@
             "key": "10-1",
             "to": "/classroom/$classroomId",
             "text": "Patrones Creacionales",
-            "displayQuality": true,
+            "displayQuality": false,
             "subMenu": [
                {
                   "key": "10-1-0",
                   "to": "/classroom/$classroomId",
                   "text": "Factory Method",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "factory_method"
                   }
@@ -440,7 +440,7 @@
                   "key": "10-1-1",
                   "to": "/classroom/$classroomId",
                   "text": "Abstract Factory",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "abstract_factory"
                   }
@@ -449,7 +449,7 @@
                   "key": "10-1-2",
                   "to": "/classroom/$classroomId",
                   "text": "Builder",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "builder"
                   }
@@ -458,7 +458,7 @@
                   "key": "10-1-3",
                   "to": "/classroom/$classroomId",
                   "text": "Prototype",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "prototype"
                   }
@@ -467,7 +467,7 @@
                   "key": "10-1-4",
                   "to": "/classroom/$classroomId",
                   "text": "Singleton",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "singleton"
                   }
@@ -478,13 +478,13 @@
             "key": "10-2",
             "to": "/classroom/$classroomId",
             "text": "Patrones Estructurales",
-            "displayQuality": true,
+            "displayQuality": false,
             "subMenu": [
                {
                   "key": "10-2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Adapter",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "adapter"
                   }
@@ -493,7 +493,7 @@
                   "key": "10-2-1",
                   "to": "/classroom/$classroomId",
                   "text": "Bridge",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "bridge"
                   }
@@ -502,7 +502,7 @@
                   "key": "10-2-2",
                   "to": "/classroom/$classroomId",
                   "text": "Composite",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "composite"
                   }
@@ -511,7 +511,7 @@
                   "key": "10-2-3",
                   "to": "/classroom/$classroomId",
                   "text": "Decorator",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "decorator"
                   }
@@ -520,7 +520,7 @@
                   "key": "10-2-4",
                   "to": "/classroom/$classroomId",
                   "text": "Facade",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "facade"
                   }
@@ -529,7 +529,7 @@
                   "key": "10-2-5",
                   "to": "/classroom/$classroomId",
                   "text": "Flyweight",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "flyweight"
                   }
@@ -538,7 +538,7 @@
                   "key": "10-2-6",
                   "to": "/classroom/$classroomId",
                   "text": "Proxy",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "proxy"
                   }
@@ -549,13 +549,13 @@
             "key": "10-3",
             "to": "/classroom/$classroomId",
             "text": "Patrones de Comportamiento",
-            "displayQuality": true,
+            "displayQuality": false,
             "subMenu": [
                {
                   "key": "10-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Chain of Responsibility",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "chain_esponsibility"
                   }
@@ -564,7 +564,7 @@
                   "key": "10-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Command",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "command"
                   }
@@ -573,7 +573,7 @@
                   "key": "10-3-2",
                   "to": "/classroom/$classroomId",
                   "text": "Interpreter",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "interpreter"
                   }
@@ -582,7 +582,7 @@
                   "key": "10-3-3",
                   "to": "/classroom/$classroomId",
                   "text": "Iterator",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "iterator"
                   }
@@ -591,7 +591,7 @@
                   "key": "10-3-4",
                   "to": "/classroom/$classroomId",
                   "text": "Mediator",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "mediator"
                   }
@@ -600,7 +600,7 @@
                   "key": "10-3-5",
                   "to": "/classroom/$classroomId",
                   "text": "Memento",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "memento"
                   }
@@ -609,7 +609,7 @@
                   "key": "10-3-6",
                   "to": "/classroom/$classroomId",
                   "text": "Observer",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "observer"
                   }
@@ -618,7 +618,7 @@
                   "key": "10-3-7",
                   "to": "/classroom/$classroomId",
                   "text": "State",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "state"
                   }
@@ -627,7 +627,7 @@
                   "key": "10-3-8",
                   "to": "/classroom/$classroomId",
                   "text": "Strategy",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "strategy"
                   }
@@ -636,7 +636,7 @@
                   "key": "10-3-9",
                   "to": "/classroom/$classroomId",
                   "text": "Template Method",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "template_method"
                   }
@@ -645,7 +645,7 @@
                   "key": "10-3-10",
                   "to": "/classroom/$classroomId",
                   "text": "Visitor",
-                  "displayQuality": true,
+                  "displayQuality": false,
                   "params": {
                      "classroomId": "visitor"
                   }
@@ -658,13 +658,13 @@
       "key": "11",
       "to": "/classroom/$classroomId",
       "text": "Arquitegturas en Rust",
-      "displayQuality": true,
+      "displayQuality": false,
       "subMenu": [
          {
             "key": "11-0",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura en capas",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "arquitectura_en_capas"
             }
@@ -673,7 +673,7 @@
             "key": "11-1",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura limpia",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "arquitectura_limpia"
             }
@@ -682,7 +682,7 @@
             "key": "11-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura hexagonal",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "arquitectura_hexagonal"
             }
@@ -691,7 +691,7 @@
             "key": "11-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura cebolla",
-            "displayQuality": true,
+            "displayQuality": false,
             "params": {
                "classroomId": "arquitectura_cebolla"
             }
