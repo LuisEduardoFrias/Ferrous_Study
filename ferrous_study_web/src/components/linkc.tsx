@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState,ReactNode } from 'react'
+import type { TMenu } from '../types/menu'
 import { ArrowRightIcon } from '../assets/svgs'
 import { Link } from '@tanstack/react-router'
 import { useStore } from '../state_warehouse/index'
@@ -19,15 +20,15 @@ export default function LinkC({ text, params, className, displayQuality, childre
 
    const hasSubMenu = subMenu && subMenu.length > 0;
 
-   const handleClick = (displayQuality:boolean) => {
+   const handleClick = (displayQuality: boolean = false) => {
       if (hasSubMenu) {
          setIsOpen(!isOpen);
          return;
       }
 
-if (!displayQuality) {
-      on_show_drawer(false)
-}
+      if (!displayQuality) {
+         on_show_drawer(false)
+      }
    };
 
    return (

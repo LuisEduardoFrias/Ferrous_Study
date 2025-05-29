@@ -21,6 +21,7 @@ Un identificador es el nombre que se le da a una entidad dentro del código fuen
 Rust las variables se definen con la palabra clave **let**:
 
 ```rust
+
 fn main() {
     //Rust ofrece seguridad de tipos mediante tipado estático.
     let x: i32 = 10;
@@ -37,6 +38,7 @@ Las variables son inmutables de forma predeterminada.
 En este ejemplo #1, i32 es el tipo de la variable. Se debe conocer durante el tiempo de compilación, pero la inferencia de tipos permite al programador omitirla en muchos casos.
 
 ```rust
+
 fn main() {
     let numero1 = 15; // Declaramos una variable con un valor entero
     let numero2 = numero1; // Copiamos el valor de numero1 a numero2
@@ -60,6 +62,7 @@ Es obligatorio especificar el tipo de dato para las constantes en Rust.
 Según el libro Rust RFC Book, se insertan cuando se utilizan.
 
 ```rust
+
 const GRAVEDAD: f32 = 9.81; // Constante para la aceleración debida a la gravedad (punto flotante)
 
 static NOMBRE_DEL_PROGRAMA: &str = "Calculadora Simple"; // Constante de cadena para el nombre del programa
@@ -91,6 +94,7 @@ Las constantes de tipo &str (slices de cadena inmutables) se definen utilizando 
 se tratara de forma más habla la palabra clave **static** más adelante.
 
 ```rust
+
 // Declaramos una constante llamada MAX_USUARIOS.
 const MAX_USUARIOS: u32 = 100;
 

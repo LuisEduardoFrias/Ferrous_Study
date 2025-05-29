@@ -11,15 +11,16 @@ import { useStore } from '../state_warehouse/index'
 import { getValue } from '../hooks/local_storage'
 // import markdownHomePage from '../markdowns/home_page.md?raw'
 
-export default function Home({ userId }: { userId: string }) {
+export default function Home() {
    useTitle('')
    const { get } = useMemoryCache();
    const on_setClassId = useStore((state) => state.on_setClassId)
    const on_add_languages = useStore((state) => state.on_add_languages);
    const languageSelected = useStore((state) => state.languageSelected);
    const [content, setContent] = useState<string>('');
+   const [welcome, setWelcome] = useState<string | null>(null);
 
-   const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage: { language: string, text: string }[]): string => {
+   const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage: { language: string, text: string }[], welcome: object | null): string => {
 
       let languageSelected_ = languageSelected;
 
@@ -27,6 +28,11 @@ export default function Home({ userId }: { userId: string }) {
          if (!languages.includes(languageSelected_)) {
             //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
             languageSelected_ = languages[0];
+         }
+
+         if (welcome) {
+            //@ts-ignore
+            setWelcome(welcome[languageSelected_?.value])
          }
 
          const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_?.value)
@@ -39,6 +45,11 @@ export default function Home({ userId }: { userId: string }) {
       if (!languageSelected_ || !languages.includes(languageSelected_)) {
          //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
          languageSelected_ = languages[0];
+      }
+
+      if (welcome) {
+         //@ts-ignore
+         setWelcome(welcome[languageSelected_?.value])
       }
 
       const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
@@ -65,7 +76,8 @@ export default function Home({ userId }: { userId: string }) {
             on_add_languages(languages as TLanguages[]);
          }
 
-         const text = verifyLanguageSelected(languages, result?.textByLanguage);
+         //@ts-ignore
+         const text = verifyLanguageSelected(languages, result?.textByLanguage, result.metadata.data?.welcome);
 
          setContent(text ?? result?.content ?? '');
       })()
@@ -75,7 +87,7 @@ export default function Home({ userId }: { userId: string }) {
       <div className="p-2">
          <img src={ferrous} loading="eager" className="bg-[#ffffff] w-full" alt="ferrous gif" />
          <h1 className="flex gap-1 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
-            Bienvenido {userId} a Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
+            {welcome ?? 'Bienvenido a'} Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
          </h1>
          <br />
          <MarkdownRenderer>

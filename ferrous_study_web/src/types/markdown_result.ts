@@ -13,6 +13,7 @@ export type TMetaData = {
    updateData: Date,
    keywords: string[],
    languages: TLanguage[],
+   data: object
 }
 
 export type TLanguage = { key: string, value: string };

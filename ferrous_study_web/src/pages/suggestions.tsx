@@ -5,7 +5,7 @@ import { TSuggestion } from '../types/suggestion'
 export default function Suggestions() {
    const handleSubmit = async (event: ChangeEvent<HTMLFormElement>) => {
       event.preventDefault();
-      
+
       const formData = new FormData(event.target);
 
       const suggestion: TSuggestion = {
@@ -44,7 +44,7 @@ export default function Suggestions() {
    };
 
    return (
-      <div className="min-h-screen bg-gray-100 flex  items-center justify-center p-4">
+      <div className="flex justify-center pt-[20%]">
          <div className="bg-white p-8 rounded-lg shadow shadow-theme-3 max-w-md w-full">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Deja tu Sugerencia</h2>
             <p className="text-gray-600 text-center mb-8">

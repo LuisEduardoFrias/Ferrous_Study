@@ -20,30 +20,34 @@ La funcion `println!` es una [macro](https://ferrous-study.vercel.app/classroom/
 La forma más sencilla de usar `println!` es pasarle una cadena literal como argumento:
 
 ```rust
+
 fn main() {
     println!("¡Hola, mundo!");
 }
-
+notcopy&>
 /*
 Al ejecutar este código, verás la siguiente salida en tu consola:
 ¡Hola, mundo!
 */
+<&notcopy
 ```
 
 ### Interpolación de variables
 Una de las características más útiles de println! es su capacidad para interpolar valores de variables dentro de la cadena de texto. Esto se hace utilizando marcadores de posición {} dentro de la cadena, y luego pasando las variables correspondientes como argumentos adicionales a la macro.
 
 ```rust
+
 fn main() {
     let nombre = "Alicia";
     let edad = 30;
     println!("Mi nombre es {} y tengo {} años.", nombre, edad);
 }
-
+notcopy&>
 /*
 La salida de este código sería:
 Mi nombre es Alicia y tengo 30 años.
 */
+<&notcopy
 ```
 
 Observa cómo los marcadores {} se reemplazan en orden con los valores de las variables nombre y edad.
@@ -60,6 +64,7 @@ Para tener un control más preciso sobre cómo se muestran los valores, println!
 Aquí tienes algunos ejemplos:
 
 ```rust
+
 fn main() {
     let pi = 3.14159;
     let numero = 255;
@@ -69,7 +74,7 @@ fn main() {
     println!("255 en binario es {:b}", numero);
     println!("Formato de depuración para un rango: {:?}", 1..5);
 }
-
+notcopy&>
 /*
 La salida de este código sería:
 El valor de pi es aproximadamente 3.14
@@ -77,12 +82,14 @@ El valor de pi es aproximadamente 3.14
 255 en binario es 11111111
 Formato de depuración para un rango: 1..5
 */
+<&notcopy
 ```
 
 Múltiples argumentos
 Puedes pasar múltiples variables a println! para insertarlas en la cadena de formato. Asegúrate de que haya suficientes marcadores {} en la cadena para todos los argumentos proporcionados.
 
 ```rust
+
 fn main() {
     let x = 10;
     let y = 20;
@@ -90,10 +97,12 @@ fn main() {
     println!("La suma de {} y {} es {}", x, y, suma);
 }
 
+notcopy&>
 /*
 Salida:
 La suma de 10 y 20 es 30
 */
+<&notcopy
 ```
 
 La macro println! es una herramienta esencial para mostrar información en Rust. Con su sintaxis básica y la capacidad de interpolar variables con varios especificadores de formato, te permite comunicar de manera efectiva los resultados y el estado de tu programa.

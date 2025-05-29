@@ -48,7 +48,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
          const value = textByLanguage?.find((obj: TTextByLanguage) => obj.language === languageSelected_?.value)
 
-         return value?.text|| null;
+         return value?.text || null;
       }
 
       languageSelected_ = getValue<TLanguages>('language_selected');
@@ -60,7 +60,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
       const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
 
-      return value?.text|| null;
+      return value?.text || null;
    }, [languageSelected])
 
    useEffect(() => {
@@ -72,7 +72,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
             });
 
             if (!result) {
-               alert('Error ennel servidor, por favor intente mas tarde.');
+               alert('Error en el servidor, por favor intente mas tarde.');
                setLoading(false);
                return;
             }

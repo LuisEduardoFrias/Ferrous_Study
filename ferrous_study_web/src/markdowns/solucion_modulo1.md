@@ -13,7 +13,9 @@ languages:
 language&>es-ES<&
 # Soluciones
 
+
 ## Solución 1: Calculadora Simple
+
 
 #### Requerimientos:
 Crea un programa que realice operaciones aritméticas básicas (suma, resta, multiplicación, división) entre dos números enteros, usando funciones.
@@ -23,7 +25,8 @@ Define dos variables constantes para almacenar los dos números con los que vas 
 Realiza cada una de las cuatro operaciones e imprime el resultado de cada una utilizando inferencia de tipos cuando sea posible.
 
 ```rust
-&title><title&
+&title>Calculadora Simple<title&
+
 fn suma(n1: i32, n2: i32) {
     let resultado = n1 + n2;
     println!("La suma de {} y {} es: {}", n1, n2, resultado);
@@ -71,7 +74,8 @@ fn main() {
 <hr />
 <br />
 
-## Solución 2: Cálculo de Área de un Rectángulo
+## Solución 2: Calculo de Área de un Rectángulo
+
 
 #### Requerimientos:
 Define dos constantes llamadas BASE y ALTURA para representar las dimensiones de un rectángulo. Asigna valores numéricos enteros a ambas constantes.
@@ -83,7 +87,8 @@ Imprime el valor del área del rectángulo utilizando **println!**. El mensaje d
 Define la función area_rectungular.
 
 ```rust
-&title><title&
+&title>Calculo de Área de un Rectángulo<title&
+
 const BASE: i32 = 10;
 const ALTURA: i32 = 5;
 
@@ -103,6 +108,7 @@ fn main() {
 
 ## Solución 3: Comparación de Constantes
 
+
 #### Requerimientos:
 Define dos constantes numéricas.
 
@@ -111,7 +117,8 @@ Completa la función verificar_rango para comparar estas dos constantes utilizan
 Para cada comparación, imprime un mensaje indicando si la condición es verdadera o falsa.
 
 ```rust
-&title><title&
+&title>Comparación de Constantes<title&
+
 fn verificar_rango(numero: i32) {
     const NUMERO_SECRETO: i32 = 18;
 

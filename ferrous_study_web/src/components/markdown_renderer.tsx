@@ -1,4 +1,4 @@
-import { Children, HTMLAttributes, useState, ReactNode, cloneElement, isValidElement } from 'react'
+import { Children, HTMLAttributes, useState, useEffect, useRef, ReactNode, cloneElement, isValidElement } from 'react'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -62,7 +62,28 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
    function MARK({ children, ...props }: HTMLAttributes<HTMLMarqueeElement>) {
       const { title, text } = getTitle(children as string);
+      const markRef = useRef<HTMLMarqueeElement | null>(null);
       const [isHovering, setIsHovering] = useState(false);
+      const [position, setPosition] = useState("left-0 -translate-x-1/2");
+
+      useEffect(() => {
+         if (markRef.current) {
+            const anchoPantallaTotal = window.innerWidth;//screen.width;
+            const x = markRef.current.getBoundingClientRect().left;
+            if ((anchoPantallaTotal - (x + 300)) < 0) {
+               if ((x - 300) < 0) {
+                  setPosition("left-1/2 -translate-x-1/2");
+               }
+               setPosition("right-0");
+            }
+            else if ((x - 300) < 0) {
+               setPosition("left-0");
+            }
+            else {
+               setPosition("left-1/2 -translate-x-1/2");
+            }
+         }
+      }, [isHovering]);
 
       const handleMouseEnter = () => {
          setIsHovering(true);
@@ -72,17 +93,20 @@ export default function MarkdownRenderer({ children }: { children: string }) {
          setIsHovering(false);
       };
 
+
+
       return (
          <span className="relative">
             {isHovering && (
                <mark
                   {...props}
-                  className="bg-theme-0  left-1/2 -translate-x-1/2 z-10 w-72 top-6 border border-theme-00 rounded absolute p-2"
+                  className={`bg-theme-0 ${position} z-10 w-[300px] top-6 border border-theme-00 rounded absolute p-2`}
                >
                   {text}
                </mark>
             )}
             <mark
+               ref={markRef}
                {...props}
                onMouseEnter={handleMouseEnter}
                onMouseLeave={handleMouseLeave}
@@ -93,8 +117,10 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       );
    }
 
-   function Table({ children, ...props }: HTMLAttributes<HTMLParagraphElement>) {
+   function Table({ children }: HTMLAttributes<HTMLParagraphElement>) {
+      //@ts-ignore
       const theadChild = children[0];
+      //@ts-ignore
       const tbodyChild = children[1];
 
       let WIDTH = 150;
@@ -118,7 +144,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
          WIDTH = Math.max(MIN_COLUMN_PIXEL_WIDTH, maxContentLength * CHARACTER_WIDTH_FACTOR);
       }
 
-      const applyCellStyles = (element: ReactNode) => {
+      const applyCellStyles = (element: ReactNode): ReactNode => {
          if (!isValidElement(element)) {
             return element;
          }
@@ -127,6 +153,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
          if (element.type === 'th') {
             const newClassName = `text-xs font-medium text-gray-600 uppercase ${className}`;
             return cloneElement(element, {
+               //@ts-ignore
                className: newClassName.trim(),
                style: null,
                children: Children.map(element.props.children, applyCellStyles),
@@ -136,6 +163,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
          if (element.type === 'td') {
             const newClassName = `text-sm text-gray-800 break-words ${className}`;
             return cloneElement(element, {
+               //@ts-ignore
                className: newClassName.trim(),
                style: null,
                children: Children.map(element.props.children, applyCellStyles),
@@ -144,6 +172,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
          if (element.props.children) {
             return cloneElement(element, {
+               //@ts-ignore
                children: Children.map(element.props.children, applyCellStyles),
             });
          }
@@ -161,12 +190,14 @@ export default function MarkdownRenderer({ children }: { children: string }) {
                   <div className="overflow-hidden rounded-lg shadow-md border border-gray-200">
                      <table className="min-w-full divide-y divide-gray-300 table-fixed">
                         {
+                           //@ts-ignore
                            cloneElement(styledThead, {
                               className: "bg-gray-100",
                               style: null,
                            })
                         }
                         {
+                           //@ts-ignore
                            cloneElement(styledTbody, {
                               className: "divide-y divide-gray-200 bg-white",
                               style: null,
@@ -243,11 +274,11 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       );
    }
 
-   type custonHtmlLi = ReactNode & { props: { children: string } };
+   type custonHtmlLi = HTMLLIElement & { key: string | null, props: { children: string } };
 
    function Ul({ children, ...props }: HTMLAttributes<HTMLUListElement>) {
 
-      const filteredChildren = (children as ReactNode[])?.filter((child: HTMLLIElement | string) => {
+      const filteredChildren = (children as custonHtmlLi[])?.filter((child: HTMLLIElement | string) => {
          if (typeof child === 'string' && child.trim() === '') {
             return false;
          }
@@ -259,7 +290,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
 
       filteredChildren.forEach((child: custonHtmlLi) => {
          if (isValidElement(child) && typeof child.props.children === 'string' && child.props.children.includes("title&>")) {
-            title = child.props.children.replace('title&>', '').trim();
+            title = (child).props.children.replace('title&>', '').trim();
          } else {
             listItems.push(child);
          }

@@ -8,6 +8,7 @@ import { SuccessIcon, ErrorIcon } from '../assets/svgs'
 import Loading from '../components/loading'
 import Notify from '../components/notify'
 import { useMemoryCache } from '../hooks/use_memory_cache'
+import { useGlobalRef } from '../hooks/use_global_ref'
 import type { TClass } from '../types/class'
 import type { TMarkdownResult, TTextByLanguage } from '../types/markdown_result'
 import type { TServiceResult } from '../types/service_result'
@@ -15,6 +16,7 @@ import type { TServiceResult } from '../types/service_result'
 export default function EditClassroom({ editClassroomId }: { editClassroomId: string }) {
    useTitle(editClassroomId)
    const { get, clear } = useMemoryCache();
+   const { get: getRef } = useGlobalRef();
    const [content, setContent] = useState<string>('');
    const [keywords, setKeywords] = useState<string>('');
    const [textValue, setTextValue] = useState<string>('');
@@ -24,6 +26,22 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
    const { dialogRef: keywordsRef, open: keywordsOpen, close: keywordsClose } = useDialog();
    const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
    const classRef = useRef<TClass[]>([]);
+
+   useEffect(() => {
+      const navbar = getRef<HTMLHeadElement>("navbar");
+      const root2 = getRef<HTMLDivElement>("root2");
+      navbar?.classList.toggle('fixed')
+      navbar?.classList.toggle('top-0')
+      navbar?.classList.toggle('left-0')
+      root2?.classList.toggle('pt-14')
+
+      return () => {
+         navbar?.classList.toggle('fixed')
+         navbar?.classList.toggle('top-0')
+         navbar?.classList.toggle('left-0')
+         root2?.classList.toggle('pt-14')
+      }
+   }, [])
 
    useEffect(() => {
       (async () => {

@@ -25,6 +25,7 @@ Después de instalar Rust, debes configurar tu editor o IDE para utilizar Rust. 
 En Debian o Ubuntu, también puedes instalar Cargo, el código fuente de Rust y el formateador de Rust a través de `apt`. Sin embargo, solo podrás conseguir una versión de Rust obsoleta que podría dar lugar a comportamientos inesperados. El comando es el siguiente:
 
 ```bash
+&>notplay
 sudo apt install cargo rust-src rustfmt
 ```
 
@@ -34,11 +35,15 @@ En macOS, puedes usar Homebrew para instalar Rust, pero esto podría proveer una
 Si quieres experimentar con el código en tu propio sistema, primero tendrás que instalar Rust. Para ello, sigue las instrucciones del Libro de Rust. De este modo, obtendrás un rustc y un cargo que funcionen. En el momento de escribir esto, la última versión estable de Rust tiene estos números de versión:
 
 ```bash
+&>notplay
 rustc --version
+notcopy&>
 rustc 1.69.0 (84c898d65 2023-04-16)
-
+<&notcopy
 cargo --version
+notcopy&>
 cargo 1.69.0 (6e9a83356 2023-04-12)
+<&notcopy
 ```
 
 También puedes usar cualquier versión posterior, ya que Rust mantiene la retrocompatibilidad.
@@ -48,9 +53,11 @@ Una vez hecho lo anterior, sigue estos pasos para compilar un binario de Rust:
  * Usa **cargo new exercise** para crear un directorio exercise/ para tu código:
  
 ```bash
+  &>notplay
   cargo new exercise
-
+  notcopy&>
   Created binary (application) `exercise` package
+  <&notcopy
 ```
 
 <br />
@@ -60,14 +67,16 @@ Una vez hecho lo anterior, sigue estos pasos para compilar un binario de Rust:
 <br />
 
 ```bash
+  &>notplay
   cd exercise
   cargo run
-   
+  notcopy&>
   Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
   Finished dev [unoptimized + debuginfo] target(s) in 0.75s
   Running `target/debug/exercise`
   
   Hello, world!
+  <&notcopy
 ```
 
 
@@ -83,13 +92,15 @@ Por ejemplo:
  * Usa cargo run para hacer build y ejecutar tu binario actualizado:
 
 ```bash
+  &>notplay
   cargo run
-
+  notcopy&>
   Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
   Finished dev [unoptimized + debuginfo] target(s) in 0.24s
   Running `target/debug/exercise`
   
   Editame!
+  <&notcopy
 ```
 
 Cargo ofrece varios comandos:

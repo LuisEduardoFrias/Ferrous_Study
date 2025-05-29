@@ -1,16 +1,18 @@
-import { useState, ChangeEvent } from 'react'
+import { useState, useEffect, ChangeEvent } from 'react'
 import TextEditor from '../components/text_editor'
 import { githubServiceApi } from '../services/github_service'
 import { useTitle } from '../hooks/use_title'
 import { useDialog } from '../hooks/use_dialog';
 import { SuccessIcon, ErrorIcon } from '../assets/svgs'
 import Loading from '../components/loading'
-import Notify from '../components/notify';
+import Notify from '../components/notify'
 import { useStore } from '../state_warehouse/index'
+import { useGlobalRef } from '../hooks/use_global_ref'
 import type { TServiceResult } from '../types/service_result'
 
 export default function NewMarkdown() {
    useTitle('Crear nueva clase')
+   const { get: getRef } = useGlobalRef<HTMLHeadElement>();
    const initial_state = useStore((state) => state.initial_state)
    const { dialogRef: verifyRef, open: openV, close: closeV } = useDialog();
    const { dialogRef, open, close } = useDialog();
@@ -21,6 +23,22 @@ export default function NewMarkdown() {
    const [textValue, setTextValue] = useState<string>('');
    const [showLoading, setShowLoading] = useState(false);
    const [contentErrorMessage, setContentErrorMessage] = useState<TServiceResult>({ message: '' });
+
+   useEffect(() => {
+      const navbar = getRef<HTMLHeadElement>("navbar");
+      const root2 = getRef<HTMLDivElement>("root2");
+      navbar?.classList.toggle('fixed')
+      navbar?.classList.toggle('top-0')
+      navbar?.classList.toggle('left-0')
+      root2?.classList.toggle('pt-14')
+
+      return () => {
+         navbar?.classList.toggle('fixed')
+         navbar?.classList.toggle('top-0')
+         navbar?.classList.toggle('left-0')
+         root2?.classList.toggle('pt-14')
+      }
+   }, [])
 
    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
       let value = event.target.value;
@@ -161,10 +179,8 @@ export default function NewMarkdown() {
                setTextValue(value);
                open();
             }}
-            default_value={textValue}
             file_name={newClassId === '' ? "Nueva clase" : newClassId}
-            class_name="block mx-auto p-2 text-black w-full font-sans text-base leading-relaxed border border-theme-4 focus:outline-none focus:border-theme-3"
-            style={{ height: 'calc(27.94cm - 2rem)', resize: 'none' }}
+            default_value={textValue}
          />
       </div >
    );

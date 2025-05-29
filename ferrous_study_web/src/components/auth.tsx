@@ -47,7 +47,7 @@ function notifySubscribers() {
 }
 
 // Función para actualizar el usuario y notificar
-export function setUser(newUser: TUser | null) {
+export function setUser(newUser: TUser) {
    currentUser = newUser; // Actualizamos nuestro estado interno
    saveValue<TUser>(USER_STORAGE_KEY, newUser); // Guardamos en localStorage
    notifySubscribers(); // Notificamos a todos los componentes suscritos

@@ -862,5 +862,566 @@
          "librerias",
          "paquetes"
       ]
+   },
+   {
+      "key": 51,
+      "name": "factory_method",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "creacional",
+         "fábrica",
+         "método fábrica",
+         "objeto",
+         "interfaz",
+         "subclase",
+         "producción"
+      ]
+   },
+   {
+      "key": 52,
+      "name": "abstract_factory",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "creacional",
+         "fábrica abstracta",
+         "familias",
+         "productos relacionados",
+         "interfaz",
+         "conjuntos"
+      ]
+   },
+   {
+      "key": 53,
+      "name": "builder",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "creacional",
+         "builder",
+         "constructor",
+         "paso a paso",
+         "representación",
+         "complejo",
+         "separación"
+      ]
+   },
+   {
+      "key": 54,
+      "name": "prototype",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "creacional",
+         "prototipo",
+         "clonación",
+         "copia",
+         "objetos",
+         "duplicar",
+         "instancia"
+      ]
+   },
+   {
+      "key": 55,
+      "name": "singleton",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "creacional",
+         "singleton",
+         "instancia única",
+         "global",
+         "acceso",
+         "recurso"
+      ]
+   },
+   {
+      "key": 56,
+      "name": "adapter",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "adaptador",
+         "interfaz",
+         "compatibilidad",
+         "clases existentes",
+         "conversión"
+      ]
+   },
+   {
+      "key": 57,
+      "name": "bridge",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "puente",
+         "abstracción",
+         "implementación",
+         "separación",
+         "desacoplamiento",
+         "jerarquías"
+      ]
+   },
+   {
+      "key": 58,
+      "name": "composite",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "compuesto",
+         "árbol",
+         "parte-todo",
+         "jerarquía",
+         "objetos individuales",
+         "colecciones",
+         "uniforme"
+      ]
+   },
+   {
+      "key": 59,
+      "name": "decorator",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "decorador",
+         "funcionalidad adicional",
+         "dinámico",
+         "envoltura",
+         "transparente"
+      ]
+   },
+   {
+      "key": 60,
+      "name": "facade",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "fachada",
+         "simplificación",
+         "interfaz",
+         "subsistema",
+         "acoplamiento bajo",
+         "simplificar"
+      ]
+   },
+   {
+      "key": 60,
+      "name": "flyweight",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "peso ligero",
+         "optimización",
+         "memoria",
+         "objetos compartidos",
+         "intrínseco",
+         "extrínseco"
+      ]
+   },
+   {
+      "key": 61,
+      "name": "proxy",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "estructural",
+         "proxy",
+         "sustituto",
+         "intermediario",
+         "control de acceso",
+         "lazy loading",
+         "protección",
+         "caché"
+      ]
+   },
+   {
+      "key": 63,
+      "name": "chain_of_responsibility",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "cadena",
+         "responsabilidad",
+         "desacoplamiento",
+         "solicitud",
+         "handlers",
+         "procesamiento"
+      ]
+   },
+   {
+      "key": 64,
+      "name": "command",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "comando",
+         "encapsulación",
+         "acción",
+         "invoker",
+         "receiver",
+         "historial",
+         "deshacer",
+         "rehacer",
+         "cola"
+      ]
+   },
+   {
+      "key": 65,
+      "name": "interpreter",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "intérprete",
+         "gramática",
+         "lenguaje",
+         "expresión",
+         "árbol de sintaxis",
+         "DSL"
+      ]
+   },
+   {
+      "key": 66,
+      "name": "iterator",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "iterador",
+         "colección",
+         "recorrido",
+         "acceso",
+         "secuencial",
+         "sin exponer estructura"
+      ]
+   },
+   {
+      "key": 67,
+      "name": "mediator",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "mediador",
+         "comunicación",
+         "centralización",
+         "desacoplamiento",
+         "complejo",
+         "objetos",
+         "interfaz"
+      ]
+   },
+   {
+      "key": 68,
+      "name": "memento",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "memento",
+         "instantánea",
+         "estado",
+         "deshacer",
+         "restaurar",
+         "guardián",
+         "originador",
+         "historial"
+      ]
+   },
+   {
+      "key": 69,
+      "name": "observer",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "observador",
+         "publicador",
+         "suscriptor",
+         "notificaciones",
+         "eventos",
+         "acoplamiento bajo",
+         "reactivo",
+         "broadcasting"
+      ]
+   },
+   {
+      "key": 70,
+      "name": "state",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "estado",
+         "máquina de estados",
+         "contexto",
+         "encapsulamiento",
+         "transición",
+         "comportamiento variable"
+      ]
+   },
+   {
+      "key": 72,
+      "name": "strategy",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "estrategia",
+         "algoritmo",
+         "intercambio",
+         "polimorfismo",
+         "encapsulamiento",
+         "flexibilidad",
+         "comportamiento variable"
+      ]
+   },
+   {
+      "key": 72,
+      "name": "template_method",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "plantilla",
+         "algoritmo",
+         "herencia",
+         "subrutinas",
+         "pasos",
+         "esqueleto",
+         "reutilización"
+      ]
+   },
+   {
+      "key": 73,
+      "name": "visitor",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comportamiento",
+         "visitante",
+         "operación",
+         "estructura de objetos",
+         "separación",
+         "algoritmo",
+         "extensión",
+         "polimorfismo"
+      ]
+   },
+   {
+      "key": 74,
+      "name": "cohesion",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "cohesión",
+         "diseño",
+         "software",
+         "responsabilidad única",
+         "alta cohesión",
+         "bajo acoplamiento",
+         "mantenimiento",
+         "reutilización"
+      ]
+   },
+   {
+      "key": 75,
+      "name": "coupling",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "acoplamiento",
+         "diseño",
+         "software",
+         "dependencia",
+         "bajo acoplamiento",
+         "alta cohesión",
+         "modularidad",
+         "flexibilidad"
+      ]
+   },
+   {
+      "key": 76,
+      "name": "solid",
+      "addInfo": {
+         "addData": "28/05/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solid",
+         "principios",
+         "diseño",
+         "software",
+         "responsabilidad única",
+         "abierto cerrado",
+         "sustitución liskov",
+         "segregación interfaz",
+         "inversión dependencia",
+         "POO",
+         "limpio"
+      ]
    }
 ]

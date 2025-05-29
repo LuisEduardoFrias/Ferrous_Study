@@ -119,6 +119,23 @@
    font-size: 14px;
 }
 
+html {
+   touch-action: manipulation;
+}
+
+html,
+body {
+   height: 100dvh;
+   width: 100dvw;
+   background-color: var(--theme-0);
+   color: var(--theme-00);
+}
+
+/* body {
+   min-width: 320px;
+   min-height: 100vh;
+} */
+
 a {
    font-weight: 500;
    text-decoration: inherit;
@@ -132,22 +149,6 @@ a:visited {
 a:hover {
    /*   text-decoration: underline; */
    color: var(--theme-3-l);
-}
-
-html {
-   touch-action: manipulation;
-}
-
-html,
-body {
-   height: 100dvh;
-   width: 100dvw;
-   background-color: var(--theme-00);
-}
-
-body {
-   min-width: 320px;
-   min-height: 100vh;
 }
 
 h1 {

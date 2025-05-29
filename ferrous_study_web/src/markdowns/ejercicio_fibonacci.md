@@ -18,6 +18,7 @@ La secuencie de Fibonacci empieza con [0, 1]. Para n>1, el número de Fibonacci 
 Completa la función fib(n) para que calcule el número n de Fibonacci.
 
 ```rust
+
 fn fib(n: u32) -> u32 {
     if n < 2 {
         // El caso base.

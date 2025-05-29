@@ -13,7 +13,9 @@ languages:
 language&>es-ES<&
 # ejercicios
 
+
 ## Ejercicio 1: Calculadora Simple
+
 
 ### Requerimientos:
  * Crea un programa que realice operaciones aritméticas básicas (suma, resta, multiplicación, división) entre dos números enteros, usando funciones.
@@ -21,7 +23,8 @@ language&>es-ES<&
  * Realiza cada una de las cuatro operaciones e imprime el resultado de cada una utilizando inferencia de tipos cuando sea posible.
 
 ```rust
-&title><title&
+&title>Calculadora simple<title&
+
 fn main() {
  
     // Suma
@@ -39,7 +42,8 @@ fn main() {
 <hr />
 <br>
 
-## Ejercicio 2: Cálculo de Área de un Rectángulo
+## Ejercicio 2: Calculo de Área de un Rectángulo
+
 
 ### Requerimientos:
  * Define dos constantes llamadas BASE y ALTURA para representar las dimensiones de un rectángulo. Asigna valores numéricos enteros a ambas constantes.
@@ -48,7 +52,8 @@ fn main() {
  * Define la función area_rectungular.
 
 ```rust
-&title><title&
+&title>Calculo de Área de un Rectángulo<title&
+
 fn main() {
     area_rectangular(BASE, ALTURA)
 }
@@ -60,6 +65,7 @@ fn main() {
 
 ## Ejercicio 3: Comparación de Constantes
 
+
 ### Requerimientos:
  * Define dos constantes numéricas (pueden ser del mismo tipo o de tipos diferentes que se puedan comparar).
 
@@ -69,7 +75,8 @@ fn main() {
  * Para cada comparación, imprime un mensaje indicando si la condición es verdadera o falsa.
 
 ```rust
-&title><title&
+&title>Comparación de Constantes<title&
+
 fn verificar_rango(numero: i32) {
     
 }

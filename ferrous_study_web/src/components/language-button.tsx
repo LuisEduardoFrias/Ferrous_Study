@@ -2,7 +2,7 @@ import { useState, useCallback } from 'react'
 import { useClickOutside } from '../hooks/use_click_on_side'
 import { WorldIcon } from '../assets/svgs'
 import { useStore } from '../state_warehouse/index'
-import { getValue } from '../hooks/local_storage'
+//import { getValue } from '../hooks/local_storage'
 import type { TLanguages } from '../types/language'
 
 export default function LanguageButton() {
