@@ -52,9 +52,8 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
    }
 
    const getOptionRight = useCallback(() => {
-      const t = btnOption?.menu[btnOption?.index + 1];
-      console.log(t);
-      return t;
+      const opt = btnOption?.menu[btnOption?.index + 1];
+      return opt?.isActive ? undefined : opt;
    }, [btnOption]);
 
    const getOptionLeft = useCallback(() => {

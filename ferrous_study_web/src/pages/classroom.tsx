@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { githubServiceApi } from '../services/github_service'
 import MarkdownRenderer from '../components/markdown_renderer'
 import ButtonChangePage from '../components/button_change_page'
@@ -18,11 +18,11 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
    const { get } = useMemoryCache();
 
    const dataClass = useStore((state) => state.dataClass);
+   const languageSelected = useStore((state) => state.languageSelected);
    const on_setClassId = useStore((state) => state.on_setClassId);
    const on_add_languages = useStore((state) => state.on_add_languages);
-   const languageSelected = useStore((state) => state.languageSelected);
 
-   const [loading, setLoading] = useState(true);
+   const [loading, setLoading] = useState<Boolean>(true);
    const [content, setContent] = useState<string>('');
 
    const classInfo = useMemo(() => {
@@ -32,11 +32,10 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
       return {
          addData: data.addInfo.addData,
          updateData: data.updateInfo?.updateData,
-         autor: data.addInfo.user.name,
       };
    }, [dataClass, classroomId]);
 
-   const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage: TTextByLanguage[]): string | null => {
+   const verifyLanguageSelected = useMemo((languages: TLanguages[], textByLanguage: TTextByLanguage[]): string | null => {
 
       let languageSelected_ = languageSelected;
 
@@ -97,7 +96,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
    }, [classroomId]);
 
-   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
+
 
    return (
       <div className="p-2">
@@ -113,22 +112,30 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
                {content}
             </MarkdownRenderer>
          </div>
-         {classInfo && (
-            <div className="flex flex-row justify-between text-gray-400 border-t border-gray-200 mt-14 py-4">
-               <span className={STYLE_SPAN}>Creado: {classInfo.addData}</span>
-               {classInfo.updateData && (
-                  <span className={STYLE_SPAN}>Actualizado: {classInfo.updateData}</span>
-               )}
-               {// <span className={`${STYLE_SPAN} text-end`}>Autor: {classInfo.autor}</span> 
-               }
-            </div>
-         )}
+         {classInfo && <DataInfo info={classInfo} />}
          <ButtonChangePage classroomId={classroomId} />
       </div>
    );
 }
 
+type DataInfoProps = {
+   info: {
+      addData: string,
+      updateData: string,
+   }
+}
 
+function DataInfo({ info }: DataInfoProps) {
+   const STYLE_SPAN = "text-sm w-40 overflow-hidden";
+   const { addData, updateData } = info;
+
+   return (
+      <div className="flex flex-row justify-between text-gray-400 border-t border-gray-200 mt-14 py-4">
+         <span className={STYLE_SPAN}>Creado: {addData}</span>
+         {updateData && (<span className={STYLE_SPAN}>Actualizado: {updateData}</span>)}
+      </div>
+   )
+}
   //   (async () => {
   //     const DynamicComponent = await import(`@/${classroomId}.md?raw`);
   //     setContent(DynamicComponent.default);

@@ -35,7 +35,7 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       return !inline && match ? (
          <div className="relative pt-4 px-3" >
             {title &&
-               <div className="absolute -top-0 w-[60%] border border-amber-200 overflow-y-scroll pr-3 z-40 " >
+               <div className="absolute -top-0 w-[60%] overflow-y-scroll pr-3 z-39 " >
                   <span className="underline" >{title}</span>
                </div>
             }
