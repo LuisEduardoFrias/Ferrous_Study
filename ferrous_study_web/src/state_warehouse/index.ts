@@ -12,6 +12,7 @@ export type State = {
    cache: Record<string, CacheEntry<any>>;
    dataClass: TClass[],
    dataMenu: TMenu[],
+   dark_theme: boolean,
    show_drawer: boolean,
    search_data: searchData,
    languages: TLanguages[],
@@ -20,6 +21,7 @@ export type State = {
    //
    initial_state: () => void,
    on_show_drawer: (isShow: boolean) => void,
+   on_dark_theme: (isShow: boolean) => void,
    on_search_data: (data: searchData) => void,
    on_miss: <T>(key: string, data: CacheEntry<T>) => void,
    on_clear_cache: (key?: string) => void,
@@ -33,6 +35,7 @@ const useStore = create<State>((set) => ({
    dataClass: [],
    dataMenu: [],
    show_drawer: false,
+   dark_theme: true,
    search_data: { show: false, data: [] },
    languages: [],
    languageSelected: null,
@@ -45,12 +48,13 @@ const useStore = create<State>((set) => ({
       ]);
 
       let languageSelected = getValue<TLanguages>('language_selected');
+      const { dark_theme } = getValue<{dark_theme:boolean}>("isDark") ?? {dark_theme:true};
 
       if (!languageSelected)
          languageSelected = null
 
       if (resultClass && resultMennu)
-         set({ dataClass: JSON.parse(resultClass), languageSelected, dataMenu: JSON.parse(resultMennu) });
+         set({ dataClass: JSON.parse(resultClass), dark_theme, languageSelected, dataMenu: JSON.parse(resultMennu) });
 
    },
 
@@ -77,6 +81,11 @@ const useStore = create<State>((set) => ({
 
    on_show_drawer: (isShow: boolean) => {
       set({ show_drawer: isShow });
+   },
+
+   on_dark_theme: (dark_theme: boolean) => {
+      saveValue<{dark_theme:boolean}>("isDark", { dark_theme })
+      set({ dark_theme });
    },
 
    on_search_data: (search_data: searchData) => {

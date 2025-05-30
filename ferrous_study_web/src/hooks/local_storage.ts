@@ -1,7 +1,7 @@
 
 export function saveValue<T>(key: string, value: T, ttlMs?: number) {
    if (!key || !value)
-      throw new Error('No agregaste elnprimer parametro "key" a la funcion "setValue" de "local_storage".');
+      throw new Error('No agregaste uno de los 2 parametros requeridos en la funcion "setValue" de "local_storage".');
 
 
    let expiry = null;
@@ -35,5 +35,5 @@ export function getValue<T>(key: string): T | null {
 }
 
 export function removeValue(key: string) {
-         localStorage.removeItem(key);
+   localStorage.removeItem(key);
 }

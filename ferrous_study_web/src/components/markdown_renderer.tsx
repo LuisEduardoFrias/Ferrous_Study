@@ -299,11 +299,12 @@ export default function MarkdownRenderer({ children }: { children: string }) {
       return (
          <>
             {title && (
-               <p className="font-bold text-gray-800 mb-1 border-b border-gray-300 inline-block">
+               <p className="font-bold text-theme-02 mb-1 border-b border-theme-03 inline-block">
                   {title}
                </p>
             )}
-            <ul {...props} className="m-0 p-0 list-disc flex flex-col gap-2 pl-6 text-gray-700">
+            <ul {...props} className="m-0 p-0 list-disc flex flex-col gap-2 pl-6 text-theme-04 />
+">
                {listItems}
             </ul>
          </>

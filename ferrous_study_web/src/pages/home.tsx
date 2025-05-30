@@ -9,6 +9,8 @@ import { githubServiceApi } from '../services/github_service'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import { useStore } from '../state_warehouse/index'
 import { getValue } from '../hooks/local_storage'
+import { Includes } from '../hooks/includes'
+
 // import markdownHomePage from '../markdowns/home_page.md?raw'
 
 export default function Home() {
@@ -25,7 +27,7 @@ export default function Home() {
       let languageSelected_ = languageSelected;
 
       if (languageSelected_) {
-         if (!languages.includes(languageSelected_)) {
+         if (!Includes<TLanguages>(languages, languageSelected_)) {
             //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
             languageSelected_ = languages[0];
          }
@@ -42,7 +44,7 @@ export default function Home() {
 
       languageSelected_ = getValue<TLanguages>('language_selected');
 
-      if (!languageSelected_ || !languages.includes(languageSelected_)) {
+      if (!languageSelected_ || !(Includes<TLanguages>(languages, languageSelected_))) {
          //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
          languageSelected_ = languages[0];
       }
@@ -66,7 +68,7 @@ export default function Home() {
          });
 
          if (!result) {
-            alert("Error en el servidor, por favor intente mas tarde.");
+            // alert("Error en el servidor, por favor intente mas tarde.");
             return;
          }
 
@@ -84,15 +86,17 @@ export default function Home() {
    }, [languageSelected, get, on_add_languages, on_setClassId]);
 
    return (
-      <div className="p-2">
+      <div className="h-full">
          <img src={ferrous} loading="eager" className="bg-[#ffffff] w-full" alt="ferrous gif" />
-         <h1 className="flex gap-1 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
+         <h1 className="flex gap-1 mt-2 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
             {welcome ?? 'Bienvenido a'} Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
          </h1>
          <br />
+      <div className="p-2">
          <MarkdownRenderer>
             {content ?? ''}
          </MarkdownRenderer>
+      </div>
       </div>
    )
 }

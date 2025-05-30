@@ -23,6 +23,10 @@ export default {
       colors: {
         "translucent": "#494949a6",
         "theme-00": "var(--theme-00)",
+        "theme-01": "var(--theme-01)",
+        "theme-02": "var(--theme-02)",
+        "theme-03": "var(--theme-03)",
+        "theme-04": "var(--theme-04)",
         "theme-0": "var(--theme-0)",
         "theme-1": "var(--theme-1)",
         "theme-1-l": "var(--theme-1-l)",

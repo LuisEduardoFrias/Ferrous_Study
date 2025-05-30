@@ -1,10 +1,11 @@
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import { FerrisIcon, EditIcon, BookCloseIcon, BookOpenIcon } from '../assets/svgs'
-import Search from '../components/search'
-import ButtonIcon from '../components/button_icon'
-import useIsMovil from '../hooks/use_is_movil'
+import Search from './search'
+import ButtonIcon from './button_icon'
+import { SignedIn } from './auth';
+import DarkToggleButton from './dark_toggle_btn';
 import LanguageButton from './language-button'
-import { SignedIn } from '../components/auth';
+import useIsMovil from '../hooks/use_is_movil'
 import { useGlobalRef } from '../hooks/use_global_ref';
 import { useStore } from '../state_warehouse/index'
 
@@ -58,6 +59,7 @@ export default function Navbar() {
          </div>
          <Search />
          <div className="flex items-center absolute right-4 gap-2 ">
+         <DarkToggleButton />
             <LanguageButton />
             {isMovil ? <MenuButton /> : <EditButton />}
          </div>

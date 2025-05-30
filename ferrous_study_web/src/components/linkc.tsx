@@ -10,12 +10,13 @@ type LinkCProps = {
    className?: string;
    isActive?: boolean;
    subMenu?: TMenu[];
-   params?: object;
+   params?: {classroomId:string};
    children?: ReactNode;
 };
 
 export default function LinkC({ text, params, className, isActive, children, to, subMenu }: LinkCProps) {
    const on_show_drawer = useStore((state) => state.on_show_drawer)
+   const classId = useStore((state) => state.classId)
    const [isOpen, setIsOpen] = useState(false);
 
    const hasSubMenu = subMenu && subMenu.length > 0;
@@ -36,26 +37,26 @@ export default function LinkC({ text, params, className, isActive, children, to,
          <Link
             to={hasSubMenu ? '' : (isActive ? '' : to)}
             params={params}
-            className={`flex items-center justify-between w-full text-theme-3 [&.active]:font-extrabold ${className} `}
+            className={`flex items-center justify-between w-full ${className} `}
             onClick={() => handleClick(isActive)}
          >
             {text}
-            <span className={`[&.active]:font-extrabold ${isActive ? 'text-gray-500' : 'text-theme-3 '}`} >
+            <span className={`flex justify-between font-extrabold ${isActive && 'text-gray-500'} w-full text-theme-3 hover:text-theme-o-3-l ${params?.classroomId === classId && 'text-theme-o-3-l'}`} >
                {children}
+               {hasSubMenu && (
+                  <span className={`transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`}>
+                     <ArrowRightIcon className="fill-current" />
+                  </span>
+               )}
             </span>
 
-            {hasSubMenu && (
-               <span className={`transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`}>
-                  <ArrowRightIcon className="fill-current" />
-               </span>
-            )}
          </Link>
 
          {hasSubMenu && (
             <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'h-auto' : 'h-0'}`}>
                <ul className="ml-4">
                   {subMenu.map((subItem, index) => (
-                     <li key={`${subItem.text}-${index}`} className="py-2 px-4">
+                     <li key={`${subItem.text}-${index}`} className="py-1 ">
                         <LinkC
                            key={text}
                            to={subItem.to}

@@ -102,7 +102,12 @@
    /* Más oscuro */
 
    --theme-0: white;
-   --theme-00: black;
+   --theme-00: #101010bc;
+   --theme-01: oklch(87.2% 0.01 258.338);
+   --theme-02: oklch(70.7% 0.022 261.325);
+   --theme-03: oklch(37.3% 0.034 259.733);
+   --theme-04: oklch(27.8% 0.033 256.848);
+
    color: white;
    background-color: #131313;
 
@@ -125,10 +130,11 @@ html {
 
 html,
 body {
-   height: 100dvh;
-   width: 100dvw;
-   background-color: var(--theme-0);
-   color: var(--theme-00);
+   min-height: 100dvh;
+   min-width: 100dvw;
+
+   background-color: var(--theme-00);
+   color: var(--theme-0);
 }
 
 /* body {
@@ -242,4 +248,24 @@ body {
 body {
    -ms-overflow-style: none;
    /* Oculta la barra de desplazamiento */
+}
+
+/* Estilo para cuando el botón con id "theme-btn" tiene la clase "dark" */
+body:has(#theme-btn.dark) {
+   --theme-0: white;
+   --theme-00: #101010bc;
+   --theme-01: oklch(87.2% 0.01 258.338);
+   --theme-02: oklch(70.7% 0.022 261.325);
+   --theme-03: oklch(37.3% 0.034 259.733);
+   --theme-04: oklch(27.8% 0.033 256.848);
+}
+
+/* Opcional: Estilos por defecto para el botón (cuando no tiene la clase "dark") */
+body:has(#theme-btn) {
+      --theme-0: #101010bc;
+   --theme-00: white;
+   --theme-01: oklch(87.2% 0.01 258.338);
+   --theme-02: oklch(70.7% 0.022 261.325);
+   --theme-03: oklch(37.3% 0.034 259.733);
+   --theme-04: oklch(27.8% 0.033 256.848);
 }

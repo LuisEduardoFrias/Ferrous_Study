@@ -4,7 +4,7 @@ import SearchResults from '../components/search_redults'
 
 export default function Layout() {
    return (
-      <div className="w-full h-full text-theme-00 bg-theme-0" >
+      <div className="w-full h-full" >
          <Navbar />
          <SearchResults />
          <Outlet />

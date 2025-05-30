@@ -45,7 +45,7 @@ export default function Drawer() {
 
          <nav className="flex flex-col gap-2 max-w-[400px] min-w-[180px] bg-theme-d-4 shadow shadow-blue-800"   >
 
-            <div className=" w-full z-40 h-14 flex items-center justify-between rounded-br-2xl  p-1 bg-theme-3 shadow shadow-amber-300">
+            <div className="w-full z-40 h-14 flex items-center justify-between rounded-br-2xl  p-1 bg-theme-3 shadow shadow-amber-300">
                <LinkC to="/" className="hover:text-theme-1-d">
                   <span className="flex gap-1 text-[14px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" /></span>
                </LinkC>
@@ -68,7 +68,7 @@ export default function Drawer() {
                         {text}
                      </LinkC>
                   ))}
-               <hr className="my-2 border-[.4px] border-theme-o-3-d" />
+               <hr className="my-2 border-[.4px] border-theme-3" />
                <SignedIn>
                   {menu &&
                      menu?.authorizedPages?.map(({ to, text, isActive, params, subMenu }) => (

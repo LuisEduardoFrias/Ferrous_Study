@@ -11,7 +11,7 @@ function Root() {
    const { ref } = useGlobalRef<HTMLDivElement>();
 
    return (
-      <div id="root2" ref={ref} className="w-[100%] h-[100%] pt-14" >
+      <div id="root2" ref={ref} className="w-[100%] h-[100%] pt-14 bg-transparent" >
          <Drawer />
          <Layout />
       </div>

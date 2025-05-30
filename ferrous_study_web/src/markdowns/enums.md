@@ -37,11 +37,20 @@ fn main() {
 Puntos Clave:
 
 Las enumeraciones te permiten colectar un conjunto de valores en un solo tipo.
-Direction es un tipo con variantes. Hay dos valores de Direction: Direction::Left y Direction::Right.
-PlayerMove es un tipo con tres variantes. Además de las cargas útiles, Rust almacenará un discriminante para saber qué variante se encuentra en un valor PlayerMove en el tiempo de ejecución.
+
+Direction es un tipo con variantes. 
+ - title&>Hay dos valores de Direction: 
+ - Direction::Left
+ - Direction::Right
+ 
+
+PlayerMove es un tipo con tres variantes.
+Además de las cargas útiles, Rust almacenará un discriminante para saber qué variante se encuentra en un valor PlayerMove en el tiempo de ejecución.
+
 Este es un buen momento para comparar las estructuras y las enumeraciones:
 En ambas puedes tener una versión sencilla sin campos (estructura unitaria) o una versión con distintos tipos de campos (variantes con carga útil).
 Incluso podrías implementar las distintas variantes de una enumeración con estructuras diferentes, pero entonces no serían del mismo tipo como lo serían si estuvieran todas definidas en una enumeración.
+
 Rust usa muy poco espacio para almacenar el discriminante.
 Si es necesario, almacena un número entero del tamaño más pequeño requerido
 

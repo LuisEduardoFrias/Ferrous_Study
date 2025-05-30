@@ -1,8 +1,9 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback } from 'react'
 import { githubServiceApi } from '../services/github_service'
 import MarkdownRenderer from '../components/markdown_renderer'
 import ButtonChangePage from '../components/button_change_page'
 import Loading from '../components/loading'
+import { Includes } from '../hooks/includes'
 import { useTitle } from '../hooks/use_title'
 import { useMemoryCache } from '../hooks/use_memory_cache'
 import { useStore } from '../state_warehouse/index'
@@ -19,10 +20,11 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
 
    const dataClass = useStore((state) => state.dataClass);
    const languageSelected = useStore((state) => state.languageSelected);
+   const on_change_language = useStore((state) => state.on_change_language);
    const on_setClassId = useStore((state) => state.on_setClassId);
    const on_add_languages = useStore((state) => state.on_add_languages);
 
-   const [loading, setLoading] = useState<Boolean>(true);
+   const [loading, setLoading] = useState<Boolean>(false);
    const [content, setContent] = useState<string>('');
 
    const classInfo = useMemo(() => {
@@ -35,37 +37,43 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
       };
    }, [dataClass, classroomId]);
 
-   const verifyLanguageSelected = useMemo((languages: TLanguages[], textByLanguage: TTextByLanguage[]): string | null => {
+   const verifyLanguageSelected = useCallback((languages: TLanguages[], textByLanguage: TTextByLanguage[]): string | null => {
 
       let languageSelected_ = languageSelected;
 
+      function chageLanguage() {
+         //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
+         languageSelected_ = languages[0];
+         on_change_language(languageSelected_);
+      }
+
       if (languageSelected_) {
-         if (!languages.includes(languageSelected_)) {
-            //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
-            languageSelected_ = languages[0];
+         if (!Includes<TLanguages>(languages, languageSelected_)) {
+            chageLanguage();
          }
 
          const value = textByLanguage?.find((obj: TTextByLanguage) => obj.language === languageSelected_?.value)
-
          return value?.text || null;
       }
 
       languageSelected_ = getValue<TLanguages>('language_selected');
 
-      if (!languageSelected_ || !languages.includes(languageSelected_)) {
-         //TODO se puede validad en que refion esta, si el idioma de la region se se encuentra, para colocarlo.
-         languageSelected_ = languages[0];
+      if (!languageSelected_ || !(Includes<TLanguages>(languages, languageSelected_))) {
+         chageLanguage();
       }
 
-      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_.value)
+      const value = textByLanguage?.find((obj: any) => obj.language === languageSelected_?.value)
 
       return value?.text || null;
    }, [languageSelected])
 
+
+   window.scrollBy({ top: -window.scrollY });
+
    useEffect(() => {
+      setLoading(true);
 
       (async () => {
-         //setLoading(false);
          try {
             const result = await get<TMarkdownResult | null>(classroomId, async () => {
                return await githubServiceApi.getFileContentByMarkdown(classroomId);
@@ -94,14 +102,12 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
          }
       })()
 
-   }, [classroomId]);
-
-
+   }, [classroomId, languageSelected]);
 
    return (
       <div className="p-2">
          {loading && (
-            <div className="bg-[rgba(96,96,96,0.441)] z-30 pt-20 backdrop-blur-sm w-full h-full absolute top-0 left-0">
+            <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-[100%] absolute top-14 left-0">
                <div className="w-full h-44">
                   <Loading />
                </div>
@@ -136,7 +142,8 @@ function DataInfo({ info }: DataInfoProps) {
       </div>
    )
 }
-  //   (async () => {
-  //     const DynamicComponent = await import(`@/${classroomId}.md?raw`);
-  //     setContent(DynamicComponent.default);
-  //   })();
+//   (async () => {
+//     const DynamicComponent = await import(`@/${classroomId}.md?raw`);
+//     setContent(DynamicComponent.default);
+//   })();
+
