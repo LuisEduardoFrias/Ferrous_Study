@@ -16,7 +16,8 @@ languages:
    value: es-ES
 ---
 language&>es-ES<&
-El patrón de diseño **State** (Estado) es un patrón **de comportamiento** que permite que un objeto altere su comportamiento cuando su estado interno cambia. Parece que el objeto cambia su clase, pero en realidad, es su objeto de estado el que cambia. Es decir, un objeto cambia su comportamiento de forma transparente para el cliente según el estado en el que se encuentre.
+# El patrón de diseño **State** (Estado)
+Es un patrón **de comportamiento** que permite que un objeto altere su comportamiento cuando su estado interno cambia. Parece que el objeto cambia su clase, pero en realidad, es su objeto de estado el que cambia. Es decir, un objeto cambia su comportamiento de forma transparente para el cliente según el estado en el que se encuentre.
 
 Imagina un objeto `ReproductorDeAudio` que puede estar en diferentes estados: `Reproduciendo`, `Pausado`, `Detenido`. El comportamiento del método `presionar_boton_reproducir()` será diferente en cada estado:
  - Si está `Detenido`, empezará a reproducir.

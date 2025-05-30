@@ -76,7 +76,7 @@ export default function Menu() {
                return items.map(item => {
                   if (item.key === targetKey) {
                      const newSubKey = item.subMenu ? `${targetKey}-${item.subMenu.length}` : `${targetKey}-0`;
-                     const newItem: TMenu = { key: newSubKey, to: link, text: '', displayQuality: false, params: undefined };
+                     const newItem: TMenu = { key: newSubKey, to: link, text: '', isActive: false, params: undefined };
                      return { ...item, params: undefined, subMenu: item.subMenu ? [...item.subMenu, newItem] : [newItem] };
                   }
                   return item;
@@ -96,7 +96,7 @@ export default function Menu() {
 
          if (!keys || keys.length === 0) {
             const newKey = `${newContent.length}`;
-            const newItem: TMenu = { key: newKey, to: link, text: '', displayQuality: false };
+            const newItem: TMenu = { key: newKey, to: link, text: '', isActive: false };
             return [...newContent, newItem];
          } else {
             return insertNewItemRecursive(newContent, keys);

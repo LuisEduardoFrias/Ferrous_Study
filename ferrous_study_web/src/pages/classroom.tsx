@@ -66,13 +66,14 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
    useEffect(() => {
 
       (async () => {
+         //setLoading(false);
          try {
             const result = await get<TMarkdownResult | null>(classroomId, async () => {
                return await githubServiceApi.getFileContentByMarkdown(classroomId);
             });
 
             if (!result) {
-               alert('Error en el servidor, por favor intente mas tarde.');
+               //alert('Error en el servidor, por favor intente mas tarde.');
                setLoading(false);
                return;
             }
@@ -94,7 +95,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
          }
       })()
 
-   }, [classroomId, languageSelected, get, on_add_languages, on_setClassId]);
+   }, [classroomId]);
 
    const STYLE_SPAN = "text-sm w-40 overflow-hidden";
 

@@ -57,11 +57,11 @@ export default function Drawer() {
             <div className="flex flex-col pt-3 gap-2 p-2 pb-5 overflow-y-scroll">
 
                {menu &&
-                  menu?.classroom?.map(({ to, text, displayQuality, params, subMenu }) => (
+                  menu?.classroom?.map(({ to, text, isActive, params, subMenu }) => (
                      <LinkC
                         key={text}
                         to={to}
-                        displayQuality={displayQuality}
+                        isActive={isActive}
                         subMenu={subMenu}
                         params={params}
                      >
@@ -71,11 +71,11 @@ export default function Drawer() {
                <hr className="my-2 border-[.4px] border-theme-o-3-d" />
                <SignedIn>
                   {menu &&
-                     menu?.authorizedPages?.map(({ to, text, displayQuality, params, subMenu }) => (
+                     menu?.authorizedPages?.map(({ to, text, isActive, params, subMenu }) => (
                         <LinkC
                            key={text}
                            to={to}
-                           displayQuality={displayQuality}
+                           isActive={isActive}
                            subMenu={subMenu}
                            params={params}
                         >
@@ -88,7 +88,7 @@ export default function Drawer() {
                   <LinkC
                      key={menu?.suggestions?.text}
                      to={menu?.suggestions?.to}
-                     displayQuality={menu?.suggestions?.displayQuality}
+                     isActive={menu?.suggestions?.isActive}
                      subMenu={menu?.suggestions?.subMenu}
                      params={menu?.suggestions?.params}
                   >
@@ -99,7 +99,7 @@ export default function Drawer() {
                   <LinkC
                      key={menu?.about?.text}
                      to={menu?.about?.to}
-                     displayQuality={menu?.about?.displayQuality}
+                     isActive={menu?.about?.isActive}
                      subMenu={menu?.about?.subMenu}
                      params={menu?.about?.params}
                   >

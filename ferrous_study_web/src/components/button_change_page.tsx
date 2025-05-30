@@ -1,100 +1,137 @@
-import { useState, useEffect, useRef, useCallback, memo } from 'react'
+import { useState, useEffect, useRef, useCallback, memo, ReactNode } from 'react'
 import { ArrowRightIcon } from '../assets/svgs'
 import { Link } from '@tanstack/react-router'
 import type { TMenu } from '../types/menu'
 import { useStore } from '../state_warehouse/index'
 
 type classOrder = {
-  key: string;
-  params: { classroomId: string; }
-  to: string;
+   key: string;
+   params: { classroomId: string; }
+   to: string;
+   isActive: boolean;
+}
+
+const TRANSITION = "absolute rounded-[8px] transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";
+
+type TOptionBtn = {
+   menu: classOrder[],
+   index: number
 }
 
 function ButtonChangePage({ classroomId }: { classroomId: string }) {
-  const dataMenu = useStore((state) => state.dataMenu)
-  const [isShow, setShow] = useState(false);
-  const [active, setActive] = useState(true);
-  const [btnOption, setBtnOptions] = useState<{ menu: classOrder[], index: number }>();
-  const TRANSITION = "transition-all ease-in-out duration-500 active:bg-theme-3 shadow-md shadow-theme-o-4-d hover:outline-2 hover:outline-theme-3 disabled:shadow-none disabled:bg-gray-400 disabled:outline-0 disabled:outline-gray-400 ";
-  const timer = useRef<number | undefined>();
-  const defaultParams = { classroomId: '' };
+   const dataMenu = useStore((state) => state.dataMenu)
+   const [isShow, setShow] = useState(false);
 
-  useEffect(() => {
-    if (isShow) {
+   const [active, setActive] = useState(true);
+   const [btnOption, setBtnOptions] = useState<TOptionBtn>();
+   const timer = useRef<number | undefined>();
+
+   useEffect(() => {
+      if (isShow) {
+         timer.current = setTimeout(() => {
+            setShow(false)
+         }, 4000)
+         return () => clearTimeout(timer.current);
+      }
+   }, [isShow]);
+
+   useEffect(() => {
+      setActive(false);
+      const menu = convertMenu(dataMenu);
+      const index = menu.findIndex((obj) => obj.params.classroomId === classroomId)
+      setBtnOptions({ menu, index });
+   }, [classroomId]);
+
+   function reTimer() {
+      clearTimeout(timer.current);
+
       timer.current = setTimeout(() => {
-        setShow(false)
+         setShow(false)
       }, 4000)
-      return () => clearTimeout(timer.current);
-    }
-  }, [isShow]);
+      setActive(true);
+   }
 
-  useEffect(() => {
-    setActive(true);
-    const menu = convertMenu(dataMenu);
-    const index = menu.findIndex((obj) => obj.params.classroomId === classroomId)
-    setBtnOptions({ menu, index });
-  }, [classroomId, dataMenu]);
+   const getOptionRight = useCallback(() => {
+      const t = btnOption?.menu[btnOption?.index + 1];
+      console.log(t);
+      return t;
+   }, [btnOption]);
 
-  function reTimer() {
-    clearTimeout(timer.current);
+   const getOptionLeft = useCallback(() => {
+      return btnOption?.menu[btnOption?.index - 1]
+   }, [btnOption]);
 
-    timer.current = setTimeout(() => {
-      setShow(false)
-    }, 4000)
-  }
+   const convertMenu = useCallback((menuItems: TMenu[]): classOrder[] => {
+      const routes: classOrder[] = [];
 
-  const getOptionRight = useCallback(() => {
-    return btnOption?.menu[btnOption?.index + 1]
-  }, [btnOption]);
-
-  const getOptionLeft = useCallback(() => {
-    return btnOption?.menu[btnOption?.index - 1]
-  }, [btnOption]);
-
-  const convertMenu = useCallback((menuItems: TMenu[]): classOrder[] => {
-    const routes: classOrder[] = [];
-
-    function processItem(item: TMenu) {
-      if (item?.params?.classroomId) {
-        routes.push({ key: item.key, params: item.params, to: item.to });
+      function processItem(item: TMenu) {
+         if (item?.params?.classroomId) {
+            routes.push({ key: item.key, params: item.params, to: item.to, isActive: item.isActive });
+         }
+         if (item?.subMenu) {
+            for (const subItem of item.subMenu) {
+               processItem(subItem);
+            }
+         }
       }
-      if (item?.subMenu) {
-        for (const subItem of item.subMenu) {
-          processItem(subItem);
-        }
+
+      for (const item of menuItems) {
+         processItem(item);
       }
-    }
 
-    for (const item of menuItems) {
-      processItem(item);
-    }
+      return routes;
+   }, [])
 
-    return routes;
-  }, [])
+   return (
+      <div className="fixed z-20 left-0 w-full top-1/2 flex items-center justify-between px-3">
 
-  return (
-    <div className="fixed z-20 left-0 w-full top-1/2 flex items-center justify-between px-3">
-      <button onClick={() => { reTimer(); setActive(false) }} disabled={active ? !getOptionLeft() : true} className={`absolute ${TRANSITION} ${!isShow ? "-left-24" : "left-2"}`}>
-        <Link
-          to={getOptionLeft()?.to ?? ''}
-          params={getOptionLeft()?.params ?? defaultParams}
-          disabled={!getOptionLeft()}
-        >
-          <ArrowRightIcon className="transform rotate-180" />
-        </Link>
-      </button>
-      <button onClick={() => { reTimer(); setActive(false); }} disabled={active ? !getOptionRight() : true} className={`absolute ${TRANSITION} ${!isShow ? "-right-24" : 'right-2'}`}>
-        <Link
-          to={getOptionRight()?.to ?? ''}
-          params={getOptionRight()?.params ?? defaultParams}
-          disabled={!getOptionRight()}
-        >
-          <ArrowRightIcon />
-        </Link>
-      </button>
-      <button onClick={() => setShow(true)} className={`absolute rounded-full h-12 w-12 bg-translucent border-none ${TRANSITION} -right-0 ${isShow && 'opacity-0 hidden'} `}></button>
-    </div>
-  )
+         <ArrowBtn
+            getOption={getOptionLeft()}
+            disabled={active ? true : !getOptionLeft()}
+            reTimer={reTimer}
+            className={!isShow ? "-left-24" : "left-2"}
+         >
+            <ArrowRightIcon className="transform rotate-180" />
+         </ArrowBtn>
+
+         <ArrowBtn
+            getOption={getOptionRight()}
+            disabled={active ? true : !getOptionRight()}
+            reTimer={reTimer}
+            className={!isShow ? "-right-24" : 'right-2'}
+         >
+            <ArrowRightIcon />
+         </ArrowBtn>
+
+         <button onClick={() => setShow(true)} className={`${TRANSITION} h-12 w-12 bg-translucent border-none right-2 ${isShow && 'opacity-0 hidden'} `}></button>
+      </div>
+   )
 }
 
 export default memo(ButtonChangePage);
+
+type ArrowBtnProps = {
+   children: ReactNode,
+   getOption: classOrder | undefined,
+   disabled: boolean,
+   reTimer: () => void,
+   className: string
+}
+
+const ArrowBtn = memo(({ children, getOption, disabled, reTimer, className }: ArrowBtnProps) => {
+   const DEFAULT_PARAMS = { classroomId: '' };
+
+   return (
+      <Link
+         to={getOption?.to ?? ''}
+         params={getOption?.params ?? DEFAULT_PARAMS}
+         disabled={disabled}
+         onClick={reTimer}
+         className={`${TRANSITION} ${className}`}
+      >
+         <button disabled={disabled} >
+            {children}
+         </button>
+      </Link>
+   )
+})

@@ -3,11 +3,13 @@
       "key": "0",
       "to": "/classroom/$classroomId",
       "text": "Rust y su ecosistema",
+      "isActive": false,
       "subMenu": [
          {
             "key": "0-0",
             "to": "/classroom/$classroomId",
             "text": "Que es Rust",
+            "isActive": false,
             "params": {
                "classroomId": "que_es_rust"
             }
@@ -16,6 +18,7 @@
             "key": "0-1",
             "to": "/classroom/$classroomId",
             "text": "Ventajas de Rust",
+            "isActive": false,
             "params": {
                "classroomId": "ventajas_de_rust"
             }
@@ -24,6 +27,7 @@
             "key": "0-2",
             "to": "/classroom/$classroomId",
             "text": "Ecosistema",
+            "isActive": false,
             "params": {
                "classroomId": "ecosistema_rust"
             }
@@ -32,6 +36,7 @@
             "key": "0-3",
             "to": "/classroom/$classroomId",
             "text": "Cargo",
+            "isActive": false,
             "params": {
                "classroomId": "cargo"
             }
@@ -40,6 +45,7 @@
             "key": "0-4",
             "to": "/classroom/$classroomId",
             "text": "Playground",
+            "isActive": false,
             "params": {
                "classroomId": "playground"
             }
@@ -48,6 +54,7 @@
             "key": "0-5",
             "to": "/classroom/$classroomId",
             "text": "Ejemplos codigo",
+            "isActive": false,
             "params": {
                "classroomId": "ejercicios_ejemplos_codigo"
             }
@@ -58,11 +65,13 @@
       "key": "1",
       "to": "/classroom/$classroomId",
       "text": "Tipos y Valores",
+      "isActive": false,
       "subMenu": [
          {
             "key": "1-0",
             "to": "/classroom/$classroomId",
             "text": "Identificadores",
+            "isActive": false,
             "params": {
                "classroomId": "variables"
             }
@@ -71,6 +80,7 @@
             "key": "1-1",
             "to": "/classroom/$classroomId",
             "text": "Valores",
+            "isActive": false,
             "params": {
                "classroomId": "valores"
             }
@@ -79,6 +89,7 @@
             "key": "1-2",
             "to": "/classroom/$classroomId",
             "text": "Aritmética",
+            "isActive": false,
             "params": {
                "classroomId": "aritmetica"
             }
@@ -87,6 +98,7 @@
             "key": "1-3",
             "to": "/classroom/$classroomId",
             "text": "Inferencia de tipos",
+            "isActive": false,
             "params": {
                "classroomId": "inferencia_tipos"
             }
@@ -95,6 +107,7 @@
             "key": "1-4",
             "to": "/classroom/$classroomId",
             "text": "Funciones",
+            "isActive": false,
             "params": {
                "classroomId": "funciones"
             }
@@ -103,6 +116,7 @@
             "key": "1-5",
             "to": "/classroom/$classroomId",
             "text": "Macro println!",
+            "isActive": false,
             "params": {
                "classroomId": "println"
             }
@@ -111,11 +125,13 @@
             "key": "1-6",
             "to": "/classroom/$classroomId",
             "text": "Ejercicios",
+            "isActive": false,
             "subMenu": [
                {
                   "key": "1-6-0",
                   "to": "/classroom/$classroomId",
                   "text": "Fibonacci",
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_fibonacci"
                   }
@@ -124,6 +140,7 @@
                   "key": "1-6-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_fibonacci"
                   }
@@ -132,6 +149,7 @@
                   "key": "1-6-2",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicios módulo 1",
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicios_modulo1"
                   }
@@ -140,6 +158,7 @@
                   "key": "1-6-2",
                   "to": "/classroom/$classroomId",
                   "text": "Solucion módulo 1",
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_modulo1"
                   }
@@ -152,11 +171,13 @@
       "key": "2",
       "to": "/classroom/$classroomId",
       "text": "Controles de flujo básicos",
+      "isActive": false,
       "subMenu": [
          {
             "key": "2-0",
             "to": "/classroom/$classroomId",
             "text": "Expresiones if",
+            "isActive": false,
             "params": {
                "classroomId": "expresion_if"
             }
@@ -165,11 +186,13 @@
             "key": "2-1",
             "to": "/classroom/$classroomId",
             "text": "Bucles",
+            "isActive": false,
             "subMenu": [
                {
                   "key": "2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Bucles",
+                  "isActive": false,
                   "params": {
                      "classroomId": "bucles"
                   }
@@ -178,6 +201,7 @@
                   "key": "2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Loop",
+                  "isActive": false,
                   "params": {
                      "classroomId": "loop_bucle"
                   }
@@ -186,6 +210,7 @@
                   "key": "2-0",
                   "to": "/classroom/$classroomId",
                   "text": "For",
+                  "isActive": false,
                   "params": {
                      "classroomId": "for_bucle"
                   }
@@ -196,11 +221,13 @@
             "key": "2-2",
             "to": "/classroom/$classroomId",
             "text": "Break y continue",
+            "isActive": false,
             "subMenu": [
                {
                   "key": "2-2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Break y continue",
+                  "isActive": false,
                   "params": {
                      "classroomId": "break_continue"
                   }
@@ -209,6 +236,7 @@
                   "key": "2-2-1",
                   "to": "/classroom/$classroomId",
                   "text": "Etiquetas",
+                  "isActive": false,
                   "params": {
                      "classroomId": "etiquetas"
                   }
@@ -219,12 +247,13 @@
             "key": "2-3",
             "to": "/classroom/$classroomId",
             "text": "Bloques, ámbitos y shadowing",
+            "isActive": false,
             "subMenu": [
                {
                   "key": "2-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Bloque",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "bloque_y_ambito"
                   }
@@ -233,7 +262,7 @@
                   "key": "2-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Shadowing",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ambito_y_shadowing"
                   }
@@ -244,11 +273,13 @@
             "key": "2-4",
             "to": "/classroom/$classroomId",
             "text": "Collatz",
+            "isActive": false,
             "subMenu": [
                {
                   "key": "2-4-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio Collatz",
+                  "isActive": false,
                   "params": {
                      "classroomId": "collats"
                   }
@@ -257,6 +288,7 @@
                   "key": "2-4-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución Colltz",
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_collezt"
                   }
@@ -269,6 +301,7 @@
       "key": "3",
       "to": "/classroom/$classroomId",
       "text": "Macros",
+      "isActive": false,
       "params": {
          "classroomId": "macros"
       }
@@ -277,11 +310,13 @@
       "key": "4",
       "to": "/classroom/$classroomId",
       "text": "Tuplas y Arrays",
+      "isActive": false,
       "subMenu": [
          {
             "key": "4-0",
             "to": "/classroom/$classroomId",
             "text": "Arrays",
+            "isActive": false,
             "params": {
                "classroomId": "array"
             }
@@ -290,6 +325,7 @@
             "key": "4-1",
             "to": "/classroom/$classroomId",
             "text": "Tuplas",
+            "isActive": false,
             "params": {
                "classroomId": "tuplas"
             }
@@ -300,6 +336,7 @@
       "key": "5",
       "to": "/classroom/$classroomId",
       "text": "RAII",
+      "isActive": false,
       "params": {
          "classroomId": "raii_concepto"
       }
@@ -308,13 +345,13 @@
       "key": "6",
       "to": "/classroom/$classroomId",
       "text": "Referencias",
-      "displayQuality": false,
+      "isActive": false,
       "subMenu": [
          {
             "key": "6-0",
             "to": "/classroom/$classroomId",
             "text": "Enums",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "enums"
             }
@@ -323,7 +360,7 @@
             "key": "6-1",
             "to": "/classroom/$classroomId",
             "text": "Referencia exclusiva",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "referencias_exclusivas"
             }
@@ -334,13 +371,13 @@
       "key": "7",
       "to": "/classroom/$classroomId",
       "text": "Frameworks",
-      "displayQuality": false,
+      "isActive": false,
       "subMenu": [
          {
             "key": "7-0",
             "to": "/classroom/$classroomId",
             "text": "Web 📃",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "framework_web"
             }
@@ -349,7 +386,7 @@
             "key": "7-1",
             "to": "/classroom/$classroomId",
             "text": "Móvil 📱",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "framework_movil"
             }
@@ -358,13 +395,16 @@
             "key": "7-2",
             "to": "/classroom/$classroomId",
             "text": "Desktop 🖥️",
-            "displayQuality": ""
+            "isActive": false,
+            "params": {
+               "classroomId": "framework_desktop"
+            }
          },
          {
             "key": "7-3",
             "to": "/classroom/$classroomId",
             "text": "Game engines 🎮",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "game_engines"
             }
@@ -375,13 +415,13 @@
       "key": "8",
       "to": "/classroom/$classroomId",
       "text": "Conceptos",
-      "displayQuality": false,
+      "isActive": false,
       "subMenu": [
          {
             "key": "8-0",
             "to": "/classroom/$classroomId",
             "text": "Coeccion",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "coeccion"
             }
@@ -390,7 +430,7 @@
             "key": "8-1",
             "to": "/classroom/$classroomId",
             "text": "Acoplamiento",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "acoplamiento"
             }
@@ -401,7 +441,7 @@
       "key": "9",
       "to": "/classroom/$classroomId",
       "text": "Solid",
-      "displayQuality": false,
+      "isActive": false,
       "params": {
          "classroomId": "solid"
       }
@@ -410,13 +450,13 @@
       "key": "10",
       "to": "/classroom/$classroomId",
       "text": "Patrones en Rust",
-      "displayQuality": false,
+      "isActive": false,
       "subMenu": [
          {
             "key": "10-0",
             "to": "/classroom/$classroomId",
             "text": "Patrones MVC",
-            "displayQuality": false,
+            "isActive": false,
             "params": {
                "classroomId": "patron_mvc"
             }
@@ -425,13 +465,13 @@
             "key": "10-1",
             "to": "/classroom/$classroomId",
             "text": "Patrones Creacionales",
-            "displayQuality": false,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "10-1-0",
                   "to": "/classroom/$classroomId",
                   "text": "Factory Method",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "factory_method"
                   }
@@ -440,7 +480,7 @@
                   "key": "10-1-1",
                   "to": "/classroom/$classroomId",
                   "text": "Abstract Factory",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "abstract_factory"
                   }
@@ -449,7 +489,7 @@
                   "key": "10-1-2",
                   "to": "/classroom/$classroomId",
                   "text": "Builder",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "builder"
                   }
@@ -458,7 +498,7 @@
                   "key": "10-1-3",
                   "to": "/classroom/$classroomId",
                   "text": "Prototype",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "prototype"
                   }
@@ -467,7 +507,7 @@
                   "key": "10-1-4",
                   "to": "/classroom/$classroomId",
                   "text": "Singleton",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "singleton"
                   }
@@ -478,13 +518,13 @@
             "key": "10-2",
             "to": "/classroom/$classroomId",
             "text": "Patrones Estructurales",
-            "displayQuality": false,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "10-2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Adapter",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "adapter"
                   }
@@ -493,7 +533,7 @@
                   "key": "10-2-1",
                   "to": "/classroom/$classroomId",
                   "text": "Bridge",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "bridge"
                   }
@@ -502,7 +542,7 @@
                   "key": "10-2-2",
                   "to": "/classroom/$classroomId",
                   "text": "Composite",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "composite"
                   }
@@ -511,7 +551,7 @@
                   "key": "10-2-3",
                   "to": "/classroom/$classroomId",
                   "text": "Decorator",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "decorator"
                   }
@@ -520,7 +560,7 @@
                   "key": "10-2-4",
                   "to": "/classroom/$classroomId",
                   "text": "Facade",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "facade"
                   }
@@ -529,7 +569,7 @@
                   "key": "10-2-5",
                   "to": "/classroom/$classroomId",
                   "text": "Flyweight",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "flyweight"
                   }
@@ -538,7 +578,7 @@
                   "key": "10-2-6",
                   "to": "/classroom/$classroomId",
                   "text": "Proxy",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "proxy"
                   }
@@ -549,13 +589,13 @@
             "key": "10-3",
             "to": "/classroom/$classroomId",
             "text": "Patrones de Comportamiento",
-            "displayQuality": false,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "10-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Chain of Responsibility",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "chain_esponsibility"
                   }
@@ -564,7 +604,7 @@
                   "key": "10-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Command",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "command"
                   }
@@ -573,7 +613,7 @@
                   "key": "10-3-2",
                   "to": "/classroom/$classroomId",
                   "text": "Interpreter",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "interpreter"
                   }
@@ -582,7 +622,7 @@
                   "key": "10-3-3",
                   "to": "/classroom/$classroomId",
                   "text": "Iterator",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "iterator"
                   }
@@ -591,7 +631,7 @@
                   "key": "10-3-4",
                   "to": "/classroom/$classroomId",
                   "text": "Mediator",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "mediator"
                   }
@@ -600,7 +640,7 @@
                   "key": "10-3-5",
                   "to": "/classroom/$classroomId",
                   "text": "Memento",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "memento"
                   }
@@ -609,7 +649,7 @@
                   "key": "10-3-6",
                   "to": "/classroom/$classroomId",
                   "text": "Observer",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "observer"
                   }
@@ -618,7 +658,7 @@
                   "key": "10-3-7",
                   "to": "/classroom/$classroomId",
                   "text": "State",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "state"
                   }
@@ -627,7 +667,7 @@
                   "key": "10-3-8",
                   "to": "/classroom/$classroomId",
                   "text": "Strategy",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "strategy"
                   }
@@ -636,7 +676,7 @@
                   "key": "10-3-9",
                   "to": "/classroom/$classroomId",
                   "text": "Template Method",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "template_method"
                   }
@@ -645,7 +685,7 @@
                   "key": "10-3-10",
                   "to": "/classroom/$classroomId",
                   "text": "Visitor",
-                  "displayQuality": false,
+                  "isActive": false,
                   "params": {
                      "classroomId": "visitor"
                   }
@@ -658,13 +698,13 @@
       "key": "11",
       "to": "/classroom/$classroomId",
       "text": "Arquitegturas en Rust",
-      "displayQuality": false,
+      "isActive": false,
       "subMenu": [
          {
             "key": "11-0",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura en capas",
-            "displayQuality": false,
+            "isActive": true,
             "params": {
                "classroomId": "arquitectura_en_capas"
             }
@@ -673,7 +713,7 @@
             "key": "11-1",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura limpia",
-            "displayQuality": false,
+            "isActive": true,
             "params": {
                "classroomId": "arquitectura_limpia"
             }
@@ -682,7 +722,7 @@
             "key": "11-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura hexagonal",
-            "displayQuality": false,
+            "isActive": true,
             "params": {
                "classroomId": "arquitectura_hexagonal"
             }
@@ -691,7 +731,7 @@
             "key": "11-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura cebolla",
-            "displayQuality": false,
+            "isActive": true,
             "params": {
                "classroomId": "arquitectura_cebolla"
             }
