@@ -1,6 +1,5 @@
-import { redirect, BeforeLoadFn } from '@tanstack/react-router'
+import { redirect, BeforeLoadFn,AnyContext } from '@tanstack/react-router'
 import { Route as RootRoute } from '../routes/__root'
-import { AnyContext } from '@tanstack/react-router'
 import { getUser } from '../components/auth';
 
 export const verifyAuthentication: BeforeLoadFn<

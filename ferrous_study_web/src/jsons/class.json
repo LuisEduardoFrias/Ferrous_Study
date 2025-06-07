@@ -1423,5 +1423,480 @@
          "POO",
          "limpio"
       ]
+   },
+   {
+      "key": 77,
+      "name": "match",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "match"
+      ]
+   },
+   {
+      "key": 78,
+      "name": "match_struts",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "match",
+         "struts"
+      ]
+   },
+   {
+      "key": 79,
+      "name": "match_enums",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "enums",
+         "match"
+      ]
+   },
+   {
+      "key": 80,
+      "name": "control_flujo_left",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "control de flujo",
+         "left"
+      ]
+   },
+   {
+      "key": 81,
+      "name": "ejercicio_eveluacion_expreciones",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "evaluacion",
+         "exprexiones"
+      ]
+   },
+   {
+      "key": 82,
+      "name": "solucion_eveluacion_expreciones",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "evaluacion",
+         "exprexiones"
+      ]
+   },
+   {
+      "key": 83,
+      "name": "metodos",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "metodos"
+      ]
+   },
+   {
+      "key": 84,
+      "name": "traits",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits"
+      ]
+   },
+   {
+      "key": 85,
+      "name": "super_traits",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "super_traits"
+      ]
+   },
+   {
+      "key": 86,
+      "name": "tipos_asociados",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tipos_asociados"
+      ]
+   },
+   {
+      "key": 87,
+      "name": "derivacion_traits",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "derivacion_traits"
+      ]
+   },
+   {
+      "key": 88,
+      "name": "ejercicio_registro_generico",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "registro genérico"
+      ]
+   },
+   {
+      "key": 89,
+      "name": "solucion_registro_generico",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "registro genérico"
+      ]
+   },
+   {
+      "key": 90,
+      "name": "genericos",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "genericos"
+      ]
+   },
+   {
+      "key": 91,
+      "name": "funciones_genericas",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "funciones",
+         "genéricos"
+      ]
+   },
+   {
+      "key": 92,
+      "name": "traits_genericas",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits",
+         "genéricos"
+      ]
+   },
+   {
+      "key": 93,
+      "name": "traits_bounds",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits",
+         "genérico"
+      ]
+   },
+   {
+      "key": 94,
+      "name": "impl_traits",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "impl",
+         "traits"
+      ]
+   },
+   {
+      "key": 95,
+      "name": "dyn_trait",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "trait",
+         "dyn"
+      ]
+   },
+   {
+      "key": 96,
+      "name": "tipo_datos_genericos",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tipos de datos",
+         "genérico"
+      ]
+   },
+   {
+      "key": 97,
+      "name": "ejercicio_min_generico",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejerecicio",
+         "min genérico"
+      ]
+   },
+   {
+      "key": 98,
+      "name": "solucion_min_generico",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "min genérico"
+      ]
+   },
+   {
+      "key": 99,
+      "name": "tipos_biblioteca_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "tipos"
+      ]
+   },
+   {
+      "key": 100,
+      "name": "option_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "ootion"
+      ]
+   },
+   {
+      "key": 101,
+      "name": "result_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "result"
+      ]
+   },
+   {
+      "key": 102,
+      "name": "string_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "string"
+      ]
+   },
+   {
+      "key": 103,
+      "name": "vectores_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "vectores"
+      ]
+   },
+   {
+      "key": 104,
+      "name": "hashmap_estandar",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "biblioteca estandar",
+         "hashmap"
+      ]
+   },
+   {
+      "key": 105,
+      "name": "ejercicio_contador",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "contador"
+      ]
+   },
+   {
+      "key": 106,
+      "name": "solucion_contador",
+      "addInfo": {
+         "addData": "06/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "contador"
+      ]
    }
 ]

@@ -1,9 +1,0 @@
-{
-   "version": 2,
-   "rewrites": [
-      {
-         "source": "/ferrous_study_server/(.*)",
-         "destination": "/ferrous_study_server/api"
-      }
-   ]
-}
