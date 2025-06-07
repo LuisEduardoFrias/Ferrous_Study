@@ -1,64 +1,60 @@
-
 .search {
-  display: flex;
-  align-items: center;
-  align-content: stretch;
-  padding-inline-start: 2px;
-  border: 1px solid var(--theme-3);
-  border-radius: 50px;
-
-
+   display: flex;
+   align-items: center;
+   align-content: stretch;
+   padding-inline-start: 2px;
+   border: 1px solid var(--theme-3);
+   border-radius: 50px;
 }
 
 .search:has(input[type='search']:focus) {
-    border: 1.5px solid var(--theme-3);
-  }
-  
+   border: 1.5px solid var(--theme-3);
+}
+
 .search:has(input[type='search']:autofill) {
-    background-color: transparent;
-  }
-  
+   background-color: transparent;
+}
+
 .search input[type='search'] {
-    border: none;
-    color: var(--theme-0);
-    background-color: transparent;
-    padding-inline-start: 2px;
-    margin-inline-end: 8px;
-    width: 100%;
+   border: none;
+   color: white;
+   background-color: transparent;
+   padding-inline-start: 2px;
+   margin-inline-end: 8px;
+   width: 100%;
 }
 
 .search input[type='search']:focus {
-      
-      outline: none;
-    }
-    
+   outline: none;
+}
+
 .search input[type='search']:autofill {
-      transition: background-color 5000s ease-in-out 0s;
-    }
-    
-  .search div {
-    width: 24px;
-    height: 24px;
-    margin-inline-end: 6px;
-  }
-  
+   transition: background-color 5000s ease-in-out 0s;
+}
+
+.search div {
+   width: 24px;
+   height: 24px;
+   margin-inline-end: 6px;
+}
+
 .search div button {
-      background-color: transparent;
-      border: none;
+   background-color: transparent;
+   border: none;
 }
 
 
 .filters button {
-    border: none;
-    background-color: transparent;
-    display: flex;
-    align-content: stretch;
-    align-items: center;
-    padding: 2px;
-    text-wrap: nowrap;
+   border: none;
+   background-color: transparent;
+   display: flex;
+   align-content: stretch;
+   align-items: center;
+   padding: 2px;
+   text-wrap: nowrap;
 }
 
 .filters button:active {
-      transform: scale(.9);
-      -webkit-tap-highlight-color: transparent;
+   transform: scale(.9);
+   -webkit-tap-highlight-color: transparent;
 }

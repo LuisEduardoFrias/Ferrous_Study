@@ -42,7 +42,7 @@ export default function LinkC({ text, params, className, isActive, children, to,
             onClick={() => handleClick(isActive)}
          >
             {text}
-            <span className={`flex justify-between font-extrabold ${!isActive ? 'text-gray-500' : 'text-theme-3'} w-full hover:text-theme-o-3-l ${params?.classroomId === classId && 'text-theme-o-3-l'}`} >
+            <span className={`flex justify-between font-extrabold ${!isActive ? 'text-gray-500' : 'text-theme-3'} w-full ${isActive && 'hover:text-theme-o-3-l'} ${(params?.classroomId === classId && isActive) && 'text-theme-o-3-l'}`} >
                {children}
                {hasSubMenu && (
                   <span className={`transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`}>
@@ -64,6 +64,7 @@ export default function LinkC({ text, params, className, isActive, children, to,
                            isActive={subItem.isActive}
                            subMenu={subItem.subMenu}
                            params={subItem.params}
+                           className={className}
                         >
                            {subItem.text}
                         </LinkC>

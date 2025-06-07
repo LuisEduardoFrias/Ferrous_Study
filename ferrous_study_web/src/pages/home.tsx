@@ -89,7 +89,7 @@ export default function Home() {
       <div className="h-full">
          <img src={ferrous} loading="eager" className="bg-[#ffffff] w-full" alt="ferrous gif" />
          <h1 className="flex gap-1 mt-2 font-bold -md:text-[25px] sm:text-3xl justify-center items-center">
-            {welcome ?? 'Bienvenido a'} Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" />
+            {welcome ?? 'Bienvenido a'} Ferrous Study! <FerrisIcon className="bg-theme-4-d rounded-full" />
          </h1>
          <br />
       <div className="p-2">

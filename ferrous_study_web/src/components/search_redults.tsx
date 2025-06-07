@@ -1,10 +1,11 @@
+import { memo } from 'react'
 import { Link } from '@tanstack/react-router'
 import type { TMenu } from '../types/menu'
 import { useGlobalRef } from '../hooks/use_global_ref'
 import { useClickOutside } from '../hooks/use_click_on_side'
 import { useStore } from '../state_warehouse/index'
 
-export default function SearchResults() {
+const SearchResults = memo(function SearchResults() {
   const search_data = useStore((state) => state.search_data)
   const on_search_data = useStore((state) => state.on_search_data)
   const { get } = useGlobalRef<HTMLInputElement>();
@@ -21,7 +22,7 @@ export default function SearchResults() {
     <>
       {
         search_data.show &&
-        <div ref={divRef} className='fixed z-40 overflow-y-scroll max-h-[200px] left-[51%] -translate-x-1/2 top-12 shadow-md shadow-theme-o-4 rounded bg-theme-0 w-auto h-auto overflow-hidden border border-theme-3'>
+        <div ref={divRef} className='fixed z-40 overflow-y-scroll max-h-[200px] left-[51%] -translate-x-1/2 top-14 shadow-md shadow-theme-o-4 rounded bg-theme-0 w-auto h-auto overflow-hidden border border-theme-3'>
           <>
             {search_data?.data &&
               search_data?.data?.length >= 1 ? (
@@ -46,8 +47,10 @@ export default function SearchResults() {
               </div>
             )}
           </>
-        </div >
+        </div>
       }
     </>
   );
-}
+});
+
+export default SearchResults;

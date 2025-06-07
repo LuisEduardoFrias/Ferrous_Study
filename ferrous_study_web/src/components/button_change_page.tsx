@@ -22,7 +22,7 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
    const dataMenu = useStore((state) => state.dataMenu)
    const [isShow, setShow] = useState(false);
 
-   const [active, setActive] = useState(true);
+   const [active, setActive] = useState(false);
    const [btnOption, setBtnOptions] = useState<TOptionBtn>();
    const timer = useRef<number | undefined>();
 
@@ -40,13 +40,13 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
       const menu = convertMenu(dataMenu);
       const index = menu.findIndex((obj) => obj.params.classroomId === classroomId)
       setBtnOptions({ menu, index });
-   }, [classroomId]);
+   }, [classroomId, dataMenu]);
 
    function reTimer() {
       clearTimeout(timer.current);
 
       timer.current = setTimeout(() => {
-         setShow(false)
+         //setShow(false)
       }, 4000)
       setActive(true);
    }

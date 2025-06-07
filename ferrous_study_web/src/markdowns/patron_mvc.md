@@ -332,6 +332,7 @@ En Rust, estas carpetas y archivos se relacionan a través del **sistema de mód
 1.  **\`main.rs\`** declararía \`mod\`s para \`models\`, \`views\`, \`controllers\`, y \`routes\`. Por ejemplo:
     ```rust
     // src/main.rs
+    &>notplay
     mod models;
     mod views;
     mod controllers;
@@ -345,12 +346,14 @@ En Rust, estas carpetas y archivos se relacionan a través del **sistema de mód
 
 2.  Dentro de cada carpeta como \`models/\`, su \`mod.rs\` declararía \`pub mod\`s para los archivos dentro de esa carpeta. Por ejemplo:
     ```rust
+    &>notplay
     // src/models/mod.rs
     pub mod user; // Esto hace que \`user.rs\` sea accesible como \`models::user\`
     ```
 
 3.  De esta manera, en tus **controladores**, podrías importar y usar funciones y structs de tus **modelos**:
     ```rust
+    &>notplay
     // src/controllers/user_controller.rs
     use crate::models::user::{User, get_all_users}; // Accedes a \`User\` y \`get_all_users\` desde el módulo \`user\` dentro de \`models\`
 
@@ -359,6 +362,7 @@ En Rust, estas carpetas y archivos se relacionan a través del **sistema de mód
 
 4.  Y en tus **rutas**, podrías mapear URLs a funciones específicas de tus **controladores**:
     ```rust
+    &>notplay
     // src/routes/web.rs
     use crate::controllers::user_controller::{get_user_handler, create_user_handler};
 

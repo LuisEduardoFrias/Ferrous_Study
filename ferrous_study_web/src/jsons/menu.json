@@ -449,7 +449,7 @@
             "text": "Estructuras",
             "isActive": true,
             "params": {
-               "classroomId": "estruturas"
+               "classroomId": "estructuras"
             }
          },
          {
@@ -1482,7 +1482,7 @@
                   "text": "Chain of Responsibility",
                   "isActive": true,
                   "params": {
-                     "classroomId": "chain_esponsibility"
+                     "classroomId": "chain_responsibility"
                   }
                },
                {

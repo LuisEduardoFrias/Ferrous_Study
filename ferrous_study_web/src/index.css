@@ -176,7 +176,7 @@ button {
    font-size: 1em;
    font-weight: 500;
    font-family: inherit;
-   background-color: var(--theme-4);
+   background-color: var(--theme-d-4);
    color: var(--theme-0);
    cursor: pointer;
    transition: border-color 0.25s;
@@ -271,8 +271,12 @@ body:has(#theme-btn.dark) {
    --theme-04: #cecfd4;
 
 
+   --theme-3-l: var(--theme-1-l);
+   --theme-3-d: var(--theme-1-d);
 
 
+   --theme-o-4-d: var(--theme-o-2-d);
+   --theme-4: var(--theme-2-l);
 }
 
 /* Opcional: Estilos por defecto para el botón (cuando no tiene la clase "dark") */

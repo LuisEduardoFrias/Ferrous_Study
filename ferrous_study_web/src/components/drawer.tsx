@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo } from 'react'
 import { useClickInSide } from '../hooks/use_click_on_side'
 import { splitMenuOptions } from '../hooks/split_menu_options'
 import { FerrisIcon, BookOpenIcon } from '../assets/svgs'
@@ -15,7 +15,7 @@ type MenuObj = {
    suggestions: TMenu,
 }
 
-export default function Drawer() {
+const Drawer = memo(function Drawer() {
    const show_drawer = useStore((state) => state.show_drawer)
    const dataMenu = useStore((state) => state.dataMenu)
    const on_show_drawer = useStore((state) => state.on_show_drawer)
@@ -47,7 +47,7 @@ export default function Drawer() {
 
             <div className="w-full z-40 h-14 flex items-center justify-between rounded-br-2xl  p-1 bg-theme-3 shadow shadow-amber-300">
                <LinkC to="/" className="hover:text-theme-1-d">
-                  <span className="flex gap-1 text-[14px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4 rounded-full" /></span>
+                  <span className="flex gap-1 text-[14px] text-theme-4-d font-extrabold items-center" >Ferrous Study! <FerrisIcon className="bg-theme-4-d rounded-full" /></span>
                </LinkC>
                <ButtonIcon>
                   <BookOpenIcon onClick={() => on_show_drawer(false)} />
@@ -112,4 +112,5 @@ export default function Drawer() {
 
       </div>
    );
-}
+});
+export default Drawer;

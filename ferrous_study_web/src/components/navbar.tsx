@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import { FerrisIcon, EditIcon, BookCloseIcon, BookOpenIcon } from '../assets/svgs'
 import Search from './search'
@@ -9,7 +10,7 @@ import useIsMovil from '../hooks/use_is_movil'
 import { useGlobalRef } from '../hooks/use_global_ref';
 import { useStore } from '../state_warehouse/index'
 
-export default function Navbar() {
+const Navbar = memo(function Navbar() {
    const navigate = useNavigate();
    const { ref } = useGlobalRef<HTMLHeadElement>();
    const show_drawer = useStore((state) => state.show_drawer)
@@ -59,11 +60,12 @@ export default function Navbar() {
          </div>
          <Search />
          <div className="flex items-center absolute right-4 gap-2 ">
-         <DarkToggleButton />
+            <DarkToggleButton />
             <LanguageButton />
             {isMovil ? <MenuButton /> : <EditButton />}
          </div>
       </header>
    );
-}
+});
+export default Navbar;
 

@@ -44,8 +44,8 @@ export default function Suggestions() {
    };
 
    return (
-      <div className="flex justify-center pt-[20%]">
-         <div className="bg-white p-8 rounded-lg shadow shadow-theme-3 max-w-md w-full">
+      <div className="flex justify-center py-[15%]">
+         <div className="bg-white p-8 rounded-lg shadow dark:shadow-[0_0_10px_1px] dark:shadow-theme-3 max-w-md w-full">
             <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Deja tu Sugerencia</h2>
             <p className="text-gray-600 text-center mb-8">
                ¡Nos encantaría escuchar tus ideas para mejorar nuestra página!
@@ -117,7 +117,7 @@ export default function Suggestions() {
                <div className="flex items-center justify-between">
                   <button
                      type="submit"
-                     className="bg-theme-4 hover:bg-theme-3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
+                     className="bg-theme-d-4 hover:bg-theme-3 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
                   >
                      Enviar Sugerencia
                   </button>
