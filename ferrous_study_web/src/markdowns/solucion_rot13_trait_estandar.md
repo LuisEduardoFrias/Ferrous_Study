@@ -63,7 +63,8 @@ mod test {
         }
     }
 }
-¿Qué ocurre si encadenas dos instancias RotDecoder y cada una de ellas rota 13 posiciones?
 ```
+
+¿Qué ocurre si encadenas dos instancias RotDecoder y cada una de ellas rota 13 posiciones?
 
 language&>es-ES<&

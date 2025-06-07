@@ -27,6 +27,12 @@ export default function EditClassroom({ editClassroomId }: { editClassroomId: st
    const { dialogRef: notifyContentRef, open: openContentNotify, close: closeContentNotify } = useDialog();
    const classRef = useRef<TClass[]>([]);
 
+      if (showLoading) {
+      document.body.style.overflow = 'hidden';
+   } else {
+      document.body.style.overflow = 'auto';
+   }
+
    useEffect(() => {
       const navbar = getRef<HTMLHeadElement>("navbar");
       const root2 = getRef<HTMLDivElement>("root2");

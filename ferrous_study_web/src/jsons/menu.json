@@ -1583,13 +1583,13 @@
       "key": "21",
       "to": "/classroom/$classroomId",
       "text": "Arquitegturas en Rust",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "21-0",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura en capas",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "arquitectura_en_capas"
             }
@@ -1598,7 +1598,7 @@
             "key": "21-1",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura limpia",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "arquitectura_limpia"
             }
@@ -1607,7 +1607,7 @@
             "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura hexagonal",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "arquitectura_hexagonal"
             }
@@ -1616,7 +1616,7 @@
             "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura cebolla",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "arquitectura_cebolla"
             }
@@ -1626,21 +1626,25 @@
    {
       "key": "22",
       "to": "/classroom/newmd",
+                  "isActive": true,
       "text": "Crear nueva clase"
    },
    {
       "key": "23",
       "to": "/settings/menu",
+                  "isActive": true,
       "text": "Configuraciones del menu"
    },
    {
       "key": "24",
       "to": "/suggestions",
+                  "isActive": true,
       "text": "Sugerencias"
    },
    {
       "key": "25",
       "to": "/about",
+                  "isActive": true,
       "text": "Acerca de Ferrous Study!"
    }
 ]

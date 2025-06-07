@@ -103,10 +103,17 @@
 
    --theme-0: white;
    --theme-00: #101010bc;
-   --theme-01: oklch(87.2% 0.01 258.338);
+   /*    --theme-01: oklch(87.2% 0.01 258.338);
    --theme-02: oklch(70.7% 0.022 261.325);
    --theme-03: oklch(37.3% 0.034 259.733);
-   --theme-04: oklch(27.8% 0.033 256.848);
+   --theme-04: oklch(27.8% 0.033 256.848); */
+
+   --theme-01: #DDE0EA;
+   --theme-02: #A8AEBF;
+   --theme-03: #5B5F70;
+   --theme-04: #454854;
+
+
 
    color: white;
    background-color: #131313;
@@ -254,18 +261,30 @@ body {
 body:has(#theme-btn.dark) {
    --theme-0: white;
    --theme-00: #101010bc;
-   --theme-01: oklch(87.2% 0.01 258.338);
+   /*    --theme-01: oklch(87.2% 0.01 258.338);
    --theme-02: oklch(70.7% 0.022 261.325);
    --theme-03: oklch(37.3% 0.034 259.733);
-   --theme-04: oklch(27.8% 0.033 256.848);
+   --theme-04: oklch(27.8% 0.033 256.848); */
+   --theme-01: #DDE0EA;
+   --theme-02: #A8AEBF;
+   --theme-03: #5B5F70;
+   --theme-04: #cecfd4;
+
+
+
+
 }
 
 /* Opcional: Estilos por defecto para el botón (cuando no tiene la clase "dark") */
 body:has(#theme-btn) {
-      --theme-0: #101010bc;
+   --theme-0: #101010bc;
    --theme-00: white;
-   --theme-01: oklch(87.2% 0.01 258.338);
+   /*    --theme-01: oklch(87.2% 0.01 258.338);
    --theme-02: oklch(70.7% 0.022 261.325);
    --theme-03: oklch(37.3% 0.034 259.733);
-   --theme-04: oklch(27.8% 0.033 256.848);
+   --theme-04: oklch(27.8% 0.033 256.848); */
+   --theme-01: #DDE0EA;
+   --theme-02: #A8AEBF;
+   --theme-03: #5B5F70;
+   --theme-04: #454854;
 }
