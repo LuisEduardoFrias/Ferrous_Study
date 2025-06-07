@@ -1,7 +1,7 @@
 [
    {
-      "key": 107,
-      "name": "tipos_biblioteca_estandar",
+      "key": 116,
+      "name": "solucion_rot13_trait_estandar",
       "addInfo": {
          "addData": "07/06/2025",
          "user": {
@@ -11,8 +11,284 @@
       },
       "updateInfo": null,
       "keywords": [
-         "biblioteca estandar",
-         "tipos"
+         "solución",
+         "rot13",
+         "traits estandar"
       ]
    },
 ]
+
+
+1. Desarrollo del curso
+2. Usando Cargo
+Día 1: mañana
+3. Te damos la bienvenida
+4. Hola, Mundo
+5. Tipos y valores
+6. Básicos de Control de Flujo
+Día 1: Tarde
+7. Te damos la bienvenida
+8. Tuplas y arrays
+9. Referencias
+10. Tipos definidos por el usuario
+Día 2: Mañana
+11. Te damos la bienvenida
+12. Correspondencia de Patrones
+13. Métodos y Traits
+Día 2: tarde
+14. Te damos la bienvenida
+15. Genéricos
+16. Tipos de la Biblioteca Estándar
+17. Traits de la biblioteca estándar
+
+Día 3: Mañana
+18. Te damos la bienvenida
+19. Manejo de Memoria
+19.1. Revisión de la memoria de programas
+19.2. Métodos de Gestión de Memoria
+19.3. Ownership
+19.4. Semántica de movimiento
+19.5. Trait Clone
+19.6. Tipos Copy
+19.7. Trait Drop
+19.8. Ejercicio: Constructores
+19.8.1. Solución
+20. Punteros inteligentes
+20.1. Box<T>
+20.2. Rc
+20.3. Objetos Trait Poseídos
+20.4. Ejercicio: Árbol binario
+20.4.1. Solución
+Día 3: Tarde
+21. Te damos la bienvenida
+22. Préstamos (Borrowing)
+22.1. Emprestar (borrow) un valor
+22.2. Verificación de Préstamos
+22.3. Errores de Préstamo
+22.4. Mutabilidad Interior
+22.5. Ejercicio: Estadísticas de Salud
+22.5.1. Solución
+23. Duraciones de vida
+23.1. Anotaciones de duración de vida
+23.2. Elisión de duración de vida
+23.3. Duraciones de vida de estructuras (structs)
+23.4. Ejercicio: Análisis de Protobuf
+23.4.1. Solución
+
+Día 4: Mañana
+24. Te damos la bienvenida
+25. Iteradores
+25.1. Iterator
+25.2. IntoIterator
+25.3. FromIterator
+25.4. Ejercicio: Encadenamiento de métodos del iterador
+25.4.1. Solución
+26. Módulos
+26.1. Módulos
+26.2. Jerarquía del sistema de archivos
+26.3. Visibilidad
+26.4. use, super, self
+26.5. Ejercicio: Módulos para una biblioteca GUI
+26.5.1. Solución
+27. Probando
+27.1. Módulos de Pruebas
+27.2. Otros tipos de pruebas
+27.3. Lints de compiladores y Clippy
+27.4. Ejercicio: Algoritmo de Luhn
+27.4.1. Solución
+Día 4: Tarde
+28. Te damos la bienvenida
+29. Manejo de Errores
+29.1. Pánicos
+29.2. Result
+29.3. Operador Try (Intentar)
+29.4. Conversiones Try (Intentar)
+29.5. Trait Error
+29.6. thiserror y anyhow
+29.7. Ejercicio: Reescribir con Result
+29.7.1. Solución
+30. Unsafe Rust
+30.1. Unsafe
+30.2. Dereferenciación de Punteros Sin Formato
+30.3. Variables Estáticas Mutables
+30.4. Uniones
+30.5. Funciones Inseguras (Unsafe)
+30.6. Implementación de Traits Unsafe (Inseguras)
+30.7. Ejercicio: Envoltorio de FFI
+30.7.1. Solución
+Android
+31. Te damos la bienvenida
+32. Configurar
+33. Reglas de Compilación (Build)
+33.1. Binarios
+33.2. Biblioteca
+34. AIDL
+34.1. Tutorial de Servicio de Cumpleaños
+34.1.1. Interfaz
+34.1.2. API de Servicios
+34.1.3. Servicio
+34.1.4. Servidor
+34.1.5. Despliegue
+34.1.6. Cliente
+34.1.7. Cambio de API
+34.1.8. Actualizando Implementaciones
+34.2. Tipos AIDL
+34.2.1. Tipos Primitivos
+34.2.2. Tipos Array
+34.2.3. Enviando Objectos
+34.2.4. Variables
+34.2.5. Enviando Archívos
+35. Probando
+35.1. GoogleTest
+35.2. Simulaciones
+36. Almacenamiento de registros
+37. Interoperabilidad
+37.1. Con C
+37.1.1. Llamar a C con Bindgen
+37.1.2. Llamar a Rust desde C
+37.2. Con C++
+37.2.1. El Modulo Puente (Bridge)
+37.2.2. Rust Bridge (Puente)
+37.2.3. C++ generado
+37.2.4. Bridge en C++
+37.2.5. Tipos de datos compartidos
+37.2.6. Enums compartidos
+37.2.7. Manejo de Errores en Rust
+37.2.8. Manejo de Errores en C++
+37.2.9. Tipos adicionales
+37.2.10. Compilar en Android: C++
+37.2.11. Compilar en Android: Genrules
+37.2.12. Compilar en Android: Rust
+37.3. Con Java
+38. Ejercicios
+Chromium
+39. Te damos la bienvenida
+40. Configurar
+41. Comparación de los ecosistemas de Chromium y Cargo
+42. Política
+43. Reglas de Compilación (Build)
+43.1. Código inseguro
+43.2. Depender de código de Rust desde Chromium C++
+43.3. Visual Studio Code
+43.4. Ejercicio
+44. Probando
+44.1. Biblioteca rust_gtest_interop
+44.2. Reglas GN para pruebas de Rust
+44.3. Macro chromium: :import!
+44.4. Ejercicio
+45. Interoperabilidad con C++
+45.1. Ejemplos
+45.2. Limitaciones de CXX
+45.3. Manejo de Errores en CXX
+45.3.1. Manejo de Errores: Ejemplo QR
+45.3.2. Manejo de Errores: Ejemplo PNG
+45.4. Usar CXX en Chromium
+45.5. Ejercicio
+46. Añadir crates de terceros
+46.1. Configurar Cargo.toml
+46.2. Configurar gnrt_config.toml
+46.3. Descargar crates
+46.4. Generar reglas de compilación gn
+46.5. Resolución de problemas
+46.5.1. Compilar secuencias de comandos que generan código
+46.5.2. Compilar secuencias de comandos que compilan C++ o llevan a cabo acciones arbitrarias
+46.6. Depender de un crate
+46.7. Revisiones y auditorías
+46.8. Comprobaciones en el código fuente de Chromium
+46.9. Mantener los crates actualizados
+46.10. Ejercicio
+47. Poner en práctica todo lo aprendido: ejercicio
+48. Soluciones de Ejercicios
+Bare Metal: mañana
+49. Te damos la bienvenida
+50. no_std
+50.1. Un Pequeño Ejemplo
+50.2. alloc
+51. Microcontroladores
+51.1. MMIO sin procesar
+51.2. PAC
+51.3. Crates HAL
+51.4. Crates de Soporte de Placa
+51.5. El Patrón de Tipo de Estado
+51.6. embedded-hal
+51.7. probe-rs y cargo-embed
+51.7.1. Depuración
+51.8. Otros proyectos
+52. Ejercicios
+52.1. Brújula
+52.2. Soluciones
+Bare Metal: tarde
+53. Procesadores de aplicaciones
+53.1. Iniciación a Rust
+53.2. Ensamblador en línea
+53.3. MMIO
+53.4. Escribir un controlador UART
+53.4.1. Más traits
+53.5. Un controlador UART mejor
+53.5.1. Bitflags
+53.5.2. Varios registros
+53.5.3. Conductor
+53.5.4. Cómo usarlo
+53.6. Almacenamiento de registros
+53.6.1. Cómo usarlo
+53.7. Excepciones
+53.8. Otros proyectos
+54. Crates útiles
+54.1. zerocopy
+54.2. aarch64-paging
+54.3. buddy_system_allocator
+54.4. tinyvec
+54.5. spin
+55. Android
+55.1. vmbase
+56. Ejercicios
+56.1. Controlador RTC
+56.2. Soluciones
+Concurrencia: mañana
+57. Te damos la bienvenida
+58. Hilos
+58.1. Hilos Simples
+58.2. Hilos con ámbito
+59. Canales
+59.1. Transmisores y Receptores
+59.2. Canales sin límites
+59.3. Canales delimitados
+60. Send y Sync
+60.1. Traits de Marcador
+60.2. Send
+60.3. Sync
+60.4. Ejemplos
+61. Estado compartido
+61.1. Arc
+61.2. Mutex
+61.3. Ejemplo
+62. Ejercicios
+62.1. La cena de los filósofos
+62.2. Comprobador de enlaces multihilo
+62.3. Soluciones
+Concurrencia: tarde
+63. Te damos la bienvenida
+64. Conceptos básicos de Async
+64.1. async/await
+64.2. Future
+64.3. Runtimes (Tiempos de Ejecución)
+64.3.1. Tokio
+64.4. Tasks
+65. Canales y Control de Flujo
+65.1. Canales asíncronos
+65.2. Unir
+65.3. Seleccionar
+66. Inconvenientes
+66.1. Bloqueo del ejecutor
+66.2. Pin
+66.3. Traits asíncronos
+66.4. Cancelación
+67. Ejercicios
+67.1. La cena de los filósofos
+67.2. Aplicación de chat de difusión
+67.3. Soluciones
+Conclusiones
+68. ¡Gracias!
+69. Glosario
+70. Otros recursos
+71. Créditos

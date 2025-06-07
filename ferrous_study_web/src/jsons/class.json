@@ -1898,5 +1898,528 @@
          "solución",
          "contador"
       ]
+   },
+   {
+      "key": 107,
+      "name": "comparaciones_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "comparaciones_trait_estandar",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 108,
+      "name": "operadores_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "operadores",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 109,
+      "name": "from_into_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "from into",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 110,
+      "name": "converciones_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "converciones",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 111,
+      "name": "expreciones_lambda_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "expreciones lambda",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 112,
+      "name": "read_write_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "read write",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 113,
+      "name": "default_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "default",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 114,
+      "name": "ejercicio_rot13_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "rot13",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 115,
+      "name": "solucion_rot13_trait_estandar",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución",
+         "rot13",
+         "traits estandar"
+      ]
+   },
+   {
+      "key": 116,
+      "name": "revicion_memoria_programa",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "revicion de memoria de programa"
+      ]
+   },
+   {
+      "key": 117,
+      "name": "metodo_gestion_memoria",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "metodo de gestion de memoria"
+      ]
+   },
+   {
+      "key": 118,
+      "name": "ownership",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ownership"
+      ]
+   },
+   {
+      "key": 119,
+      "name": "semantica_movimiento",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "semantica de movimiento"
+      ]
+   },
+   {
+      "key": 120,
+      "name": "trait_clone",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "trait clone"
+      ]
+   },
+   {
+      "key": 121,
+      "name": "tipos_copy",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tipos copy"
+      ]
+   },
+   {
+      "key": 122,
+      "name": "trit_drop",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "trit drop"
+      ]
+   },
+   {
+      "key": 123,
+      "name": "ejercicio_constructores",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de constructores"
+      ]
+   },
+   {
+      "key": 124,
+      "name": "solucion_constructores",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solucion de constructores"
+      ]
+   },
+   {
+      "key": 125,
+      "name": "box",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "box"
+      ]
+   },
+   {
+      "key": 126,
+      "name": "rc",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "rc"
+      ]
+   },
+   {
+      "key": 127,
+      "name": "objetos_trait_poseidos",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "objetos trait poseidos"
+      ]
+   },
+   {
+      "key": 128,
+      "name": "ejercicio_arbol_binario",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio arbol binario"
+      ]
+   },
+   {
+      "key": 129,
+      "name": "solucion_arbol_binario",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solucion arbol binario"
+      ]
+   },
+   {
+      "key": 130,
+      "name": "borrow",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "borrow"
+      ]
+   },
+   {
+      "key": 131,
+      "name": "verificacion_prestamo",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "verificación de prestamo"
+      ]
+   },
+   {
+      "key": 132,
+      "name": "errores_prestamo",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "errores de prestamo"
+      ]
+   },
+   {
+      "key": 133,
+      "name": "mutabiblidad_interior",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "mutabiblidad de interior"
+      ]
+   },
+   {
+      "key": 134,
+      "name": "ejercicio_estadisticas_salud",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio estadisticas de salud"
+      ]
+   },
+   {
+      "key": 135,
+      "name": "solucion_estadistica_salud",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solucion estadistica de salud"
+      ]
+   },
+   {
+      "key": 136,
+      "name": "anotaciones_duracion_vida",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "anotaciones de duración de vida"
+      ]
+   },
+   {
+      "key": 137,
+      "name": "elision_duracion_vida",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "elision de duración de vida"
+      ]
+   },
+   {
+      "key": 138,
+      "name": "duraciones_vida_estructuras",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "duraciones de vida de estructuras"
+      ]
+   },
+   {
+      "key": 139,
+      "name": "ejercicio_analisis_protobuf",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio",
+         "analisis de protobuf"
+      ]
+   },
+   {
+      "key": 140,
+      "name": "solucion_analisis_protobuf",
+      "addInfo": {
+         "addData": "07/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solucion",
+         "analisis protobuf"
+      ]
    }
 ]

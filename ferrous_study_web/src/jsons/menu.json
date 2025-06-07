@@ -875,15 +875,6 @@
          {
             "key": "12-0",
             "to": "/classroom/$classroomId",
-            "text": "Introducción",
-            "isActive": true,
-            "params": {
-               "classroomId": "traits_biblioteca_estandar"
-            }
-         },
-         {
-            "key": "12-1",
-            "to": "/classroom/$classroomId",
             "text": "Comparaciones",
             "isActive": true,
             "params": {
@@ -891,7 +882,7 @@
             }
          },
          {
-            "key": "12-2",
+            "key": "12-1",
             "to": "/classroom/$classroomId",
             "text": "operadores",
             "isActive": true,
@@ -900,7 +891,7 @@
             }
          },
          {
-            "key": "12-3",
+            "key": "12-2",
             "to": "/classroom/$classroomId",
             "text": "From e Into",
             "isActive": true,
@@ -909,7 +900,7 @@
             }
          },
          {
-            "key": "12-4",
+            "key": "12-3",
             "to": "/classroom/$classroomId",
             "text": "Converciones",
             "isActive": true,
@@ -918,7 +909,7 @@
             }
          },
          {
-            "key": "12-5",
+            "key": "12-4",
             "to": "/classroom/$classroomId",
             "text": "Expresiones lambdas",
             "isActive": true,
@@ -927,16 +918,16 @@
             }
          },
          {
-            "key": "12-6",
+            "key": "12-5",
             "to": "/classroom/$classroomId",
             "text": "Read y Write",
             "isActive": true,
             "params": {
-               "classroomId": "read_Write_trait_estandar"
+               "classroomId": "read_write_trait_estandar"
             }
          },
          {
-            "key": "12-7",
+            "key": "12-6",
             "to": "/classroom/$classroomId",
             "text": "Default",
             "isActive": true,
@@ -945,13 +936,13 @@
             }
          },
          {
-            "key": "12-8",
+            "key": "12-7",
             "to": "/classroom/$classroomId",
             "text": "Rot 13",
             "isActive": true,
             "subMenu": [
                {
-                  "key": "12-8-0",
+                  "key": "12-7-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio rot 13",
                   "isActive": true,
@@ -960,7 +951,7 @@
                   }
                },
                {
-                  "key": "12-8-1",
+                  "key": "12-7-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución rot 13",
                   "isActive": true,
@@ -973,13 +964,302 @@
       ]
    },
    {
-      "key": "7",
+      "key": "13",
+      "to": "/classroom/$classroomId",
+      "text": "Manejo de Memoria",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "13-0",
+            "to": "/classroom/$classroomId",
+            "text": "Revisión de la memoria de programas",
+            "isActive": true,
+            "params": {
+               "classroomId": "revicion_memoria_programa"
+            }
+         },
+         {
+            "key": "13-1",
+            "to": "/classroom/$classroomId",
+            "text": "Métodos de Gestión de Memoria",
+            "isActive": true,
+            "params": {
+               "classroomId": "metodo_gestion_memoria"
+            }
+         },
+         {
+            "key": "13-2",
+            "to": "/classroom/$classroomId",
+            "text": "Ownership",
+            "isActive": true,
+            "params": {
+               "classroomId": "ownership"
+            }
+         },
+         {
+            "key": "13-3",
+            "to": "/classroom/$classroomId",
+            "text": "Semántica de movimiento",
+            "isActive": true,
+            "params": {
+               "classroomId": "semantica_movimiento"
+            }
+         },
+         {
+            "key": "13-4",
+            "to": "/classroom/$classroomId",
+            "text": "Trait Clone",
+            "isActive": true,
+            "params": {
+               "classroomId": "trait_clone"
+            }
+         },
+         {
+            "key": "13-5",
+            "to": "/classroom/$classroomId",
+            "text": "Tipos Copy",
+            "isActive": true,
+            "params": {
+               "classroomId": "tipos_copy"
+            }
+         },
+         {
+            "key": "13-6",
+            "to": "/classroom/$classroomId",
+            "text": "Trait Drop",
+            "isActive": true,
+            "params": {
+               "classroomId": "trait_drop"
+            }
+         },
+         {
+            "key": "13-7",
+            "to": "/classroom/$classroomId",
+            "text": "Constructores",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "13-7-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_constructores"
+                  }
+               },
+               {
+                  "key": "13-7-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_constructores"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "14",
+      "to": "/classroom/$classroomId",
+      "text": "Punteros inteligentes",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "14-0",
+            "to": "/classroom/$classroomId",
+            "text": "Box<T>",
+            "isActive": true,
+            "params": {
+               "classroomId": "box"
+            }
+         },
+         {
+            "key": "14-1",
+            "to": "/classroom/$classroomId",
+            "text": "Rc",
+            "isActive": true,
+            "params": {
+               "classroomId": "rc"
+            }
+         },
+         {
+            "key": "14-2",
+            "to": "/classroom/$classroomId",
+            "text": "Objetos Trait Poseídos",
+            "isActive": true,
+            "params": {
+               "classroomId": "objetos_trait_poseidos"
+            }
+         },
+         {
+            "key": "14-3",
+            "to": "/classroom/$classroomId",
+            "text": "Árbol binario",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "14-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_arbol_binario"
+                  }
+               },
+               {
+                  "key": "14-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_arbol_binario"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "15",
+      "to": "/classroom/$classroomId",
+      "text": "Préstamos (Borrowing)",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "15-0",
+            "to": "/classroom/$classroomId",
+            "text": "Emprestar (borrow) un valor",
+            "isActive": true,
+            "params": {
+               "classroomId": "borrow"
+            }
+         },
+         {
+            "key": "15-1",
+            "to": "/classroom/$classroomId",
+            "text": "Verificación de Préstamos",
+            "isActive": true,
+            "params": {
+               "classroomId": "verificacion_prestamo"
+            }
+         },
+         {
+            "key": "15-2",
+            "to": "/classroom/$classroomId",
+            "text": "Errores de Préstamo",
+            "isActive": true,
+            "params": {
+               "classroomId": "errores_prestamo"
+            }
+         },
+         {
+            "key": "15-3",
+            "to": "/classroom/$classroomId",
+            "text": "Mutabilidad Interior",
+            "isActive": true,
+            "params": {
+               "classroomId": "mutabiblidad_interior"
+            }
+         },
+         {
+            "key": "15-4",
+            "to": "/classroom/$classroomId",
+            "text": "Estadísticas de Salud",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "15-4-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_estadisticas_salud"
+                  }
+               },
+               {
+                  "key": "15-4-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_estadistica_salud"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "16",
+      "to": "/classroom/$classroomId",
+      "text": "Duraciones de vida",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "16-0",
+            "to": "/classroom/$classroomId",
+            "text": "Anotaciones de duración de vida",
+            "isActive": true,
+            "params": {
+               "classroomId": "anotaciones_duracion_vida"
+            }
+         },
+         {
+            "key": "16-1",
+            "to": "/classroom/$classroomId",
+            "text": "Elisión de duración de vida",
+            "isActive": true,
+            "params": {
+               "classroomId": "elision_duracion_vida"
+            }
+         },
+         {
+            "key": "16-2",
+            "to": "/classroom/$classroomId",
+            "text": "Duraciones de vida de estructuras (structs)",
+            "isActive": true,
+            "params": {
+               "classroomId": "duraciones_vida_estructuras"
+            }
+         },
+         {
+            "key": "16-3",
+            "to": "/classroom/$classroomId",
+            "text": "Análisis de Protobuf",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "16-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_analisis_protobuf"
+                  }
+               },
+               {
+                  "key": "16-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_analisis_protobuf"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "17",
       "to": "/classroom/$classroomId",
       "text": "Frameworks",
       "isActive": true,
       "subMenu": [
          {
-            "key": "7-0",
+            "key": "17-0",
             "to": "/classroom/$classroomId",
             "text": "Web 📃",
             "isActive": true,
@@ -988,7 +1268,7 @@
             }
          },
          {
-            "key": "7-1",
+            "key": "17-1",
             "to": "/classroom/$classroomId",
             "text": "Móvil 📱",
             "isActive": true,
@@ -997,7 +1277,7 @@
             }
          },
          {
-            "key": "7-2",
+            "key": "17-2",
             "to": "/classroom/$classroomId",
             "text": "Desktop 🖥️",
             "isActive": true,
@@ -1006,7 +1286,7 @@
             }
          },
          {
-            "key": "7-3",
+            "key": "17-3",
             "to": "/classroom/$classroomId",
             "text": "Game engines 🎮",
             "isActive": true,
@@ -1017,13 +1297,13 @@
       ]
    },
    {
-      "key": "8",
+      "key": "18",
       "to": "/classroom/$classroomId",
       "text": "Conceptos",
       "isActive": true,
       "subMenu": [
          {
-            "key": "8-0",
+            "key": "18-0",
             "to": "/classroom/$classroomId",
             "text": "Coeccion",
             "isActive": true,
@@ -1032,7 +1312,7 @@
             }
          },
          {
-            "key": "8-1",
+            "key": "18-1",
             "to": "/classroom/$classroomId",
             "text": "Acoplamiento",
             "isActive": true,
@@ -1043,7 +1323,7 @@
       ]
    },
    {
-      "key": "9",
+      "key": "19",
       "to": "/classroom/$classroomId",
       "text": "Solid",
       "isActive": true,
@@ -1052,13 +1332,13 @@
       }
    },
    {
-      "key": "10",
+      "key": "20",
       "to": "/classroom/$classroomId",
       "text": "Patrones en Rust",
       "isActive": true,
       "subMenu": [
          {
-            "key": "10-0",
+            "key": "20-0",
             "to": "/classroom/$classroomId",
             "text": "Patrones MVC",
             "isActive": true,
@@ -1067,13 +1347,13 @@
             }
          },
          {
-            "key": "10-1",
+            "key": "20-1",
             "to": "/classroom/$classroomId",
             "text": "Patrones Creacionales",
             "isActive": true,
             "subMenu": [
                {
-                  "key": "10-1-0",
+                  "key": "20-1-0",
                   "to": "/classroom/$classroomId",
                   "text": "Factory Method",
                   "isActive": true,
@@ -1082,7 +1362,7 @@
                   }
                },
                {
-                  "key": "10-1-1",
+                  "key": "20-1-1",
                   "to": "/classroom/$classroomId",
                   "text": "Abstract Factory",
                   "isActive": true,
@@ -1091,7 +1371,7 @@
                   }
                },
                {
-                  "key": "10-1-2",
+                  "key": "20-1-2",
                   "to": "/classroom/$classroomId",
                   "text": "Builder",
                   "isActive": true,
@@ -1100,7 +1380,7 @@
                   }
                },
                {
-                  "key": "10-1-3",
+                  "key": "20-1-3",
                   "to": "/classroom/$classroomId",
                   "text": "Prototype",
                   "isActive": true,
@@ -1109,7 +1389,7 @@
                   }
                },
                {
-                  "key": "10-1-4",
+                  "key": "20-1-4",
                   "to": "/classroom/$classroomId",
                   "text": "Singleton",
                   "isActive": true,
@@ -1120,13 +1400,13 @@
             ]
          },
          {
-            "key": "10-2",
+            "key": "20-2",
             "to": "/classroom/$classroomId",
             "text": "Patrones Estructurales",
             "isActive": true,
             "subMenu": [
                {
-                  "key": "10-2-0",
+                  "key": "20-2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Adapter",
                   "isActive": true,
@@ -1135,7 +1415,7 @@
                   }
                },
                {
-                  "key": "10-2-1",
+                  "key": "20-2-1",
                   "to": "/classroom/$classroomId",
                   "text": "Bridge",
                   "isActive": true,
@@ -1144,7 +1424,7 @@
                   }
                },
                {
-                  "key": "10-2-2",
+                  "key": "20-2-2",
                   "to": "/classroom/$classroomId",
                   "text": "Composite",
                   "isActive": true,
@@ -1153,7 +1433,7 @@
                   }
                },
                {
-                  "key": "10-2-3",
+                  "key": "20-2-3",
                   "to": "/classroom/$classroomId",
                   "text": "Decorator",
                   "isActive": true,
@@ -1162,7 +1442,7 @@
                   }
                },
                {
-                  "key": "10-2-4",
+                  "key": "20-2-4",
                   "to": "/classroom/$classroomId",
                   "text": "Facade",
                   "isActive": true,
@@ -1171,7 +1451,7 @@
                   }
                },
                {
-                  "key": "10-2-5",
+                  "key": "20-2-5",
                   "to": "/classroom/$classroomId",
                   "text": "Flyweight",
                   "isActive": true,
@@ -1180,7 +1460,7 @@
                   }
                },
                {
-                  "key": "10-2-6",
+                  "key": "20-2-6",
                   "to": "/classroom/$classroomId",
                   "text": "Proxy",
                   "isActive": true,
@@ -1191,13 +1471,13 @@
             ]
          },
          {
-            "key": "10-3",
+            "key": "20-3",
             "to": "/classroom/$classroomId",
             "text": "Patrones de Comportamiento",
             "isActive": true,
             "subMenu": [
                {
-                  "key": "10-3-0",
+                  "key": "20-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Chain of Responsibility",
                   "isActive": true,
@@ -1206,7 +1486,7 @@
                   }
                },
                {
-                  "key": "10-3-1",
+                  "key": "20-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Command",
                   "isActive": true,
@@ -1215,7 +1495,7 @@
                   }
                },
                {
-                  "key": "10-3-2",
+                  "key": "20-3-2",
                   "to": "/classroom/$classroomId",
                   "text": "Interpreter",
                   "isActive": true,
@@ -1224,7 +1504,7 @@
                   }
                },
                {
-                  "key": "10-3-3",
+                  "key": "20-3-3",
                   "to": "/classroom/$classroomId",
                   "text": "Iterator",
                   "isActive": true,
@@ -1233,7 +1513,7 @@
                   }
                },
                {
-                  "key": "10-3-4",
+                  "key": "20-3-4",
                   "to": "/classroom/$classroomId",
                   "text": "Mediator",
                   "isActive": true,
@@ -1242,7 +1522,7 @@
                   }
                },
                {
-                  "key": "10-3-5",
+                  "key": "20-3-5",
                   "to": "/classroom/$classroomId",
                   "text": "Memento",
                   "isActive": true,
@@ -1251,7 +1531,7 @@
                   }
                },
                {
-                  "key": "10-3-6",
+                  "key": "20-3-6",
                   "to": "/classroom/$classroomId",
                   "text": "Observer",
                   "isActive": true,
@@ -1260,7 +1540,7 @@
                   }
                },
                {
-                  "key": "10-3-7",
+                  "key": "20-3-7",
                   "to": "/classroom/$classroomId",
                   "text": "State",
                   "isActive": true,
@@ -1269,7 +1549,7 @@
                   }
                },
                {
-                  "key": "10-3-8",
+                  "key": "20-3-8",
                   "to": "/classroom/$classroomId",
                   "text": "Strategy",
                   "isActive": true,
@@ -1278,7 +1558,7 @@
                   }
                },
                {
-                  "key": "10-3-9",
+                  "key": "20-3-9",
                   "to": "/classroom/$classroomId",
                   "text": "Template Method",
                   "isActive": true,
@@ -1287,7 +1567,7 @@
                   }
                },
                {
-                  "key": "10-3-10",
+                  "key": "20-3-10",
                   "to": "/classroom/$classroomId",
                   "text": "Visitor",
                   "isActive": true,
@@ -1300,13 +1580,13 @@
       ]
    },
    {
-      "key": "11",
+      "key": "21",
       "to": "/classroom/$classroomId",
       "text": "Arquitegturas en Rust",
       "isActive": true,
       "subMenu": [
          {
-            "key": "11-0",
+            "key": "21-0",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura en capas",
             "isActive": true,
@@ -1315,7 +1595,7 @@
             }
          },
          {
-            "key": "11-1",
+            "key": "21-1",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura limpia",
             "isActive": true,
@@ -1324,7 +1604,7 @@
             }
          },
          {
-            "key": "11-2",
+            "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura hexagonal",
             "isActive": true,
@@ -1333,7 +1613,7 @@
             }
          },
          {
-            "key": "11-2",
+            "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Arquitectura cebolla",
             "isActive": true,
@@ -1344,22 +1624,22 @@
       ]
    },
    {
-      "key": "12",
+      "key": "22",
       "to": "/classroom/newmd",
       "text": "Crear nueva clase"
    },
    {
-      "key": "13",
+      "key": "23",
       "to": "/settings/menu",
       "text": "Configuraciones del menu"
    },
    {
-      "key": "14",
+      "key": "24",
       "to": "/suggestions",
       "text": "Sugerencias"
    },
    {
-      "key": "15",
+      "key": "25",
       "to": "/about",
       "text": "Acerca de Ferrous Study!"
    }
