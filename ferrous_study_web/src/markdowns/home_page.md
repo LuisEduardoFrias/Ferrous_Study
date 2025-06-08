@@ -9,10 +9,13 @@ languages:
    value: es-ES
  - key: English
    value: en-EN
+ - key: Português
+   value: pt-PT
 data:
  welcome:
   es-ES: Bienvenido a
   en-EN: Welcome to
+  PT-PT: Bem-vindo a
 ---
 language&>es-ES<&
 Este es un curso gratuito de Rust, basado en el curso desarrollado por el equipo de Android en Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
@@ -92,3 +95,42 @@ The course assumes you already know how to program. Rust is a statically typed l
 
 If you know how to program in a dynamically typed language, such as Python or JavaScript, you will be able to keep up without a problem.
 language&>en-EN<&
+language&>pt-PT<&
+Este é um curso gratuito de Rust, baseado no curso desenvolvido pela equipe do Android no Google, [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html).
+
+O curso abrange o espectro completo do Rust, desde a sintaxe básica até tópicos avançados como genéricos e tratamento de erros.
+
+A versão mais recente do curso pode ser encontrada em [comprehensive rust](https://google.github.io/comprehensive-rust/es/index.html), consulte-o para obter atualizações.
+
+<br />
+<hr />
+<br />
+
+## Os objetivos
+
+O objetivo do curso é ensinar-lhe Rust. Presumindo que você não sabe nada sobre Rust, espera-se alcançar o seguinte:
+- Dar-lhe uma compreensão abrangente da sintaxe e linguagem Rust.
+- Permitir que você modifique programas Rust e escreva novos.
+- Ensinar-lhe a idiomática própria do Rust.
+
+Com base nisso, convidamos você a aprofundar-se em um ou mais tópicos especializados:
+
+- Rust no Android: um curso sobre o uso de Rust no desenvolvimento da plataforma Android (AOSP). Inclui interoperabilidade com C, C++ e Java.
+- Rust no Chromium: uma aula sobre o uso de Rust dentro do navegador Chromium. Inclui interoperabilidade com C++ e como incorporar bibliotecas de terceiros (“crates”) no Chromium.
+- Bare Metal Rust: uma aula sobre o uso de Rust para desenvolvimento bare-metal (embarcado). Serão abordados tanto microcontroladores quanto processadores de aplicações.
+- Concorrência em Rust: uma aula sobre concorrência em Rust. Abordaremos tanto a concorrência clássica (programação interrompível por meio de threads e exclusões mútuas), quanto a concorrência async / await (multitarefa cooperativa por meio de traits future).
+
+<br />
+<hr />
+<br />
+
+## Objetivos que não serão abordados
+Rust é uma linguagem muito ampla e não poderemos cobrir tudo em poucos dias. Alguns dos objetivos que não são propostos neste curso são os seguintes:
+
+Aprender a desenvolver macros: consulte o capítulo 19.5 do Livro de Rust e Rust by Example.
+
+## Pressupostos
+O curso pressupõe que você já sabe programar. Rust é uma linguagem estaticamente tipada e, às vezes, faremos comparações com C e C++ para explicar melhor ou contrastar nossa abordagem.
+
+Se você sabe programar em uma linguagem dinamicamente tipada, como Python ou JavaScript, conseguirá acompanhar o ritmo sem problemas.
+language&>pt-PT<&
