@@ -105,7 +105,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
    }, [classroomId, languageSelected]);
 
    return (
-      <div className="p-2">
+      <div className="grid grid-rows-[1fr_auto] grid-cols-1 p-2 min-h-[calc(100dvh-50px)]">
          {loading && (
             <div className="bg-[rgba(96,96,96,0.441)] z-30 backdrop-blur-sm w-full h-[100%] absolute top-14 left-0">
                <div className="w-full h-44">
@@ -118,6 +118,7 @@ export default function ClassRoom({ classroomId }: { classroomId: string }) {
                {content}
             </MarkdownRenderer>
          </div>
+
          {classInfo && <DataInfo info={classInfo} />}
          <ButtonChangePage classroomId={classroomId} />
       </div>
@@ -136,10 +137,10 @@ function DataInfo({ info }: DataInfoProps) {
    const { addData, updateData } = info;
 
    return (
-      <div className="flex flex-row justify-between text-gray-400 border-t border-gray-200 mt-14 py-4">
+      <footer className="flex flex-row justify-between text-gray-400 border-t border-gray-200 mt-14 py-4">
          <span className={STYLE_SPAN}>Creado: {addData}</span>
          {updateData && (<span className={STYLE_SPAN}>Actualizado: {updateData}</span>)}
-      </div>
+      </footer>
    )
 }
 //   (async () => {

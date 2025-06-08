@@ -26,6 +26,11 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
    const [btnOption, setBtnOptions] = useState<TOptionBtn>();
    const timer = useRef<number | undefined>();
 
+   window.addEventListener('scroll', () => {
+      if (isShow)
+         setShow(false)
+   })
+
    useEffect(() => {
       if (isShow) {
          timer.current = setTimeout(() => {
@@ -46,7 +51,7 @@ function ButtonChangePage({ classroomId }: { classroomId: string }) {
       clearTimeout(timer.current);
 
       timer.current = setTimeout(() => {
-         //setShow(false)
+         setShow(false)
       }, 4000)
       setActive(true);
    }

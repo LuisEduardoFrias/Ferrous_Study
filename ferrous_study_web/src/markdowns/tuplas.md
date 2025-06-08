@@ -13,6 +13,7 @@ language&>es-ES<&
 # Tuplas
 
 <br/>
+
 ```rust
 fn main() {
     let t: (i8, bool) = (7, true);

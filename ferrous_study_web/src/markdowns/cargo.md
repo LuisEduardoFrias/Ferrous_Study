@@ -3,11 +3,11 @@ key: 5
 name: cargo
 addData: 19/05/2025
 updateData: null
-keywords: 
- - cargo
+keywords:
+- cargo
 languages:
- - key: Español
-   value: es-ES
+- key: Español
+value: es-ES
 ---
 language&>es-ES<&
 # Usando Cargo
@@ -40,6 +40,7 @@ rustc --version
 notcopy&>
 rustc 1.69.0 (84c898d65 2023-04-16)
 <&notcopy
+
 cargo --version
 notcopy&>
 cargo 1.69.0 (6e9a83356 2023-04-12)
@@ -50,76 +51,77 @@ También puedes usar cualquier versión posterior, ya que Rust mantiene la retro
 
 Una vez hecho lo anterior, sigue estos pasos para compilar un binario de Rust:
 
- * Usa **cargo new exercise** para crear un directorio exercise/ para tu código:
- 
+* Usa **cargo new exercise** para crear un directorio exercise/ para tu código:
+
 ```bash
-  &>notplay
-  cargo new exercise
-  notcopy&>
-  Created binary (application) `exercise` package
-  <&notcopy
+&>notplay
+cargo new exercise
+notcopy&>
+Created binary (application) `exercise` package
+<&notcopy
 ```
 
 <br />
 
- * Ve a exercise/ y usa cargo run para compilar y ejecutar tu binario:
+* Ve a exercise/ y usa cargo run para compilar y ejecutar tu binario:
 
 <br />
 
 ```bash
-  &>notplay
-  cd exercise
-  cargo run
-  notcopy&>
-  Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
-  Finished dev [unoptimized + debuginfo] target(s) in 0.75s
-  Running `target/debug/exercise`
-  
-  Hello, world!
-  <&notcopy
+&>notplay
+cd exercise
+cargo run
+notcopy&>
+Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
+Finished dev [unoptimized + debuginfo] target(s) in 0.75s
+Running `target/debug/exercise`
+
+Hello, world!
+<&notcopy
 ```
 
 
- * Sustituye el código del archivo src/main.rs con tu propio código. 
+* Sustituye el código del archivo src/main.rs con tu propio código.
 Por ejemplo:
-  
+
 ```bash
- fn main() {
-    println!("¡Edítame!");
-  }
+fn main() {
+println!("¡Edítame!");
+}
 ```
 
- * Usa cargo run para hacer build y ejecutar tu binario actualizado:
+* Usa cargo run para hacer build y ejecutar tu binario actualizado:
 
 ```bash
-  &>notplay
-  cargo run
-  notcopy&>
-  Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
-  Finished dev [unoptimized + debuginfo] target(s) in 0.24s
-  Running `target/debug/exercise`
-  
-  Editame!
-  <&notcopy
+&>notplay
+cargo run
+notcopy&>
+
+Compiling exercise v0.1.0 (/home/mgeisler/tmp/exercise)
+Finished dev [unoptimized + debuginfo] target(s) in 0.24s
+Running `target/debug/exercise`
+
+Editame!
+<&notcopy
 ```
 
 Cargo ofrece varios comandos:
 
 Imagina que estás construyendo algo con piezas. Cargo es como tu caja de herramientas y tu manual de instrucciones para Rust.
 
- * cargo check:  Es como revisar que todas tus piezas estén en su lugar y bien conectadas, pero sin armar nada todavía. Te dice si hay algún error antes de construir.
+* cargo check:  Es como revisar que todas tus piezas estén en su lugar y bien conectadas, pero sin armar nada todavía. Te dice si hay algún error antes de construir.
 
- * cargo build:  Este comando toma tus piezas y las arma. Crea el programa, pero no lo abre ni lo pone en funcionamiento.
+* cargo build:  Este comando toma tus piezas y las arma. Crea el programa, pero no lo abre ni lo pone en funcionamiento.
 
- * cargo build --release:  Este comando también arma tu programa, pero lo hace de la mejor manera posible para que funcione rápido y ocupe menos espacio. La versión final y optimizada se guarda en target/release/.
+* cargo build --release:  Este comando también arma tu programa, pero lo hace de la mejor manera posible para que funcione rápido y ocupe menos espacio. La versión final y optimizada se guarda en target/release/.
 
 Cargo también archivos como:
 
- * target/debug/: Aquí es donde Cargo guarda la versión de tu programa que es útil para cuando estás aprendiendo y probando. Es como un borrador que te permite ver los errores fácilmente.
+* target/debug/: Aquí es donde Cargo guarda la versión de tu programa que es útil para cuando estás aprendiendo y probando. Es como un borrador que te permite ver los errores fácilmente.
 
- * Cargo.toml: Este archivo es como la lista de materiales de tu proyecto. Aquí le dices a Cargo qué otras "piezas" (llamadas dependencias, paquetes o crates) necesitas para que tu proyecto funcione.
+* Cargo.toml: Este archivo es como la lista de materiales de tu proyecto. Aquí le dices a Cargo qué otras "piezas" (llamadas dependencias, paquetes o crates) necesitas para que tu proyecto funcione.
 
- * Cuando usas comandos como cargo build, Cargo automáticamente busca y descarga esas "piezas" que listaste en Cargo.toml si aún no las tienes.
+* Cuando usas comandos como cargo build, Cargo automáticamente busca y descarga esas "piezas" que listaste en Cargo.toml si aún no las tienes.
 
 En resumen, Cargo te ayuda a revisar, construir y gestionar las "piezas" que necesita tu programa de Rust. ¡Es una herramienta muy útil!
 

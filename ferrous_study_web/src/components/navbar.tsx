@@ -1,3 +1,4 @@
+
 import { memo } from 'react'
 import { Link, useLocation, useNavigate } from '@tanstack/react-router'
 import { FerrisIcon, EditIcon, BookCloseIcon, BookOpenIcon } from '../assets/svgs'
@@ -27,6 +28,21 @@ const Navbar = memo(function Navbar() {
       }
    });
 
+   // pt-14
+   window.addEventListener('scroll', () => {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (ref.current) {
+         if (scrollTop > 0) {
+            ref.current.classList.add('fixed');
+         } else {
+            ref.current.classList.remove('fixed');
+         }
+      }
+   });
+
+
+
    function EditButton() {
       return (
          <SignedIn>
@@ -51,7 +67,7 @@ const Navbar = memo(function Navbar() {
    }
 
    return (
-      <header ref={ref} id="navbar" className={`fixed top-0 left-0 flex flex-row gap-2 items-center justify-center transition-all z-40 p-2 backdrop-blur-[0.8px] ${color} w-full h-14`} >
+      <header ref={ref} id="navbar" className={` top-0 left-0 flex flex-row gap-2 items-center justify-center transition-all z-40 p-2 backdrop-blur-[0.8px] ${color} w-full h-14`} >
          <div className="flex items-center absolute left-4 ">
             <Link to="/" className="hover:text-theme-1-d mr-4"> <FerrisIcon className="bg-theme-4-d hover:bg-theme-4 hover:scale-110 rounded-full" /></Link>
             {
