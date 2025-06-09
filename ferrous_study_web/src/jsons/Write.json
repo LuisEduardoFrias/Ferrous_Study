@@ -1,9 +1,764 @@
 [
    {
-      "key": 116,
-      "name": "solucion_rot13_trait_estandar",
+      "key": "17",
+      "to": "/classroom/$classroomId",
+      "text": "Iteradores",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "17-0",
+            "to": "/classroom/$classroomId",
+            "text": "Iterator",
+            "isActive": true,
+            "params": {
+               "classroomId": "iterator"
+            }
+         },
+         {
+            "key": "17-1",
+            "to": "/classroom/$classroomId",
+            "text": "IntoIterator",
+            "isActive": true,
+            "params": {
+               "classroomId": "intoiterator"
+            }
+         },
+         {
+            "key": "17-2",
+            "to": "/classroom/$classroomId",
+            "text": "FromIterator",
+            "isActive": true,
+            "params": {
+               "classroomId": "fromiterator"
+            }
+         },
+         {
+            "key": "17-3",
+            "to": "/classroom/$classroomId",
+            "text": "Encadenamiento de métodos del iterador",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "17-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_encadenamiento_metodo_iterador"
+                  }
+               },
+               {
+                  "key": "17-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_encadenamiento_metodo_iterador"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "18",
+      "to": "/classroom/$classroomId",
+      "text": "Módulos",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "18-0",
+            "to": "/classroom/$classroomId",
+            "text": "Introducción",
+            "isActive": true,
+            "params": {
+               "classroomId": "introduccion_modulo"
+            }
+         },
+         {
+            "key": "18-1",
+            "to": "/classroom/$classroomId",
+            "text": "Jerarquía del sistema de archivos",
+            "isActive": true,
+            "params": {
+               "classroomId": "jerarquia_sistena_archivos"
+            }
+         },
+         {
+            "key": "18-2",
+            "to": "/classroom/$classroomId",
+            "text": "Visibilidad",
+            "isActive": true,
+            "params": {
+               "classroomId": "visibilidad"
+            }
+         },
+         {
+            "key": "18-3",
+            "to": "/classroom/$classroomId",
+            "text": "Use, super, self",
+            "isActive": true,
+            "params": {
+               "classroomId": "use_super_self"
+            }
+         },
+         {
+            "key": "18-4",
+            "to": "/classroom/$classroomId",
+            "text": "Módulos para una biblioteca GUI",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "18-4-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_modulo_biblioteca_gui"
+                  }
+               },
+               {
+                  "key": "18-4-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_modulo_biblioteca_gui"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "19",
+      "to": "/classroom/$classroomId",
+      "text": "Probando",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "19-0",
+            "to": "/classroom/$classroomId",
+            "text": "Módulos de Pruebas",
+            "isActive": true,
+            "params": {
+               "classroomId": "modulo_pruebas"
+            }
+         },
+         {
+            "key": "19-1",
+            "to": "/classroom/$classroomId",
+            "text": "Otros tipos de pruebas",
+            "isActive": true,
+            "params": {
+               "classroomId": "otros_tipos_pruebas"
+            }
+         },
+         {
+            "key": "19-2",
+            "to": "/classroom/$classroomId",
+            "text": "Lints de compiladores y Clippy",
+            "isActive": true,
+            "params": {
+               "classroomId": "links_compiladores_clippy"
+            }
+         },
+         {
+            "key": "19-3",
+            "to": "/classroom/$classroomId",
+            "text": "Algoritmo de Luhn",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "17-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_algoritmo_luhn"
+                  }
+               },
+               {
+                  "key": "17-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_algoritmo_luhn"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "20",
+      "to": "/classroom/$classroomId",
+      "text": "Manejo de Errores",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "20-0",
+            "to": "/classroom/$classroomId",
+            "text": "Pánicos",
+            "isActive": true,
+            "params": {
+               "classroomId": "panico"
+            }
+         },
+         {
+            "key": "20-1",
+            "to": "/classroom/$classroomId",
+            "text": "Result",
+            "isActive": true,
+            "params": {
+               "classroomId": "result"
+            }
+         },
+         {
+            "key": "20-2",
+            "to": "/classroom/$classroomId",
+            "text": "Operador Try (Intentar)",
+            "isActive": true,
+            "params": {
+               "classroomId": "operador_try"
+            }
+         },
+         {
+            "key": "20-3",
+            "to": "/classroom/$classroomId",
+            "text": "Conversiones Try (Intentar)",
+            "isActive": true,
+            "params": {
+               "classroomId": "conversiones_try"
+            }
+         },
+         {
+            "key": "20-4",
+            "to": "/classroom/$classroomId",
+            "text": "Trait Error",
+            "isActive": true,
+            "params": {
+               "classroomId": "trait_error"
+            }
+         },
+         {
+            "key": "20-5",
+            "to": "/classroom/$classroomId",
+            "text": "Thiserror y anyhow",
+            "isActive": true,
+            "params": {
+               "classroomId": "thiserror_anyhow"
+            }
+         },
+         {
+            "key": "20-6",
+            "to": "/classroom/$classroomId",
+            "text": "Reescribir con Result",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "20-6-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_rescribir_result"
+                  }
+               },
+               {
+                  "key": "20-6-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_rescribir_result"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "21",
+      "to": "/classroom/$classroomId",
+      "text": "Unsafe Rust",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "21-0",
+            "to": "/classroom/$classroomId",
+            "text": "Introducción",
+            "isActive": true,
+            "params": {
+               "classroomId": "introduccion_unsafe"
+            }
+         },
+         {
+            "key": "21-1",
+            "to": "/classroom/$classroomId",
+            "text": "Dereferenciación de Punteros Sin Formato",
+            "isActive": true,
+            "params": {
+               "classroomId": "dereferenciacion_puntero_sin_formato"
+            }
+         },
+         {
+            "key": "21-2",
+            "to": "/classroom/$classroomId",
+            "text": "Variables Estáticas Mutables",
+            "isActive": true,
+            "params": {
+               "classroomId": "variables_estaticas_mutables"
+            }
+         },
+         {
+            "key": "21-3",
+            "to": "/classroom/$classroomId",
+            "text": "Uniones",
+            "isActive": true,
+            "params": {
+               "classroomId": "uniones"
+            }
+         },
+         {
+            "key": "21-4",
+            "to": "/classroom/$classroomId",
+            "text": "Funciones Inseguras (Unsafe)",
+            "isActive": true,
+            "params": {
+               "classroomId": "funciones_inseguras"
+            }
+         },
+         {
+            "key": "21-5",
+            "to": "/classroom/$classroomId",
+            "text": "Implementación de Traits Unsafe (Inseguras)",
+            "isActive": true,
+            "params": {
+               "classroomId": "implementacion_traits_unsafe"
+            }
+         },
+         {
+            "key": "21-6",
+            "to": "/classroom/$classroomId",
+            "text": "Envoltorio de FFI",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "21-6-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_envoltorio_FFI"
+                  }
+               },
+               {
+                  "key": "21-6-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_envoltorio_FFI"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "22",
+      "to": "/classroom/$classroomId",
+      "text": "Concurrencia",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "22-0",
+            "to": "/classroom/$classroomId",
+            "text": "Hilos",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "22-0-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Hilos Simples",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "hilos_simples"
+                  }
+               },
+               {
+                  "key": "22-0-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Hilos con ámbito",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "hilos_ambito"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "22-1",
+            "to": "/classroom/$classroomId",
+            "text": "Canales",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "22-1-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Transmisores y Receptores",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "transmisores_receptores"
+                  }
+               },
+               {
+                  "key": "22-1-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Canales sin límites",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "canales_sin_limites"
+                  }
+               },
+               {
+                  "key": "22-1-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Canales delimitados",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "canales_delimitados"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "22-2",
+            "to": "/classroom/$classroomId",
+            "text": "Send y Sync",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "22-2-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Traits de Marcador",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "traits_marcador"
+                  }
+               },
+               {
+                  "key": "22-2-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Send",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "send"
+                  }
+               },
+               {
+                  "key": "22-2-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Sync",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "sync"
+                  }
+               },
+               {
+                  "key": "22-2-3",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejemplos",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejemplos_send_sync"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "22-3",
+            "to": "/classroom/$classroomId",
+            "text": "Estado compartido",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "22-3-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Arc",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "arc"
+                  }
+               },
+               {
+                  "key": "22-3-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Mutex",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "mutex"
+                  }
+               },
+               {
+                  "key": "22-3-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejemplo",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejemplos_estado_compartido"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "22-4",
+            "to": "/classroom/$classroomId",
+            "text": "Ejercicios",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "22-4-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio: la cena de los filósofos",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_cadena_filosofos"
+                  }
+               },
+               {
+                  "key": "22-4-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "solución: La cena de los filósofos",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion__cadena_filosofos"
+                  }
+               },
+               {
+                  "key": "22-4-2",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio: Comprobador de enlaces multihilo",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_comprobador_enlaces_multihilo"
+                  }
+               },
+               {
+                  "key": "22-4-3",
+                  "to": "/classroom/$classroomId",
+                  "text": "solución: Comprobador de enlaces multihilo",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_comprobador_enlaces_multihilo"
+                  }
+               }
+            ]
+         }
+      ]
+   },
+   {
+      "key": "23",
+      "to": "/classroom/$classroomId",
+      "text": "Conceptos básicos de Async",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "23-0",
+            "to": "/classroom/$classroomId",
+            "text": "async/await",
+            "isActive": true,
+            "params": {
+               "classroomId": "async_await"
+            }
+         },
+         {
+            "key": "23-1",
+            "to": "/classroom/$classroomId",
+            "text": "Future",
+            "isActive": true,
+            "params": {
+               "classroomId": "Future"
+            }
+         },
+         {
+            "key": "23-2",
+            "to": "/classroom/$classroomId",
+            "text": "Runtimes (Tiempos de Ejecución)",
+            "isActive": true,
+            "params": {
+               "classroomId": "runtimes"
+            }
+         },
+         {
+            "key": "23-3",
+            "to": "/classroom/$classroomId",
+            "text": "Tokio",
+            "isActive": true,
+            "params": {
+               "classroomId": "tokio"
+            }
+         },
+         {
+            "key": "23-4",
+            "to": "/classroom/$classroomId",
+            "text": "Tasks",
+            "isActive": true,
+            "params": {
+               "classroomId": "tasks"
+            }
+         }
+      ]
+   },
+   {
+      "key": "24",
+      "to": "/classroom/$classroomId",
+      "text": "Canales y Control de Flujo",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "24-0",
+            "to": "/classroom/$classroomId",
+            "text": "Canales asíncronos",
+            "isActive": true,
+            "params": {
+               "classroomId": "canales_asíncronos"
+            }
+         },
+         {
+            "key": "24-1",
+            "to": "/classroom/$classroomId",
+            "text": "Unir",
+            "isActive": true,
+            "params": {
+               "classroomId": "Unir"
+            }
+         },
+         {
+            "key": "24-2",
+            "to": "/classroom/$classroomId",
+            "text": "Seleccionar",
+            "isActive": true,
+            "params": {
+               "classroomId": "seleccionar"
+            }
+         }
+      ]
+   },
+   {
+      "key": "25",
+      "to": "/classroom/$classroomId",
+      "text": "Inconvenientes",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "25-0",
+            "to": "/classroom/$classroomId",
+            "text": "Bloqueo del ejecutor",
+            "isActive": true,
+            "params": {
+               "classroomId": "bloqueo_ejecutor"
+            }
+         },
+         {
+            "key": "25-1",
+            "to": "/classroom/$classroomId",
+            "text": "Pin",
+            "isActive": true,
+            "params": {
+               "classroomId": "pin"
+            }
+         },
+         {
+            "key": "25-2",
+            "to": "/classroom/$classroomId",
+            "text": "Traits asíncronos",
+            "isActive": true,
+            "params": {
+               "classroomId": "traits_asincronos"
+            }
+         },
+         {
+            "key": "25-3",
+            "to": "/classroom/$classroomId",
+            "text": "Cancelación",
+            "isActive": true,
+            "params": {
+               "classroomId": "cancelación"
+            }
+         }
+      ]
+   },
+   {
+      "key": "26",
+      "to": "/classroom/$classroomId",
+      "text": "Ejercicios",
+      "isActive": true,
+      "subMenu": [
+         {
+            "key": "26-0",
+            "to": "/classroom/$classroomId",
+            "text": "La cena de los filósofos async",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "26-0-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_cena_filosofos_async"
+                  }
+               },
+               {
+                  "key": "26-0-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_cena_filosofos_async"
+                  }
+               }
+            ]
+         },
+         {
+            "key": "26-1",
+            "to": "/classroom/$classroomId",
+            "text": "Aplicación de chat de difusión",
+            "isActive": true,
+            "subMenu": [
+               {
+                  "key": "26-1-0",
+                  "to": "/classroom/$classroomId",
+                  "text": "Ejercicio",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "ejercicio_char_defunsion"
+                  }
+               },
+               {
+                  "key": "26-1-1",
+                  "to": "/classroom/$classroomId",
+                  "text": "Solución",
+                  "isActive": true,
+                  "params": {
+                     "classroomId": "solucion_char_defunsion"
+                  }
+               }
+            ]
+         }
+      ]
+   }
+]
+
+[
+   {
+      "key": 141,
+      "name": "iterator",
       "addInfo": {
-         "addData": "07/06/2025",
+         "addData": "08/06/2025",
          "user": {
             "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
             "name": "Luis Eduardo"
@@ -11,111 +766,962 @@
       },
       "updateInfo": null,
       "keywords": [
-         "solución",
-         "rot13",
-         "traits estandar"
+         "iterator"
       ]
    },
+   {
+      "key": 142,
+      "name": "intoIterator",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "intoIterator"
+      ]
+   },
+   {
+      "key": 143,
+      "name": "fromIterator",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "fromIterator"
+      ]
+   },
+   {
+      "key": 144,
+      "name": "ejercicio_encadenamiento_metodo_iterador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio encadenamiento de metodo de iterador"
+      ]
+   },
+   {
+      "key": 145,
+      "name": "solucion_encadenamiento_metodo_iterador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución encadenamiento de metodo de iterador"
+      ]
+   },
+   {
+      "key": 146,
+      "name": "introduccion_modulo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "introduccion de modulo"
+      ]
+   },
+   {
+      "key": 147,
+      "name": "jerarquia_sistena_archivos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "jerarquia de sistena de archivos"
+      ]
+   },
+   {
+      "key": 148,
+      "name": "visibilidad",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "visibilidad"
+      ]
+   },
+   {
+      "key": 149,
+      "name": "use_super_self",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "use super self"
+      ]
+   },
+   {
+      "key": 150,
+      "name": "ejercicio_modulo_biblioteca_gui",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio modulo de biblioteca gui"
+      ]
+   },
+   {
+      "key": 151,
+      "name": "solucion_modulo_biblioteca_gui",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución modulo de biblioteca gui"
+      ]
+   },
+   {
+      "key": 152,
+      "name": "modulo_pruebas",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "modulo de pruebas"
+      ]
+   },
+   {
+      "key": 153,
+      "name": "otros_tipos_pruebas",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "otros tipos de pruebas"
+      ]
+   },
+   {
+      "key": 154,
+      "name": "links_compiladores_clippy",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "links de compiladores clippy"
+      ]
+   },
+   {
+      "key": 155,
+      "name": "ejercicio_algoritmo_luhn",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de algoritmo de luhn"
+      ]
+   },
+   {
+      "key": 156,
+      "name": "solucion_algoritmo_luhn",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de algoritmo de luhn"
+      ]
+   },
+   {
+      "key": 157,
+      "name": "panico",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "error",
+         "panico",
+         "panic"
+      ]
+   },
+   {
+      "key": 158,
+      "name": "result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "result"
+      ]
+   },
+   {
+      "key": 159,
+      "name": "operador_try",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "operador try"
+      ]
+   },
+   {
+      "key": 160,
+      "name": "conversiones_try",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "conversiones try"
+      ]
+   },
+   {
+      "key": 161,
+      "name": "trait_error",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "trait error"
+      ]
+   },
+   {
+      "key": 162,
+      "name": "thiserror_anyhow",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "thiserror y anyhow"
+      ]
+   },
+   {
+      "key": 163,
+      "name": "ejercicio_rescribir_result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de rescribir con result"
+      ]
+   },
+   {
+      "key": 164,
+      "name": "solucion_rescribir_result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de rescribir con result"
+      ]
+   },
+   {
+      "key": 165,
+      "name": "introduccion_unsafe",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "introduccion de unsafe"
+      ]
+   },
+   {
+      "key": 166,
+      "name": "dereferenciacion_puntero_sin_formato",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "dereferenciacion de puntero sin formato"
+      ]
+   },
+   {
+      "key": 167,
+      "name": "variables_estaticas_mutables",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "variables estaticas mutables"
+      ]
+   },
+   {
+      "key": 168,
+      "name": "uniones",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "uniones"
+      ]
+   },
+   {
+      "key": 169,
+      "name": "funciones_innseguras",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "funciones innseguras"
+      ]
+   },
+   {
+      "key": 170,
+      "name": "implementacion_traits_unsafe",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "implementacion de traits unsafe"
+      ]
+   },
+   {
+      "key": 171,
+      "name": "ejercicio_envoltorio_FFI",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio envoltorio de FFI"
+      ]
+   },
+   {
+      "key": 172,
+      "name": "solucion_envoltorio_FFI",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución envoltorio de FFI"
+      ]
+   },
+   {
+      "key": 173,
+      "name": "hilos_simples",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "hilos simples"
+      ]
+   },
+   {
+      "key": 174,
+      "name": "hilos_ambito",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "hilos con ambito"
+      ]
+   },
+   {
+      "key": 175,
+      "name": "transmisores_receptores",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "transmisores y receptores"
+      ]
+   },
+   {
+      "key": 176,
+      "name": "canales_sin_limites",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales sin limites"
+      ]
+   },
+   {
+      "key": 177,
+      "name": "canales_delimitados",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales delimitados"
+      ]
+   },
+   {
+      "key": 178,
+      "name": "traits_marcador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits de marcador"
+      ]
+   },
+   {
+      "key": 179,
+      "name": "send",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "send"
+      ]
+   },
+   {
+      "key": 180,
+      "name": "sync",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "sync"
+      ]
+   },
+   {
+      "key": 181,
+      "name": "ejemplos_send_sync",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejemplos de send y sync"
+      ]
+   },
+   {
+      "key": 182,
+      "name": "arc",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "arc"
+      ]
+   },
+   {
+      "key": 183,
+      "name": "mutex",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "mutex"
+      ]
+   },
+   {
+      "key": 184,
+      "name": "ejemplos_estado_compartido",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejemplos de estado compartido"
+      ]
+   },
+   {
+      "key": 185,
+      "name": "ejercicio_cadena_filosofos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de cadena de filosofos"
+      ]
+   },
+   {
+      "key": 186,
+      "name": "solucion_cadena_filosofos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución cadena de filosofos"
+      ]
+   },
+   {
+      "key": 187,
+      "name": "ejercicio_comprobador_enlaces_multihilo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio comprobador de enlaces multihilo"
+      ]
+   },
+   {
+      "key": 188,
+      "name": "solucion_comprobador_enlaces_multihilo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución comprobador de enlaces multihilo"
+      ]
+   },
+   {
+      "key": 189,
+      "name": "async_await",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de async await"
+      ]
+   },
+   {
+      "key": 190,
+      "name": "Future",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "future"
+      ]
+   },
+   {
+      "key": 191,
+      "name": "runtimes",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "runtimes"
+      ]
+   },
+   {
+      "key": 192,
+      "name": "tokio",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tokio"
+      ]
+   },
+   {
+      "key": 193,
+      "name": "tasks",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tasks"
+      ]
+   },
+   {
+      "key": 194,
+      "name": "canales_asíncronos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales asincronos"
+      ]
+   },
+   {
+      "key": 195,
+      "name": "Unir",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "unir"
+      ]
+   },
+   {
+      "key": 196,
+      "name": "seleccionar",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "seleccionar"
+      ]
+   },
+   {
+      "key": 197,
+      "name": "bloqueo_ejecutor",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "bloqueo",
+         "ejecutor"
+      ]
+   },
+   {
+      "key": 198,
+      "name": "pin",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "pin"
+      ]
+   },
+   {
+      "key": 199,
+      "name": "traits_asincronos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits asincronos"
+      ]
+   },
+   {
+      "key": 200,
+      "name": "cancelación",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "cancelacion"
+      ]
+   },
+   {
+      "key": 201,
+      "name": "ejercicio_cena_filosofos_async",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio cena de filosofos async"
+      ]
+   },
+   {
+      "key": 202,
+      "name": "solucion_cena_filosofos_async",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución cena de filosofos async"
+      ]
+   },
+   {
+      "key": 203,
+      "name": "ejercicio_char_defunsion",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de chat de defunsion"
+      ]
+   },
+   {
+      "key": 204,
+      "name": "solucion_char_defunsion",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de chat de defunsion"
+      ]
+   }
 ]
 
 
-1. Desarrollo del curso
-2. Usando Cargo
-Día 1: mañana
-3. Te damos la bienvenida
-4. Hola, Mundo
-5. Tipos y valores
-6. Básicos de Control de Flujo
-Día 1: Tarde
-7. Te damos la bienvenida
-8. Tuplas y arrays
-9. Referencias
-10. Tipos definidos por el usuario
-Día 2: Mañana
-11. Te damos la bienvenida
-12. Correspondencia de Patrones
-13. Métodos y Traits
-Día 2: tarde
-14. Te damos la bienvenida
-15. Genéricos
-16. Tipos de la Biblioteca Estándar
-17. Traits de la biblioteca estándar
 
-Día 3: Mañana
-18. Te damos la bienvenida
-19. Manejo de Memoria
-19.1. Revisión de la memoria de programas
-19.2. Métodos de Gestión de Memoria
-19.3. Ownership
-19.4. Semántica de movimiento
-19.5. Trait Clone
-19.6. Tipos Copy
-19.7. Trait Drop
-19.8. Ejercicio: Constructores
-19.8.1. Solución
-20. Punteros inteligentes
-20.1. Box<T>
-20.2. Rc
-20.3. Objetos Trait Poseídos
-20.4. Ejercicio: Árbol binario
-20.4.1. Solución
-Día 3: Tarde
-21. Te damos la bienvenida
-22. Préstamos (Borrowing)
-22.1. Emprestar (borrow) un valor
-22.2. Verificación de Préstamos
-22.3. Errores de Préstamo
-22.4. Mutabilidad Interior
-22.5. Ejercicio: Estadísticas de Salud
-22.5.1. Solución
-23. Duraciones de vida
-23.1. Anotaciones de duración de vida
-23.2. Elisión de duración de vida
-23.3. Duraciones de vida de estructuras (structs)
-23.4. Ejercicio: Análisis de Protobuf
-23.4.1. Solución
 
-Día 4: Mañana
-24. Te damos la bienvenida
-25. Iteradores
-25.1. Iterator
-25.2. IntoIterator
-25.3. FromIterator
-25.4. Ejercicio: Encadenamiento de métodos del iterador
-25.4.1. Solución
-26. Módulos
-26.1. Módulos
-26.2. Jerarquía del sistema de archivos
-26.3. Visibilidad
-26.4. use, super, self
-26.5. Ejercicio: Módulos para una biblioteca GUI
-26.5.1. Solución
-27. Probando
-27.1. Módulos de Pruebas
-27.2. Otros tipos de pruebas
-27.3. Lints de compiladores y Clippy
-27.4. Ejercicio: Algoritmo de Luhn
-27.4.1. Solución
-Día 4: Tarde
-28. Te damos la bienvenida
-29. Manejo de Errores
-29.1. Pánicos
-29.2. Result
-29.3. Operador Try (Intentar)
-29.4. Conversiones Try (Intentar)
-29.5. Trait Error
-29.6. thiserror y anyhow
-29.7. Ejercicio: Reescribir con Result
-29.7.1. Solución
-30. Unsafe Rust
-30.1. Unsafe
-30.2. Dereferenciación de Punteros Sin Formato
-30.3. Variables Estáticas Mutables
-30.4. Uniones
-30.5. Funciones Inseguras (Unsafe)
-30.6. Implementación de Traits Unsafe (Inseguras)
-30.7. Ejercicio: Envoltorio de FFI
-30.7.1. Solución
 Android
 31. Te damos la bienvenida
 32. Configurar
@@ -161,6 +1767,7 @@ Android
 37.2.12. Compilar en Android: Rust
 37.3. Con Java
 38. Ejercicios
+
 Chromium
 39. Te damos la bienvenida
 40. Configurar
@@ -199,6 +1806,7 @@ Chromium
 46.10. Ejercicio
 47. Poner en práctica todo lo aprendido: ejercicio
 48. Soluciones de Ejercicios
+
 Bare Metal: mañana
 49. Te damos la bienvenida
 50. no_std
@@ -244,49 +1852,9 @@ Bare Metal: tarde
 56. Ejercicios
 56.1. Controlador RTC
 56.2. Soluciones
-Concurrencia: mañana
-57. Te damos la bienvenida
-58. Hilos
-58.1. Hilos Simples
-58.2. Hilos con ámbito
-59. Canales
-59.1. Transmisores y Receptores
-59.2. Canales sin límites
-59.3. Canales delimitados
-60. Send y Sync
-60.1. Traits de Marcador
-60.2. Send
-60.3. Sync
-60.4. Ejemplos
-61. Estado compartido
-61.1. Arc
-61.2. Mutex
-61.3. Ejemplo
-62. Ejercicios
-62.1. La cena de los filósofos
-62.2. Comprobador de enlaces multihilo
-62.3. Soluciones
-Concurrencia: tarde
-63. Te damos la bienvenida
-64. Conceptos básicos de Async
-64.1. async/await
-64.2. Future
-64.3. Runtimes (Tiempos de Ejecución)
-64.3.1. Tokio
-64.4. Tasks
-65. Canales y Control de Flujo
-65.1. Canales asíncronos
-65.2. Unir
-65.3. Seleccionar
-66. Inconvenientes
-66.1. Bloqueo del ejecutor
-66.2. Pin
-66.3. Traits asíncronos
-66.4. Cancelación
-67. Ejercicios
-67.1. La cena de los filósofos
-67.2. Aplicación de chat de difusión
-67.3. Soluciones
+
+
+
 Conclusiones
 68. ¡Gracias!
 69. Glosario

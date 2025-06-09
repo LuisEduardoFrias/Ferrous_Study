@@ -2421,5 +2421,968 @@
          "solucion",
          "analisis protobuf"
       ]
+   },
+      {
+      "key": 141,
+      "name": "iterator",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "iterator"
+      ]
+   },
+   {
+      "key": 142,
+      "name": "intoIterator",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "intoIterator"
+      ]
+   },
+   {
+      "key": 143,
+      "name": "fromIterator",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "fromIterator"
+      ]
+   },
+   {
+      "key": 144,
+      "name": "ejercicio_encadenamiento_metodo_iterador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio encadenamiento de metodo de iterador"
+      ]
+   },
+   {
+      "key": 145,
+      "name": "solucion_encadenamiento_metodo_iterador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución encadenamiento de metodo de iterador"
+      ]
+   },
+   {
+      "key": 146,
+      "name": "introduccion_modulo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "introduccion de modulo"
+      ]
+   },
+   {
+      "key": 147,
+      "name": "jerarquia_sistena_archivos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "jerarquia de sistena de archivos"
+      ]
+   },
+   {
+      "key": 148,
+      "name": "visibilidad",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "visibilidad"
+      ]
+   },
+   {
+      "key": 149,
+      "name": "use_super_self",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "use super self"
+      ]
+   },
+   {
+      "key": 150,
+      "name": "ejercicio_modulo_biblioteca_gui",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio modulo de biblioteca gui"
+      ]
+   },
+   {
+      "key": 151,
+      "name": "solucion_modulo_biblioteca_gui",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución modulo de biblioteca gui"
+      ]
+   },
+   {
+      "key": 152,
+      "name": "modulo_pruebas",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "modulo de pruebas"
+      ]
+   },
+   {
+      "key": 153,
+      "name": "otros_tipos_pruebas",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "otros tipos de pruebas"
+      ]
+   },
+   {
+      "key": 154,
+      "name": "links_compiladores_clippy",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "links de compiladores clippy"
+      ]
+   },
+   {
+      "key": 155,
+      "name": "ejercicio_algoritmo_luhn",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de algoritmo de luhn"
+      ]
+   },
+   {
+      "key": 156,
+      "name": "solucion_algoritmo_luhn",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de algoritmo de luhn"
+      ]
+   },
+   {
+      "key": 157,
+      "name": "panico",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "error",
+         "panico",
+         "panic"
+      ]
+   },
+   {
+      "key": 158,
+      "name": "result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "result"
+      ]
+   },
+   {
+      "key": 159,
+      "name": "operador_try",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "operador try"
+      ]
+   },
+   {
+      "key": 160,
+      "name": "conversiones_try",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "conversiones try"
+      ]
+   },
+   {
+      "key": 161,
+      "name": "trait_error",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "trait error"
+      ]
+   },
+   {
+      "key": 162,
+      "name": "thiserror_anyhow",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "thiserror y anyhow"
+      ]
+   },
+   {
+      "key": 163,
+      "name": "ejercicio_rescribir_result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de rescribir con result"
+      ]
+   },
+   {
+      "key": 164,
+      "name": "solucion_rescribir_result",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de rescribir con result"
+      ]
+   },
+   {
+      "key": 165,
+      "name": "introduccion_unsafe",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "introduccion de unsafe"
+      ]
+   },
+   {
+      "key": 166,
+      "name": "dereferenciacion_puntero_sin_formato",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "dereferenciacion de puntero sin formato"
+      ]
+   },
+   {
+      "key": 167,
+      "name": "variables_estaticas_mutables",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "variables estaticas mutables"
+      ]
+   },
+   {
+      "key": 168,
+      "name": "uniones",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "uniones"
+      ]
+   },
+   {
+      "key": 169,
+      "name": "funciones_innseguras",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "funciones innseguras"
+      ]
+   },
+   {
+      "key": 170,
+      "name": "implementacion_traits_unsafe",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "implementacion de traits unsafe"
+      ]
+   },
+   {
+      "key": 171,
+      "name": "ejercicio_envoltorio_FFI",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio envoltorio de FFI"
+      ]
+   },
+   {
+      "key": 172,
+      "name": "solucion_envoltorio_FFI",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución envoltorio de FFI"
+      ]
+   },
+   {
+      "key": 173,
+      "name": "hilos_simples",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "hilos simples"
+      ]
+   },
+   {
+      "key": 174,
+      "name": "hilos_ambito",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "hilos con ambito"
+      ]
+   },
+   {
+      "key": 175,
+      "name": "transmisores_receptores",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "transmisores y receptores"
+      ]
+   },
+   {
+      "key": 176,
+      "name": "canales_sin_limites",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales sin limites"
+      ]
+   },
+   {
+      "key": 177,
+      "name": "canales_delimitados",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales delimitados"
+      ]
+   },
+   {
+      "key": 178,
+      "name": "traits_marcador",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits de marcador"
+      ]
+   },
+   {
+      "key": 179,
+      "name": "send",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "send"
+      ]
+   },
+   {
+      "key": 180,
+      "name": "sync",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "sync"
+      ]
+   },
+   {
+      "key": 181,
+      "name": "ejemplos_send_sync",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejemplos de send y sync"
+      ]
+   },
+   {
+      "key": 182,
+      "name": "arc",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "arc"
+      ]
+   },
+   {
+      "key": 183,
+      "name": "mutex",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "mutex"
+      ]
+   },
+   {
+      "key": 184,
+      "name": "ejemplos_estado_compartido",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejemplos de estado compartido"
+      ]
+   },
+   {
+      "key": 185,
+      "name": "ejercicio_cadena_filosofos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de cadena de filosofos"
+      ]
+   },
+   {
+      "key": 186,
+      "name": "solucion_cadena_filosofos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución cadena de filosofos"
+      ]
+   },
+   {
+      "key": 187,
+      "name": "ejercicio_comprobador_enlaces_multihilo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio comprobador de enlaces multihilo"
+      ]
+   },
+   {
+      "key": 188,
+      "name": "solucion_comprobador_enlaces_multihilo",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución comprobador de enlaces multihilo"
+      ]
+   },
+   {
+      "key": 189,
+      "name": "async_await",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de async await"
+      ]
+   },
+   {
+      "key": 190,
+      "name": "Future",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "future"
+      ]
+   },
+   {
+      "key": 191,
+      "name": "runtimes",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "runtimes"
+      ]
+   },
+   {
+      "key": 192,
+      "name": "tokio",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tokio"
+      ]
+   },
+   {
+      "key": 193,
+      "name": "tasks",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "tasks"
+      ]
+   },
+   {
+      "key": 194,
+      "name": "canales_asíncronos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "canales asincronos"
+      ]
+   },
+   {
+      "key": 195,
+      "name": "Unir",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "unir"
+      ]
+   },
+   {
+      "key": 196,
+      "name": "seleccionar",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "seleccionar"
+      ]
+   },
+   {
+      "key": 197,
+      "name": "bloqueo_ejecutor",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "bloqueo",
+         "ejecutor"
+      ]
+   },
+   {
+      "key": 198,
+      "name": "pin",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "pin"
+      ]
+   },
+   {
+      "key": 199,
+      "name": "traits_asincronos",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "traits asincronos"
+      ]
+   },
+   {
+      "key": 200,
+      "name": "cancelación",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "cancelacion"
+      ]
+   },
+   {
+      "key": 201,
+      "name": "ejercicio_cena_filosofos_async",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio cena de filosofos async"
+      ]
+   },
+   {
+      "key": 202,
+      "name": "solucion_cena_filosofos_async",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución cena de filosofos async"
+      ]
+   },
+   {
+      "key": 203,
+      "name": "ejercicio_char_defunsion",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "ejercicio de chat de defunsion"
+      ]
+   },
+   {
+      "key": 204,
+      "name": "solucion_char_defunsion",
+      "addInfo": {
+         "addData": "08/06/2025",
+         "user": {
+            "key": "user_2xJyANKAq4BANCJiZyRQb8Obfjr",
+            "name": "Luis Eduardo"
+         }
+      },
+      "updateInfo": null,
+      "keywords": [
+         "solución de chat de defunsion"
+      ]
    }
 ]
