@@ -1271,7 +1271,7 @@
             "key": "17-1",
             "to": "/classroom/$classroomId",
             "text": "IntoIterator",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "intoiterator"
             }
@@ -1280,7 +1280,7 @@
             "key": "17-2",
             "to": "/classroom/$classroomId",
             "text": "FromIterator",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "fromiterator"
             }
@@ -1289,13 +1289,13 @@
             "key": "17-3",
             "to": "/classroom/$classroomId",
             "text": "Encadenamiento de métodos del iterador",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "17-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_encadenamiento_metodo_iterador"
                   }
@@ -1304,7 +1304,7 @@
                   "key": "17-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_encadenamiento_metodo_iterador"
                   }
@@ -1317,13 +1317,13 @@
       "key": "18",
       "to": "/classroom/$classroomId",
       "text": "Módulos",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "18-0",
             "to": "/classroom/$classroomId",
             "text": "Introducción",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "introduccion_modulo"
             }
@@ -1332,7 +1332,7 @@
             "key": "18-1",
             "to": "/classroom/$classroomId",
             "text": "Jerarquía del sistema de archivos",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "jerarquia_sistena_archivos"
             }
@@ -1341,7 +1341,7 @@
             "key": "18-2",
             "to": "/classroom/$classroomId",
             "text": "Visibilidad",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "visibilidad"
             }
@@ -1350,7 +1350,7 @@
             "key": "18-3",
             "to": "/classroom/$classroomId",
             "text": "Use, super, self",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "use_super_self"
             }
@@ -1359,13 +1359,13 @@
             "key": "18-4",
             "to": "/classroom/$classroomId",
             "text": "Módulos para una biblioteca GUI",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "18-4-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_modulo_biblioteca_gui"
                   }
@@ -1374,7 +1374,7 @@
                   "key": "18-4-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_modulo_biblioteca_gui"
                   }
@@ -1387,13 +1387,13 @@
       "key": "19",
       "to": "/classroom/$classroomId",
       "text": "Probando",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "19-0",
             "to": "/classroom/$classroomId",
             "text": "Módulos de Pruebas",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "modulo_pruebas"
             }
@@ -1402,7 +1402,7 @@
             "key": "19-1",
             "to": "/classroom/$classroomId",
             "text": "Otros tipos de pruebas",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "otros_tipos_pruebas"
             }
@@ -1411,7 +1411,7 @@
             "key": "19-2",
             "to": "/classroom/$classroomId",
             "text": "Lints de compiladores y Clippy",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "links_compiladores_clippy"
             }
@@ -1420,13 +1420,13 @@
             "key": "19-3",
             "to": "/classroom/$classroomId",
             "text": "Algoritmo de Luhn",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "17-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_algoritmo_luhn"
                   }
@@ -1435,7 +1435,7 @@
                   "key": "17-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_algoritmo_luhn"
                   }
@@ -1448,13 +1448,13 @@
       "key": "20",
       "to": "/classroom/$classroomId",
       "text": "Manejo de Errores",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "20-0",
             "to": "/classroom/$classroomId",
             "text": "Pánicos",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "panico"
             }
@@ -1463,7 +1463,7 @@
             "key": "20-1",
             "to": "/classroom/$classroomId",
             "text": "Result",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "result"
             }
@@ -1472,7 +1472,7 @@
             "key": "20-2",
             "to": "/classroom/$classroomId",
             "text": "Operador Try (Intentar)",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "operador_try"
             }
@@ -1481,7 +1481,7 @@
             "key": "20-3",
             "to": "/classroom/$classroomId",
             "text": "Conversiones Try (Intentar)",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "conversiones_try"
             }
@@ -1490,7 +1490,7 @@
             "key": "20-4",
             "to": "/classroom/$classroomId",
             "text": "Trait Error",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "trait_error"
             }
@@ -1499,7 +1499,7 @@
             "key": "20-5",
             "to": "/classroom/$classroomId",
             "text": "Thiserror y anyhow",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "thiserror_anyhow"
             }
@@ -1508,13 +1508,13 @@
             "key": "20-6",
             "to": "/classroom/$classroomId",
             "text": "Reescribir con Result",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "20-6-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_rescribir_result"
                   }
@@ -1523,7 +1523,7 @@
                   "key": "20-6-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_rescribir_result"
                   }
@@ -1536,13 +1536,13 @@
       "key": "21",
       "to": "/classroom/$classroomId",
       "text": "Unsafe Rust",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "21-0",
             "to": "/classroom/$classroomId",
             "text": "Introducción",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "introduccion_unsafe"
             }
@@ -1551,7 +1551,7 @@
             "key": "21-1",
             "to": "/classroom/$classroomId",
             "text": "Dereferenciación de Punteros Sin Formato",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "dereferenciacion_puntero_sin_formato"
             }
@@ -1560,7 +1560,7 @@
             "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Variables Estáticas Mutables",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "variables_estaticas_mutables"
             }
@@ -1569,7 +1569,7 @@
             "key": "21-3",
             "to": "/classroom/$classroomId",
             "text": "Uniones",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "uniones"
             }
@@ -1578,7 +1578,7 @@
             "key": "21-4",
             "to": "/classroom/$classroomId",
             "text": "Funciones Inseguras (Unsafe)",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "funciones_inseguras"
             }
@@ -1587,7 +1587,7 @@
             "key": "21-5",
             "to": "/classroom/$classroomId",
             "text": "Implementación de Traits Unsafe (Inseguras)",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "implementacion_traits_unsafe"
             }
@@ -1596,13 +1596,13 @@
             "key": "21-6",
             "to": "/classroom/$classroomId",
             "text": "Envoltorio de FFI",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "21-6-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_envoltorio_FFI"
                   }
@@ -1611,7 +1611,7 @@
                   "key": "21-6-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_envoltorio_FFI"
                   }
@@ -1624,19 +1624,19 @@
       "key": "22",
       "to": "/classroom/$classroomId",
       "text": "Concurrencia",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "22-0",
             "to": "/classroom/$classroomId",
             "text": "Hilos",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "22-0-0",
                   "to": "/classroom/$classroomId",
                   "text": "Hilos Simples",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "hilos_simples"
                   }
@@ -1645,7 +1645,7 @@
                   "key": "22-0-1",
                   "to": "/classroom/$classroomId",
                   "text": "Hilos con ámbito",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "hilos_ambito"
                   }
@@ -1656,13 +1656,13 @@
             "key": "22-1",
             "to": "/classroom/$classroomId",
             "text": "Canales",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "22-1-0",
                   "to": "/classroom/$classroomId",
                   "text": "Transmisores y Receptores",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "transmisores_receptores"
                   }
@@ -1671,7 +1671,7 @@
                   "key": "22-1-1",
                   "to": "/classroom/$classroomId",
                   "text": "Canales sin límites",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "canales_sin_limites"
                   }
@@ -1680,7 +1680,7 @@
                   "key": "22-1-2",
                   "to": "/classroom/$classroomId",
                   "text": "Canales delimitados",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "canales_delimitados"
                   }
@@ -1691,13 +1691,13 @@
             "key": "22-2",
             "to": "/classroom/$classroomId",
             "text": "Send y Sync",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "22-2-0",
                   "to": "/classroom/$classroomId",
                   "text": "Traits de Marcador",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "traits_marcador"
                   }
@@ -1706,7 +1706,7 @@
                   "key": "22-2-1",
                   "to": "/classroom/$classroomId",
                   "text": "Send",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "send"
                   }
@@ -1715,7 +1715,7 @@
                   "key": "22-2-2",
                   "to": "/classroom/$classroomId",
                   "text": "Sync",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "sync"
                   }
@@ -1724,7 +1724,7 @@
                   "key": "22-2-3",
                   "to": "/classroom/$classroomId",
                   "text": "Ejemplos",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejemplos_send_sync"
                   }
@@ -1735,13 +1735,13 @@
             "key": "22-3",
             "to": "/classroom/$classroomId",
             "text": "Estado compartido",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "22-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Arc",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "arc"
                   }
@@ -1750,7 +1750,7 @@
                   "key": "22-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Mutex",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "mutex"
                   }
@@ -1759,7 +1759,7 @@
                   "key": "22-3-2",
                   "to": "/classroom/$classroomId",
                   "text": "Ejemplo",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejemplos_estado_compartido"
                   }
@@ -1770,13 +1770,13 @@
             "key": "22-4",
             "to": "/classroom/$classroomId",
             "text": "Ejercicios",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "22-4-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio: la cena de los filósofos",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_cadena_filosofos"
                   }
@@ -1785,7 +1785,7 @@
                   "key": "22-4-1",
                   "to": "/classroom/$classroomId",
                   "text": "solución: La cena de los filósofos",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_cadena_filosofos"
                   }
@@ -1794,7 +1794,7 @@
                   "key": "22-4-2",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio: Comprobador de enlaces multihilo",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_comprobador_enlaces_multihilo"
                   }
@@ -1803,7 +1803,7 @@
                   "key": "22-4-3",
                   "to": "/classroom/$classroomId",
                   "text": "solución: Comprobador de enlaces multihilo",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_comprobador_enlaces_multihilo"
                   }
@@ -1816,13 +1816,13 @@
       "key": "23",
       "to": "/classroom/$classroomId",
       "text": "Conceptos básicos de Async",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "23-0",
             "to": "/classroom/$classroomId",
             "text": "async/await",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "async_await"
             }
@@ -1831,7 +1831,7 @@
             "key": "23-1",
             "to": "/classroom/$classroomId",
             "text": "Future",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "Future"
             }
@@ -1840,7 +1840,7 @@
             "key": "23-2",
             "to": "/classroom/$classroomId",
             "text": "Runtimes (Tiempos de Ejecución)",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "runtimes"
             }
@@ -1849,7 +1849,7 @@
             "key": "23-3",
             "to": "/classroom/$classroomId",
             "text": "Tokio",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "tokio"
             }
@@ -1858,7 +1858,7 @@
             "key": "23-4",
             "to": "/classroom/$classroomId",
             "text": "Tasks",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "tasks"
             }
@@ -1869,13 +1869,13 @@
       "key": "24",
       "to": "/classroom/$classroomId",
       "text": "Canales y Control de Flujo",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "24-0",
             "to": "/classroom/$classroomId",
             "text": "Canales asíncronos",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "canales_asíncronos"
             }
@@ -1884,7 +1884,7 @@
             "key": "24-1",
             "to": "/classroom/$classroomId",
             "text": "Unir",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "Unir"
             }
@@ -1893,7 +1893,7 @@
             "key": "24-2",
             "to": "/classroom/$classroomId",
             "text": "Seleccionar",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "seleccionar"
             }
@@ -1904,13 +1904,13 @@
       "key": "25",
       "to": "/classroom/$classroomId",
       "text": "Inconvenientes",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "25-0",
             "to": "/classroom/$classroomId",
             "text": "Bloqueo del ejecutor",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "bloqueo_ejecutor"
             }
@@ -1919,7 +1919,7 @@
             "key": "25-1",
             "to": "/classroom/$classroomId",
             "text": "Pin",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "pin"
             }
@@ -1928,7 +1928,7 @@
             "key": "25-2",
             "to": "/classroom/$classroomId",
             "text": "Traits asíncronos",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "traits_asincronos"
             }
@@ -1937,7 +1937,7 @@
             "key": "25-3",
             "to": "/classroom/$classroomId",
             "text": "Cancelación",
-            "isActive": true,
+            "isActive": false,
             "params": {
                "classroomId": "cancelación"
             }
@@ -1948,19 +1948,19 @@
       "key": "26",
       "to": "/classroom/$classroomId",
       "text": "Ejercicios",
-      "isActive": true,
+      "isActive": false,
       "subMenu": [
          {
             "key": "26-0",
             "to": "/classroom/$classroomId",
             "text": "La cena de los filósofos async",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "26-0-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_cena_filosofos_async"
                   }
@@ -1969,7 +1969,7 @@
                   "key": "26-0-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_cena_filosofos_async"
                   }
@@ -1980,13 +1980,13 @@
             "key": "26-1",
             "to": "/classroom/$classroomId",
             "text": "Aplicación de chat de difusión",
-            "isActive": true,
+            "isActive": false,
             "subMenu": [
                {
                   "key": "26-1-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "ejercicio_char_defunsion"
                   }
@@ -1995,7 +1995,7 @@
                   "key": "26-1-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": true,
+                  "isActive": false,
                   "params": {
                      "classroomId": "solucion_char_defunsion"
                   }
