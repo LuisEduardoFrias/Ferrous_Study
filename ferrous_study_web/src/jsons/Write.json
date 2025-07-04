@@ -639,7 +639,7 @@
             "text": "Unir",
             "isActive": true,
             "params": {
-               "classroomId": "Unir"
+               "classroomId": "unir"
             }
          },
          {
@@ -758,6 +758,13 @@
       ]
    }
 ]
+
+
+
+
+
+
+
 
 [
    {

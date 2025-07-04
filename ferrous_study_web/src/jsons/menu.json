@@ -1271,7 +1271,7 @@
             "key": "17-1",
             "to": "/classroom/$classroomId",
             "text": "IntoIterator",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "intoiterator"
             }
@@ -1280,7 +1280,7 @@
             "key": "17-2",
             "to": "/classroom/$classroomId",
             "text": "FromIterator",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "fromiterator"
             }
@@ -1289,13 +1289,13 @@
             "key": "17-3",
             "to": "/classroom/$classroomId",
             "text": "Encadenamiento de métodos del iterador",
-            "isActive": false,
+            "isActive": true,
             "subMenu": [
                {
                   "key": "17-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "ejercicio_encadenamiento_metodo_iterador"
                   }
@@ -1304,7 +1304,7 @@
                   "key": "17-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "solucion_encadenamiento_metodo_iterador"
                   }
@@ -1317,13 +1317,13 @@
       "key": "18",
       "to": "/classroom/$classroomId",
       "text": "Módulos",
-      "isActive": false,
+      "isActive": true,
       "subMenu": [
          {
             "key": "18-0",
             "to": "/classroom/$classroomId",
             "text": "Introducción",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "introduccion_modulo"
             }
@@ -1332,7 +1332,7 @@
             "key": "18-1",
             "to": "/classroom/$classroomId",
             "text": "Jerarquía del sistema de archivos",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "jerarquia_sistena_archivos"
             }
@@ -1341,7 +1341,7 @@
             "key": "18-2",
             "to": "/classroom/$classroomId",
             "text": "Visibilidad",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "visibilidad"
             }
@@ -1350,7 +1350,7 @@
             "key": "18-3",
             "to": "/classroom/$classroomId",
             "text": "Use, super, self",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "use_super_self"
             }
@@ -1359,13 +1359,13 @@
             "key": "18-4",
             "to": "/classroom/$classroomId",
             "text": "Módulos para una biblioteca GUI",
-            "isActive": false,
+            "isActive": true,
             "subMenu": [
                {
                   "key": "18-4-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "ejercicio_modulo_biblioteca_gui"
                   }
@@ -1374,7 +1374,7 @@
                   "key": "18-4-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "solucion_modulo_biblioteca_gui"
                   }
@@ -1387,13 +1387,13 @@
       "key": "19",
       "to": "/classroom/$classroomId",
       "text": "Probando",
-      "isActive": false,
+      "isActive": true,
       "subMenu": [
          {
             "key": "19-0",
             "to": "/classroom/$classroomId",
             "text": "Módulos de Pruebas",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "modulo_pruebas"
             }
@@ -1402,7 +1402,7 @@
             "key": "19-1",
             "to": "/classroom/$classroomId",
             "text": "Otros tipos de pruebas",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "otros_tipos_pruebas"
             }
@@ -1411,7 +1411,7 @@
             "key": "19-2",
             "to": "/classroom/$classroomId",
             "text": "Lints de compiladores y Clippy",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "links_compiladores_clippy"
             }
@@ -1420,22 +1420,22 @@
             "key": "19-3",
             "to": "/classroom/$classroomId",
             "text": "Algoritmo de Luhn",
-            "isActive": false,
+            "isActive": true,
             "subMenu": [
                {
-                  "key": "17-3-0",
+                  "key": "19-3-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "ejercicio_algoritmo_luhn"
                   }
                },
                {
-                  "key": "17-3-1",
+                  "key": "19-3-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "solucion_algoritmo_luhn"
                   }
@@ -1448,13 +1448,13 @@
       "key": "20",
       "to": "/classroom/$classroomId",
       "text": "Manejo de Errores",
-      "isActive": false,
+      "isActive": true,
       "subMenu": [
          {
             "key": "20-0",
             "to": "/classroom/$classroomId",
             "text": "Pánicos",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "panico"
             }
@@ -1463,7 +1463,7 @@
             "key": "20-1",
             "to": "/classroom/$classroomId",
             "text": "Result",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "result"
             }
@@ -1472,7 +1472,7 @@
             "key": "20-2",
             "to": "/classroom/$classroomId",
             "text": "Operador Try (Intentar)",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "operador_try"
             }
@@ -1481,7 +1481,7 @@
             "key": "20-3",
             "to": "/classroom/$classroomId",
             "text": "Conversiones Try (Intentar)",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "conversiones_try"
             }
@@ -1490,7 +1490,7 @@
             "key": "20-4",
             "to": "/classroom/$classroomId",
             "text": "Trait Error",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "trait_error"
             }
@@ -1499,7 +1499,7 @@
             "key": "20-5",
             "to": "/classroom/$classroomId",
             "text": "Thiserror y anyhow",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "thiserror_anyhow"
             }
@@ -1508,13 +1508,13 @@
             "key": "20-6",
             "to": "/classroom/$classroomId",
             "text": "Reescribir con Result",
-            "isActive": false,
+            "isActive": true,
             "subMenu": [
                {
                   "key": "20-6-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "ejercicio_rescribir_result"
                   }
@@ -1523,7 +1523,7 @@
                   "key": "20-6-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "solucion_rescribir_result"
                   }
@@ -1536,13 +1536,13 @@
       "key": "21",
       "to": "/classroom/$classroomId",
       "text": "Unsafe Rust",
-      "isActive": false,
+      "isActive": true,
       "subMenu": [
          {
             "key": "21-0",
             "to": "/classroom/$classroomId",
             "text": "Introducción",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "introduccion_unsafe"
             }
@@ -1551,7 +1551,7 @@
             "key": "21-1",
             "to": "/classroom/$classroomId",
             "text": "Dereferenciación de Punteros Sin Formato",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "dereferenciacion_puntero_sin_formato"
             }
@@ -1560,7 +1560,7 @@
             "key": "21-2",
             "to": "/classroom/$classroomId",
             "text": "Variables Estáticas Mutables",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "variables_estaticas_mutables"
             }
@@ -1569,7 +1569,7 @@
             "key": "21-3",
             "to": "/classroom/$classroomId",
             "text": "Uniones",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "uniones"
             }
@@ -1578,7 +1578,7 @@
             "key": "21-4",
             "to": "/classroom/$classroomId",
             "text": "Funciones Inseguras (Unsafe)",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "funciones_inseguras"
             }
@@ -1587,7 +1587,7 @@
             "key": "21-5",
             "to": "/classroom/$classroomId",
             "text": "Implementación de Traits Unsafe (Inseguras)",
-            "isActive": false,
+            "isActive": true,
             "params": {
                "classroomId": "implementacion_traits_unsafe"
             }
@@ -1596,13 +1596,13 @@
             "key": "21-6",
             "to": "/classroom/$classroomId",
             "text": "Envoltorio de FFI",
-            "isActive": false,
+            "isActive": true,
             "subMenu": [
                {
                   "key": "21-6-0",
                   "to": "/classroom/$classroomId",
                   "text": "Ejercicio",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "ejercicio_envoltorio_FFI"
                   }
@@ -1611,7 +1611,7 @@
                   "key": "21-6-1",
                   "to": "/classroom/$classroomId",
                   "text": "Solución",
-                  "isActive": false,
+                  "isActive": true,
                   "params": {
                      "classroomId": "solucion_envoltorio_FFI"
                   }
@@ -1886,7 +1886,7 @@
             "text": "Unir",
             "isActive": false,
             "params": {
-               "classroomId": "Unir"
+               "classroomId": "unir"
             }
          },
          {
