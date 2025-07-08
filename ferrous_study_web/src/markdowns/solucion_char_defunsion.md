@@ -1,15 +1,3 @@
----
-key: 129
-name: solucion_char_defunsion
-addData: 3/07/2025
-updateData: null
-keywords: 
- - solución
- - char de defunsión
-languages:
- - key: Español
-   value: es-ES
----
 language&>es-ES<&
 # Solución, aplicación de chat de difusión
 
