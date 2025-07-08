@@ -4,6 +4,7 @@ import type { TLanguages } from '../types/language'
 import type { TMarkdownResult } from '../types/markdown_result'
 import { FerrisIcon } from '../assets/svgs'
 import MarkdownRenderer from "../components/markdown_renderer"
+import { Link } from '@tanstack/react-router'
 import { useTitle } from '../hooks/use_title'
 import { githubServiceApi } from '../services/github_service'
 import { useMemoryCache } from '../hooks/use_memory_cache'
@@ -92,11 +93,18 @@ export default function Home() {
             {welcome ?? 'Bienvenido a'} Ferrous Study! <FerrisIcon className="bg-theme-4-d rounded-full" />
          </h1>
          <br />
-      <div className="p-2">
-         <MarkdownRenderer>
-            {content ?? ''}
-         </MarkdownRenderer>
-      </div>
+         <div className="p-2">
+            <MarkdownRenderer>
+               {content ?? ''}
+            </MarkdownRenderer>
+            <div className="flex items-center justify-center w-full mb-6" >
+               <Link
+                  to="/classroom/$classroomId"
+                  params={{ classroomId: "que_es_rust" }}
+                  className="p-2 shadow shadow-theme-4 bg-theme-d-4 rounded-lg w-24 text-center"
+               ><span className="text-center font-extrabold text-theme-3" >Inicial</span></Link>
+            </div>
+         </div>
       </div>
    )
 }

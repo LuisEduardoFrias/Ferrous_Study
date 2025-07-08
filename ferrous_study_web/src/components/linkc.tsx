@@ -27,7 +27,7 @@ export default function LinkC({ text, params, className, isActive, children, to,
          return;
       }
 
-      if (!isActive) {
+      if (isActive) {
          on_show_drawer(false)
       }
    };

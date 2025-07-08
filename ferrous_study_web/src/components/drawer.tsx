@@ -35,7 +35,9 @@ const Drawer = memo(function Drawer() {
       const about = authPage.filter(item => item.to && item.to.includes('/about'))[0];
       const suggestions = authPage.filter(item => item.to && item.to.includes('/suggestions'))[0];
       const authorizedPages = authPage.filter(item => !item.to || (!item.to.includes('/about') && !item.to.includes('/suggestions')));
-      setMenu({ classroom, authorizedPages, suggestions, about })
+
+
+      setMenu({ classroom: createGroup(classroom), authorizedPages, suggestions, about })
    }, [dataMenu])
 
    useEffect(() => { }, [menu])
@@ -56,19 +58,10 @@ const Drawer = memo(function Drawer() {
 
             <div className="flex flex-col pt-3 gap-2 p-2 pb-5 overflow-y-scroll">
 
-               {menu &&
-                  menu?.classroom?.map(({ to, text, isActive, params, subMenu }) => (
-                     <LinkC
-                        key={text}
-                        to={to}
-                        isActive={isActive}
-                        subMenu={subMenu}
-                        params={params}
-                     >
-                        {text}
-                     </LinkC>
-                  ))}
+               {menu && renderingGroup(menu?.classroom)}
+
                <hr className="my-2 border-[.4px] border-theme-3" />
+
                <SignedIn>
                   {menu &&
                      menu?.authorizedPages?.map(({ to, text, isActive, params, subMenu }) => (
@@ -114,3 +107,27 @@ const Drawer = memo(function Drawer() {
    );
 });
 export default Drawer;
+
+
+function createGroup<T>(array: T[], groupLenght: number = 5): T[][] {
+   const groups: T[][] = [];
+   for (let i = 0; i < array.length; i += groupLenght) {
+      groups.push(array.slice(i, i + groupLenght));
+   }
+   return groups;
+}
+
+
+function renderingGroup<T>(groups: T[][]) {
+   return groups.map((group, index) =>
+      <div className="border-[0.3px] shadow-[0_0.3px_0.3px_0_rgba(0_0_0__0.5)] shadow-theme-1 border-[#ffffff1e] p-2">
+         <LinkC
+            key={index}
+            isActive={true}
+            subMenu={group}
+         >
+            Seccion {index + 1}
+         </LinkC>
+      </div>
+   );
+}
