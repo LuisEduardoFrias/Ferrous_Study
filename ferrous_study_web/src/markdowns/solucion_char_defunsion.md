@@ -12,10 +12,10 @@ languages:
 ---
 language&>es-ES<&
 # Solución, aplicación de chat de difusión
+<br />
 
 ```rust
-title&>src/bin/server.rs<&title
-
+&title>src/bin/server.rs<title&
 use futures_util::sink::SinkExt;
 use futures_util::stream::StreamExt;
 use std::error::Error;
@@ -79,9 +79,11 @@ async fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
     }
 }
 ```
+<br />
+<br />
 
 ```rust
-title&>src/bin/client.rs<&title
+&title>src/bin/client.rs<title&
 
 use futures_util::stream::StreamExt;
 use futures_util::SinkExt;

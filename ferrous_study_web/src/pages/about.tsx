@@ -56,14 +56,14 @@ const tools: Tool[] = [
 ];
 
 export default function About() {
-   useTitle('Acerca de');
+   useTitle('Acerca de: FerrousStudy');
    const [showForm, setShowForm] = useState(false);
    const hoverTimer = useRef<number | null>(null);
 
    const handleMouseEnter = () => {
       hoverTimer.current = setTimeout(() => {
          setShowForm(true);
-      }, 10000);
+      }, 5000);
    };
 
    const handleMouseLeave = () => {
@@ -279,7 +279,7 @@ export default function About() {
                <button
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
-                  className="border-none hover:bg-amber-200 h-[12px] w-[12px] flex justify-center items-center bg-transparent text-theme-0 p-0"
+                  className="border-none hover:bg-theme-2-d h-[12px] w-[12px] flex justify-center items-center bg-transparent text-theme-0 p-0"
                >
                   ©
                </button>{yourCopyright}</Paragraph>
@@ -343,29 +343,29 @@ function LoginForm({ onClose }: { onClose: () => void }) {
             >
                &times;
             </button>
-            <h2 className="text-3xl font-bold text-theme-04 mb-6">Iniciar Sesión</h2>
+            <h2 className="text-3xl font-bold text-theme-2-d mb-6">Iniciar Sesión</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                <div>
-                  <label htmlFor="username" className="block text-left text-theme-04 text-sm font-semibold mb-2">
+                  <label htmlFor="username" className="block text-left text-gray-800 text-sm font-semibold mb-2">
                      Usuario:
                   </label>
                   <input
                      type="text"
                      id="username" // El 'id' se usa para referenciar el input por su nombre
                      name="username" // ¡Importante! El 'name' es clave para acceder al valor
-                     className="w-full px-4 py-2 border border-theme-04 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     className="w-full px-4 py-2 border text-black border-theme-04 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                      required
                   />
                </div>
                <div>
-                  <label htmlFor="password" className="block text-left text-theme-04 text-sm font-semibold mb-2">
+                  <label htmlFor="password" className="block text-left text-gray-800 text-sm font-semibold mb-2">
                      Contraseña:
                   </label>
                   <input
                      type="password"
                      id="password" // El 'id' se usa para referenciar el input por su nombre
                      name="password" // ¡Importante! El 'name' es clave para acceder al valor
-                     className="w-full px-4 py-2 border border-theme-04 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                     className="w-full px-4 py-2 border text-black border-theme-04 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                      required
                   />
                </div>

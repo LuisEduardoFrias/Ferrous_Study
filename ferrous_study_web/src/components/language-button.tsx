@@ -52,12 +52,8 @@ export default function LanguageButton() {
 
             {languages.map((lang: TLanguages) => (
                <li
-                  key={lang.value}
-                  className={`
-              hover:bg-theme-3 cursor-pointer
-              ${isLanguageSelected(lang)}
-              px-2 py-1 text-sm
-            `}
+                  key={lang.key}
+                  className={`hover:bg-theme-3 cursor-pointer ${isLanguageSelected(lang)} px-2 py-1 text-sm`}
                   onClick={() => handleLanguageClick(lang)}
                >
                   {lang.key}

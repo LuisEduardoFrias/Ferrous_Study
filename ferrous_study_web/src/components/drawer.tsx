@@ -9,7 +9,7 @@ import type { TMenu } from '../types/menu'
 import { useStore } from '../state_warehouse/index'
 
 type MenuObj = {
-   classroom: TMenu[],
+   classroom: Array<TMenu[]>,
    authorizedPages: TMenu[],
    about: TMenu,
    suggestions: TMenu,
@@ -109,8 +109,8 @@ const Drawer = memo(function Drawer() {
 export default Drawer;
 
 
-function createGroup<T>(array: T[], groupLenght: number = 5): T[][] {
-   const groups: T[][] = [];
+function createGroup(array: TMenu[], groupLenght: number = 5): Array<TMenu[]> {
+   const groups: Array<TMenu[]> = [];
    for (let i = 0; i < array.length; i += groupLenght) {
       groups.push(array.slice(i, i + groupLenght));
    }
@@ -118,13 +118,14 @@ function createGroup<T>(array: T[], groupLenght: number = 5): T[][] {
 }
 
 
-function renderingGroup<T>(groups: T[][]) {
+function renderingGroup(groups: Array<TMenu[]>) {
    return groups.map((group, index) =>
-      <div className="border-[0.3px] shadow-[0_0.3px_0.3px_0_rgba(0_0_0__0.5)] shadow-theme-1 border-[#ffffff1e] p-2">
+      <div key={index} className="border-[0.3px] shadow-[0_0.3px_0.3px_0_rgba(0_0_0__0.5)] shadow-theme-1 border-[#ffffff1e] p-2">
          <LinkC
+            to=""
             key={index}
             isActive={true}
-            subMenu={group}
+            subMenu={group as TMenu[]}
          >
             Seccion {index + 1}
          </LinkC>

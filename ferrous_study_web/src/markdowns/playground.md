@@ -19,9 +19,6 @@ Rust cuenta con dos “perfiles” principales para generar código: Debug (comp
 
 Si te interesa, utiliza la opción “ASM” en “…” para ver el código de ensamblado que se ha generado.
 
-Speaker Notes
-This slide should take about 2 minutes.
-Cuando sea la hora del descanso, anima a los asistentes a abrir el playground para que experimenten un poco. Hazles saber que pueden mantener la
-pestaña abierta y probar cosas durante el resto del curso. Resulta especialmente útil para los participantes con un nivel avanzado que quieran obtener
+Pedes mantener la pestaña abierta y probar cosas durante el resto del curso. Resulta especialmente útil para los participantes con un nivel avanzado que quieran obtener
 más información sobre las optimizaciones o el ensamblaje generado de Rust.
 language&>es-ES<&
